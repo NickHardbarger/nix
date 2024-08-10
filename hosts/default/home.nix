@@ -12,7 +12,6 @@
     extraConfig = {
       init.defaultBranch = "main";
       safe.directory = "/home/iglu/nicksOS";
-      #safe.directory = "/etc/nixos";
     };
   };
 
