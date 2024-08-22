@@ -27,7 +27,7 @@
       name = "envy-sound";
       patch = ./envy-sound.diff;
     } ];
-    kernelPackages = pkgs.linuxPackages_5_18;
+    kernelPackages = pkgs.linuxPackages_5_15;
     #kernelPackages = pkgs.linuxPackages;
     #kernelPackages = pkgs.linuxPackages_latest;
     #kernelPackages = pkgs.linuxPackages_hardened;
