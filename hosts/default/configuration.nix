@@ -28,9 +28,9 @@
       patch = ./envy-sound.diff;
     } ];
     #kernelPackages = pkgs.linuxPackages;
-    #kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     #kernelPackages = pkgs.linuxPackages_hardened;
-    kernelPackages = pkgs.linuxPackages_zen;
+    #kernelPackages = pkgs.linuxPackages_zen;
   };
   networking.hostName = "nicksOS";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
