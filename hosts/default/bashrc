@@ -1,0 +1,13 @@
+pfetch
+export EDITOR=nvim
+alias bashrc='emacsclient ~/.bashrc'
+alias termrc='emacsclient ~/.config/alacritty/alacritty.toml'
+alias swayrc='emacsclient ~/.config/sway/config'
+alias statusrc='emacsclient ~/.config/i3status/config'
+alias menurc='emacsclient ~/.config/tofi/config'
+alias nixrc='sudoedit ~/nicksOS/hosts/default/configuration.nix'
+alias flakerc='sudoedit ~/nicksOS/flake.nix'
+alias hardrc='sudoedit ~/nicksOS/hosts/default/hardware-configuration.nix'
+alias horse='sudoedit ~/nicksOS/hosts/default/home.nix'
+alias irs='sudo nixos-rebuild switch --flake ~/nicksOS#default'
+alias buildflags='nix edit -f "<nixpkgs>"'
