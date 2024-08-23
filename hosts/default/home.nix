@@ -67,16 +67,13 @@
   home.file = {
     "~/.bashrc".source = ./bash;
     "~/.config/sway/config" = {
-      source = ./sway;
-      recursive = true;
+      source = config.lib.file.mkOutOfStoreSymlink ./sway;
     };
     "~/.config/i3status/config" = {
-      source = ./i3status;
-      recursive = true;
+      source = config.lib.file.mkOutOfStoreSymlink ./i3status;
     };
     "~/.config/tofi/config" = {
-      source = ./tofi;
-      recursive = true;
+      source = config.lib.file.mkOutOfStoreSymlink ./tofi;
     };
   };
 
