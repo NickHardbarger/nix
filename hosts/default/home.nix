@@ -16,6 +16,15 @@
         safe.directory = "/home/iglu/nicksOS";
       };
     };
+    bash = {
+      bashrcExtra = "pfetch";
+      sessionVariables = {
+        EDITOR = "nvim";
+      };
+      shellALiases = {
+        irs = "sudo nixos-rebuild switch --flake ~/nicksOS#default";
+      };
+    };
     emacs = {
       enable = true;
     };
@@ -65,10 +74,9 @@
     # '')
   ];
   home.file = {
-    "~/.bashrc".source = ./bash;
   };
   xdg = {
-    enable = true;
+    enable = true; # might not need this line
     configFile = {
       "sway/config".source = ./sway/config;
       "i3status/config".source = ./i3status/config;
