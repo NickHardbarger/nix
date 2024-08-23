@@ -18,16 +18,13 @@
     };
     bash = {
       bashrcExtra = "pfetch";
-      sessionVariables = {
-        EDITOR = "nvim";
-      };
-      shellAliases = {
-        irs = "sudo nixos-rebuild switch --flake ~/nicksOS#default";
-      };
     };
     emacs = {
       enable = true;
     };
+  };
+  home.shellAliases = {
+    "irs" = "sudo nixos-rebuild switch --flake ~/nicksOS#default";
   };
   ### CURSOR ###
   home.pointerCursor = {
@@ -84,7 +81,7 @@
     };
   };
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
