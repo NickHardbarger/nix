@@ -68,8 +68,6 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    #"~/.bashrc".source = ./.bashrc;
-    #".config/sway/config".source = ./sway.config;
   };
 
   home.sessionVariables = {
