@@ -21,7 +21,7 @@
       sessionVariables = {
         EDITOR = "nvim";
       };
-      shellALiases = {
+      shellAliases = {
         irs = "sudo nixos-rebuild switch --flake ~/nicksOS#default";
       };
     };
