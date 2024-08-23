@@ -64,16 +64,20 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-  xdg = {
-    enable = true;
-    configFile = {
-      "~/.config/i3status/config" = ./i3status;
-      "~/.config/sway/config" = ./sway;
-      "~/.config/tofi/config" = ./tofi;
-    };
-  };
   home.file = {
     "~/.bashrc".source = ./bash;
+    "~/.config/sway/config" = {
+      source = ./sway;
+      recursive = true;
+    };
+    "~/.config/i3status/config" = {
+      source = ./i3status;
+      recursive = true;
+    };
+    "~/.config/tofi/config" = {
+      source = ./tofi;
+      recursive = true;
+    };
   };
 
   home.sessionVariables = {
