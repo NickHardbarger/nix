@@ -66,17 +66,15 @@
   ];
   home.file = {
     "~/.bashrc".source = ./bash;
-    "~/.config/sway/config" = {
-      source = config.lib.file.mkOutOfStoreSymlink ./sway;
-    };
-    "~/.config/i3status/config" = {
-      source = config.lib.file.mkOutOfStoreSymlink ./i3status;
-    };
-    "~/.config/tofi/config" = {
-      source = config.lib.file.mkOutOfStoreSymlink ./tofi;
+  };
+  xdg = {
+    enable = true;
+    configFile = {
+      "sway/config".source = ./sway/config;
+      "i3status/config".source = ./i3status/config;
+      "tofi/config".source = ./tofi/config;
     };
   };
-
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
