@@ -64,14 +64,16 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
+  xdg = {
+    enable = true;
+    configFile = {
+      "~/.config/i3status/config".source = ./i3status;
+      "~/.config/sway/config".source = ./sway;
+      "~/.config/tofi/config".source = ./tofi;
+    };
+  };
   home.file = {
     "~/.bashrc".source = ./bash;
-    "~/.config/i3status/config".source = ./i3status;
-    "~/.config/sway/config".source = ./sway;
-    "~/.config/tofi/config".source = ./tofi;
   };
 
   home.sessionVariables = {
