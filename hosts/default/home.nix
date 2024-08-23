@@ -67,9 +67,9 @@
   xdg = {
     enable = true;
     configFile = {
-      "~/.config/i3status/config".source = ./i3status;
-      "~/.config/sway/config".source = ./sway;
-      "~/.config/tofi/config".source = ./tofi;
+      "~/.config/i3status/config" = ./i3status;
+      "~/.config/sway/config" = ./sway;
+      "~/.config/tofi/config" = ./tofi;
     };
   };
   home.file = {
