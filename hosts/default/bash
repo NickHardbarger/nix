@@ -1,10 +1,9 @@
 pfetch
 export EDITOR=nvim
-alias bashrc='emacsclient ~/.bashrc'
-alias termrc='emacsclient ~/.config/alacritty/alacritty.toml'
-alias swayrc='emacsclient ~/.config/sway/config'
-alias statusrc='emacsclient ~/.config/i3status/config'
-alias menurc='emacsclient ~/.config/tofi/config'
+alias bashrc='emacsclient ~/nicksOS/hosts/default/bash'
+alias swayrc='emacsclient ~/nicksOS/hosts/default/sway'
+alias statusrc='emacsclient ~/nicksOS/hosts/default/i3status'
+alias menurc='emacsclient ~/nicksOS/hosts/default/tofi'
 alias nixrc='sudoedit ~/nicksOS/hosts/default/configuration.nix'
 alias flakerc='sudoedit ~/nicksOS/flake.nix'
 alias hardrc='sudoedit ~/nicksOS/hosts/default/hardware-configuration.nix'
