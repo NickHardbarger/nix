@@ -1,2 +1,3 @@
 # nicksOS
-nicksOs is my current working name for my own custom gnu/linux/systemd/wayland/nix distro
+nicksOS is the current working name for my own bespoke GNU/Linux/Systemd/Wayland/Nix distro.
+Using NixOS as a base, [add more]
