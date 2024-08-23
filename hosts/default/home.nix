@@ -17,6 +17,7 @@
       };
     };
     bash = {
+      enable = true;
       bashrcExtra = "pfetch";
     };
     emacs = {
