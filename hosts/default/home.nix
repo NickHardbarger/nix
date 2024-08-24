@@ -20,7 +20,7 @@
       enable = true;
       bashrcExtra = ''
         pfetch
-	export EDITOR=nvim
+	export EDITOR=emacsclient
       '';
     };
     emacs = {
