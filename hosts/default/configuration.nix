@@ -192,7 +192,7 @@
 	  servers = {
 	    nixd.enable = true;
 	    bashls.enable = true;
-	    pylsp.enable = true;
+	    pyright.enable = true;
 	  };
 	};
       };
