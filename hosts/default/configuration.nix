@@ -79,7 +79,6 @@
       };
       qtile = {
         enable = true;
-	backend = "wayland";
       };
     };
   };
