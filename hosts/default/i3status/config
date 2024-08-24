@@ -1,5 +1,5 @@
 general {
-        colors = false
+        #colors = true
         interval = 5
 }
 
@@ -17,7 +17,7 @@ order += "wireless wlo1"
 order += "tztime local"
 
 wireless wlo1 {
-        format_up = "(%quality at %essid, %bitrate) %ip"
+        format_up = "(%quality at %essid, %bitrate) "#%ip"
         format_down = "WiFi down"
 }
 
