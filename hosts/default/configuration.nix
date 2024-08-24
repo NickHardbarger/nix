@@ -79,6 +79,7 @@
       };
       qtile = {
         enable = true;
+	backend = "wayland";
       };
     };
   };
@@ -142,8 +143,6 @@
       enable = true;
       extraPackages = with pkgs; [
         i3status # status bar
-	dunst # notification daemon
-	tofi # app launcher
       ];
     };
     ### FIREFOX ###
@@ -206,10 +205,6 @@
       enable = true;
     };
     ### SHELL ###
-    bash = {
-      shellAliases = {
-      };
-    };
     starship = {
       enable = true;
       settings = {
@@ -277,6 +272,8 @@
 	})
       ];
     }))
+    dunst # notification daemon
+    tofi # app launcher
     mangohud # steam hud overlay
     grim # screenshots
     slurp # screenshots

@@ -80,8 +80,9 @@
   home.file = {
   };
   xdg = {
-    enable = true; # might not need this line
+    enable = true;
     configFile = {
+      #"qtile/config.py".source = ./qtile/config.py;
       "sway/config".source = ./sway/config;
       "i3status/config".source = ./i3status/config;
       "tofi/config".source = ./tofi/config;
