@@ -121,8 +121,8 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.Max(),
+    #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    #layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -137,7 +137,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="JetBrains Mono",
+    font="JetBrains Mono Nerd Font",
     fontsize=16,
     padding=3,
 )
@@ -157,8 +157,8 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                #widget.TextBox("default config", name="default"),
+                #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 widget.StatusNotifier(),
                 #widget.Systray(),
