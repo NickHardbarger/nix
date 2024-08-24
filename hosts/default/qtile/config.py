@@ -137,7 +137,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="JetBrains Mono Nerd Font",
+    font="JetBrains Mono",
     fontsize=16,
     padding=3,
 )
@@ -160,10 +160,10 @@ screens = [
                 widget.TextBox("default config", name="default"),
                 widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Systray(),
+                widget.StatusNotifier(),
+                #widget.Systray(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
+                #widget.QuickExit(),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
