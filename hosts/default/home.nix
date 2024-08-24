@@ -82,7 +82,7 @@
   xdg = {
     enable = true;
     configFile = {
-      #"qtile/config.py".source = ./qtile/config.py;
+      "qtile/config.py".source = ./qtile/config.py;
       "sway/config".source = ./sway/config;
       "i3status/config".source = ./i3status/config;
       "tofi/config".source = ./tofi/config;
