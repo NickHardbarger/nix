@@ -32,6 +32,7 @@
     "cough" = "sudoedit ~/nicksOS/hosts/default/configuration.nix";
     "horse" = "sudoedit ~/nicksOS/hosts/default/home.nix";
     "sack" = "sudo git add * && sudo git commit -m";
+    "qstart" = "qtile start -b wayland";
   };
   ### CURSOR ###
   home.pointerCursor = {
