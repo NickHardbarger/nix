@@ -159,6 +159,11 @@
 	};
       };
     };
+    ### HTOP ###
+    htop = {
+      enable = true;
+      package = pkgs.htop;
+    };
     ### VIM ###
     nano = {
       enable = false;
