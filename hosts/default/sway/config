@@ -28,7 +28,7 @@ font pango:JetBrains Mono 12
 
 exec nm-applet # might not need this with wpa supplicant? idk
 exec blueman-applet
-exec waybar
+#exec waybar
 exec dunst
 exec swaybg -i ~/nicksOS/hosts/default/wallpapers/stairs.jpg -m fill
 
@@ -216,21 +216,21 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-#bar {
-#    #status_command i3status -c ~/.config/i3status/config
-#    status_command waybar
-#    position top
-#    #tray_output primary
-##    colors {
-##        background #282828
-##        statusline #ebdbb2
-##        focused_workspace  #689d6a #689d6a #282828
-##        active_workspace   #333333 #5f676a #282828
-##        inactive_workspace #333333 #222222 #888888
-##        urgent_workspace   #2f343a #900000 #282828
-##        binding_mode       #2f343a #900000 #282828
-##    }
-#}
+bar {
+    #status_command i3status -c ~/.config/i3status/config
+    status_command waybar
+    #position top
+    #tray_output primary
+#    colors {
+#        background #282828
+#        statusline #ebdbb2
+#        focused_workspace  #689d6a #689d6a #282828
+#        active_workspace   #333333 #5f676a #282828
+#        inactive_workspace #333333 #222222 #888888
+#        urgent_workspace   #2f343a #900000 #282828
+#        binding_mode       #2f343a #900000 #282828
+#    }
+}
 # class                 border  backgr. text    indicator child_border
 client.focused          #689d6a #689d6a #282828 #b16286   #689d6a
 client.focused_inactive #333333 #5f676a #282828 #484e50   #5f676a
