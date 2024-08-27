@@ -20,7 +20,6 @@
       enable = true;
       bashrcExtra = ''
         pfetch
-	export EDITOR=emacsclient
       '';
     };
     emacs = {
@@ -51,7 +50,8 @@
     emacs = {
       enable = true;
       startWithUserSession = true;
-      #package = pkgs.emacs;
+      defaultEditor = true;
+      package = pkgs.emacs-nox;
       client = {
         arguments = [
 	  "-c"
