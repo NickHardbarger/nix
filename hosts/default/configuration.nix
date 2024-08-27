@@ -147,6 +147,7 @@
       enable = true;
       extraPackages = with pkgs; [
         i3status # status bar
+	i3blocks # better status bar
 	swaybg # wallpaper setter
       ];
     };
