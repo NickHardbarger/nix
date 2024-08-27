@@ -14,7 +14,7 @@ for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 
 font pango:JetBrains Mono 12
-
+exec_always waybar
 exec nm-applet
 exec blueman-applet
 exec dunst
@@ -201,7 +201,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-    swaybar_command waybar
+    #swaybar_command waybar
 }
 #default_border pixel 2
 #default_floating_border pixel 2
