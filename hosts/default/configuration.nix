@@ -146,7 +146,6 @@
     sway = {
       enable = true;
       extraPackages = with pkgs; [
-        i3status # status bar
 	waybar # statusbar
 	swaybg # wallpaper setter
       ];

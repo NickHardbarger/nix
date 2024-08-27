@@ -88,7 +88,6 @@
     configFile = {
       "qtile/config.py".source = ./qtile/config.py;
       "sway/config".source = ./sway/config;
-      "i3status/config".source = ./i3status/config;
       "waybar/config.jsonc".source = ./waybar/config.jsonc;
       "waybar/style.css".source = ./waybar/style.css;
       "tofi/config".source = ./tofi/config;
