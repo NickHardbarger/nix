@@ -26,9 +26,8 @@ for_window [app_id=".*"] opacity $opacity
 
 font pango:JetBrains Mono 12
 
-exec nm-applet # might not need this with wpa supplicant? idk
+exec nm-applet
 exec blueman-applet
-#exec waybar
 exec dunst
 exec swaybg -i ~/nicksOS/hosts/default/wallpapers/stairs.jpg -m fill
 
