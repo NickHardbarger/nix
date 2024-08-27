@@ -34,7 +34,7 @@ exec dunst
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
-output * bg ../wallpapers/stairs.jpg fill
+output * bg ~/nicksOS/hosts/default/wallpapers/stairs.jpg fill # pathing issue
 #
 # Example configuration:
 #

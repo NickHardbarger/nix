@@ -48,7 +48,7 @@
   };
   services = {
     emacs = {
-      enable = true;
+      enable = true; # enables emacs daemon mode
       startWithUserSession = true;
       defaultEditor = true;
       package = pkgs.emacs-nox;

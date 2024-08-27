@@ -147,6 +147,7 @@
       enable = true;
       extraPackages = with pkgs; [
         i3status # status bar
+	swaybg # wallpaper setter
       ];
     };
     ### FIREFOX ###
