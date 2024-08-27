@@ -22,9 +22,9 @@
         pfetch
       '';
     };
-    emacs = {
-      enable = true;
-    };
+    #emacs = {
+    #  enable = true;
+    #};
   };
   home.shellAliases = {
     "irs" = "sudo nixos-rebuild switch --flake ~/nicksOS#default";
