@@ -218,7 +218,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     #status_command i3status -c ~/.config/i3status/config
-    status_command waybar
+    swaybar_command waybar
     #position top
     #tray_output primary
 #    colors {
