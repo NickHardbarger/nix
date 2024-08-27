@@ -15,6 +15,7 @@
   #SECURITY
   #SYSTEM
   #NIX
+  #VIRTUALISATION
   #USERS
   #HOME-MANAGER
   #PROGRAMS
@@ -121,11 +122,15 @@
       ];
     };
   };
+  virtualisation = {
+    virtualbox.host.enable = true;
+  };
   # Don't forget to set a password with ‘passwd’.
   users.users.iglu = {
     isNormalUser = true;
     description = "iglu";
-    extraGroups = [ "networkmanager" "wheel" ];
+    initialPassword = "iglu";
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
     packages = with pkgs; [
     ];
   };
