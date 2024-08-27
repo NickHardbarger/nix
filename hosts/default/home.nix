@@ -22,9 +22,10 @@
         pfetch
       '';
     };
-    #emacs = {
-    #  enable = true;
-    #};
+    emacs = {
+      enable = true;
+      package = pkgs.emacs-nox;
+    };
   };
   home.shellAliases = {
     "irs" = "sudo nixos-rebuild switch --flake ~/nicksOS#default";
@@ -32,6 +33,7 @@
     "horse" = "sudoedit ~/nicksOS/hosts/default/home.nix";
     "sack" = "sudo git add * && sudo git commit -m";
     "qstart" = "qtile start -b wayland";
+    "cmatrix" = "cmatrix -C cyan";
   };
   ### CURSOR ###
   home.pointerCursor = {
@@ -90,7 +92,6 @@
     };
   };
   home.sessionVariables = {
-    #EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

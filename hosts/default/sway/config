@@ -35,7 +35,7 @@ exec swaybg -i ~/nicksOS/hosts/default/wallpapers/stairs.jpg -m fill
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
-#output * bg ../wallpapers/stairs.jpg fill # pathing issue
+#output * bg ~/nicksOS/hosts/default/wallpapers/stairs.jpg fill # doesn't work for some reason, swaybg does tho
 #
 # Example configuration:
 #
