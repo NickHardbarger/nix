@@ -29,7 +29,7 @@ font pango:JetBrains Mono 12
 exec nm-applet # might not need this with wpa supplicant? idk
 exec blueman-applet
 exec dunst
-exec swaybg -i ../wallpapers/stairs.jpg -m fill
+exec swaybg -i ~/nicksOS/hosts/default/wallpapers/stairs.jpg -m fill
 
 #seat seat0 xcursor_theme default 48
 ### Output configuration
