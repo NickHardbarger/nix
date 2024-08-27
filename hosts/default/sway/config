@@ -219,10 +219,8 @@ bar {
 #        binding_mode       #2f343a #900000 #282828
 #    }
 }
-default_border none
-default_floating_border none
-titlebar_border_thickness 2
-titlebar_padding 0
+default_border pixel 2
+default_floating_border pixel 2
 # class                 border  backgr. text    indicator child_border
 client.focused          #689d6a #689d6a #282828 #b16286   #689d6a
 client.focused_inactive #333333 #5f676a #282828 #484e50   #5f676a
