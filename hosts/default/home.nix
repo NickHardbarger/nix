@@ -34,6 +34,7 @@
     "sack" = "sudo git add * && sudo git commit -m";
     "qstart" = "qtile start -b wayland";
     "cmatrix" = "cmatrix -C cyan";
+    ".." = "cd ..";
   };
   ### CURSOR ###
   home.pointerCursor = {
@@ -88,6 +89,7 @@
       "qtile/config.py".source = ./qtile/config.py;
       "sway/config".source = ./sway/config;
       "i3status/config".source = ./i3status/config;
+      "i3blocks/config".source = ./i3blocks/config
       "tofi/config".source = ./tofi/config;
     };
   };
