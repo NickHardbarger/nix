@@ -15,7 +15,7 @@ for_window [app_id=".*"] opacity $opacity
 
 font pango:JetBrains Mono 12
 exec waybar
-exec nm-applet --indicator
+#exec nm-applet
 exec blueman-applet
 exec dunst
 exec swaybg -i ~/nicksOS/hosts/default/wallpapers/stairs.jpg -m fill

@@ -29,12 +29,14 @@
     #kernelPackages = pkgs.linuxPackages_hardened;
     #kernelPackages = pkgs.linuxPackages_zen;
   };
-  networking.hostName = "nicksOS";
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nicksOS";
+    networkmanager.enable = true;
+    proxy = {
+      #default = "http://user:password@proxy:port/";
+      #noProxy = "127.0.0.1,localhost,internal.domain";
+    };
+  };
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
@@ -142,7 +144,10 @@
   };
   ### PROGRAMS ###
   programs = {
-  ### SWAY ###
+    nm-applet = { # doesn't work for some reason
+      enable = false;
+      indicator = true;
+    };
     sway = {
       enable = true;
       extraPackages = with pkgs; [
@@ -150,7 +155,6 @@
 	swaybg # wallpaper setter
       ];
     };
-    ### FIREFOX ###
     firefox = {
       enable = true;
       languagePacks = [ "en-US" ];
@@ -165,12 +169,10 @@
 	};
       };
     };
-    ### HTOP ###
     htop = {
       enable = true;
       package = pkgs.htop;
     };
-    ### VIM ###
     nano = {
       enable = false;
     };
@@ -215,7 +217,6 @@
     gamemode = {
       enable = true;
     };
-    ### SHELL ###
     starship = {
       enable = true;
       settings = {
@@ -293,6 +294,7 @@
     mako # notification daemon
     wl-clipboard # clipboard
     cmatrix # fun cli script
+    nm-tray # lets me connect to eduroam- hopefully
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # installs only that font
