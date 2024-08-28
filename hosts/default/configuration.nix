@@ -294,7 +294,7 @@
     mako # notification daemon
     wl-clipboard # clipboard
     cmatrix # fun cli script
-    nm-tray # lets me connect to eduroam- hopefully
+    networkmanagerapplet # for some reason enabling the option doesn't work
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # installs only that font
