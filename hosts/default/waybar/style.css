@@ -1,13 +1,13 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "JetBrains Mono Nerd Font", monospace;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0.5);
     border-bottom: 2px solid rgba(100, 114, 125, 0.5);
-    color: #282828;
+    color: #ebdbb2;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -45,7 +45,7 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #ebdbb2;
 }
 
 /* you can set a style on hover for any module like this */
@@ -56,7 +56,7 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #ebdbb2;
 }
 
 #workspaces button:hover {
@@ -65,7 +65,7 @@ button:hover {
 
 #workspaces button.focused {
     background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #ebdbb2;
 }
 
 #workspaces button.urgent {
@@ -74,7 +74,7 @@ button:hover {
 
 #mode {
     background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #ebdbb2;
 }
 
 #clock,
@@ -95,7 +95,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
+    color: #ebdbb2;
 }
 
 #window,
@@ -118,18 +118,18 @@ button:hover {
 }
 
 #battery {
-    background-color: #ffffff;
+    background-color: #ebdbb2;
     color: #000000;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    color: #ebdbb2;
     background-color: #26A65B;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
+        background-color: #ebdbb2;
         color: #000000;
     }
 }
@@ -137,7 +137,7 @@ button:hover {
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: #ebdbb2;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -151,12 +151,12 @@ button:hover {
 
 #power-profiles-daemon.performance {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: #ebdbb2;
 }
 
 #power-profiles-daemon.balanced {
     background-color: #2980b9;
-    color: #ffffff;
+    color: #ebdbb2;
 }
 
 #power-profiles-daemon.power-saver {
