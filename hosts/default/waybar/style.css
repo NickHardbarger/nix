@@ -136,7 +136,7 @@ button:hover {
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    background-color: #cc241d;
     color: #ebdbb2;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -150,7 +150,7 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    background-color: #f53c3c;
+    background-color: #cc241d;
     color: #ebdbb2;
 }
 
@@ -190,7 +190,7 @@ label:focus {
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: #cc241d;
 }
 
 #pulseaudio {
@@ -209,7 +209,7 @@ label:focus {
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
+    background-color: #cc241d;
 }
 
 #custom-media {
@@ -262,7 +262,7 @@ label:focus {
 }
 
 #mpd.disconnected {
-    background-color: #f53c3c;
+    background-color: #cc241d;
 }
 
 #mpd.stopped {
