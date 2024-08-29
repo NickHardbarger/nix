@@ -155,7 +155,7 @@ button:hover {
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #2980b9;
+    background-color: #458588;
     color: #ebdbb2;
 }
 
@@ -174,7 +174,7 @@ label:focus {
 }
 
 #memory {
-    background-color: #9b59b6;
+    background-color: #b16286;
 }
 
 #disk {
@@ -186,7 +186,7 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: #458588;
 }
 
 #network.disconnected {
@@ -235,7 +235,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: #458588;
 }
 
 #tray > .passive {
