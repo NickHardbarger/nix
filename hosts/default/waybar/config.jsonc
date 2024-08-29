@@ -1,4 +1,5 @@
-// -*- mode: jsonc -*-
+// the commas highlighted in red are necessary
+//if I remove them waybar won't start
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
@@ -116,7 +117,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{used}% "
+        "format": "{used} "
     },
     "temperature": {
         // "thermal-zone": 2,
