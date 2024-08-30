@@ -64,7 +64,7 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: #928374;
     box-shadow: inset 0 -3px #ebdbb2;
 }
 
@@ -73,7 +73,7 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #928374;
     box-shadow: inset 0 -3px #ebdbb2;
 }
 
@@ -114,7 +114,7 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: #928374;
 }
 
 #battery {
