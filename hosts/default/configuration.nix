@@ -183,38 +183,38 @@
       colorschemes.gruvbox.enable = true;
       extraConfigLua = ''
         vim.o.number = true
-	vim.o.relativenumber = true
-	vim.opt.guicursor = ""
-	vim.opt.wrap = false
-	vim.opt.hlsearch = false
-	vim.opt.incsearch = true
-	vim.opt.termguicolors = true
-	vim.opt.colorcolumn = "80"
+        vim.o.relativenumber = true
+        vim.opt.guicursor = ""
+        vim.opt.wrap = false
+        vim.opt.hlsearch = false
+        vim.opt.incsearch = true
+        vim.opt.termguicolors = true
+        vim.opt.colorcolumn = "80"
       '';
       plugins = {
         lualine.enable = true;
-	fzf-lua.enable = true;
-	fugitive.enable = true;
-	telescope.enable = true;
-	treesitter = {
-	  enable = true;
-	  grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
-	};
-	lsp = {
-	  enable = true;
-	  servers = {
-	    nixd.enable = true; # Nix
-	    bashls.enable = true; # Bash
-	    perlpls.enable = true; # Perl
-	    ccls.enable = true; # C/C++
-	    html.enable = true; # HTML
-	    cssls.enable = true; # CSS
-	    tsserver.enable = true; # Javascript
-	    java-language-server.enable = true; # Java
-	    pyright.enable = true; # Python
-	    hls.enable = true; # Haskell
-	  };
-	};
+        fzf-lua.enable = true;
+        fugitive.enable = true;
+        telescope.enable = true;
+        treesitter = {
+          enable = true;
+          grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
+        };
+        lsp = {
+          enable = true;
+          servers = {
+            nixd.enable = true; # Nix
+            bashls.enable = true; # Bash
+            perlpls.enable = true; # Perl
+            ccls.enable = true; # C/C++
+            html.enable = true; # HTML
+            cssls.enable = true; # CSS
+            tsserver.enable = true; # Javascript
+            java-language-server.enable = true; # Java
+            pyright.enable = true; # Python
+            hls.enable = true; # Haskell
+          };
+        };
       };
     };
     steam = {
@@ -255,22 +255,24 @@
     (st.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ /*xorg.libXcursor*/ ];
       patches = [
-        (fetchpatch { # gruvbox colorscheme
-	  url = "https://st.suckless.org/patches/gruvbox/st-gruvbox-dark-0.8.5.diff";
-	  sha256 = "0jvn0i0fl0w3c8dcmwyh9w19g3hsi22cqmyqly5zjzjwjhc8qnjv";
-	})
-	(fetchpatch { # adds janky scrolling: shift + pgup/pgdn
-	  url = "https://st.suckless.org/patches/scrollback/st-scrollback-0.9.2.diff";
-	  sha256 = "0ymc5db75cwmdvv8ak3bfaf7iz4snj65fbmhrl9blv7h7pw3pdld";
-	})
-	(fetchpatch { # improves the scrolling, now just need shift + mousewheel
-	  url = "https://st.suckless.org/patches/scrollback/st-scrollback-mouse-0.9.2.diff";
-	  sha256 = "068s5rjvvw2174y34i5xxvpw4jvjy58akd1kgf025h1153hmf7jy";
-	})
-	(fetchpatch { # allows setting default font size
-	  url = "https://st.suckless.org/patches/defaultfontsize/st-defaultfontsize-20210225-4ef0cbd.diff";
-	  sha256 = "0jji1p096zpkyxg7cmxhj4mgvwg582xgl1xw7lfkirxdxf1lp70m";
-	})
+        ./st/st-defaultfontsize-20210225-4ef0cbd.diff
+	./st/st-gruvbox-dark-0.8.5.diff
+        #(fetchpatch { # gruvbox colorscheme
+	#  url = "https://st.suckless.org/patches/gruvbox/st-gruvbox-dark-0.8.5.diff";
+	#  sha256 = "0jvn0i0fl0w3c8dcmwyh9w19g3hsi22cqmyqly5zjzjwjhc8qnjv";
+	#})
+	#(fetchpatch { # adds janky scrolling: shift + pgup/pgdn
+	#  url = "https://st.suckless.org/patches/scrollback/st-scrollback-0.9.2.diff";
+	#  sha256 = "0ymc5db75cwmdvv8ak3bfaf7iz4snj65fbmhrl9blv7h7pw3pdld";
+	#})
+	#(fetchpatch { # improves the scrolling, now just need shift + mousewheel
+	#  url = "https://st.suckless.org/patches/scrollback/st-scrollback-mouse-0.9.2.diff";
+	#  sha256 = "068s5rjvvw2174y34i5xxvpw4jvjy58akd1kgf025h1153hmf7jy";
+	#})
+	#(fetchpatch { # allows setting default font size
+	#  url = "https://st.suckless.org/patches/defaultfontsize/st-defaultfontsize-20210225-4ef0cbd.diff";
+	#  sha256 = "0jji1p096zpkyxg7cmxhj4mgvwg582xgl1xw7lfkirxdxf1lp70m";
+	#})
 	#(fetchpatch { # lets cursor access my cursor theme
 	#  url = "https://st.suckless.org/patches/themed_cursor/st-themed_cursor-0.8.1.diff";
 	#  sha256 = "1h22jfcwc1pskw0vf107sv29rnwqqp5vbbz2dg8acd9xwhmhhyb2";
@@ -285,10 +287,10 @@
     (dmenu.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
       patches = [
-        (fetchpatch { # gruvbox colorscheme
-	  url = "https://tools.suckless.org/dmenu/patches/gruvbox/dmenu-gruvbox-20210329-9ae8ea5.diff";
-	  sha256 = "1fblgsxh86rgbl25n1qbkz5gfndvkv20hyzfiy068n5hih2mvmp6";
-	})
+        #(fetchpatch { # gruvbox colorscheme
+	#  url = "https://tools.suckless.org/dmenu/patches/gruvbox/dmenu-gruvbox-20210329-9ae8ea5.diff";
+	#  sha256 = "1fblgsxh86rgbl25n1qbkz5gfndvkv20hyzfiy068n5hih2mvmp6";
+	#})
       ];
     }))
     dunst # notification daemon
