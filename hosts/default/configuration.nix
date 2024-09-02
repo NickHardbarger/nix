@@ -257,40 +257,17 @@
       patches = [
         ./st/st-defaultfontsize-20210225-4ef0cbd.diff
 	./st/st-gruvbox-dark-0.8.5.diff
-        #(fetchpatch { # gruvbox colorscheme
-	#  url = "https://st.suckless.org/patches/gruvbox/st-gruvbox-dark-0.8.5.diff";
-	#  sha256 = "0jvn0i0fl0w3c8dcmwyh9w19g3hsi22cqmyqly5zjzjwjhc8qnjv";
-	#})
-	#(fetchpatch { # adds janky scrolling: shift + pgup/pgdn
-	#  url = "https://st.suckless.org/patches/scrollback/st-scrollback-0.9.2.diff";
-	#  sha256 = "0ymc5db75cwmdvv8ak3bfaf7iz4snj65fbmhrl9blv7h7pw3pdld";
-	#})
-	#(fetchpatch { # improves the scrolling, now just need shift + mousewheel
-	#  url = "https://st.suckless.org/patches/scrollback/st-scrollback-mouse-0.9.2.diff";
-	#  sha256 = "068s5rjvvw2174y34i5xxvpw4jvjy58akd1kgf025h1153hmf7jy";
-	#})
-	#(fetchpatch { # allows setting default font size
-	#  url = "https://st.suckless.org/patches/defaultfontsize/st-defaultfontsize-20210225-4ef0cbd.diff";
-	#  sha256 = "0jji1p096zpkyxg7cmxhj4mgvwg582xgl1xw7lfkirxdxf1lp70m";
-	#})
-	#(fetchpatch { # lets cursor access my cursor theme
-	#  url = "https://st.suckless.org/patches/themed_cursor/st-themed_cursor-0.8.1.diff";
-	#  sha256 = "1h22jfcwc1pskw0vf107sv29rnwqqp5vbbz2dg8acd9xwhmhhyb2";
-	#})
-	#(fetchpatch { # lets me click on links
-	#  url = "https://st.suckless.org/patches/clickurl/st-clickurl-0.8.5.diff";
-	#  sha256 = "1a97q2hv63j2nq6vw924a6si8wg4903rbkrmml31zlhjgl9nbmq4";
-	#})
+	#./st/st-themed_cursor-0.8.1.diff # patch error
+	./st/st-scrollback-0.9.2.diff
+	./st/st-scrollback-mouse-0.9.2.diff
+	#./st/st-clickurl-0.8.5.diff # patch error
       ];
     }))
     ### DMENU ###
     (dmenu.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
       patches = [
-        #(fetchpatch { # gruvbox colorscheme
-	#  url = "https://tools.suckless.org/dmenu/patches/gruvbox/dmenu-gruvbox-20210329-9ae8ea5.diff";
-	#  sha256 = "1fblgsxh86rgbl25n1qbkz5gfndvkv20hyzfiy068n5hih2mvmp6";
-	#})
+        ./dmenu/dmenu-gruvbox-20210329-9ae8ea5.diff
       ];
     }))
     dunst # notification daemon
