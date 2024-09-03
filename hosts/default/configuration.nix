@@ -271,11 +271,13 @@
     mangohud # steam hud overlay
     grim # screenshots
     slurp # screenshots
-    pfetch-rs # fetch script
     wget # file retriever
     mako # notification daemon
     wl-clipboard # clipboard
-    cmatrix # fun cli script
+    ### CLI SCRIPTS ###
+    pfetch-rs # basic system info
+    cmatrix # matrix text scroll
+    speedtest-cli # test network speed
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # installs only that font
