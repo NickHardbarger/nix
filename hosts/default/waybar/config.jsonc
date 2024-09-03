@@ -30,7 +30,7 @@
         "battery",
         "battery#bat2",
         "clock",
-	"network",
+	//"network",
         "tray"
         //"custom/power"
     ],
