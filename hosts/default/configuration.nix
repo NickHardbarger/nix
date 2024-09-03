@@ -144,10 +144,6 @@
   };
   ### PROGRAMS ###
   programs = {
-    nm-applet = { # doesn't work for some reason
-      enable = false;
-      indicator = true;
-    };
     sway = {
       enable = true;
       extraPackages = with pkgs; [
@@ -253,7 +249,7 @@
   environment.systemPackages = with pkgs; [
     ### SIMPLE TERMINAL ###
     (st.overrideAttrs (oldAttrs: {
-      buildInputs = oldAttrs.buildInputs ++ [ /*xorg.libXcursor*/ ];
+      buildInputs = oldAttrs.buildInputs ++ [ ];
       patches = [
         ./st/st-defaultfontsize-20210225-4ef0cbd.diff
 	./st/st-gruvbox-dark-0.8.5.diff
@@ -280,7 +276,6 @@
     mako # notification daemon
     wl-clipboard # clipboard
     cmatrix # fun cli script
-    networkmanagerapplet # for some reason enabling the option doesn't work
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # installs only that font
