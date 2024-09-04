@@ -265,7 +265,7 @@
       patches = [
         ./dmenu/dmenu-gruvbox-20210329-9ae8ea5.diff
 	./dmenu/dmenu-lineheight-5.2.diff
-	./dmenu/dmenu-numbers-4.9.diff
+	./dmenu/dmenu-numbers-20220512-28fb3e2.diff
       ];
     }))
     dunst # notification daemon
