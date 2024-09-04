@@ -269,7 +269,6 @@
       ];
     }))
     dunst # notification daemon
-    tofi # app launcher
     mangohud # steam hud overlay
     grim # screenshots
     slurp # screenshots
