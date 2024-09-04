@@ -264,6 +264,7 @@
       buildInputs = oldAttrs.buildInputs ++ [ ];
       patches = [
         ./dmenu/dmenu-gruvbox-20210329-9ae8ea5.diff
+	./dmenu/dmenu-lineheight-5.2.diff
       ];
     }))
     dunst # notification daemon
