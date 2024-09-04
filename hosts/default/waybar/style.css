@@ -1,12 +1,11 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "JetBrains Mono Nerd Font", monospace;
-    font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 16px;
 }
 
 window#waybar {
     background-color: #282828;
-    border-bottom: 2px solid rgba(100, 114, 125, 0.5);
+    border-bottom: 3px solid #282828;
     color: #ebdbb2;
     transition-property: background-color;
     transition-duration: .5s;
@@ -45,7 +44,7 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ebdbb2;
+    border-bottom: 3px solid #ebdbb2;
 }
 
 /* you can set a style on hover for any module like this */
@@ -56,16 +55,17 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ebdbb2;
+    color: #d65d0e;
+    border-bottom: 3px solid #d65d0e;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background-color: #282828;
 }
 
 #workspaces button.focused {
-    background-color: #928374;
-    box-shadow: inset 0 -3px #ebdbb2;
+    color: #689d6a;
+    border-bottom: 3px solid #689d6a;
 }
 
 #workspaces button.urgent {
@@ -114,17 +114,18 @@ button:hover {
 }
 
 #clock {
-    background-color: #928374;
+    color: #928374;
+    border-bottom: 3px solid #928374;
 }
 
 #battery {
-    background-color: #ebdbb2;
-    color: #000000;
+    color: #ebdbb2;
+    border-bottom: 3px solid #ebdbb2;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ebdbb2;
-    background-color: #98971a;
+    color: #98971a;
+    border-bottom: 3px solid #98971a;
 }
 
 @keyframes blink {
@@ -136,13 +137,13 @@ button:hover {
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #cc241d;
-    color: #ebdbb2;
+    color: #cc241d;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    border-bottom: 3px solid #cc241d;
 }
 
 #power-profiles-daemon {
@@ -174,7 +175,8 @@ label:focus {
 }
 
 #memory {
-    background-color: #b16286;
+    color: #b16286;
+    border-bottom: 3px solid #b16286;
 }
 
 #disk {
@@ -194,13 +196,14 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #d79921;
-    color: #000000;
+    color: #d79921;
+    border-bottom: 3px solid #d79921;
 }
 
 #pulseaudio.muted {
     background-color: #90b1b1;
     color: #2a5c45;
+    box-shadow: inset 0 -3px #ebdbb2;
 }
 
 #wireplumber {
@@ -235,7 +238,8 @@ label:focus {
 }
 
 #tray {
-    background-color: #458588;
+    color: #458588;
+    border-bottom: 3px solid #458588;
 }
 
 #tray > .passive {

@@ -4,16 +4,15 @@ set $down j
 set $up k
 set $right l
 set $term st -z 16
-# Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu tofi-run | xargs swaymsg exec --
+set $menu dmenu_run | xargs swaymsg exec --
 
 set $opacity 0.9
 for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 
-font pango:JetBrains Mono 12
+font pango:JetBrains Mono 16
 exec waybar
 exec blueman-applet
 exec dunst
@@ -199,12 +198,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 3
+default_floating_border pixel 3
 # class                 border  backgr. text    indicator child_border
 client.focused          #689d6a #689d6a #282828 #b16286   #689d6a
-client.focused_inactive #333333 #5f676a #282828 #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.focused_inactive #d65d0e #d65d0e #282828 #484e50   #d65d0e
+client.unfocused        #d65d0e #d65d0e #888888 #292d2e   #d65d0e
 client.urgent           #2f343a #900000 #282828 #900000   #900000
 client.placeholder      #000000 #0c0c0c #282828 #000000   #0c0c0c
 
