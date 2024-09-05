@@ -6,6 +6,9 @@
   home.homeDirectory = "/home/iglu";
   ### PROGRAMS ###
   programs = {
+    home-manager = {
+      enable = true;
+    };
     ### GIT ###
     git = {
       enable = true;
@@ -72,8 +75,6 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = [
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -91,12 +92,8 @@
       "sway/config".source = ./sway/config;
       "waybar/config.jsonc".source = ./waybar/config.jsonc;
       "waybar/style.css".source = ./waybar/style.css;
-      "tofi/config".source = ./tofi/config;
     };
   };
   home.sessionVariables = {
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
