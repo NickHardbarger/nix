@@ -31,7 +31,8 @@
     };
   };
   home.shellAliases = {
-    "irs" = "sudo nixos-rebuild switch --recreate-lock-file --flake ~/nicksOS#default";
+    "irs" = "sudo nixos-rebuild switch --flake ~/nicksOS#default";
+    #"irs" = "sudo nixos-rebuild switch --recreate-lock-file --flake ~/nicksOS#default";
     "ngc" = "nix-collect-garbage -d";
     "cough" = "sudoedit ~/nicksOS/hosts/default/configuration.nix";
     "horse" = "sudoedit ~/nicksOS/hosts/default/home.nix";

@@ -202,13 +202,13 @@
             nixd.enable = true; # Nix
             bashls.enable = true; # Bash
             perlpls.enable = true; # Perl
-            ccls.enable = true; # C/C++
-            html.enable = true; # HTML
+            #ccls.enable = true; # C/C++
+            #html.enable = true; # HTML
             cssls.enable = true; # CSS
-            tsserver.enable = true; # Javascript
-            java-language-server.enable = true; # Java
+            #tsserver.enable = true; # Javascript
+            #java-language-server.enable = true; # Java
             pyright.enable = true; # Python
-            hls.enable = true; # Haskell
+            #hls.enable = true; # Haskell
           };
         };
       };
