@@ -62,8 +62,9 @@
       layout = "us";
       variant = "";
     };
-    videoDrivers = [
+    videoDrivers = [      
       "amdgpu"
+      "intel"
     ];
     excludePackages = with pkgs; [
       xterm
