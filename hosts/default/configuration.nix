@@ -25,7 +25,7 @@
     loader = {
       grub.enable = false;
       systemd-boot.enable = true;
-      ef.canTouchEfiVariables = true;
+      efi.canTouchEfiVariables = true;
     };
     #kernelPackages = pkgs.linuxPackages;
     #kernelPackages = pkgs.linuxPackages_latest;
