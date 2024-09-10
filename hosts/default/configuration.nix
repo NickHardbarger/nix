@@ -279,6 +279,7 @@
     wget # file retriever
     mako # notification daemon
     wl-clipboard # clipboard
+    pulseaudio
     ### CLI SCRIPTS ###
     pfetch-rs # basic system info
     cmatrix # matrix text scroll
