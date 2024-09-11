@@ -61,6 +61,7 @@
   };
   services.xserver = {
     enable = true;
+    autorun = false;
     xkb = {
       layout = "us";
       variant = "";
@@ -72,7 +73,10 @@
     excludePackages = with pkgs; [
       xterm
     ];
-    displayManager.lightdm.enable = false; # display managers are more trouble than they're worth
+    displayManager = {
+      startx.enable = true;
+      lightdm.enable = false;
+    };
     windowManager = {
       dwm = {
         enable = true;
