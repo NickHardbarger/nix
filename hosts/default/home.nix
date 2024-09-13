@@ -22,10 +22,7 @@
     btop = {
       enable = true;
       package = pkgs.btop;
-      settings = {
-        color_theme = "gruvbox_dark";
-	theme_background = true;
-      };
+      #settings = { color_theme = "gruvbox_dark"; };
     };
     bash = {
       enable = true;
