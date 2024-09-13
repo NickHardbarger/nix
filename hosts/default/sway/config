@@ -10,7 +10,6 @@ for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 font pango:JetBrains Mono 16
 exec waybar
-#exec blueman-applet
 exec dunst
 exec swaybg -i ~/nicksOS/hosts/default/wallpapers/stairs.jpg -m fill
 bindsym $mod+Return exec $term
