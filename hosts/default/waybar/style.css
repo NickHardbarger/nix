@@ -237,8 +237,8 @@ label:focus {
 }
 
 #tray {
-    color: #d65d0e;
-    border-bottom: 3px solid #d65d0e;
+    color: #928374;
+    border-bottom: 3px solid #928374;
 }
 
 #tray > .passive {
