@@ -114,8 +114,8 @@ button:hover {
 }
 
 #clock {
-    color: #928374;
-    border-bottom: 3px solid #928374;
+    color: #458588;
+    border-bottom: 3px solid #458588;
 }
 
 #battery {
@@ -201,8 +201,8 @@ label:focus {
 }
 
 #pulseaudio.muted {
-    color: #2a5c45;
-    border-bottom: 3px solid  #2a5c45;
+    color: #cc241d;
+    border-bottom: 3px solid  #cc241d;
 }
 
 #wireplumber {
@@ -237,8 +237,8 @@ label:focus {
 }
 
 #tray {
-    color: #458588;
-    border-bottom: 3px solid #458588;
+    color: #d65d0e;
+    border-bottom: 3px solid #d65d0e;
 }
 
 #tray > .passive {
