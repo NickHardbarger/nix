@@ -173,10 +173,6 @@
 	};
       };
     };
-    htop = {
-      enable = true;
-      package = pkgs.htop;
-    };
     nano = {
       enable = false;
     };
