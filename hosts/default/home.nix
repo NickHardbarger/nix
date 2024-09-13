@@ -19,6 +19,10 @@
         safe.directory = "/home/iglu/nicksOS";
       };
     };
+    btop = {
+      enable = true;
+      package = pkgs.btop;
+    };
     bash = {
       enable = true;
       bashrcExtra = ''
