@@ -61,8 +61,8 @@ button {
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
+    background: #282828;
     background-color: #282828;
-    padding: 0 3px;
 }
 #mode {
     background-color: #928374;
