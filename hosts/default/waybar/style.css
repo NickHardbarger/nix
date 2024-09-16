@@ -4,11 +4,11 @@
 }
 
 window#waybar {
-    background-color: #282828;
+    /*background-color: #282828;*/
     color: #689d6a;
     transition-property: background-color;
     transition-duration: .5s;
-    opacity: 0.9;
+    opacity: 0;
 }
 
 window#waybar.hidden {
@@ -117,18 +117,21 @@ button:hover {
     color: #458588;
     border-bottom: 3px solid #458588;
     background-color: #282828;
+    opacity: 0.9;
 }
 
 #battery {
     color: #98971a;
     border-bottom: 3px solid #98971a;
     background-color: #282828;
+    opacity: 0.9;
 }
 
 #battery.charging, #battery.plugged {
     color: #98971a;
     border-bottom: 3px solid #98971a;
     background-color: #282828;
+    opacity: 0.9;
 }
 
 @keyframes blink {
@@ -148,6 +151,7 @@ button:hover {
     animation-direction: alternate;
     border-bottom: 3px solid #cc241d;
     background-color: #282828;
+    opacity: 0.9;
 }
 
 #power-profiles-daemon {
@@ -182,6 +186,7 @@ label:focus {
     color: #b16286;
     border-bottom: 3px solid #b16286;
     background-color: #282828;
+    opacity: 0.9;
 }
 
 #disk {
@@ -204,12 +209,14 @@ label:focus {
     color: #d79921;
     border-bottom: 3px solid #d79921;
     background-color: #282828;
+    opacity: 0.9;
 }
 
 #pulseaudio.muted {
     color: #cc241d;
     border-bottom: 3px solid  #cc241d;
     background-color: #282828;
+    opacity: 0.9;
 }
 
 #wireplumber {
@@ -247,6 +254,7 @@ label:focus {
     color: #928374;
     border-bottom: 3px solid #928374;
     background-color: #282828;
+    opacity: 0.9;
 }
 
 #tray > .passive {
