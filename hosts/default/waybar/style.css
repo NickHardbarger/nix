@@ -41,25 +41,10 @@ button {
     border-radius: 0;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    border-bottom: 3px solid #ebdbb2;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
 #workspaces button {
     padding: 0 5px;
     color: #d65d0e;
     border-bottom: 3px solid #d65d0e;
-    background-color: #282828;
-}
-
-#workspaces button:hover {
     background-color: #282828;
 }
 
