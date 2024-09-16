@@ -44,12 +44,14 @@ button {
 #workspaces button {
     padding: 0 5px;
     color: #d65d0e;
+    border-radius: 25px;
     border-bottom: 3px solid #d65d0e;
     background-color: #282828;
 }
 
 #workspaces button.focused {
     color: #689d6a;
+    border-radius: 25px;
     border-bottom: 3px solid #689d6a;
     background-color: #282828;
 }
@@ -107,6 +109,7 @@ button {
 
 #clock {
     color: #458588;
+    border-radius: 25px;
     border-bottom: 3px solid #458588;
     background-color: #282828;
     opacity: 0.9;
@@ -114,6 +117,7 @@ button {
 
 #battery {
     color: #98971a;
+    border-radius: 25px;
     border-bottom: 3px solid #98971a;
     background-color: #282828;
     opacity: 0.9;
@@ -121,6 +125,7 @@ button {
 
 #battery.charging, #battery.plugged {
     color: #98971a;
+    border-radius: 25px;
     border-bottom: 3px solid #98971a;
     background-color: #282828;
     opacity: 0.9;
@@ -141,6 +146,7 @@ button {
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    border-radius: 25px;
     border-bottom: 3px solid #cc241d;
     background-color: #282828;
     opacity: 0.9;
@@ -176,6 +182,7 @@ label:focus {
 
 #memory {
     color: #b16286;
+    border-radius: 25px;
     border-bottom: 3px solid #b16286;
     background-color: #282828;
     opacity: 0.9;
@@ -199,6 +206,7 @@ label:focus {
 
 #pulseaudio {
     color: #d79921;
+    border-radius: 25px;
     border-bottom: 3px solid #d79921;
     background-color: #282828;
     opacity: 0.9;
@@ -206,6 +214,7 @@ label:focus {
 
 #pulseaudio.muted {
     color: #cc241d;
+    border-radius: 25px;
     border-bottom: 3px solid  #cc241d;
     background-color: #282828;
     opacity: 0.9;
@@ -244,6 +253,7 @@ label:focus {
 
 #tray {
     color: #928374;
+    border-radius: 25px;
     border-bottom: 3px solid #928374;
     background-color: #282828;
     opacity: 0.9;
