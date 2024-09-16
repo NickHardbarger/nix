@@ -1,8 +1,10 @@
-# Installation
-To install nicksOS on a fresh NixOS system, run these commands:
-```
+#+title: nicksOS
+#+author: Nick Hardbarger
+* Installation
+** To install nicksOS on a fresh NixOS system, run these commands:
+#+begin_example
 nix-shell -p git
-```
+#+end_example
 ```
 cd
 git clone https://github.com/NickHardbarger/nicksOS
