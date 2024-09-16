@@ -4,11 +4,12 @@
 }
 
 window#waybar {
-    /*background-color: #282828;
-    border-bottom: 3px solid #282828;*/
+    background-color: #282828;
+    border-bottom: 3px solid #282828;
     color: #ebdbb2;
     transition-property: background-color;
     transition-duration: .5s;
+    opacity: 0.9;
 }
 
 window#waybar.hidden {
