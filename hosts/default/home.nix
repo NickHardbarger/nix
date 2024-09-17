@@ -45,6 +45,7 @@
     "qstart" = "qtile start -b wayland";
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
+    "vi" = "emacsclient";
   };
   ### CURSOR ###
   home.pointerCursor = {
