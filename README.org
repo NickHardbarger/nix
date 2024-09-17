@@ -5,23 +5,23 @@
 ** Installation
 To install nicksOS on a fresh NixOS system, run these commands:
 
-#+begin_src
+#+BEGIN_SRC shell
 nix-shell -p git
-#+end_src
+#+END_SRC
 
-#+begin_example
+#+BEGIN_SRC shell
 cd
 git clone https://github.com/NickHardbarger/nicksOS
-#+end_example
+#+END_SRC
 
-#+begin_example
+#+BEGIN_SRC shell
 sudo rm /etc/nixos/configuration.nix
-#+end_example
+#+END_SRC
 
-#+begin_example
+#+BEGIN_SRC shell
 sudo mv /etc/nixos/hardware-configuration.nix ~/nicksOS/hosts/default/
-#+end_example
+#+END_SRC
 
-#+begin_example
+#+BEGIN_SRC shell
 sudo nixos-rebuild switch --flake ~/nicksOS#default
-#+end_example
+#+END_SRC
