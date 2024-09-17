@@ -1,6 +1,7 @@
 #+title: nicksOS
 #+author: Nick Hardbarger
-
+* Last edited: [2024-09-17 Tue]
+* TODO Finish this readme
 ** Installation
 To install nicksOS on a fresh NixOS system, run these commands:
 
