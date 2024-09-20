@@ -1,6 +1,7 @@
+#-*- mode: org -*-
 #+title: nicksOS documentation
 #+author: Nick Hardbarger
-* Last updated: [2024-09-17 Tue]
+#+date: [2024-09-17 Tue]
 * TODO Finish this readme!
 ** Installation
 To install nicksOS on a fresh NixOS system, run these commands:
