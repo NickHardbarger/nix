@@ -32,7 +32,7 @@
     };
     emacs = {
       enable = true;
-      package = pkgs.emacs-nox;
+      package = pkgs.emacs;#-nox;
     };
   };
   home.shellAliases = {
@@ -65,7 +65,7 @@
       enable = true; # enables emacs daemon mode
       startWithUserSession = true;
       defaultEditor = true;
-      package = pkgs.emacs-nox;
+      package = pkgs.emacs;#-nox;
       client = {
         arguments = [
 	  "-c"
