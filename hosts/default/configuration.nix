@@ -73,6 +73,7 @@
     xkb = {
       layout = "us";
       variant = "";
+      options = "ctrl:nocaps";
     };
     videoDrivers = [      
       "amdgpu"
