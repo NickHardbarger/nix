@@ -1,3 +1,7 @@
+input * {
+  xkb_layout "us"
+  xkb_options "ctrl:nocaps"
+}
 set $mod Mod4
 set $left h
 set $down j
