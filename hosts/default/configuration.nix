@@ -289,6 +289,9 @@
     mako # notification daemon
     wl-clipboard # clipboard
     pulseaudio
+    discord
+    libreoffice
+    onlyoffice-bin#desktopeditors
     ### CLI SCRIPTS ###
     pfetch-rs # basic system info
     cmatrix # matrix text scroll
