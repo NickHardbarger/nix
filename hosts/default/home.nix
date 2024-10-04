@@ -34,6 +34,12 @@
       enable = true;
       package = pkgs.emacs-nox;
     };
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+      ];
+    };
   };
   home.shellAliases = {
     "irs" = "sudo nixos-rebuild switch --flake ~/nicksOS#default";
