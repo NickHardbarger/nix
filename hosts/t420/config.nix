@@ -2,7 +2,7 @@
 {
   imports = [ 
       ./hardware.nix
-      inputs.home-manager.nixosModules.default
+      inputs.home-manager.nixosModules.t420
       #inputs.nixvim.nixosModules.nixvim
   ];
   #BOOT
