@@ -42,7 +42,7 @@
     };
   };
   home.shellAliases = {
-    "switcht420" = "sudo nixos-rebuild switch --flake ~/nicksOS#default";
+    "switch t420" = "sudo nixos-rebuild switch --flake ~/nicksOS#default";
     #"switch lock t420" = "sudo nixos-rebuild switch --recreate-lock-file --flake ~/nicksOS#default";
     "ngc" = "nix-collect-garbage -d";
     "sack" = "sudo git add * && sudo git commit -m";
