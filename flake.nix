@@ -16,11 +16,11 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.t420 = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/t420/config.nix
-        inputs.home-manager.nixosModules.t420
+        inputs.home-manager.nixosModules.default
       ];
     };
   };
