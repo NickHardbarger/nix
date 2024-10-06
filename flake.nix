@@ -20,7 +20,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/t420/config.nix
-        inputs.home-manager.nixosModules.t420
+        inputs.home-manager.nixosModules.default
       ];
     };
   };
