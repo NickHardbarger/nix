@@ -33,6 +33,9 @@
     emacs = {
       enable = true;
       package = pkgs.emacs-nox;
+      extraPackages = epkgs: [
+        epkgs.gruvbox-theme
+      ];
     };
     obs-studio = {
       enable = true;
