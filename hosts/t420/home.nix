@@ -98,11 +98,12 @@
     # '')
   ];
   home.file = {
+    ".emacs.d/init.el".source = ./emacs/init.el;
   };
   xdg = {
     enable = true;
     configFile = {
-      "emacs/init.el".source = ./emacs/init.el;
+      #"emacs/init.el".source = ./emacs/init.el;
       "qtile/config.py".source = ./qtile/config.py;
       "sway/config".source = ./sway/config;
       "waybar/config.jsonc".source = ./waybar/config.jsonc;
