@@ -8,8 +8,8 @@
       modus-themes-italic-constructs t
       modus-themes-paren-match '(bold intense)
       modus-themes-syntax '(alt-syntax))
-(require 'org
-	 'gruvbox-theme)
+(require 'org)
+	 ;'gruvbox-theme)
 	 ;ob-shell)
 (org-babel-do-load-languages
  'org-babel-load-languages
