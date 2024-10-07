@@ -103,7 +103,6 @@
   xdg = {
     enable = true;
     configFile = {
-      #"emacs/init.el".source = ./emacs/init.el;
       "qtile/config.py".source = ./qtile/config.py;
       "sway/config".source = ./sway/config;
       "waybar/config.jsonc".source = ./waybar/config.jsonc;
