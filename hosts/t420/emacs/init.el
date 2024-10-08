@@ -2,6 +2,7 @@
 (setq inhibit-startup-message t
       visible-bell t
       display-line-numbers 'relative
+      scroll-conservatively most-positive-fixnum
       modus-themes-mode-line '(accented)
       modus-themes-region '(accented) ;(bg-only)
       modus-themes-bold-constructs t
