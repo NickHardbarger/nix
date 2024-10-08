@@ -35,6 +35,8 @@
       package = pkgs.emacs-nox;
       extraPackages = epkgs: [
         epkgs.gruvbox-theme
+	epkgs.tree-sitter
+	epkgs.tree-sitter-langs
       ];
     };
     obs-studio = {
