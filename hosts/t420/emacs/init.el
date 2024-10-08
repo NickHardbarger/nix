@@ -10,11 +10,14 @@
       modus-themes-paren-match '(bold intense)
       modus-themes-syntax '(alt-syntax))
 (require 'org)
+;(require 'ob-shell)
+(require 'gruvbox-theme)
+;; TREE SITTER ;;
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
 (global-tree-sitter-mode)
-(require 'gruvbox-theme)
-;(require 'ob-shell)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
