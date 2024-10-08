@@ -88,6 +88,7 @@
   ];				
   home.file = {
     ".emacs.d/init.el".source = ./emacs/init.el;
+    ".xinitrc".source = ./.xinitrc;
   };
   xdg = {
     enable = true;
