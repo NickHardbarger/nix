@@ -99,5 +99,6 @@
     };
   };
   home.sessionVariables = {
+    EDITOR = "vi";
   };
 }
