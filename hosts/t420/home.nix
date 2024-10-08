@@ -99,6 +99,6 @@
     };
   };
   home.sessionVariables = {
-    EDITOR = "vi";
+    EDITOR = "emacsclient -c -a ''";
   };
 }
