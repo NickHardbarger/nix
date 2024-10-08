@@ -54,7 +54,7 @@
     "qstart" = "qtile start -b wayland";
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
-    "vi" = "emacsclient";
+    "vi" = "emacsclient -a -c";
   };
   ### CURSOR ###
   home.pointerCursor = {
@@ -69,19 +69,20 @@
       enable = true;
     };
   };
-  services = {
-    emacs = {
-      enable = true; # enables emacs daemon mode
-      startWithUserSession = true;
-      defaultEditor = true;
-      package = pkgs.emacs-nox;
-      client = {
-        arguments = [
-	  "-c"
-	];
-      };
-    };
-  };
+  #services = {
+  #  emacs = {
+  #    enable = true; # enables emacs daemon mode
+  #    startWithUserSession = true;
+  #    defaultEditor = true;
+  #    package = pkgs.emacs-nox;
+  #    client = {
+  #      arguments = [
+  #	   "-a"
+  #	   "-c"
+  #	 ];
+  #    };
+  #  };
+  #};
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -98,7 +99,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-  ];
+  ];				
   home.file = {
     ".emacs.d/init.el".source = ./emacs/init.el;
   };
