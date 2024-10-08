@@ -12,8 +12,8 @@
 (require 'org)
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
-	 ;'gruvbox-theme)
-	 ;ob-shell)
+(require 'gruvbox-theme)
+;(require 'ob-shell)
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
