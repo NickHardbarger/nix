@@ -69,20 +69,6 @@
       enable = true;
     };
   };
-  #services = {
-  #  emacs = {
-  #    enable = true; # enables emacs daemon mode
-  #    startWithUserSession = true;
-  #    defaultEditor = true;
-  #    package = pkgs.emacs-nox;
-  #    client = {
-  #      arguments = [
-  #	   "-a"
-  #	   "-c"
-  #	 ];
-  #    };
-  #  };
-  #};
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
