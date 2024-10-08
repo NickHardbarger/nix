@@ -12,6 +12,7 @@
 (require 'org)
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+(global-tree-sitter-mode)
 (require 'gruvbox-theme)
 ;(require 'ob-shell)
 (org-babel-do-load-languages
