@@ -39,7 +39,7 @@
 	epkgs.tree-sitter-langs
       ];
     };
-p    obs-studio = {
+    obs-studio = {
       enable = true;
       plugins = with pkgs.obs-studio-plugins; [
         wlrobs
