@@ -9,9 +9,9 @@
       modus-themes-italic-constructs t
       modus-themes-paren-match '(bold intense)
       modus-themes-syntax '(alt-syntax))
-(require 'org
-	 'tree-sitter
-	 'tree-sitter-langs)
+(require 'org)
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 	 ;'gruvbox-theme)
 	 ;ob-shell)
 (org-babel-do-load-languages
