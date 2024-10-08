@@ -30,7 +30,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = st -z 16#guess_terminal()
+terminal = "st -z 16"#guess_terminal()
 
 keys = [
     # A list of available commands that can be bound to keys can be found
