@@ -22,7 +22,7 @@
 (global-display-line-numbers-mode 1)
 (hl-line-mode 1)
 (blink-cursor-mode 1)
-(load-theme 'gruvbox t)
+(load-theme 'gruvbox-dark-medium t)
 ;; EVIL MODE ;;
 ; Set up package.el to work with MELPA
 (require 'package)
