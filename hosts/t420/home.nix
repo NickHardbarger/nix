@@ -39,7 +39,7 @@
 	epkgs.tree-sitter-langs
       ];
     };
-    obs-studio = {
+p    obs-studio = {
       enable = true;
       plugins = with pkgs.obs-studio-plugins; [
         wlrobs
@@ -54,7 +54,7 @@
     "qstart" = "qtile start -b wayland";
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
-    "vi" = "emacsclient -a "" -c";
+    "vi" = "emacsclient -c -a ''";
   };
   ### CURSOR ###
   home.pointerCursor = {
