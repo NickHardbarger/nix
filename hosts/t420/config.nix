@@ -33,7 +33,7 @@
     kernelPackages = pkgs.linuxPackages_zen;
   };
   networking = {
-    hostName = "nicksOS";
+    hostName = "nil";
     networkmanager.enable = true;
     firewall = {
       enable = true;
