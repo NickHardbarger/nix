@@ -67,35 +67,40 @@
   nixpkgs.config = {
     allowUnfree = true;
   };
-  services.xserver = {
-    enable = true;
-    autorun = false;
-    xkb = {
-      layout = "us";
-      variant = "";
-      options = "ctrl:nocaps";
+  services = {
+    fail2ban = {
+      enable = true;
     };
-    videoDrivers = [      
-      "amdgpu"
-      "intel"
-    ];
-    excludePackages = with pkgs; [
-      xterm
-    ];
-    displayManager = {
-      startx.enable = true;
-      lightdm.enable = false;
-    };
-    windowManager = {
-      dwm = {
-        enable = true;
+    xserver = {
+      enable = true;
+      autorun = false;
+      xkb = {
+        layout = "us";
+        variant = "";
+        options = "ctrl:nocaps";
       };
-      xmonad = {
-        enable = true;
-	enableContribAndExtras = true;
+      videoDrivers = [      
+        "amdgpu"
+        "intel"
+      ];
+      excludePackages = with pkgs; [
+        xterm
+      ];
+      displayManager = {
+        startx.enable = true;
+        lightdm.enable = false;
       };
-      qtile = {
-        enable = true;
+      windowManager = {
+        dwm = {
+          enable = true;
+        };
+        xmonad = {
+          enable = true;
+	  enableContribAndExtras = true;
+        };
+        qtile = {
+          enable = true;
+        };
       };
     };
   };
