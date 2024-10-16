@@ -16,7 +16,7 @@
       userEmail = "nickhardbarger13@gmail.com";
       extraConfig = {
         init.defaultBranch = "main";
-        safe.directory = "/home/iglu/nicksOS";
+        safe.directory = "/home/iglu/nil";
       };
     };
     btop = {
