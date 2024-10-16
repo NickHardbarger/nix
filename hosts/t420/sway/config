@@ -14,7 +14,7 @@ for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 font pango:JetBrains Mono 16
 exec waybar
-exec dunst
+exec mako
 exec swaybg -i ~/nil/hosts/t420/wallpapers/stairs.jpg -m fill
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
