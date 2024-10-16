@@ -1,11 +1,9 @@
-#+title: nicksOS documentation
+#+title: NIL documentation
 #+author: Nick Hardbarger
-#+date: [2024-10-08 Tue]
-
-* TODO Change project name to NIL
+#+date: [2024-10-16]
 
 ** Installation
-To install nicksOS on a fresh NixOS system, run these commands:
+To install NIL on a fresh NixOS system, run these commands:
 
 #+BEGIN_SRC shell
 nix-shell -p git
@@ -13,7 +11,7 @@ nix-shell -p git
 
 #+BEGIN_SRC shell
 cd
-git clone https://github.com/NickHardbarger/nicksOS
+git clone https://github.com/NickHardbarger/nil
 #+END_SRC
 
 #+BEGIN_SRC shell
@@ -21,11 +19,11 @@ sudo rm /etc/nixos/configuration.nix
 #+END_SRC
 
 #+BEGIN_SRC shell
-sudo mv /etc/nixos/hardware-configuration.nix ~/nicksOS/hosts/default/
+sudo mv /etc/nixos/hardware-configuration.nix ~/nil/hosts/t420/
 #+END_SRC
 
 #+BEGIN_SRC shell
-sudo nixos-rebuild switch --flake ~/nicksOS#default
+sudo nixos-rebuild switch --flake ~/nil#default
 #+END_SRC
 
 ** TODO Features
