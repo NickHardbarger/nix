@@ -49,7 +49,6 @@
   };
   home.shellAliases = {
     "switch-t420" = "sudo nixos-rebuild switch --flake ~/nil#default";
-    "switch-lock-t420" = "sudo nixos-rebuild switch --recreate-lock-file --flake ~/nil#default";
     "ngc" = "nix-collect-garbage -d";
     "qstart" = "qtile start -b wayland";
     "cmatrix" = "cmatrix -C cyan";
