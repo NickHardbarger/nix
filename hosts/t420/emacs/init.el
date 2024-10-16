@@ -12,6 +12,7 @@
 (require 'org)
 ;(require 'ob-shell)
 (require 'gruvbox-theme)
+(require 'magit)
 ;; TREE SITTER ;;
 (require 'tree-sitter)
 (require 'tree-sitter-langs)

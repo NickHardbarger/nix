@@ -37,6 +37,7 @@
         epkgs.gruvbox-theme
 	epkgs.tree-sitter
 	epkgs.tree-sitter-langs
+	epkgs.magit
       ];
     };
     obs-studio = {
