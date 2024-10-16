@@ -1,5 +1,5 @@
 {
-  description = "nicksOS system flake";
+  description = "NIL system flake";
 
   inputs = {
     nixpkgs = {
