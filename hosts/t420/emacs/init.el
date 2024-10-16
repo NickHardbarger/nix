@@ -41,7 +41,7 @@
   (package-install 'evil))
 
 ; Enable Evil
-(require 'evil)
+;(require 'evil)
 (evil-mode -1) ; refraining from evil... for now
 (custom-set-variables
  ; custom-set-variables was added by Custom.
