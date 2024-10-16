@@ -90,9 +90,6 @@
       dwm = {
         enable = true;
       };
-      awesome = {
-        enable = true;
-      };
       xmonad = {
         enable = true;
 	enableContribAndExtras = true;
