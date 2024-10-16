@@ -254,8 +254,8 @@
     enable32Bit = true;
 
     # amdvlk driver: worse performance but more "correct", also the default for steam
-    extraPackages = [ pkgs.amdvlk ];
-    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+    #extraPackages = [ pkgs.amdvlk ];
+    #extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
   environment.variables = {
   };
