@@ -86,6 +86,13 @@
     };
     openssh = {
       enable = true;
+      settings = {
+        PasswordAuthentication = true;
+	AllowUsers = [ "iglu" ];
+	UseDns = true;
+	X11Forwarding = false;
+	PermitRootLogin = "prohibit-password";
+      };
     };
     xserver = {
       enable = true;
