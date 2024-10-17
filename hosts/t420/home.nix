@@ -29,6 +29,7 @@
       enable = true;
       bashrcExtra = ''
         pfetch
+	eval "$(ssh-agent -s)"
       '';
     };
     emacs = {
