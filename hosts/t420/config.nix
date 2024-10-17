@@ -185,6 +185,9 @@
   };
   ### PROGRAMS ###
   programs = {
+    ssh = {
+      startAgent = true;
+    };
     sway = {
       enable = true;
       extraPackages = with pkgs; [
