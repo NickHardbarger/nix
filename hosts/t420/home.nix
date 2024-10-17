@@ -30,7 +30,7 @@
       bashrcExtra = ''
         pfetch
 	function start_agent {
-	  eval ssh-agent $SHELL
+	  eval ssh-agent bash
 	  ssh-add ~/.ssh/id_ed25519
 	  ssh-add ~/.ssh/id_deploy
 	}
