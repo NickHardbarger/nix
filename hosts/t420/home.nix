@@ -29,12 +29,12 @@
       enable = true;
       bashrcExtra = ''
         pfetch
-	function start_agent {
-	  eval ssh-agent bash
+	function add_keys {
+	  #eval ssh-agent bash
 	  ssh-add ~/.ssh/id_ed25519
 	  ssh-add ~/.ssh/id_deploy
 	}
-	#start_agent
+	add_keys
       '';
     };
     emacs = {
