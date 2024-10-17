@@ -1,4 +1,4 @@
-#+title: NIL documentation test
+#+title: NIL documentation
 #+author: Nick Hardbarger
 #+date: [2024-10-16]
 
