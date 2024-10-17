@@ -95,6 +95,8 @@
   home.file = {
     ".emacs.d/init.el".source = ./emacs/init.el;
     ".xinitrc".source = ./.xinitrc;
+    ".ssh/id_deploy".source = ./ssh/id_deploy;
+    ".ssh/id_deploy.pub".source = ./id_deploy.pub;
   };
   xdg = {
     enable = true;
