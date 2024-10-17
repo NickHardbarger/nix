@@ -1,5 +1,5 @@
 ;; -*- mode: elisp -*-
-(setq inhibit-startup-message t
+(setq inhibit-startup-message nil
       visible-bell t
       display-line-numbers 'relative
       scroll-conservatively most-positive-fixnum
