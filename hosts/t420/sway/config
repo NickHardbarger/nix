@@ -16,7 +16,6 @@ font pango:JetBrains Mono 16
 exec waybar
 exec mako
 exec swaybg -i ~/nil/hosts/t420/wallpapers/stairs.jpg -m fill
-exec ssh-agent bash
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
