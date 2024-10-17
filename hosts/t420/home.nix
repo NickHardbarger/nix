@@ -1,9 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  # DO NOT FUCK WITH THIS UNTIL BACKED UP WITH GIT
-  home.username = "iglu";
-  home.homeDirectory = "/home/iglu";
+  home = {
+    username = "iglu";
+    homeDirectory = "/home/iglu";
+  };
   ### PROGRAMS ###
   programs = {
     home-manager = {
