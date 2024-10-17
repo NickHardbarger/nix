@@ -3,7 +3,6 @@
   imports = [ 
       ./hardware.nix
       inputs.home-manager.nixosModules.default
-      #inputs.nixvim.nixosModules.nixvim
   ];
   #BOOT
   #NETWORKING
@@ -212,47 +211,6 @@
     nano = {
       enable = false;
     };
-    #nixvim = {
-    #  enable = true;
-    #  viAlias = true;
-    #  vimAlias = true;
-    #  colorschemes.gruvbox.enable = true;
-    #  extraConfigLua = ''
-    #    vim.o.number = true
-    #    vim.o.relativenumber = true
-    #    vim.opt.guicursor = ""
-    #    vim.opt.wrap = false
-    #    vim.opt.hlsearch = false
-    #    vim.opt.incsearch = true
-    #    vim.opt.termguicolors = true
-    #    vim.opt.colorcolumn = "80"
-    #  '';
-    #  plugins = {
-    #    lualine.enable = true;
-    #    fzf-lua.enable = true;
-    #    fugitive.enable = true;
-    #    telescope.enable = true;
-    #    treesitter = {
-    #      enable = true;
-    #      grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
-    #    };
-    #    lsp = {
-    #      enable = true;
-    #      servers = {
-    #        nixd.enable = true; # Nix
-    #        bashls.enable = true; # Bash
-    #        perlpls.enable = true; # Perl
-    #        #ccls.enable = true; # C/C++
-    #        #html.enable = true; # HTML
-    #        cssls.enable = true; # CSS
-    #        #tsserver.enable = true; # Javascript
-    #        #java-language-server.enable = true; # Java
-    #        pyright.enable = true; # Python
-    #        #hls.enable = true; # Haskell
-    #      };
-    #    };
-    #  };
-    #};
     steam = {
       enable = true;
       gamescopeSession.enable = true;
