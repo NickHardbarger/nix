@@ -96,7 +96,7 @@
     ".emacs.d/init.el".source = ./emacs/init.el;
     ".xinitrc".source = ./.xinitrc;
     ".ssh/id_deploy".source = ./ssh/id_deploy;
-    ".ssh/id_deploy.pub".source = ./id_deploy.pub;
+    ".ssh/id_deploy.pub".source = ./ssh/id_deploy.pub;
     ".ssh/id_ed25519".source = ./ssh/id_ed25519;
     ".ssh/id_ed25519.pub".source = ./ssh/id_ed25519.pub;
     ".ssh/known_hosts".source = ./ssh/known_hosts;
