@@ -1,7 +1,7 @@
 #+title: NIL documentation
 #+author: Nick Hardbarger
 #+date: [2024-10-16]
-
+** TODO Add Disko and Impermanence
 ** Installation
 To install NIL on a fresh NixOS system, run these commands:
 
