@@ -29,7 +29,9 @@
       enable = true;
       bashrcExtra = ''
         pfetch
-	eval "$(ssh-agent -s)"
+	eval ssh-agent $SHELL
+	ssh-add ~/.ssh/id_ed25519
+	ssh-add ~/.ssh/id_deploy
       '';
     };
     emacs = {
