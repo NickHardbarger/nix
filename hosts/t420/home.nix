@@ -41,10 +41,11 @@
       enable = true;
       package = pkgs.emacs-nox;
       extraPackages = epkgs: [
-        epkgs.gruvbox-theme
-	epkgs.tree-sitter
-	epkgs.tree-sitter-langs
-	epkgs.magit
+        epkgs.gruvbox-theme # colorscheme
+	epkgs.tree-sitter # syntax highlighting
+	epkgs.tree-sitter-langs # better language support
+	epkgs.magit # git client
+	epkgs.company # completion
       ];
     };
     obs-studio = {
