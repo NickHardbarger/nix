@@ -18,6 +18,7 @@
 (require 'tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+(add-hook 'after-init-hook 'global-company-mode)
 (server-start)
 (org-babel-do-load-languages
  'org-babel-load-languages
