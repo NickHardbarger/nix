@@ -13,6 +13,9 @@
 ;(require 'ob-shell)
 (require 'gruvbox-theme)
 (require 'magit)
+;; NEOTREE ;;
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 ;; TREE SITTER ;;
 (require 'tree-sitter)
 (require 'tree-sitter-langs)

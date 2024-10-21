@@ -46,6 +46,7 @@
 	epkgs.tree-sitter-langs # better language support
 	epkgs.magit # git client
 	epkgs.company # completion
+	epkgs.neotree # directory viewer
       ];
     };
     obs-studio = {
