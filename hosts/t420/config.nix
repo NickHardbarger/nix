@@ -28,8 +28,8 @@
       overlays = [
         (self: super: {
 	  linuxZen = pkgs.linuxPackagesFor (pkgs.linux_zen.kernel.override {
-	    structuredExtraConfig = with lib.kernel; {
-	      SCHED_MUQSS = yes;
+	    structuredExtraConfig = {#with lib.kernel; {
+	      SCHED_MUQSS = lib.kernel.yes;
 	    };
 	    ignoreConfigErrors = true;
 	  });
