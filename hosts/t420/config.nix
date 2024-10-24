@@ -36,7 +36,7 @@
       name = "nil";
       patch = null;
       extraStructuredConfig = with lib.kernel; {
-        KERNEL_XZ = yes;
+        KERNEL_LZ4 = yes;
 	CC_OPTIMIZE_FOR_PERFORMANCE = yes;
 	MACINTOSH_DRIVERS = no;
 	INPUT_TABLET = no;
