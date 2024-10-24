@@ -27,7 +27,7 @@
       };
       overlays = [
         (self: super: {
-	  linuxZennn = pkgs.linuxPackagesFor (pkgs.linux_zen.kernel.override {
+	  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_zen.kernel.override {
 	    structuredExtraConfig = with lib.kernel; {
 	      SCHED_MUQSS = yes;
 	    };
@@ -42,7 +42,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackagesFor pkgs.linuxZennn;
+    #kernelPackages = pkgs.linuxPackagesFor pkgs.linuxZennn;
     #kernelPackages = pkgs.linuxPackages;
     #kernelPackages = pkgs.linuxPackages_latest;
     #kernelPackages = pkgs.linuxPackages_hardened;
