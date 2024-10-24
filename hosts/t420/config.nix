@@ -3,7 +3,7 @@
   imports = [ 
       ./hardware.nix
       inputs.home-manager.nixosModules.default
-      ./linux/kernel.nix
+      #./linux/kernel.nix
   ];
   #BOOT
   #NETWORKING
@@ -31,10 +31,15 @@
     #kernelPackages = pkgs.linuxPackages_latest;
     #kernelPackages = pkgs.linuxPackages_hardened;
     #kernelPackages = pkgs.linuxPackages_zen;
-    #kernelPackages = pkgs.linuxManualConfig {
-    #  version = "6.11.5";
-    #  configFile = ./linux/.config;
-    #};
+    kernelPackages = pkgs.linuxManualConfig {
+      #version = "6.11.5-nil";
+      modDirVersion = "6.11.5";
+      src = pkgs.fetchurl {
+        url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${modDirVersion}.tar.xz";
+	hash = "sha256:01rafnqal2v96dzkabz0irymq4sc9ja00ggyv1xn7yzjnyrqa527";
+      };
+      configfile = ./linux/.config;
+    };
   };
   networking = {
     hostName = "nil";
