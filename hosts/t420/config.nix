@@ -25,16 +25,16 @@
       config = {
         allowUnfree = true;
       };
-      overlays = [
-        (self: super: {
-	  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_zen.kernel.override {
-	    structuredExtraConfig = with lib.kernel; {
-	      SCHED_MUQSS = yes;
-	    };
-	    ignoreConfigErrors = true;
-	  });
-	})
-      ];
+      #overlays = [
+      #  (self: super: {
+      #	  linuxZen = pkgs.linuxPackagesFor (pkgs.linux_zen.kernel.override {
+      #	    structuredExtraConfig = with lib.kernel; {
+      #	      SCHED_MUQSS = yes;
+      #	    };
+      #	    ignoreConfigErrors = true;
+      #	  });
+      #	})
+      #];
     };
     boot = {
     loader = {
@@ -46,7 +46,14 @@
     #kernelPackages = pkgs.linuxPackages;
     #kernelPackages = pkgs.linuxPackages_latest;
     #kernelPackages = pkgs.linuxPackages_hardened;
-    #kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPatches = lib.singleton {
+      name = "enable-lirc";
+      patch = null;
+      extraStructuredConfig = with lib.kernel; {
+        LIRC = yes;
+      };
+    };
     #kernelPackages = pkgs.linuxManualConfig {
     #  version = "6.11.5";
     #  #modDirVersion = "6.11.5";
