@@ -129,9 +129,6 @@
           enable = true;
 	  enableContribAndExtras = true;
         };
-        qtile = {
-          enable = true;
-        };
       };
     };
   };

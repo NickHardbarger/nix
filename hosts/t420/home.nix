@@ -59,7 +59,6 @@
   home.shellAliases = {
     "switch-t420" = "sudo nixos-rebuild switch --flake ~/nil#default";
     "ngc" = "nix-collect-garbage -d";
-    "qstart" = "qtile start -b wayland";
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
     "vi" = "emacsclient -c -a ''";
@@ -106,7 +105,6 @@
   xdg = {
     enable = true;
     configFile = {
-      "qtile/config.py".source = ./qtile/config.py;
       "sway/config".source = ./sway/config;
       "waybar/config.jsonc".source = ./waybar/config.jsonc;
       "waybar/style.css".source = ./waybar/style.css;
