@@ -3,7 +3,6 @@
   imports = [ 
       ./hardware.nix
       inputs.home-manager.nixosModules.default
-      #./linux/kernel.nix
   ];
   #NIXPKGS
   #BOOT
@@ -25,16 +24,6 @@
       config = {
         allowUnfree = true;
       };
-      #overlays = [
-      #  (self: super: {
-      #	  linuxZen = pkgs.linuxPackagesFor (pkgs.linux_zen.kernel.override {
-      #	    structuredExtraConfig = with lib.kernel; {
-      #	      SCHED_MUQSS = yes;
-      #	    };
-      #	    ignoreConfigErrors = true;
-      #	  });
-      #	})
-      #];
     };
     boot = {
     loader = {
@@ -42,27 +31,18 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    #kernelPackages = pkgs.linuxPackagesFor pkgs.linuxZennn;
-    #kernelPackages = pkgs.linuxPackages;
-    #kernelPackages = pkgs.linuxPackages_latest;
-    #kernelPackages = pkgs.linuxPackages_hardened;
     kernelPackages = pkgs.linuxPackages_zen;
     kernelPatches = lib.singleton {
-      name = "enable-lirc";
+      name = "nil";
       patch = null;
       extraStructuredConfig = with lib.kernel; {
-        LIRC = yes;
+        KERNEL_XZ = yes;
+	CC_OPTIMIZE_FOR_PERFORMANCE = yes;
+	MACINTOSH_DRIVERS = no;
+	INPUT_TABLET = no;
+	INPUT_TOUCHSCREEN = no;
       };
     };
-    #kernelPackages = pkgs.linuxManualConfig {
-    #  version = "6.11.5";
-    #  #modDirVersion = "6.11.5";
-    #  src = pkgs.fetchurl {
-    #    url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.11.5.tar.xz";
-    #    hash = "sha256:01rafnqal2v96dzkabz0irymq4sc9ja00ggyv1xn7yzjnyrqa527";
-    #  };
-    #  configfile = ./linux/.config;
-    #};
   };
   networking = {
     hostName = "nil";
