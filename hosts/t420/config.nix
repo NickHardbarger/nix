@@ -3,6 +3,7 @@
   imports = [ 
       ./hardware.nix
       inputs.home-manager.nixosModules.default
+      ./linux/kernel.nix
   ];
   #BOOT
   #NETWORKING
@@ -29,7 +30,7 @@
     #kernelPackages = pkgs.linuxPackages;
     #kernelPackages = pkgs.linuxPackages_latest;
     #kernelPackages = pkgs.linuxPackages_hardened;
-    kernelPackages = pkgs.linuxPackages_zen;
+    #kernelPackages = pkgs.linuxPackages_zen;
   };
   networking = {
     hostName = "nil";
