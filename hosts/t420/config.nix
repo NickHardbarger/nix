@@ -5,13 +5,13 @@
       inputs.home-manager.nixosModules.default
       #./linux/kernel.nix
   ];
+  #NIXPKGS
   #BOOT
   #NETWORKING
   #HARDWARE
   #SERVICES
   #TIME
   #I18N
-  #NIXPKGS
   #SECURITY
   #SYSTEM
   #NIX
@@ -21,7 +21,22 @@
   #PROGRAMS
   #ENVIRONMENT
   #FONTS
-  boot = {
+    nixpkgs = {
+      config = {
+        allowUnfree = true;
+      };
+      overlays = [
+        (self: super: {
+	  linuxZen = pkgs.linuxPackagesFor (pkgs.linux_zen.kernel.override {
+	    structuredExtraConfig = with lib.kernel; {
+	      SCHED_MUQSS = yes;
+	    };
+	    ignoreConfigErrors = true;
+	  });
+	})
+      ];
+    };
+    boot = {
     loader = {
       grub.enable = false;
       systemd-boot.enable = true;
@@ -72,11 +87,6 @@
     LC_PAPER = "en_US.UTF-8";
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
-  };
-    nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
   };
   services = {
     fail2ban = {
