@@ -108,7 +108,7 @@
 	SERIAL_NONSTANDARD = no;
 	HW_RANDOM = no;
 	WATCHDOG = no;
-	AGP = no;
+	AGP = yes; # hopefully changing to yes fixes error?
 	DRM_AMDGPU = yes;
 	DRM_I915 = yes;
 	SND_SUPPORT_OLD_API = no;
