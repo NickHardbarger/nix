@@ -138,7 +138,7 @@
 	EFIVAR_FS = yes;
 	SECURITY_SELINUX = no;
 	DEBUG_KERNEL = yes;
-	FTRACE = no;
+	FTRACE = yes; # changed to yes to fix error
 	PROVIDE_OHCI1394_DMA_INIT = no;
       };
     };
