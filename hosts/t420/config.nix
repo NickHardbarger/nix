@@ -57,7 +57,7 @@
 	#NR_CPUS = "32"; # num of cores, also this didn't work, as I expected
 	X86_5LEVEL = no;
 	NUMA = yes; # changed to yes to fix error
-	X86_CHECK_BIOS_CORRUPTION = no;
+	X86_CHECK_BIOS_CORRUPTION = yes; # changed to yes to fix error
 	EFI_STUB = yes; # changed to yes to fix error
 	SUSPEND = no;
 	HIBERNATION = no;
