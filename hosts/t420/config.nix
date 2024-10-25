@@ -50,7 +50,7 @@
 	PREEMPT_NONE = no; # low throughput
 	IKCONFIG = yes;
 	IKCONFIG_PROC = yes;
-	BLK_DEV_INITRD = no; # initramfs/initrd
+	BLK_DEV_INITRD = yes; # initramfs/initrd # changed to yes to fix error
 	PROFILING = no;
 	X86_MPPARSE = no;
 	X86_EXTENDED_PLATFORM = no;
@@ -108,7 +108,7 @@
 	SERIAL_NONSTANDARD = no;
 	HW_RANDOM = no;
 	WATCHDOG = no;
-	AGP = yes; # hopefully changing to yes fixes error?
+	AGP = yes; # changed to yes to fix error
 	DRM_AMDGPU = yes;
 	DRM_I915 = yes;
 	SND_SUPPORT_OLD_API = no;
