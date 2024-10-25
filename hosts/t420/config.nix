@@ -104,7 +104,7 @@
 	INPUT_TABLET = no;
 	INPUT_TOUCHSCREEN = no;
 	INPUT_MISC = no;
-	SERIAL_8250 = no;
+	SERIAL_8250 = yes; # changed to yes to fix error
 	SERIAL_NONSTANDARD = no;
 	HW_RANDOM = no;
 	WATCHDOG = no;
