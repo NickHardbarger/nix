@@ -116,7 +116,7 @@
 	DRM_AMDGPU = yes;
 	DRM_I915 = yes;
 	DRM_I915_GVT = yes;
-	DRM_I915_GVT_KVMGT = yes;
+	DRM_I915_GVT_KVMGT = module; # changed to module to fix error
 	X86_SGX_KVM = yes;
 	KVM_AMD_SEV = yes;
 	KVM_ASYNC_PF = yes;
