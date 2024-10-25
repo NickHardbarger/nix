@@ -42,7 +42,7 @@
 	MCORE2 = yes; # intel
 	MK8 = no; # amd
 	GENERIC_CPU = no; # generic
-	POSIX_MQUEUE = no;
+	POSIX_MQUEUE = yes; # changed to yes to fix error
 	USELIB = no;
 	AUDIT = no;
 	PREEMPT = yes; # low latency
