@@ -110,8 +110,8 @@
 	SERIAL_8250 = yes; # changed to yes to fix error
 	SERIAL_NONSTANDARD = no;
 	#HW_RANDOM = no;
-	WATCHDOG = no;
-	WATCHDOG_SYSFS = yes; # changed to yes to fix error
+	#WATCHDOG = no;
+	#WATCHDOG_SYSFS = yes; # changed to yes to fix error
 	AGP = yes; # changed to yes to fix error
 	DRM_AMDGPU = yes;
 	DRM_I915 = yes;
