@@ -90,7 +90,7 @@
 	TCP_MD5SIG = no;
 	IPV6 = yes;
 	NETLABEL = no;
-	NET_SCHED = no;
+	NET_SCHED = yes; # changed to yes to fix error
 	HAMRADIO = no;
 	BT = no;
 	NET_9P = no;
