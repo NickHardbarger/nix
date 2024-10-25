@@ -54,7 +54,7 @@
 	PROFILING = no;
 	X86_MPPARSE = no;
 	X86_EXTENDED_PLATFORM = no;
-	NR_CPUS = "32"; # num of cores, this might not work
+	#NR_CPUS = "32"; # num of cores, also this didn't work, as I expected
 	X86_5LEVEL = no;
 	NUMA = no;
 	X86_CHECK_BIOS_CORRUPTION = no;
