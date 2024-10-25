@@ -58,7 +58,7 @@
 	X86_5LEVEL = no;
 	NUMA = no;
 	X86_CHECK_BIOS_CORRUPTION = no;
-	EFI_STUB = no;
+	EFI_STUB = yes; # changed to yes to fix error
 	SUSPEND = no;
 	HIBERNATION = no;
 	PM_DEBUG = no;
