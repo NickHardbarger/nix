@@ -43,6 +43,15 @@
 	MK8 = no; # amd
 	GENERIC_CPU = no; # generic
 	POSIX_MQUEUE = no;
+	PREEMPT = yes; # low latency
+	PREEMPT_VOLUNTARY = no; # balanced
+	PREEMPT_NONE = no; # low throughput
+	IKCONFIG = yes;
+	IKCONFIG_PROC = yes;
+	BLK_DEV_INITRD = no; # initramfs/initrd
+	PROFILING = no;
+	X86_MPPARSE = no;
+	X86_EXTENDED_PLATFORM = no;
 	MACINTOSH_DRIVERS = no;
 	INPUT_TABLET = no;
 	INPUT_TOUCHSCREEN = no;
