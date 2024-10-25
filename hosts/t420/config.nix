@@ -86,7 +86,7 @@
 	IP_ADVANCED_ROUTER = yes; # changed to yes to fix error
 	IP_PNP = no;
 	SYN_COOKIES = no;
-	TCP_CONG_ADVANCED = no;
+	TCP_CONG_ADVANCED = yes; # changed to yes to fix error
 	TCP_MD5SIG = no;
 	IPV6 = yes;
 	NETLABEL = no;
