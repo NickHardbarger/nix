@@ -61,7 +61,7 @@
 	SUSPEND = no;
 	HIBERNATION = no;
 	PM_DEBUG = no;
-	PM_ADVANCED_DEBUG = no;
+	PM_ADVANCED_DEBUG = yes; # changed to yes to fix error
 	PM_TRACE = no;
 	PM_TRACE_RTC = no;
 	ACPI_SPCR_TABLE = no;
