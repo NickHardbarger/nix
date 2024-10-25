@@ -45,7 +45,7 @@
 	POSIX_MQUEUE = yes; # changed to yes to fix error
 	USELIB = no;
 	AUDIT = no;
-	PREEMPT = yes; # low latency
+	PREEMPT = no; # low latency # changed to no to fix error
 	PREEMPT_VOLUNTARY = no; # balanced
 	PREEMPT_NONE = no; # low throughput
 	IKCONFIG = yes;
