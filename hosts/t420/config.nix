@@ -75,7 +75,7 @@
 	MQ_IOSCHED_DEADLINE = yes; # changed to yes to fix error
 	MQ_IOSCHED_KYBER = yes; #no;
 	MQ_IOSCHED_BFQ = no;
-	IOSCHED_BFQ = no;
+	IOSCHED_BFQ = module; # changed to module to fix error
 	SWAP = yes;
 	ZSWAP = yes;
 	ZSWAP_DEFAULT_ON = yes;
