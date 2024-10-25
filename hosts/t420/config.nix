@@ -46,7 +46,7 @@
 	USELIB = no;
 	AUDIT = no;
 	PREEMPT = no; # low latency # changed to no to fix error
-	PREEMPT_VOLUNTARY = no; # balanced
+	PREEMPT_VOLUNTARY = yes; # balanced # changed to yes to fix error
 	PREEMPT_NONE = no; # low throughput
 	IKCONFIG = yes;
 	IKCONFIG_PROC = yes;
