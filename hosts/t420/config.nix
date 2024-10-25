@@ -69,12 +69,12 @@
 	VIRTUALIZATION = no;
 	KPROBES = yes; # changed to yes to fix error
 	GCC_PLUGINS = no;
-	#MODULES = yes;
-	MODULES = no; # may lead to stuff not working!
+	MODULES = yes;
+	#MODULES = no; # may lead to stuff not working!
 	BLK_DEBUG_FS = no;
-	#MQ_IOSCHED_DEADLINE = yes; # changed to yes to fix error
-	#MQ_IOSCHED_KYBER = yes; #no;
-	#MQ_IOSCHED_BFQ = no;
+	MQ_IOSCHED_DEADLINE = yes; # changed to yes to fix error
+	MQ_IOSCHED_KYBER = yes; #no;
+	MQ_IOSCHED_BFQ = no;
 	#IOSCHED_BFQ = module; # changed to module to fix error
 	SWAP = yes;
 	ZSWAP = yes;
