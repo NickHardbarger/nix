@@ -31,14 +31,18 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages;
     kernelPatches = lib.singleton {
       name = "nil";
       patch = null;
       extraStructuredConfig = with lib.kernel; {
-        HAVE_KERNEL_ZSTD = yes;
-        KERNEL_ZSTD = yes;
+        #HAVE_KERNEL_LZ4 = yes;
+        KERNEL_LZ4 = yes;
 	CC_OPTIMIZE_FOR_PERFORMANCE = yes;
+	MCORE2 = yes; # intel
+	MK8 = no; # amd
+	GENERIC_CPU = no; # generic
+	POSIX_MQUEUE = no;
 	MACINTOSH_DRIVERS = no;
 	INPUT_TABLET = no;
 	INPUT_TOUCHSCREEN = no;
