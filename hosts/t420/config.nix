@@ -82,7 +82,7 @@
 	ZSWAP_COMPRESSOR_DEFAULT_LZO = yes;
 	ZSWAP_ZPOOL_DEFAULT_ZBUD = yes;
 	TRANSPARENT_HUGEPAGE = yes;
-	TRANSPARENT_HUGEPAGE_ALWAYS = yes;
+	TRANSPARENT_HUGEPAGE_ALWAYS = no; # changed to no to fix error
 	IP_ADVANCED_ROUTER = yes; # changed to yes to fix error
 	IP_PNP = no;
 	SYN_COOKIES = no;
