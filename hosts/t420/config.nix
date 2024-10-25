@@ -98,11 +98,11 @@
 	#BT = no;
 	NET_9P = no;
 	#HOTPLUG_PCI = no;
-	DEBUG_DEVRES = no;
-	BLK_DEV_NVME = yes;
-	SATA_PMP = no;
-	ATA_SFF = no;
-	MD = yes; # changed to yes to fix error
+	#DEBUG_DEVRES = no;
+	#BLK_DEV_NVME = yes;
+	#SATA_PMP = no;
+	#ATA_SFF = no;
+	#MD = yes; # changed to yes to fix error
 	MACINTOSH_DRIVERS = no;
 	INPUT_TABLET = no;
 	INPUT_TOUCHSCREEN = no;
