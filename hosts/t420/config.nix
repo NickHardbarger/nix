@@ -67,7 +67,7 @@
 	X86_ACPI_CPUFREQ = no;
 	INTEL_IDLE = yes;
 	VIRTUALIZATION = no;
-	KPROBES = no;
+	KPROBES = yes; # changed to yes to fix error
 	GCC_PLUGINS = no;
 	#MODULES = yes;
 	MODULES = no; # may lead to stuff not working!
