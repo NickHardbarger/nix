@@ -63,7 +63,7 @@
 	PM_DEBUG = no;
 	PM_ADVANCED_DEBUG = yes; # changed to yes to fix error
 	PM_TRACE = yes; # changed to yes to fix error
-	PM_TRACE_RTC = no;
+	PM_TRACE_RTC = yes; # changed to yes to fix error
 	ACPI_SPCR_TABLE = no;
 	#CPU_FREQ_DEFAULT_GOV_PERFORMANCE = yes;
 	X86_ACPI_CPUFREQ = no;
