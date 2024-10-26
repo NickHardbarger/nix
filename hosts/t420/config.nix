@@ -143,7 +143,7 @@
 	HID_SAMSUNG = no;
 	HID_SUNPLUS = no;
 	HID_TOPSEED = no;
-	USB_OHCI_HCD = no;
+	#USB_OHCI_HCD = no;
 	#USB_UHCI_HCD = no;
 	#QUOTA = no;
 	AUTOFS_FS = no;
