@@ -127,7 +127,7 @@
 	SND_VERBOSE_PROCFS = no;
 	HID_A4TECH = no;
 	HID_BELKIN = no;
-	HID_CHERRY = no;
+	#HID_CHERRY = no;
 	HID_CHICONY = no;
 	HID_CYPRESS =  no;
 	HID_EZKEY = no;
