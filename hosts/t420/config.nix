@@ -27,7 +27,7 @@
       efi.canTouchEfiVariables = true;
     };
     ### KERNEL ###
-    kernelPackages = pkgs.linuxPackages-zen;
+    kernelPackages = pkgs.linuxPackages_zen;
     #kernelPatches = lib.singleton {
       #name = "nil";
       #patch = null;
