@@ -384,6 +384,7 @@
 	./dmenu/dmenu-numbers-20220512-28fb3e2.diff
       ];
     }))
+    xmobar # status bar
     dunst # notification daemon
     mangohud # steam hud overlay
     grim # screenshots
