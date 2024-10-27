@@ -4,13 +4,6 @@
       ./hardware.nix
       inputs.home-manager.nixosModules.default
   ];
-  #NIXPKGS
-  #BOOT
-  #NETWORKING
-  #HARDWARE
-  #SERVICES
-  #TIME
-  #I18N
   #SECURITY
   #SYSTEM
   #NIX
@@ -20,17 +13,20 @@
   #PROGRAMS
   #ENVIRONMENT
   #FONTS
+    ### NIXPKGS ###
     nixpkgs = {
       config = {
         allowUnfree = true;
       };
     };
+    ### BOOT ###
     boot = {
     loader = {
       grub.enable = false;
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+    ### KERNEL ###
     kernelPackages = pkgs.linuxPackages;
     kernelPatches = lib.singleton {
       name = "nil";
@@ -155,6 +151,7 @@
       };
     };
   };
+  ### NETWORKING ###
   networking = {
     hostName = "nil";
     networkmanager.enable = true;
@@ -171,23 +168,48 @@
       #noProxy = "127.0.0.1,localhost,internal.domain";
     };
   };
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
-  time.timeZone = "America/New_York";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+  ### HARDWARE ###
+  hardware = {
+    pulseaudio.enable = false;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
+  ### LOCALE ###
+  time.timeZone = "America/New_York";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
+    };
+  };
+  ### SERVICES ###
   services = {
+    blueman.enable = true;
+    printing.enable = true;
+    pipewire = {
+      enable = true;
+      alsa = {
+        enable = true;
+	support32Bit = true;
+      };
+      pulse.enable = true;
+      #jack.enable = true;
+      #media-session.enable = true;
+    };
     fail2ban = {
       enable = true;
       maxretry = 5;
@@ -243,19 +265,9 @@
       };
     };
   };
-  services.printing.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    #jack.enable = true;
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
   };
   system.autoUpgrade = {
     enable = true;
@@ -339,28 +351,17 @@
     starship = {
       enable = true;
       settings = {
-          add_newline = false;
-	  line_break = {
-	    disabled = true;
-	  };
-	  format = "$all$directory$character";
-	  character = {
-	    success_symbol = "[➜](bold green)";
-	    error_symbol = "[➜](bold red)";
-	  };
+        add_newline = false;
+	line_break = {
+	  disabled = true;
+	};
+	format = "$all$directory$character";
+	character = {
+	  success_symbol = "[➜](bold green)";
+	  error_symbol = "[➜](bold red)";
+	};
       };
     };
-  };
-  hardware.graphics = {
-    # radv driver: better performance but less "correct"
-    enable = true;
-    enable32Bit = true;
-
-    # amdvlk driver: worse performance but more "correct", also the default for steam
-    #extraPackages = [ pkgs.amdvlk ];
-    #extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
-  };
-  environment.variables = {
   };
   environment.systemPackages = with pkgs; [
     ### SIMPLE TERMINAL ###
@@ -386,16 +387,17 @@
     }))
     xmobar # status bar
     dunst # notification daemon
+    mako # notification daemon
     mangohud # steam hud overlay
     grim # screenshots
     slurp # screenshots
     wget # file retriever
-    mako # notification daemon
     wl-clipboard # clipboard
-    pulseaudio
-    discord
-    libreoffice
-    onlyoffice-bin#desktopeditors
+    pulseaudio # ?? I forget why that's there lol
+    discord # chat client
+    libreoffice # office suit
+    onlyoffice-bin # office suit
+    #onlyoffice-desktopeditors # office suit
     ### CLI SCRIPTS ###
     pfetch-rs # basic system info
     cmatrix # matrix text scroll
