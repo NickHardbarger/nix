@@ -39,7 +39,7 @@
     };
     emacs = {
       enable = true;
-      package = pkgs.emacs;
+      package = pkgs.emacs-nox;
       extraPackages = epkgs: [
         epkgs.gruvbox-theme # colorscheme
 	epkgs.tree-sitter # syntax highlighting
