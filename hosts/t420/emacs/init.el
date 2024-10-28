@@ -7,8 +7,8 @@
       modus-themes-region '(accented) ;(bg-only)
       modus-themes-bold-constructs t
       modus-themes-italic-constructs t
-      modus-themes-paren-match '(bold intense)
-      modus-themes-syntax '(alt-syntax))
+      modus-themes-paren-match '(bold intense))
+      ;modus-themes-syntax '(alt-syntax))
 (require 'org)
 ;(require 'ob-shell)
 (require 'gruvbox-theme)
