@@ -6,6 +6,7 @@
 (server-start)
 (require 'magit)
 (add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (menu-bar-mode -1)
 (global-display-line-numbers-mode 1)
 (hl-line-mode 1)

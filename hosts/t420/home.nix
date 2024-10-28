@@ -44,6 +44,7 @@
         epkgs.gruvbox-theme # colorscheme
 	epkgs.tree-sitter # syntax highlighting
 	epkgs.tree-sitter-langs # better language support
+	epkgs.rainbow-delimiters # rainbow parentheses
 	epkgs.magit # git client
 	epkgs.company # completion
 	epkgs.neotree # directory viewer
