@@ -355,6 +355,9 @@
     (dwl.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
       patches = [
+        ./dwl/bar-0.7.patch
+	./dwl/swallow.patch
+	./dwl/vanitygaps-0.7.patch
       ];
     }))
     ### SIMPLE TERMINAL ###
