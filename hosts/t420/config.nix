@@ -351,6 +351,12 @@
     };
   };
   environment.systemPackages = with pkgs; [
+    ### DWL ###
+    (dwl.overrideAttrs (oldAttrs: {
+      buildInputs = oldAttrs.buildInputs ++ [ ];
+      patches = [
+      ];
+    }))
     ### SIMPLE TERMINAL ###
     (st.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
@@ -372,6 +378,7 @@
 	./dmenu/dmenu-numbers-20220512-28fb3e2.diff
       ];
     }))
+    foot # terminal
     waybar # statusbar
     swaybg # wallpaper setter
     mako # notification daemon
