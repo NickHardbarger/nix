@@ -254,15 +254,6 @@
         startx.enable = true;
         lightdm.enable = false;
       };
-      windowManager = {
-        dwm = {
-          enable = true;
-        };
-        xmonad = {
-          enable = true;
-	  enableContribAndExtras = true;
-        };
-      };
     };
   };
   security = {
