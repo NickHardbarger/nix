@@ -319,10 +319,6 @@
     };
     sway = {
       enable = true;
-      extraPackages = with pkgs; [
-	waybar # statusbar
-	swaybg # wallpaper setter
-      ];
     };
     firefox = {
       enable = true;
@@ -385,8 +381,8 @@
 	./dmenu/dmenu-numbers-20220512-28fb3e2.diff
       ];
     }))
-    xmobar # status bar
-    dunst # notification daemon
+    waybar # statusbar
+    swaybg # wallpaper setter
     mako # notification daemon
     mangohud # steam hud overlay
     grim # screenshots
