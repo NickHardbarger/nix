@@ -357,7 +357,7 @@
       patches = [
         ./dwl/bar-0.7.patch
 	./dwl/swallow.patch
-	#./dwl/vanitygaps-0.7.patch
+	#./dwl/vanitygaps-0.7.patch # patch error
       ];
       configFile = writeText "config.def.h" (builtins.readFile ./dwl/config.def.h);
       postPatch = oldAttrs.postPatch ++ ''cp ${configFile} config.def.h'';
