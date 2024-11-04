@@ -21,7 +21,7 @@
       overlays = [
         (final: prev: {
 	  dwl = prev.dwl.override {
-	    enableXWayland = true;
+	    enableXWayland = false;
 	    configH = ./dwl/config.h;
 	  };
 	})
