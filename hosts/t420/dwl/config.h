@@ -136,6 +136,7 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_d,          incnmaster,     {.i = -1} },
 	{ MODKEY,                    XKB_KEY_h,          setmfact,       {.f = -0.05f} },
 	{ MODKEY,                    XKB_KEY_l,          setmfact,       {.f = +0.05f} },
+	/* setopacity is busted, just as I suspected! */
 	/*{ MODKEY,                    XKB_KEY_o,          setopacity,     {.f = +0.1f} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_O,          setopacity,     {.f = -0.1f} },*/
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     zoom,           {0} },
@@ -171,7 +172,7 @@ static const Key keys[] = {
 	 */
 #define CHVT(n) { WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_XF86Switch_VT_##n, chvt, {.ui = (n)} }
 	CHVT(1), CHVT(2), CHVT(3), CHVT(4), CHVT(5), CHVT(6),
-	/*CHVT(7), CHVT(8), CHVT(9), CHVT(10), CHVT(11), CHVT(12),*/
+	CHVT(7), CHVT(8), CHVT(9), CHVT(10), CHVT(11), CHVT(12),
 };
 
 static const Button buttons[] = {
