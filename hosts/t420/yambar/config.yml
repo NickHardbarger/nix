@@ -25,9 +25,9 @@ bar:
   background: 111111cc
 
   border:
-    width: 1
+    width: 10
     color: 999999cc
-    margin: 5
+    margin: 10
     top-margin: 0
 
   left:
