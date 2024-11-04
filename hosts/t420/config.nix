@@ -389,6 +389,7 @@
     foot # terminal
     waybar # statusbar
     swaybg # wallpaper setter
+    wbg # wallpaper setter
     mako # notification daemon
     mangohud # steam hud overlay
     grim # screenshots
