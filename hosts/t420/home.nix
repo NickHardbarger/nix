@@ -58,7 +58,7 @@
     ".." = "cd ..";
     "vi" = "emacsclient -c -a ''";
     #"dwl" = "dwl -s '~/nil/hosts/t420/dwl/init.sh'";
-    "dwl" = "dwl -s 'exec yambar && exec mako && exec foot --server";
+    "dwl" = "exec dwl -s 'exec yambar && exec sway -i ~/nil/hosts/t420/wallpapers/stairs.jpg -m fill && exec mako && exec foot --server && exec <&-'";
   };
   ### CURSOR ###
   home.pointerCursor = {
