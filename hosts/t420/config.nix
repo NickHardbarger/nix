@@ -384,6 +384,7 @@
       ];
     }))
     dwl # wayland compositor
+    yambar # status bar
     wmenu # app launcher
     foot # terminal
     waybar # statusbar
