@@ -360,7 +360,7 @@
 	#./dwl/swallow.patch
 	#./dwl/vanitygaps-0.7.patch # patch error
       ];
-      configFile = super.writeText "config.h" (builtins.readFile ./dwl/config.h);
+      configFile = super.writeText "config.h" (builtins.readFile ./dwl/src/config.h);
       #postPatch = "${oldAttrs.postPatch}\ncp ${configFile} config.def.h\n";
       postPatch = oldAttrs.postPatch ++ ''cp ${configFile} config.h'';
     }))
