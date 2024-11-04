@@ -57,7 +57,7 @@
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
     "vi" = "emacsclient -c -a ''";
-    "dwl" = "dwl -s '~/nil/hosts/t420/dwl/init.sh <&-'";
+    "dwl" = "dwl -s '~/nil/hosts/t420/dwl/init.sh'";
   };
   ### CURSOR ###
   home.pointerCursor = {
