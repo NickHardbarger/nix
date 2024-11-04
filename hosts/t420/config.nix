@@ -20,7 +20,7 @@
       };
       overlays = [
         (final: prev: {
-	  dwl = prev.dwl.override { conf = ./dwl/config.h; };
+	  dwl = prev.dwl.override { configH = ./dwl/config.h; };
 	})
       ];
     };
