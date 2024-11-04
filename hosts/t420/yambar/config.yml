@@ -5,8 +5,9 @@
 # the sway-xkb module with the xkb module.
 
 # fonts we'll be re-using here and there
-awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=14
-awesome_brands: &awesome_brands Font Awesome 6 Brands:pixelsize=16
+#awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=14
+#awesome_brands: &awesome_brands Font Awesome 6 Brands:pixelsize=16
+#jetbrains: &jetbrains Jetbrains Mono
 
 std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
 
@@ -18,7 +19,7 @@ bar:
   margin: 7
 
   # Default font
-  font: Adobe Helvetica:pixelsize=12
+  font: Jetbrains Mono:pixelsize=12
 
   foreground: ffffffff
   background: 111111cc
@@ -30,75 +31,73 @@ bar:
     top-margin: 0
 
   left:
-    - i3:
-        anchors: # Not used (directly) by f00bar; used here to avoid duplication
-          - string: &i3_common {margin: 5, on-click: "swaymsg --quiet workspace {name}"}
-          - string: &default {<<: *i3_common, text: "? {name}"}
-          - string: &main    {<<: *i3_common, text: , font: *awesome}
-          - string: &surfing {<<: *i3_common, text: , font: *awesome_brands}
-          - string: &misc    {<<: *i3_common, text: , font: *awesome}
-          - string: &mail    {<<: *i3_common, text: , font: *awesome}
-          - string: &music   {<<: *i3_common, text: , font: *awesome}
-          - focused: &focused
-              deco: {stack: [background: {color: ffa0a04c}, <<: *std_underline]}
-          - invisible: &invisible {foreground: ffffff55}
-          - urgent: &urgent
-              foreground: 000000ff
-              deco: {stack: [background: {color: bc2b3fff}, <<: *std_underline]}
-          - map: &i3_mode
-              default:
-                - string:
-                    margin: 5
-                    text: "{mode}"
-                    deco: {background: {color: cc421dff}}
-                - empty: {right-margin: 7}
-              conditions:
-                mode == default: {empty: {}}
-        content:
-          "":
-            map:
-              conditions:
-                state == focused:   {string: {<<: [*default, *focused]}}
-                state == unfocused: {string: {<<: *default}}
-                state == invisible: {string: {<<: [*default, *invisible]}}
-                state == urgent:    {string: {<<: [*default, *urgent]}}
-          main:
-            map:
-              conditions:
-                state == focused:   {string: {<<: [*main, *focused]}}
-                state == unfocused: {string: {<<: *main}}
-                state == invisible: {string: {<<: [*main, *invisible]}}
-                state == urgent:    {string: {<<: [*main, *urgent]}}
-          surfing:
-            map:
-              conditions:
-                state == focused: {string: {<<: [*surfing, *focused]}}
-                state == unfocused: {string: {<<: *surfing}}
-                state == invisible: {string: {<<: [*surfing, *invisible]}}
-                state == urgent:    {string: {<<: [*surfing, *urgent]}}
-          misc:
-            map:
-              conditions:
-                state == focused: {string: {<<: [*misc, *focused]}}
-                state == unfocused: {string: {<<: *misc}}
-                state == invisible: {string: {<<: [*misc, *invisible]}}
-                state == urgent:    {string: {<<: [*misc, *urgent]}}
-
-          mail:
-            map:
-              conditions:
-                state == focused: {string: {<<: [*mail, *focused]}}
-                state == unfocused: {string: {<<: *mail}}
-                state == invisible: {string: {<<: [*mail, *invisible]}}
-                state == urgent:    {string: {<<: [*mail, *urgent]}}
-          music:
-            map:
-              conditions:
-                state == focused: {string: {<<: [*music, *focused]}}
-                state == unfocused: {string: {<<: *music}}
-                state == invisible: {string: {<<: [*music, *invisible]}}
-                state == urgent:    {string: {<<: [*music, *urgent]}}
-
+    #- i3:
+    #    anchors: # Not used (directly) by f00bar; used here to avoid duplication
+    #      - string: &i3_common {margin: 5, on-click: "swaymsg --quiet workspace {name}"}
+    #      - string: &default {<<: *i3_common, text: "? {name}"}
+    #      - string: &main    {<<: *i3_common, text: , font: *awesome}
+    #      - string: &surfing {<<: *i3_common, text: , font: *awesome_brands}
+    #      - string: &misc    {<<: *i3_common, text: , font: *awesome}
+    #      - string: &mail    {<<: *i3_common, text: , font: *awesome}
+    #      - string: &music   {<<: *i3_common, text: , font: *awesome}
+    #      - focused: &focused
+    #          deco: {stack: [background: {color: ffa0a04c}, <<: *std_underline]}
+    #      - invisible: &invisible {foreground: ffffff55}
+    #      - urgent: &urgent
+    #          foreground: 000000ff
+    #          deco: {stack: [background: {color: bc2b3fff}, <<: *std_underline]}
+    #      - map: &i3_mode
+    #          default:
+    #            - string:
+    #                margin: 5
+    #                text: "{mode}"
+    #                deco: {background: {color: cc421dff}}
+    #            - empty: {right-margin: 7}
+    #          conditions:
+    #            mode == default: {empty: {}}
+    #    content:
+    #      "":
+    #        map:
+    #          conditions:
+    #            state == focused:   {string: {<<: [*default, *focused]}}
+    #            state == unfocused: {string: {<<: *default}}
+    #            state == invisible: {string: {<<: [*default, *invisible]}}
+    #            state == urgent:    {string: {<<: [*default, *urgent]}}
+    #      main:
+    #        map:
+    #          conditions:
+    #            state == focused:   {string: {<<: [*main, *focused]}}
+    #            state == unfocused: {string: {<<: *main}}
+    #            state == invisible: {string: {<<: [*main, *invisible]}}
+    #            state == urgent:    {string: {<<: [*main, *urgent]}}
+    #      surfing:
+    #        map:
+    #          conditions:
+    #            state == focused: {string: {<<: [*surfing, *focused]}}
+    #            state == unfocused: {string: {<<: *surfing}}
+    #            state == invisible: {string: {<<: [*surfing, *invisible]}}
+    #            state == urgent:    {string: {<<: [*surfing, *urgent]}}
+    #      misc:
+    #        map:
+    #          conditions:
+    #            state == focused: {string: {<<: [*misc, *focused]}}
+    #            state == unfocused: {string: {<<: *misc}}
+    #            state == invisible: {string: {<<: [*misc, *invisible]}}
+    #            state == urgent:    {string: {<<: [*misc, *urgent]}}
+    #      mail:
+    #        map:
+    #          conditions:
+    #            state == focused: {string: {<<: [*mail, *focused]}}
+    #            state == unfocused: {string: {<<: *mail}}
+    #            state == invisible: {string: {<<: [*mail, *invisible]}}
+    #            state == urgent:    {string: {<<: [*mail, *urgent]}}
+    #      music:
+    #        map:
+    #          conditions:
+    #            state == focused: {string: {<<: [*music, *focused]}}
+    #            state == unfocused: {string: {<<: *music}}
+    #            state == invisible: {string: {<<: [*music, *invisible]}}
+    #            state == urgent:    {string: {<<: [*music, *urgent]}}
     - foreign-toplevel:
         content:
           map:
@@ -163,11 +162,11 @@ bar:
                     optical:
                       - string: {<<: *optical, deco: *std_underline}
                       - string: {text: "{label}"}
-    - sway-xkb:
-        identifiers: [1:1:AT_Translated_Set_2_keyboard]
-        content:
-          - string: {text: , font: *awesome}
-          - string: {text: "{layout}"}
+    #- sway-xkb:
+    #    identifiers: [1:1:AT_Translated_Set_2_keyboard]
+    #    content:
+    #      - string: {text: , font: *awesome}
+    #      - string: {text: "{layout}"}
     - network:
         content:
           map:
@@ -222,9 +221,9 @@ bar:
                           - string: {text: , font: *awesome}
                           - string: {text: , font: *awesome}
                           - string: {text: , font: *awesome}
-    - backlight:
-        name: intel_backlight
-        content: [ string: {text: , font: *awesome}, string: {text: "{percent}%"}]
+    #- backlight:
+    #    name: intel_backlight
+    #    content: [ string: {text: , font: *awesome}, string: {text: "{percent}%"}]
     - battery:
         name: BAT0
         poll-interval: 30000
@@ -281,9 +280,9 @@ bar:
           - string: {text: "{date}", right-margin: 5}
           - string: {text: , font: *awesome}
           - string: {text: "{time}"}
-    - label:
-        content:
-          string:
-            on-click: systemctl poweroff
-            text: 
-            font: *awesome
+    #- label:
+    #    content:
+    #      string:
+    #        on-click: systemctl poweroff
+    #        text: 
+    #        font: *awesome
