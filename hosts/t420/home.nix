@@ -105,6 +105,7 @@
     ".config/waybar/style.css".source = ./waybar/style.css;
   };
   home.sessionVariables = {
+    FLAKE = "~/nil";
     EDITOR = "emacsclient -c -a ''";
   };
 }

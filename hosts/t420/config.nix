@@ -310,9 +310,10 @@
   programs = {
     nh = {
       enable = true;
-      flake = "/home/iglu/nil";
+      #flake = "/home/iglu/nil"; # doesn't work??
       clean = {
         enable = true;
+	#dates = weekly; # doesn't work??
 	extraArgs = "--keep-since 3d --keep 3";
       };
     };
