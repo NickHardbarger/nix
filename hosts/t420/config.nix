@@ -313,7 +313,6 @@
       flake = "~/nil";
       clean = {
         enable = true;
-	dates = daily; # weekly won't work?
 	extraArgs = "--keep-since 3d --keep 3";
       };
     };
