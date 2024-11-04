@@ -22,11 +22,11 @@ static int log_level = WLR_ERROR;
 
 /* Autostart */
 static const char *const autostart[] = {
-        "swaybg", "-i", "~/nil/hosts/t420/wallpapers/stairs.jpg", "-m", "fill", NULL,
+        "swaybg -i ~/nil/hosts/t420/wallpapers/stairs.jpg -m fill", NULL,
         "yambar", NULL,
         "mako", NULL,
-        "foot", "--server", NULL,
-        "emacs", "--daemon", NULL,
+        "foot --server", NULL,
+        "emacs --daemon", NULL,
         NULL /* terminate */
 };
 
