@@ -8,7 +8,7 @@
 	  ./bar-0.7.patch
 	  ./client-opacity.patch
 	  ./swallow.patch
-	  #./vanitygaps-0.7.patch
+	  ./vanitygaps-0.7.patch
 	];
       });
     })
