@@ -310,7 +310,7 @@
   programs = {
     nh = {
       enable = true;
-      flake = "~/nil";
+      flake = "/home/iglu/nil";
       clean = {
         enable = true;
 	extraArgs = "--keep-since 3d --keep 3";
