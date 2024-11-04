@@ -380,6 +380,7 @@
 	./dmenu/dmenu-numbers-20220512-28fb3e2.diff
       ];
     }))
+    dwl # wayland compositor
     foot # terminal
     waybar # statusbar
     swaybg # wallpaper setter
