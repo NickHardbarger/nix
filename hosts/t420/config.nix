@@ -18,7 +18,11 @@
       config = {
         allowUnfree = true;
       };
-      overlays = [];
+      overlays = [
+        (final: prev: {
+	  dwl = prev.dwl.override { conf = ./dwl/config.h; };
+	})
+      ];
     };
     ### BOOT ###
     boot = {
