@@ -9,4 +9,4 @@ exec foot --server
 exec emacs --daemon
 
 # terminates
-exec <&-
+#exec <&-
