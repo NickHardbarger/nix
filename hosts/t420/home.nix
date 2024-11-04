@@ -29,12 +29,6 @@
       enable = true;
       bashrcExtra = ''
         pfetch
-	function add_keys {
-	  #eval ssh-agent bash
-	  ssh-add ~/.ssh/id_ed25519
-	  ssh-add ~/.ssh/id_deploy
-	}
-	#add_keys
       '';
     };
     emacs = {
@@ -63,6 +57,7 @@
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
     "vi" = "emacsclient -c -a ''";
+    "dwl" = "dwl -s '~/nil/hosts/t420/dwl/init.sh <&-'";
   };
   ### CURSOR ###
   home.pointerCursor = {
