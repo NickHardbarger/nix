@@ -310,7 +310,7 @@
   programs = {
     nh = {
       enable = true;
-      #flake = "/home/iglu/nil"; # doesn't work??
+      flake = "~/nil";
       clean = {
         enable = true;
 	#dates = weekly; # doesn't work??
