@@ -353,8 +353,8 @@
   environment.systemPackages = with pkgs; [
     ### DWL ###
     (dwl.overrideAttrs (oldAttrs: {
+      buildInputs = oldAttrs.buildInputs ++ [ wlroots ];
       src = ./dwl;
-      buildInputs = oldAttrs.buildInputs ++ [ ];
       patches = [
         #./dwl/bar-0.7.patch
 	#./dwl/swallow.patch
