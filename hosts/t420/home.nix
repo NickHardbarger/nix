@@ -52,8 +52,6 @@
     };
   };
   home.shellAliases = {
-    "switch" = "sudo nixos-rebuild switch --flake ~/nil#nil";
-    "ngc" = "nix-collect-garbage -d";
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
     "vi" = "emacsclient -c -a ''";
@@ -107,7 +105,6 @@
     ".config/waybar/style.css".source = ./waybar/style.css;
   };
   home.sessionVariables = {
-    FLAKE = "~/nil";
     EDITOR = "emacsclient -c -a ''";
   };
 }

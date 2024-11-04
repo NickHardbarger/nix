@@ -10,7 +10,6 @@
   #VIRTUALISATION
   #USERS
   #HOME-MANAGER
-  #PROGRAMS
   #ENVIRONMENT
   #FONTS
     ### NIXPKGS ###
@@ -283,11 +282,6 @@
     randomizedDelaySec = "30min";
   };
   nix = {
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 3d";
-    };
     settings = {
       auto-optimise-store = true;
       experimental-features = [
@@ -305,8 +299,6 @@
     description = "iglu";
     initialPassword = "iglu";
     extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
-    packages = with pkgs; [
-    ];
   };
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
@@ -316,6 +308,15 @@
   };
   ### PROGRAMS ###
   programs = {
+    nh = {
+      enable = true;
+      flake = "~/nil";
+      clean = {
+        enable = true;
+	dates = weekly;
+	extraArgs = "--keep-since 3d --keep 3";
+      };
+    };
     ssh = {
       startAgent = true;
     };
