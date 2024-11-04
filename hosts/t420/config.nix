@@ -24,7 +24,10 @@
     boot = {
     loader = {
       grub.enable = false;
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+	configurationLimit = 20;
+      };
       efi.canTouchEfiVariables = true;
     };
     ### KERNEL ###
