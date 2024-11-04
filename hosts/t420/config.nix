@@ -381,6 +381,7 @@
       ];
     }))
     dwl # wayland compositor
+    wmenu # app launcher
     foot # terminal
     waybar # statusbar
     swaybg # wallpaper setter
