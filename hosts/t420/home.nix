@@ -97,6 +97,7 @@
     ".ssh/id_ed25519".source = ./ssh/id_ed25519;
     ".ssh/id_ed25519.pub".source = ./ssh/id_ed25519.pub;
     ".ssh/known_hosts".source = ./ssh/known_hosts;
+    ".config/foot/foot.ini".source = ./foot/foot.ini;
   };
   xdg = {
     enable = true;
