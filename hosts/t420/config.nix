@@ -354,15 +354,15 @@
     ### DWL ###
     (dwl.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
-      src = ./dwl;
+      #src = ./dwl;
       patches = [
         #./dwl/bar-0.7.patch
 	#./dwl/swallow.patch
 	#./dwl/vanitygaps-0.7.patch # patch error
       ];
-      #configFile = super.writeText "config.def.h" (builtins.readFile ./dwl/config.def.h);
+      configFile = super.writeText "config.h" (builtins.readFile ./dwl/config.h);
       #postPatch = "${oldAttrs.postPatch}\ncp ${configFile} config.def.h\n";
-      #postPatch = oldAttrs.postPatch ++ ''cp ${configFile} config.def.h'';
+      postPatch = oldAttrs.postPatch ++ ''cp ${configFile} config.h'';
     }))
     ### SIMPLE TERMINAL ###
     (st.overrideAttrs (oldAttrs: {

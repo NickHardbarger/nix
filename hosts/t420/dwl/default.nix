@@ -103,25 +103,3 @@ stdenv.mkDerivation (finalAttrs: {
       command = "dwl -v 2>&1; return 0";
     };
   };
-
-  meta = {
-    homepage = "https://codeberg.org/dwl/dwl";
-    changelog = "https://codeberg.org/dwl/dwl/src/branch/${finalAttrs.version}/CHANGELOG.md";
-    description = "Dynamic window manager for Wayland";
-    longDescription = ''
-      dwl is a compact, hackable compositor for Wayland based on wlroots. It is
-      intended to fill the same space in the Wayland world that dwm does in X11,
-      primarily in terms of philosophy, and secondarily in terms of
-      functionality. Like dwm, dwl is:
-
-      - Easy to understand, hack on, and extend with patches
-      - One C source file (or a very small number) configurable via config.h
-      - Tied to as few external dependencies as possible
-    '';
-    license = lib.licenses.gpl3Only;
-    maintainers = [ lib.maintainers.AndersonTorres ];
-    inherit (wayland.meta) platforms;
-    mainProgram = "dwl";
-  };
-})
-# TODO: custom patches from upstream website
