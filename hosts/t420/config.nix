@@ -353,14 +353,15 @@
   environment.systemPackages = with pkgs; [
     ### DWL ###
     (dwl.overrideAttrs (oldAttrs: {
+      src = ./dwl;
       buildInputs = oldAttrs.buildInputs ++ [ ];
       patches = [
-        ./dwl/bar-0.7.patch
-	./dwl/swallow.patch
+        #./dwl/bar-0.7.patch
+	#./dwl/swallow.patch
 	#./dwl/vanitygaps-0.7.patch # patch error
       ];
-      configFile = super.writeText "config.def.h" (builtins.readFile ./dwl/config.def.h);
-      postPatch = "${oldAttrs.postPatch}\ncp ${configFile} config.def.h\n";
+      #configFile = super.writeText "config.def.h" (builtins.readFile ./dwl/config.def.h);
+      #postPatch = "${oldAttrs.postPatch}\ncp ${configFile} config.def.h\n";
       #postPatch = oldAttrs.postPatch ++ ''cp ${configFile} config.def.h'';
     }))
     ### SIMPLE TERMINAL ###
