@@ -52,7 +52,7 @@
     };
   };
   home.shellAliases = {
-    "switch-t420" = "sudo nixos-rebuild switch --flake ~/nil#default";
+    "switch" = "sudo nixos-rebuild switch --flake ~/nil#default";
     "ngc" = "nix-collect-garbage -d";
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
