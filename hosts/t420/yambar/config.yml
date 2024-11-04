@@ -5,8 +5,8 @@
 # the sway-xkb module with the xkb module.
 
 # fonts we'll be re-using here and there
-#awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=14
-#awesome_brands: &awesome_brands Font Awesome 6 Brands:pixelsize=16
+#font: &font Font Font 6 Free:style=solid:pixelsize=14
+#font_brands: &font_brands Font Font 6 Brands:pixelsize=16
 #jetbrains: &jetbrains Jetbrains Mono
 
 std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
@@ -19,7 +19,7 @@ bar:
   margin: 7
 
   # Default font
-  font: Jetbrains Mono:pixelsize=12
+  font: &font Jetbrains Mono:pixelsize=12
 
   foreground: ffffffff
   background: 111111cc
@@ -35,11 +35,11 @@ bar:
     #    anchors: # Not used (directly) by f00bar; used here to avoid duplication
     #      - string: &i3_common {margin: 5, on-click: "swaymsg --quiet workspace {name}"}
     #      - string: &default {<<: *i3_common, text: "? {name}"}
-    #      - string: &main    {<<: *i3_common, text: , font: *awesome}
-    #      - string: &surfing {<<: *i3_common, text: , font: *awesome_brands}
-    #      - string: &misc    {<<: *i3_common, text: , font: *awesome}
-    #      - string: &mail    {<<: *i3_common, text: , font: *awesome}
-    #      - string: &music   {<<: *i3_common, text: , font: *awesome}
+    #      - string: &main    {<<: *i3_common, text: , font: *font}
+    #      - string: &surfing {<<: *i3_common, text: , font: *font_brands}
+    #      - string: &misc    {<<: *i3_common, text: , font: *font}
+    #      - string: &mail    {<<: *i3_common, text: , font: *font}
+    #      - string: &music   {<<: *i3_common, text: , font: *font}
     #      - focused: &focused
     #          deco: {stack: [background: {color: ffa0a04c}, <<: *std_underline]}
     #      - invisible: &invisible {foreground: ffffff55}
@@ -140,8 +140,8 @@ bar:
   right:
     - removables:
         anchors:
-          drive: &drive { text: , font: *awesome}
-          optical: &optical {text: , font: *awesome}
+          drive: &drive { text: , font: *font}
+          optical: &optical {text: , font: *font}
         spacing: 5
         content:
           map:
@@ -165,7 +165,7 @@ bar:
     #- sway-xkb:
     #    identifiers: [1:1:AT_Translated_Set_2_keyboard]
     #    content:
-    #      - string: {text: , font: *awesome}
+    #      - string: {text: , font: *font}
     #      - string: {text: "{layout}"}
     - network:
         content:
@@ -178,9 +178,9 @@ bar:
                     ~carrier: {empty: {}}
                     carrier:
                       map:
-                        default: {string: {text: , font: *awesome, foreground: ffffff66}}
+                        default: {string: {text: , font: *font, foreground: ffffff66}}
                         conditions:
-                          state == up && ipv4 != "": {string: {text: , font: *awesome}}
+                          state == up && ipv4 != "": {string: {text: , font: *font}}
     - network:
         poll-interval: 1000
         content:
@@ -189,18 +189,18 @@ bar:
             conditions:
               name == wlp2s0:
                 map:
-                  default: {string: {text: , font: *awesome, foreground: ffffff66}}
+                  default: {string: {text: , font: *font, foreground: ffffff66}}
                   conditions:
-                    state == down: {string: {text: , font: *awesome, foreground: ff0000ff}}
+                    state == down: {string: {text: , font: *font, foreground: ff0000ff}}
                     state == up:
                       map:
                         default:
-                          - string: {text: , font: *awesome}
+                          - string: {text: , font: *font}
                           - string: {text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s"}
 
                         conditions:
                           ipv4 == "":
-                            - string: {text: , font: *awesome, foreground: ffffff66}
+                            - string: {text: , font: *font, foreground: ffffff66}
                             - string: {text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66}
     - alsa:
         card: hw:PCH
@@ -208,22 +208,22 @@ bar:
         content:
           map:
             conditions:
-              ~online: {string: {text: , font: *awesome, foreground: ff0000ff}}
+              ~online: {string: {text: , font: *font, foreground: ff0000ff}}
               online:
                 map:
                   on-click: /bin/sh -c "amixer -q sset Speaker unmute && amixer -q sset Headphone unmute && amixer -q sset Master toggle"
                   conditions:
-                    muted: {string: {text: , font: *awesome, foreground: ffffff66}}
+                    muted: {string: {text: , font: *font, foreground: ffffff66}}
                     ~muted:
                       ramp:
                         tag: percent
                         items:
-                          - string: {text: , font: *awesome}
-                          - string: {text: , font: *awesome}
-                          - string: {text: , font: *awesome}
+                          - string: {text: , font: *font}
+                          - string: {text: , font: *font}
+                          - string: {text: , font: *font}
     #- backlight:
     #    name: intel_backlight
-    #    content: [ string: {text: , font: *awesome}, string: {text: "{percent}%"}]
+    #    content: [ string: {text: , font: *font}, string: {text: "{percent}%"}]
     - battery:
         name: BAT0
         poll-interval: 30000
@@ -234,16 +234,16 @@ bar:
                 - ramp:
                     tag: capacity
                     items:
-                      - string: {text: , foreground: ff0000ff, font: *awesome}
-                      - string: {text: , foreground: ffa600ff, font: *awesome}
-                      - string: {text: , font: *awesome}
-                      - string: {text: , font: *awesome}
-                      - string: {text: , font: *awesome}
-                      - string: {text: , font: *awesome}
-                      - string: {text: , font: *awesome}
-                      - string: {text: , font: *awesome}
-                      - string: {text: , font: *awesome}
-                      - string: {text: , foreground: 00ff00ff, font: *awesome}
+                      - string: {text: , foreground: ff0000ff, font: *font}
+                      - string: {text: , foreground: ffa600ff, font: *font}
+                      - string: {text: , font: *font}
+                      - string: {text: , font: *font}
+                      - string: {text: , font: *font}
+                      - string: {text: , font: *font}
+                      - string: {text: , font: *font}
+                      - string: {text: , font: *font}
+                      - string: {text: , font: *font}
+                      - string: {text: , foreground: 00ff00ff, font: *font}
                 - string: {text: "{capacity}% {estimate}"}
         content:
           map:
@@ -253,36 +253,36 @@ bar:
               state == discharging:
                 <<: *discharging
               state == charging:
-                - string: {text: , foreground: 00ff00ff, font: *awesome}
+                - string: {text: , foreground: 00ff00ff, font: *font}
                 - string: {text: "{capacity}% {estimate}"}
               state == full:
-                - string: {text: , foreground: 00ff00ff, font: *awesome}
+                - string: {text: , foreground: 00ff00ff, font: *font}
                 - string: {text: "{capacity}% full"}
               state == "not charging":
                 - ramp:
                     tag: capacity
                     items:
-                      - string: {text:  , foreground: ff0000ff, font: *awesome}
-                      - string: {text:  , foreground: ffa600ff, font: *awesome}
-                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
-                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
-                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
-                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
-                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
-                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
-                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
-                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: ff0000ff, font: *font}
+                      - string: {text:  , foreground: ffa600ff, font: *font}
+                      - string: {text:  , foreground: 00ff00ff, font: *font}
+                      - string: {text:  , foreground: 00ff00ff, font: *font}
+                      - string: {text:  , foreground: 00ff00ff, font: *font}
+                      - string: {text:  , foreground: 00ff00ff, font: *font}
+                      - string: {text:  , foreground: 00ff00ff, font: *font}
+                      - string: {text:  , foreground: 00ff00ff, font: *font}
+                      - string: {text:  , foreground: 00ff00ff, font: *font}
+                      - string: {text:  , foreground: 00ff00ff, font: *font}
                 - string: {text: "{capacity}%"}
     - clock:
         time-format: "%H:%M %Z"
         content:
-          - string: {text: , font: *awesome}
+          - string: {text: , font: *font}
           - string: {text: "{date}", right-margin: 5}
-          - string: {text: , font: *awesome}
+          - string: {text: , font: *font}
           - string: {text: "{time}"}
     #- label:
     #    content:
     #      string:
     #        on-click: systemctl poweroff
     #        text: 
-    #        font: *awesome
+    #        font: *font
