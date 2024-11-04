@@ -360,9 +360,11 @@
 	#./dwl/swallow.patch
 	#./dwl/vanitygaps-0.7.patch # patch error
       ];
-      configH = writeText "config.h" (builtins.readFile ./dwl/src/config.h);
+      let
+        configFile = writeText "config.h" (builtins.readFile ./dwl/src/config.h);
+      in
       #postPatch = "${oldAttrs.postPatch}\ncp ${configFile} config.def.h\n";
-      postPatch = oldAttrs.postPatch ++ ''cp ${configH} config.h'';
+      postPatch = oldAttrs.postPatch ++ ''cp ${configFile} config.h'';
     }))
     ### SIMPLE TERMINAL ###
     (st.overrideAttrs (oldAttrs: {
