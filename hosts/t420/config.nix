@@ -20,7 +20,10 @@
       };
       overlays = [
         (final: prev: {
-	  dwl = prev.dwl.override { configH = ./dwl/config.h; };
+	  dwl = prev.dwl.override {
+	    enableXWayland = true;
+	    configH = ./dwl/config.h;
+	  };
 	})
       ];
     };
