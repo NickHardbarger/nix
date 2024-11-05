@@ -407,7 +407,7 @@
     cmatrix # matrix text scroll
     speedtest-cli # test network speed
     ### DWL ###
-    (import ./dwl.nix { inherits pkgs; })
+    (import ./dwl.nix { inherit pkgs; })
     wayland
     wayland-scanner
     wlroots
