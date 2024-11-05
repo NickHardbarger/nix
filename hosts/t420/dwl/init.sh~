@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-exec mako
-exec swaybg -i ~/nil/hosts/t420/wallpapers/stairs.jpg -m fill

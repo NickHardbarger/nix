@@ -3,7 +3,6 @@
   imports = [ 
       ./hardware.nix
       inputs.home-manager.nixosModules.default
-      ./dwl/dwl.nix
       ./slstatus/slstatus.nix
   ];
   #SECURITY
@@ -20,12 +19,6 @@
         allowUnfree = true;
       };
       overlays = [
-        (final: prev: {
-	  dwl = prev.dwl.override {
-	    enableXWayland = true; # might be necessary for slstatus?
-	    configH = ./dwl/config.h;
-	  };
-	})
 	(final: prev: {
 	  slstatus = prev.slstatus.override {
 	    conf = ./slstatus/config.h;
@@ -391,7 +384,11 @@
 	./dmenu/dmenu-numbers-20220512-28fb3e2.diff
       ];
     }))
-    dwl # wayland compositor
+    ### DWL ###
+    (dwl.overrideAttrs (oldAttrs: {
+      buildInputs = oldAttrs.buildInputs ++ [ ];
+      src = ./dwl;
+    }))
     slstatus # provides input for dwl's bar
     yambar # status bar
     wmenu # app launcher

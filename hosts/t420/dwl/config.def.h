@@ -6,53 +6,26 @@
 /* appearance */
 static const int sloppyfocus               = 1;  /* focus follows mouse */
 static const int bypass_surface_visibility = 0;  /* 1 means idle inhibitors will disable idle tracking even if it's surface isn't visible  */
-static const int smartgaps                 = 0;  /* 1 means no outer gap when there is only one window */
-static const int monoclegaps               = 0;  /* 1 means outer gaps in monocle layout */
 static const unsigned int borderpx         = 1;  /* border pixel of windows */
-static const unsigned int gappih           = 10; /* horiz inner gap between windows */
-static const unsigned int gappiv           = 10; /* vert inner gap between windows */
-static const unsigned int gappoh           = 10; /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov           = 10; /* vert outer gap between windows and screen edge */
-static const int showbar                   = 1;  /* 0 means no bar */
-static const int topbar                    = 1;  /* 0 means bottom bar */
-static const char *fonts[]                 = {"monospace:size=10"};
-static const float rootcolor[]             = COLOR(0x000000ff);
+static const float rootcolor[]             = COLOR(0x222222ff);
 static const float bordercolor[]           = COLOR(0x444444ff);
 static const float focuscolor[]            = COLOR(0x005577ff);
 static const float urgentcolor[]           = COLOR(0xff0000ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
-/*static uint32_t colors[][3]              = {
-       /*               fg          bg          border
-       [SchemeNorm] = { 0xbbbbbbff, 0x222222ff, 0x444444ff },
-       [SchemeSel]  = { 0xeeeeeeff, 0x005577ff, 0x005577ff },
-       [SchemeUrg]  = { 0,          0,          0x770000ff },
-};*/
-static const float default_opacity         = 0.75;
+
 /* tagging - TAGCOUNT must be no greater than 31 */
 #define TAGCOUNT (9)
-static char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 /* logging */
 static int log_level = WLR_ERROR;
 
-/* Autostart */
-static const char *const autostart[] = {
-        "wbg", "~/nil/hosts/t420/wallpapers/stairs.jpg",/*"swaybg -i ~/nil/hosts/t420/wallpapers/stairs.jpg -m fill",*/ NULL,
-        "yambar", NULL,
-        "mako", NULL,
-        "foot --server", NULL,
-        "emacs --daemon", NULL,
-        NULL /* terminate */
-};
-
 /* NOTE: ALWAYS keep a rule declared even if you don't use rules (e.g leave at least one example) */
 static const Rule rules[] = {
-	/* app_id             title       tags mask     isfloating   alpha                isterm noswallow monitor */
+	/* app_id             title       tags mask     isfloating   monitor */
 	/* examples: */
-        { "Gimp_EXAMPLE",     NULL,       0,            1,           default_opacity,     0,     0,        -1 }, /* Start on currently visible tags floating, not tiled */
-        { "firefox_EXAMPLE",  NULL,       1 << 8,       0,           default_opacity,     0,     0,        -1 }, /* Start on ONLY tag "9" */
-	{ "foot",             NULL,       0,            0,           default_opacity,     1,     1,        -1 }, /* make foot swallow clients that are not foot */
+	{ "Gimp_EXAMPLE",     NULL,       0,            1,           -1 }, /* Start on currently visible tags floating, not tiled */
+	{ "firefox_EXAMPLE",  NULL,       1 << 8,       0,           -1 }, /* Start on ONLY tag "9" */
 };
 
 /* layout(s) */
@@ -81,7 +54,10 @@ static const MonitorRule monrules[] = {
 /* keyboard */
 static const struct xkb_rule_names xkb_rules = {
 	/* can specify fields: rules, model, layout, variant, options */
+	/* example:
 	.options = "ctrl:nocaps",
+	*/
+	.options = NULL,
 };
 
 static const int repeat_rate = 25;
@@ -130,8 +106,8 @@ LIBINPUT_CONFIG_TAP_MAP_LMR -- 1/2/3 finger tap maps to left/middle/right
 */
 static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TAP_MAP_LRM;
 
-/* If you want to use the alt key for MODKEY, use WLR_MODIFIER_ALT */
-#define MODKEY WLR_MODIFIER_LOGO
+/* If you want to use the windows key for MODKEY, use WLR_MODIFIER_LOGO */
+#define MODKEY WLR_MODIFIER_ALT
 
 #define TAGKEYS(KEY,SKEY,TAG) \
 	{ MODKEY,                    KEY,            view,            {.ui = 1 << TAG} }, \
@@ -143,50 +119,29 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[] = { "foot", NULL }; /*st -z 16*/
-static const char *menucmd[] = { "wmenu-run", NULL }; /*dmenu_run -h 27*/
+static const char *termcmd[] = { "foot", NULL };
+static const char *menucmd[] = { "wmenu-run", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
 	/* modifier                  key                 function        argument */
 	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = menucmd} },
-	{ MODKEY,                    XKB_KEY_Return,     spawn,          {.v = termcmd} },
-	{ MODKEY,                    XKB_KEY_b,          toggletag,      {0} }, /* changed from togglebar */
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     spawn,          {.v = termcmd} },
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
 	{ MODKEY,                    XKB_KEY_i,          incnmaster,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_d,          incnmaster,     {.i = -1} },
 	{ MODKEY,                    XKB_KEY_h,          setmfact,       {.f = -0.05f} },
 	{ MODKEY,                    XKB_KEY_l,          setmfact,       {.f = +0.05f} },
-	/* setopacity is busted, just as I suspected!
-	{ MODKEY,                    XKB_KEY_o,          setopacity,     {.f = +0.1f} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_O,          setopacity,     {.f = -0.1f} },*/
-	/* lets see if the  gaps keybinds are busted too
-	{ MODKEY|WLR_MODIFIER_LOGO,  XKB_KEY_h,          incgaps,       {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO,  XKB_KEY_l,          incgaps,       {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_SHIFT,   XKB_KEY_H,      incogaps,      {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_SHIFT,   XKB_KEY_L,      incogaps,      {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_CTRL,    XKB_KEY_h,      incigaps,      {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_CTRL,    XKB_KEY_l,      incigaps,      {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO,  XKB_KEY_0,          togglegaps,     {0} },
-	{ MODKEY|WLR_MODIFIER_LOGO|WLR_MODIFIER_SHIFT,   XKB_KEY_parenright,defaultgaps,    {0} },
-	{ MODKEY,                    XKB_KEY_y,          incihgaps,     {.i = +1 } },
-	{ MODKEY,                    XKB_KEY_o,          incihgaps,     {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_y,          incivgaps,     {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_o,          incivgaps,     {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO,  XKB_KEY_y,          incohgaps,     {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_LOGO,  XKB_KEY_o,          incohgaps,     {.i = -1 } },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Y,          incovgaps,     {.i = +1 } },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_O,          incovgaps,     {.i = -1 } },*/
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     zoom,           {0} },
+	{ MODKEY,                    XKB_KEY_Return,     zoom,           {0} },
 	{ MODKEY,                    XKB_KEY_Tab,        view,           {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_C,          killclient,     {0} },
 	{ MODKEY,                    XKB_KEY_t,          setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                    XKB_KEY_e,          setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                    XKB_KEY_f,          setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                    XKB_KEY_m,          setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                    XKB_KEY_space,      setlayout,      {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_space,      togglefloating, {0} },
-	{ MODKEY,                    XKB_KEY_f,        togglefullscreen, {0} },
+	{ MODKEY,                    XKB_KEY_e,         togglefullscreen, {0} },
 	{ MODKEY,                    XKB_KEY_0,          view,           {.ui = ~0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_parenright, tag,            {.ui = ~0} },
 	{ MODKEY,                    XKB_KEY_comma,      focusmon,       {.i = WLR_DIRECTION_LEFT} },
@@ -215,19 +170,7 @@ static const Key keys[] = {
 };
 
 static const Button buttons[] = {
-       { MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
-       { MODKEY, BTN_MIDDLE, togglefloating, {0} },
-       { MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
-       /* Clk buttons busted
-       { ClkLtSymbol, 0,      BTN_LEFT,   setlayout,       {.v = &layouts[0]} },
-       { ClkLtSymbol, 0,      BTN_RIGHT,  setlayout,       {.v = &layouts[2]} },
-       { ClkTitle,    0,      BTN_MIDDLE, zoom,            {0} },
-       { ClkStatus,   0,      BTN_MIDDLE, spawn,           {.v = termcmd} },
-       { ClkClient,   MODKEY, BTN_LEFT,   moveresize,      {.ui = CurMove} },
-       { ClkClient,   MODKEY, BTN_MIDDLE, togglefloating,  {0} },
-       { ClkClient,   MODKEY, BTN_RIGHT,  moveresize,      {.ui = CurResize} },
-       { ClkTagBar,   0,      BTN_LEFT,   view,            {0} },
-       { ClkTagBar,   0,      BTN_RIGHT,  toggleview,      {0} },
-       { ClkTagBar,   MODKEY, BTN_LEFT,   tag,             {0} },
-       { ClkTagBar,   MODKEY, BTN_RIGHT,  toggletag,       {0} },*/
+	{ MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
+	{ MODKEY, BTN_MIDDLE, togglefloating, {0} },
+	{ MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
 };
