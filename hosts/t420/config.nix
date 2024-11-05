@@ -23,7 +23,7 @@
         (final: prev: {
 	  dwl = prev.dwl.override {
 	    enableXWayland = true; # might be necessary for slstatus?
-	    #configH = ./dwl/config.h;
+	    configH = ./dwl/config.h;
 	  };
 	})
 	(final: prev: {
