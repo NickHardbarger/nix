@@ -4,7 +4,6 @@
       ./hardware.nix
       inputs.home-manager.nixosModules.default
       ./slstatus/slstatus.nix
-      ./dwl.nix
   ];
   #SECURITY
   #SYSTEM
@@ -408,6 +407,7 @@
     cmatrix # matrix text scroll
     speedtest-cli # test network speed
     ### DWL ###
+    (import ./dwl.nix { inherits pkgs; })
     wayland
     wayland-scanner
     wlroots

@@ -1,5 +1,6 @@
-with import <nixpkgs> {};
+{ config, pkgs, ...}:
+#with import <nixpkgs> {};
 
-writeShellScriptBin "dwl" ''
+pkgs.writeShellScriptBin "dwlinit" ''
   /home/iglu/dwl/dwl
 ''
