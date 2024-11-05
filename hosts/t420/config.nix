@@ -387,7 +387,7 @@
     ### DWL ###
     (dwl.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
-      src = fetchFromGithub {
+      src = fetchFromGitHub {
 	owner = "NickHardbarger";
 	repo = "dwl";
 	sha256 = "0yvlyzabxv24n37bi9h699ipqg8nxkkhwdnr4987abmfw1nbr5cb";
