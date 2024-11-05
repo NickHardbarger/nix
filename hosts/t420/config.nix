@@ -3,6 +3,7 @@
   imports = [ 
       ./hardware.nix
       inputs.home-manager.nixosModules.default
+      ./dwl/dwl.nix
   ];
   #SECURITY
   #SYSTEM
