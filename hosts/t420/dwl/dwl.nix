@@ -4,11 +4,11 @@
       dwl = super.dwl.overrideAttrs (oldAttrs: rec {
         src = dwl-source;
 	patches = [
-	  ./autostart-0.7.patch
-	  ./bar-0.7.patch
 	  ./client-opacity.patch
 	  ./swallow.patch
+	  ./autostart-0.7.patch
 	  ./vanitygaps-0.7.patch
+	  ./bar-0.7.patch
 	];
       });
     })
