@@ -1,8 +1,8 @@
-{ config, pkgs, dwl-source, ... }: {
+{ config, pkgs, ... }: {
   nixpkgs.overlays = [
     (self: super: {
       dwl = super.dwl.overrideAttrs (oldAttrs: rec {
-        src = dwl-source;
+        #src = dwl-source;
 	patches = [
 	  ./autostart-0.7.patch
 	  ./bar-0.7.patch
