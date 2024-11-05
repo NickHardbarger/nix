@@ -387,7 +387,7 @@
     ### DWL ###
     (dwl.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
-      src = /home/iglu/dwl;
+      src = ./dwl;
       #src = fetchFromGitHub {
 	#owner = "NickHardbarger";
 	#repo = "dwl";

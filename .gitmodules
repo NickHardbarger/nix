@@ -1,0 +1,3 @@
+[submodule "hosts/t420/dwl"]
+	path = hosts/t420/dwl
+	url = https://github.com/NickHardbarger/dwl.git
