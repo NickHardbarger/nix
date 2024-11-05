@@ -22,12 +22,12 @@ static const float focuscolor[]            = COLOR(0x005577ff);
 static const float urgentcolor[]           = COLOR(0xff0000ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
-static uint32_t colors[][3]                = {
-       /*               fg          bg          border*/
+/*static uint32_t colors[][3]              = {
+       /*               fg          bg          border
        [SchemeNorm] = { 0xbbbbbbff, 0x222222ff, 0x444444ff },
        [SchemeSel]  = { 0xeeeeeeff, 0x005577ff, 0x005577ff },
        [SchemeUrg]  = { 0,          0,          0x770000ff },
-};
+};*/
 static const float default_opacity         = 0.75;
 /* tagging - TAGCOUNT must be no greater than 31 */
 #define TAGCOUNT (9)
@@ -151,7 +151,7 @@ static const Key keys[] = {
 	/* modifier                  key                 function        argument */
 	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = menucmd} },
 	{ MODKEY,                    XKB_KEY_Return,     spawn,          {.v = termcmd} },
-	{ MODKEY,                    XKB_KEY_b,          togglebar,     {0} },
+	{ MODKEY,                    XKB_KEY_b,          toggletag,      {0} }, /* changed from togglebar */
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
 	{ MODKEY,                    XKB_KEY_i,          incnmaster,     {.i = +1} },
