@@ -411,7 +411,7 @@
     wayland-scanner
     wlroots
     libinput
-    xkbcommon
+    libxkbcommon
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # installs only that font
