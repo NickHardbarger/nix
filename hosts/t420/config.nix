@@ -26,7 +26,7 @@
 	})
 	(final: prev: {
 	  slstatus = prev.slstatus.override {
-	    conf = ./slstatus/config.h
+	    conf = ./slstatus/config.h;
 	  };
 	})
       ];
