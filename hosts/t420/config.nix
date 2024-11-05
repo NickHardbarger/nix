@@ -387,9 +387,10 @@
     ### DWL ###
     (dwl.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
-      src = builtins.fetchTarball {
-        url = "https://github.com/NickHardbarger/dwl/archive/refs/heads/main.zip";
-	sha256 = "1yhsgypxnlzs4v2c8f901l34y2khc6j55wzzckpwgs0cr4487gb2";
+      src = fetchFromGithub {
+	owner = "NickHardbarger";
+	repo = "dwl";
+	sha256 = "0yvlyzabxv24n37bi9h699ipqg8nxkkhwdnr4987abmfw1nbr5cb";
       };
     }))
     slstatus # provides input for dwl's bar
