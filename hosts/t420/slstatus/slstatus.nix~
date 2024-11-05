@@ -1,0 +1,11 @@
+{ config, pkgs, slstatus-source, ... }: {
+  nixpkgs.overlays = [
+    (self: super: {
+      slstatus = super.slstatus.overrideAttrs (oldAttrs: rec {
+        src = slstatus-source;
+	patches = [
+	];
+      });
+    })
+  ];
+}

@@ -24,6 +24,11 @@
 	    configH = ./dwl/config.h;
 	  };
 	})
+	(final: prev: {
+	  slstatus = prev.slstatus.override {
+	    conf = ./slstatus/config.h
+	  };
+	})
       ];
     };
     ### BOOT ###
@@ -385,6 +390,7 @@
       ];
     }))
     dwl # wayland compositor
+    slstatus # provides input for dwl's bar
     yambar # status bar
     wmenu # app launcher
     foot # terminal
