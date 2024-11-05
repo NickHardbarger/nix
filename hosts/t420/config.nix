@@ -387,7 +387,9 @@
     ### DWL ###
     (dwl.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
-      src = ./dwl;
+      src = builtins.fetchTarball {
+        url = "https://github.com/NickHardbarger/dwl/archive/refs/heads/main.zip";
+      };
     }))
     slstatus # provides input for dwl's bar
     yambar # status bar
