@@ -215,6 +215,10 @@ static const Key keys[] = {
 };
 
 static const Button buttons[] = {
+       { MODKEY, BTN_LEFT,   moveresize,     {.ui = CurMove} },
+       { MODKEY, BTN_MIDDLE, togglefloating, {0} },
+       { MODKEY, BTN_RIGHT,  moveresize,     {.ui = CurResize} },
+       /* Clk buttons busted
        { ClkLtSymbol, 0,      BTN_LEFT,   setlayout,       {.v = &layouts[0]} },
        { ClkLtSymbol, 0,      BTN_RIGHT,  setlayout,       {.v = &layouts[2]} },
        { ClkTitle,    0,      BTN_MIDDLE, zoom,            {0} },
@@ -225,5 +229,5 @@ static const Button buttons[] = {
        { ClkTagBar,   0,      BTN_LEFT,   view,            {0} },
        { ClkTagBar,   0,      BTN_RIGHT,  toggleview,      {0} },
        { ClkTagBar,   MODKEY, BTN_LEFT,   tag,             {0} },
-       { ClkTagBar,   MODKEY, BTN_RIGHT,  toggletag,       {0} },
+       { ClkTagBar,   MODKEY, BTN_RIGHT,  toggletag,       {0} },*/
 };
