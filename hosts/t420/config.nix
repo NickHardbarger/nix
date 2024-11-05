@@ -406,6 +406,12 @@
     pfetch-rs # basic system info
     cmatrix # matrix text scroll
     speedtest-cli # test network speed
+    ### DWL ###
+    wayland
+    wayland-scanner
+    wlroots
+    libinput
+    xkbcommon
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # installs only that font
