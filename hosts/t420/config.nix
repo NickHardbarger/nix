@@ -4,6 +4,7 @@
       ./hardware.nix
       inputs.home-manager.nixosModules.default
       ./dwl/dwl.nix
+      ./slstatus/slstatus.nix
   ];
   #SECURITY
   #SYSTEM
