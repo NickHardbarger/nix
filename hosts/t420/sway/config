@@ -7,7 +7,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term st -z 16
+set $term foot #st -z 16
 set $menu dmenu_run -h 27 | xargs swaymsg exec --
 set $opacity 0.9
 for_window [class=".*"] opacity $opacity
