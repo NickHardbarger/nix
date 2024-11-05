@@ -387,12 +387,13 @@
     ### DWL ###
     (dwl.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
-      src = fetchFromGitHub {
-	owner = "NickHardbarger";
-	repo = "dwl";
-	rev = "84245764e28e6c841946ef706c704139e97d1bd4";
-	sha256 = "0yvlyzabxv24n37bi9h699ipqg8nxkkhwdnr4987abmfw1nbr5cb";
-      };
+      src = /home/iglu/dwl;
+      #src = fetchFromGitHub {
+	#owner = "NickHardbarger";
+	#repo = "dwl";
+	#rev = "84245764e28e6c841946ef706c704139e97d1bd4";
+	#sha256 = "0yvlyzabxv24n37bi9h699ipqg8nxkkhwdnr4987abmfw1nbr5cb";
+      #};
     }))
     slstatus # provides input for dwl's bar
     yambar # status bar
