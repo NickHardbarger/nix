@@ -29,6 +29,7 @@
       enable = true;
       bashrcExtra = ''
         pfetch
+	export PATH=$PATH:/home/iglu/dwl
       '';
     };
     emacs = {
