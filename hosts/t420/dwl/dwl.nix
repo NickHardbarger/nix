@@ -8,7 +8,7 @@
 	  ./swallow.patch
 	  ./autostart-0.7.patch
 	  ./vanitygaps-0.7.patch
-	  #./bar-0.7.patch
+	  ./bar-0.7.patch
 	];
       });
     })
