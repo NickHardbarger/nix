@@ -20,7 +20,7 @@
       overlays = [
         (final: prev: {
 	  dwl = prev.dwl.override {
-	    enableXWayland = false;
+	    enableXWayland = true; # might be necessary for slstatus?
 	    configH = ./dwl/config.h;
 	  };
 	})
