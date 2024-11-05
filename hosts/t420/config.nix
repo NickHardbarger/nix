@@ -386,7 +386,7 @@
     }))
     ### DWL ###
     (dwl.overrideAttrs (oldAttrs: {
-      buildInputs = oldAttrs.buildInputs ++ [ wlroots ];
+      buildInputs = oldAttrs.buildInputs ++ [ ];
       src = ./dwl;
     }))
     slstatus # provides input for dwl's bar
