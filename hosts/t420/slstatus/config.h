@@ -67,7 +67,7 @@ static const char unknown_str[] = "死"; //"n/a";
 static const struct arg args[] = {
 	/* function format          argument */
         //{battery_perc,              "BAT0"  },
-        {kernel_release,            NULL    },
+        //{kernel_release,            NULL    },
         //{ kanji,                    NULL    },
 	{ datetime, "%s",           "%F %T" },
 };
