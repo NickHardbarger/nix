@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let dwl = pkgs.dwl.overrideAttrs (old: {
-      src = /home/iglu/mydwl;
+      src = ~/mydwl;
     });
 in {
   home = {
