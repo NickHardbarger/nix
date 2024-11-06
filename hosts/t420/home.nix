@@ -56,8 +56,7 @@
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
     "vi" = "emacsclient -c -a ''";
-    #"dwl" = "dwl -s '~/nil/hosts/t420/dwl/init.sh'";
-    #"dwl" = "exec dwl -s 'exec yambar && exec sway -i ~/nil/hosts/t420/wallpapers/stairs.jpg -m fill && exec mako && exec foot --server && exec <&-'";
+    "wmenu-run" = "wmenu-run -f 'Jetbrains Mono 12'";
   };
   ### CURSOR ###
   home.pointerCursor = {
