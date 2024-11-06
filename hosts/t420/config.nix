@@ -367,17 +367,6 @@ in {
       };
     };
   };
-  let newPicom = pkgs.picom.overrideAttrs (old: {
-      version = "git"; # usually harmless to omit
-      src = /* put your source here; typically a local path or
-               a fixed-output derivation produced by
-               `fetchFromGitHub`.
-               builtins.fetchGit is also an option. Doesn't run
-               in parallel but does fetch private sources. */;
-    });
-in {
-  services.picom.package = newPicom; 
-}
   environment.systemPackages = with pkgs; [
     ### SIMPLE TERMINAL ###
     (st.overrideAttrs (oldAttrs: {
