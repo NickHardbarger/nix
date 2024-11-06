@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a"; //"死";
+static const char unknown_str[] = "死"; //"n/a";
 
 /* maximum output string length */
 #define MAXLEN 2048
