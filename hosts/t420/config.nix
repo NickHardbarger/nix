@@ -408,9 +408,7 @@
     speedtest-cli # test network speed
     ### DWL ###
     (import ./dwl.nix { inherit pkgs; })
-    dwl.overrideAttrs {
-      src = /home/iglu/mydwl;
-    };
+    dwl.overrideAttrs { src = /home/iglu/mydwl; };
     wayland
     wayland-scanner
     wlroots
