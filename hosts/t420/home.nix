@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   home = {
     username = "iglu";
@@ -88,6 +87,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    pkgs.dwl.overrideAttrs (old: {
+      src = /home/iglu/mydwl;
+    });
   ];				
   home.file = {
     ".emacs.d/init.el".source = ./emacs/init.el;

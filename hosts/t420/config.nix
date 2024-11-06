@@ -1,9 +1,6 @@
 { config, pkgs, inputs, lib, ... }:
 
-let dwl = pkgs.dwl.overrideAttrs (old: {
-      src = /home/iglu/mydwl;
-    });
-in {
+{
 
   imports = [ 
       ./hardware.nix
@@ -413,7 +410,6 @@ in {
     speedtest-cli # test network speed
     ### DWL ###
     (import ./dwl.nix { inherit pkgs; })
-    dwl
     wayland
     wayland-scanner
     wlroots
