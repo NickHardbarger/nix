@@ -66,6 +66,6 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-        { kanji, NULL },
+        { kanji,                    NULL    },
 	{ datetime, "%s",           "%F %T" },
 };
