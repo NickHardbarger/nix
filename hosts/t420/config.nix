@@ -310,6 +310,8 @@
   };
   ### PROGRAMS ###
   programs = {
+    nix-ld.enable = true;
+    bash.blesh.enable = true;
     nh = {
       enable = true;
       flake = "/home/iglu/nil";
