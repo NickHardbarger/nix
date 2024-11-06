@@ -1,12 +1,9 @@
 { pkgs }:
 #with import <nixpkgs> {};
 
-pkgs.writeShellScriptBin "dwlinit" ''
-  /home/iglu/mydwl/dwl
-''
 pkgs.writeShellApplication {
-  name = "dwlstart";
-  runtimeInputs = with pkgs; [
+  name = "mydwl";
+  runtimeInputs = with pkgs; [ # might not be necessary
     wayland
     wayland-scanner
     wlroots
@@ -17,6 +14,7 @@ pkgs.writeShellApplication {
     fcft
   ];
   text = ''
-    /home/iglu/mydwl/dwl
+    exec slstatus -s /home/iglu/mydwl/dwl
+    exec <&-
   '';
 }
