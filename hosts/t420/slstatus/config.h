@@ -66,6 +66,8 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
+        {battery_perc,              "BAT0"  },
+        {kernel_release,            NULL    },
         { kanji,                    NULL    },
 	{ datetime, "%s",           "%F %T" },
 };
