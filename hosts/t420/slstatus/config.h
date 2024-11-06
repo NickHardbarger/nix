@@ -66,6 +66,7 @@ static const char unknown_str[] = "死"; //"n/a";
  */
 static const struct arg args[] = {
 	/* function        format       argument */
+  //need volume module
         {  ram_perc,       "[RAM: %s%%]", NULL    },
         {  battery_perc,   "[BAT: %s%%]", "BAT0"  },
 	{  kernel_release, "[%s]",        NULL    },
