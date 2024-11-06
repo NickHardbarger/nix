@@ -1,5 +1,10 @@
 { config, pkgs, inputs, lib, ... }:
-{
+
+let dwl = pkgs.dwl.overrideAttrs (old: {
+      src = /home/iglu/mydwl;
+    });
+in {
+
   imports = [ 
       ./hardware.nix
       inputs.home-manager.nixosModules.default
@@ -362,6 +367,17 @@
       };
     };
   };
+  let newPicom = pkgs.picom.overrideAttrs (old: {
+      version = "git"; # usually harmless to omit
+      src = /* put your source here; typically a local path or
+               a fixed-output derivation produced by
+               `fetchFromGitHub`.
+               builtins.fetchGit is also an option. Doesn't run
+               in parallel but does fetch private sources. */;
+    });
+in {
+  services.picom.package = newPicom; 
+}
   environment.systemPackages = with pkgs; [
     ### SIMPLE TERMINAL ###
     (st.overrideAttrs (oldAttrs: {
@@ -408,7 +424,7 @@
     speedtest-cli # test network speed
     ### DWL ###
     (import ./dwl.nix { inherit pkgs; })
-    dwl.overrideAttrs { src = /home/iglu/mydwl; }
+    dwl
     wayland
     wayland-scanner
     wlroots
