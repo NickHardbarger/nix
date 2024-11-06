@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let dwl = pkgs.dwl.overrideAttrs (old: {
-      src = ~/mydwl;
+      src = ../../../mydwl;
     });
 in {
   home = {
