@@ -64,9 +64,26 @@ static const char unknown_str[] = "死"; //"n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
+
+/* vol and mic modules stolen from github.com/brookiestein */
+static const char vol[] = "muted=`wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $3;}'`; \
+                            volume=`wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2;}'`; \
+                            if [ -z ${muted} ]; then \
+                                printf \"${volume}\"; \
+                            else printf \"Off\"; \
+                            fi";
+
+static const char mic[] = "muted=`wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{print $3;}'`; \
+                            volume=`wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{print $2;}'`; \
+                            if [ -z ${muted} ]; then \
+                                printf \"${volume}\"; \
+                            else printf \"Off\"; \
+                            fi";
+
 static const struct arg args[] = {
-	/* function        format       argument */
-  //need volume module
+	/* function        format         argument */
+        {  run_command,    " %s ",       vol     },
+        {  run_command,    " %s ",       mic     },
         {  ram_perc,       "[RAM: %s%%]", NULL    },
         {  battery_perc,   "[BAT: %s%%]", "BAT0"  },
 	{  kernel_release, "[%s]",        NULL    },
