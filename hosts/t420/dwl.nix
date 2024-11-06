@@ -2,7 +2,7 @@
 #with import <nixpkgs> {};
 
 #pkgs.writeShellScriptBin "dwlinit" ''
-#  /home/iglu/dwl/dwl
+#  /home/iglu/mydwl/dwl
 #''
 pkgs.writeShellApplication {
   name = "dwlstart";
@@ -17,6 +17,6 @@ pkgs.writeShellApplication {
     fcft
   ];
   text = ''
-    /home/iglu/dwl/dwl
+    /home/iglu/mydwl/dwl
   '';
 }
