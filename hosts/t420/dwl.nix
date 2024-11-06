@@ -1,9 +1,9 @@
 { pkgs }:
 #with import <nixpkgs> {};
 
-#pkgs.writeShellScriptBin "dwlinit" ''
-#  /home/iglu/mydwl/dwl
-#''
+pkgs.writeShellScriptBin "dwlinit" ''
+  /home/iglu/mydwl/dwl
+''
 pkgs.writeShellApplication {
   name = "dwlstart";
   runtimeInputs = with pkgs; [
