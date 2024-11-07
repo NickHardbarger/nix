@@ -56,6 +56,7 @@
     ".." = "cd ..";
     "vi" = "emacsclient -c -a ''";
     "wmenu-run" = "wmenu-run -f 'Jetbrains Mono 12'";
+    "mydwl" = "exec mydwl";
   };
   ### CURSOR ###
   home.pointerCursor = {

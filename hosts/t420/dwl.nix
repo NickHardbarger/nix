@@ -14,7 +14,7 @@ pkgs.writeShellApplication {
     fcft
   ];
   text = ''
-    exec slstatus -s | /home/iglu/mydwl/dwl
+    slstatus -s | /home/iglu/mydwl/dwl
     exec <&-
   '';
 }
