@@ -1,7 +1,8 @@
 (setq inhibit-startup-message nil
       visible-bell t
       display-line-numbers 'relative
-      scroll-conservatively most-positive-fixnum)
+      scroll-conservatively most-positive-fixnum
+      make-backup-files nil)
 
 (server-start)
 (require 'magit)
