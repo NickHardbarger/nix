@@ -82,11 +82,11 @@ static const char mic[] = "muted=`wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk 
 
 static const struct arg args[] = {
 	/* function        format         argument */
-        {  run_command,    " %s ",       vol     },
-        {  run_command,    " %s ",       mic     },
+        {  run_command,    "[VOL: %s ]",  vol     },
+        {  run_command,    "[MIC: %s ]",  mic     },
         {  ram_perc,       "[RAM: %s%%]", NULL    },
         {  battery_perc,   "[BAT: %s%%]", "BAT0"  },
-	{  kernel_release, "[%s]",        NULL    },
+	//{  kernel_release, "[%s]",        NULL    },
 	{  kanji,          "[%s]",        NULL    },
 	{  datetime,       "[%s]",        "%F %T" },
 };
