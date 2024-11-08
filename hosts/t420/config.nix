@@ -173,7 +173,7 @@
 	#PROVIDE_OHCI1394_DMA_INIT = no;
       #};
     #};
-  };
+  #};
   ### NETWORKING ###
   networking = {
     hostName = "nil";
