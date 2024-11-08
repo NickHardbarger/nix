@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  version = "6.6.59-custom";
+  #version = "6.6.59-custom";
   modDirVersion = "6.6.59";
   src = fetchTarball {
     url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.59.tar.xz";
@@ -7,7 +7,7 @@
   };
   configfile = ./.config;
   linux = pkgs.linuxManualConfig {
-    inherit version modDirVersion src configfile;
+    inherit modDirVersion src configfile;
     allowImportFromDerivation = true;
   };
 }
