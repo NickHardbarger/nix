@@ -6,7 +6,7 @@
       ./hardware.nix
       inputs.home-manager.nixosModules.default
       ./slstatus/slstatus.nix
-      ./kernel/kernel.nix
+      #./kernel/kernel.nix
   ];
   #SECURITY
   #SYSTEM
