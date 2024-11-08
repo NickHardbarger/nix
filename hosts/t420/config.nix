@@ -39,7 +39,17 @@
       efi.canTouchEfiVariables = true;
     };
     ### KERNEL ###
-    kernelPackages = pkgs.linuxPackages_zen;
+    #kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxManualConfig {
+      version = "6.6.59";
+      src = fetchTarball {
+        url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
+	sha256 = "0vd76ccd4li4wsg04gc4nai9f4y1nknz967qby0i53y0v046hq93";
+      };
+      configfile = ./kernel/.config;
+      #stdenv = pkgs.gcc10Stdenv;
+      #extraMakeFlags = ["WERROR=0"];
+    };
     #kernelPatches = lib.singleton {
       #name = "nil";
       #patch = null;
