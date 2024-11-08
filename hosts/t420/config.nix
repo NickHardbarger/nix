@@ -40,7 +40,7 @@
       efi.canTouchEfiVariables = true;
     };
     ### KERNEL ###
-    kernelPackages = linux;
+    kernelPackages = pkgs.linux;
     #kernelPackages = pkgs.linuxPackages_zen;
     #kernelPackages = pkgs.linuxManualConfig {
       #version = "6.6.59";
