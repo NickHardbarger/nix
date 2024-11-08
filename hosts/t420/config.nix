@@ -40,6 +40,7 @@
       efi.canTouchEfiVariables = true;
     };
     ### KERNEL ###
+    kernelPackages = linux;
     #kernelPackages = pkgs.linuxPackages_zen;
     #kernelPackages = pkgs.linuxManualConfig {
       #version = "6.6.59";
@@ -399,6 +400,7 @@
 	./dmenu/dmenu-numbers-20220512-28fb3e2.diff
       ];
     }))
+    linux
     slstatus # provides input for dwl's bar
     yambar # status bar
     wmenu # app launcher
