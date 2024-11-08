@@ -14,7 +14,7 @@ pkgs.writeShellApplication {
     fcft
   ];
   text = ''
-    slstatus -s | ./dwl
+    slstatus -s | ~/nil/hosts/t420/dwl/dwl
     exec <&-
   '';
 }
