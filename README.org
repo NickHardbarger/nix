@@ -1,7 +1,13 @@
 #+title: NIL documentation
 #+author: Nick Hardbarger
-#+date: [2024-10-16]
+#+date: [2024-11-10]
+#+caption: my desktop
+[[./desktop.png]]
 ** TODO Add Disko and Impermanence
+** TODO Add opacity to dwl
+** TODO Rice dwl
+** TODO Add custom kernel
+** TODO Configure emacs!
 ** Installation
 To install NIL on a fresh NixOS system, run these commands:
 
