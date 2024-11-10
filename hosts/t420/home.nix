@@ -58,6 +58,7 @@
     "wmenu-run" = "wmenu-run -f 'Jetbrains Mono 12'";
     "mydwl" = "exec mydwl";
     "menuconfig" = "MENUCONFIG_COLOR=blackbg menuconfig";
+    "screenshot" = "slurp | grim -g -"; # to use: screenshot <screenshot>.png
   };
   ### CURSOR ###
   home.pointerCursor = {
