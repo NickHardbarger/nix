@@ -12,6 +12,8 @@
 (global-display-line-numbers-mode 1)
 (hl-line-mode 1)
 (blink-cursor-mode 1)
+
+;; TRANSPARENCY ;;
 (set-frame-parameter nil 'alpha-background 90)
 (add-to-list 'default-frame-alist '(alpha-background . 90))
 (defun on-after-init ()
@@ -43,6 +45,10 @@
 ;; NEOTREE ;;
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+
+;; SMARTPARENS ;;
+(require 'smartparens-config)
+(smartparens-global-mode t)
 
 ;; TREE SITTER ;;
 (require 'tree-sitter)

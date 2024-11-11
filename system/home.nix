@@ -43,6 +43,7 @@
         epkgs.neotree # directory viewer
         epkgs.nix-mode # nix major mode
         epkgs.lsp-mode # language server support
+        epkgs.smartparens # insert pairs
       ];
     };
     obs-studio = {
