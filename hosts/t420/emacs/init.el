@@ -12,6 +12,8 @@
 (global-display-line-numbers-mode 1)
 (hl-line-mode 1)
 (blink-cursor-mode 1)
+(require 'nix-mode)
+(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 
 ;; THEME ;;
 (require 'gruvbox-theme)

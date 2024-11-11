@@ -42,6 +42,7 @@
 	epkgs.magit # git client
 	epkgs.company # completion
 	epkgs.neotree # directory viewer
+	epkgs.nix-mode # nix major mode
 	epkgs.lsp-mode # language server support
       ];
     };
