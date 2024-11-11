@@ -33,7 +33,7 @@
         };
       })
       (final: prev: {
-      dwl = prev.dwl.overrideAttrs (old: {src = /home/iglu/mydwl/;});
+      dwl = prev.dwl.overrideAttrs (old: {src = /home/iglu/mydwl;});
     })
     ];
   };
