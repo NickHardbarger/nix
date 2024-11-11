@@ -3,7 +3,8 @@
 
 pkgs.writeShellApplication {
   name = "mydwl";
-  runtimeInputs = with pkgs; [ # might not be necessary
+  runtimeInputs = with pkgs; [
+    # might not be necessary
     wayland
     wayland-scanner
     wlroots

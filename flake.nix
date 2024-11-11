@@ -11,15 +11,19 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations = {
-      nil = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/t420/config.nix
-          inputs.home-manager.nixosModules.default
-        ];
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    {
+      nixosConfigurations = {
+        nil = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/t420/config.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
       };
     };
-  };
 }

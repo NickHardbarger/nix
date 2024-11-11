@@ -7,9 +7,15 @@ let
     sha256 = "0vd76ccd4li4wsg04gc4nai9f4y1nknz967qby0i53y0v046hq93";
   };
   configfile = ./.config;
-in {
+in
+{
   linux = pkgs.linuxManualConfig {
-    inherit version modDirVersion src configfile;
+    inherit
+      version
+      modDirVersion
+      src
+      configfile
+      ;
     allowImportFromDerivation = true;
   };
 }
