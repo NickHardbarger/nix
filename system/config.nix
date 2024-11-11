@@ -9,7 +9,6 @@
 {
 
   imports = [
-    ./hardware.nix
     inputs.home-manager.nixosModules.default
     ./slstatus/slstatus.nix
     #./kernel/kernel.nix
@@ -183,7 +182,7 @@
   #};
   ### NETWORKING ###
   networking = {
-    hostName = "nil";
+    hostName = "t420";
     networkmanager.enable = true;
     firewall = {
       enable = true;

@@ -15,12 +15,13 @@
     { self, nixpkgs, ... }@inputs:
     {
       nixosConfigurations = {
-        nil = nixpkgs.lib.nixosSystem {
+        t420 = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
           };
           modules = [
-            ./hosts/t420/config.nix
+            ./system/config.nix
+            ./system/hardware/t420.nix
             inputs.home-manager.nixosModules.default
           ];
         };
