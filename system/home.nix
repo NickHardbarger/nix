@@ -101,17 +101,12 @@
   ];
   home.file = {
     ".emacs.d/init.el".source = ./emacs/init.el;
-
+    ".config/foot/foot.ini".source = ./foot/foot.ini;
     ".ssh/id_deploy".source = ./ssh/id_deploy;
     ".ssh/id_deploy.pub".source = ./ssh/id_deploy.pub;
     ".ssh/id_ed25519".source = ./ssh/id_ed25519;
     ".ssh/id_ed25519.pub".source = ./ssh/id_ed25519.pub;
     ".ssh/known_hosts".source = ./ssh/known_hosts;
-
-    ".config/foot/foot.ini".source = ./foot/foot.ini;
-    ".config/sway/config".source = ./sway/config;
-    ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
-    ".config/waybar/style.css".source = ./waybar/style.css;
   };
   home.sessionVariables = {
     EDITOR = "emacsclient -c -a ''";
