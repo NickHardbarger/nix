@@ -309,9 +309,6 @@
     pfetch-rs # basic system info
     cmatrix # matrix text scroll
     speedtest-cli # test network speed
-    ### LSP ###
-    nixd
-    nixfmt-rfc-style
     ### MISC ###
     waybar # statusbar
     mangohud # steam hud overlay
