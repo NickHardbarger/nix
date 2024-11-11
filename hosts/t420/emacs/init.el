@@ -2,7 +2,8 @@
       visible-bell t
       display-line-numbers 'relative
       scroll-conservatively most-positive-fixnum
-      make-backup-files nil)
+      make-backup-files nil
+      lsp-log-io nil)
 
 (server-start)
 (require 'magit)
@@ -33,6 +34,10 @@
 (require 'tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+;; LSP ;;
+(require 'lsp-mode)
+;(add-hook 'XXX-mode-hook #'lsp)
 
 ;; MELPA ;;
 (require 'package)
