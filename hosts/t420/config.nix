@@ -400,30 +400,25 @@
 	./dmenu/dmenu-numbers-20220512-28fb3e2.diff
       ];
     }))
-    slstatus # provides input for dwl's bar
-    yambar # status bar
-    wmenu # app launcher
-    foot # terminal
+    ### MISC ###
     waybar # statusbar
-    swaybg # wallpaper setter
-    wbg # wallpaper setter
-    mako # notification daemon
     mangohud # steam hud overlay
-    grim # screenshots
-    slurp # screenshots
     wget # file retriever
-    wl-clipboard # clipboard
     pulseaudio # ?? I forget why that's there lol
     discord # chat client
-    libreoffice # office suit
-    onlyoffice-bin # office suit
-    #onlyoffice-desktopeditors # office suit
-    ### CLI SCRIPTS ###
-    pfetch-rs # basic system info
-    cmatrix # matrix text scroll
-    speedtest-cli # test network speed
+    libreoffice # office suite
+    onlyoffice-bin # office suite
+    #onlyoffice-desktopeditors # office suite
     ### DWL ###
     (import ./dwl/dwl.nix { inherit pkgs; })
+    slstatus # provides input for bar
+    wmenu # app launcher
+    foot # terminal
+    wbg # wallpaper setter
+    mako # notification daemon
+    grim # screenshots
+    slurp # screen select
+    wl-clipboard # clipboard
     wayland
     wayland-scanner
     wlroots
@@ -432,6 +427,13 @@
     pixman
     libdrm
     fcft
+    ### CLI SCRIPTS ###
+    pfetch-rs # basic system info
+    cmatrix # matrix text scroll
+    speedtest-cli # test network speed
+    ### LSP ###
+    nixd
+    nixfmt
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # installs only that font
