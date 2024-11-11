@@ -400,15 +400,6 @@
 	./dmenu/dmenu-numbers-20220512-28fb3e2.diff
       ];
     }))
-    ### MISC ###
-    waybar # statusbar
-    mangohud # steam hud overlay
-    wget # file retriever
-    pulseaudio # ?? I forget why that's there lol
-    discord # chat client
-    libreoffice # office suite
-    onlyoffice-bin # office suite
-    #onlyoffice-desktopeditors # office suite
     ### DWL ###
     (import ./dwl/dwl.nix { inherit pkgs; })
     slstatus # provides input for bar
@@ -433,7 +424,16 @@
     speedtest-cli # test network speed
     ### LSP ###
     nixd
-    nixfmt
+    nixfmt-rfc-style
+    ### MISC ###
+    waybar # statusbar
+    mangohud # steam hud overlay
+    wget # file retriever
+    pulseaudio # ?? I forget why that's there lol
+    discord # chat client
+    libreoffice # office suite
+    onlyoffice-bin # office suite
+    #onlyoffice-desktopeditors # office suite
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # installs only that font
