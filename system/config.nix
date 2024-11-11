@@ -32,9 +32,11 @@
           conf = ./slstatus/config.h;
         };
       })
-      (final: prev: {
-      dwl = prev.dwl.overrideAttrs (old: {src = /home/iglu/mydwl;});
-    })
+      #(final: prev: {
+        #dwl = prev.dwl.overrideAttrs (old: {
+          #src = /home/iglu/mydwl;
+        #});
+      #})
     ];
   };
   ### BOOT ###
@@ -60,129 +62,6 @@
     #stdenv = pkgs.gcc10Stdenv;
     #extraMakeFlags = ["WERROR=0"];
   };
-  #kernelPatches = lib.singleton {
-  #name = "nil";
-  #patch = null;
-  #extraStructuredConfig = with lib.kernel; {
-  #KERNEL_ZSTD = yes;
-  #CC_OPTIMIZE_FOR_PERFORMANCE = yes;
-  #MCORE2 = yes; # intel
-  #MK8 = no; # amd
-  #GENERIC_CPU = no; # generic
-  #POSIX_MQUEUE = yes; # changed to yes to fix error
-  #USELIB = no;
-  ##AUDIT = no;
-  #PREEMPT = no; # low latency # changed to no to fix error
-  #PREEMPT_VOLUNTARY = yes; # balanced # changed to yes to fix error
-  #PREEMPT_NONE = no; # low throughput
-  #IKCONFIG = yes;
-  #IKCONFIG_PROC = yes;
-  #BLK_DEV_INITRD = yes; # initramfs/initrd # changed to yes to fix error
-  #PROFILING = no;
-  #X86_MPPARSE = no;
-  #X86_EXTENDED_PLATFORM = no;
-  ##NR_CPUS = "32"; # num of cores, also this didn't work, as I expected
-  #X86_5LEVEL = no;
-  #NUMA = yes; # changed to yes to fix error
-  #X86_CHECK_BIOS_CORRUPTION = yes; # changed to yes to fix error
-  #EFI_STUB = yes; # changed to yes to fix error
-  #SUSPEND = no;
-  #HIBERNATION = no;
-  #PM_DEBUG = no;
-  #PM_ADVANCED_DEBUG = yes; # changed to yes to fix error
-  #PM_TRACE = yes; # changed to yes to fix error
-  #PM_TRACE_RTC = yes; # changed to yes to fix error
-  #ACPI_SPCR_TABLE = no;
-  ##CPU_FREQ_DEFAULT_GOV_PERFORMANCE = yes;
-  #X86_ACPI_CPUFREQ = no;
-  #INTEL_IDLE = yes;
-  #VIRTUALIZATION = no;
-  #KPROBES = yes; # changed to yes to fix error
-  #GCC_PLUGINS = no;
-  #MODULES = yes;
-  #MODULES = no; # may lead to stuff not working!
-  #BLK_DEBUG_FS = no;
-  #MQ_IOSCHED_DEADLINE = yes; # changed to yes to fix error
-  #MQ_IOSCHED_KYBER = yes; #no;
-  #MQ_IOSCHED_BFQ = no;
-  #IOSCHED_BFQ = module; # changed to module to fix error
-  #SWAP = yes;
-  #ZSWAP = yes;
-  #ZSWAP_DEFAULT_ON = yes;
-  #ZSWAP_EXCLUSIVE_LOADS_DEFAULT_ON = yes;
-  #ZSWAP_COMPRESSOR_DEFAULT_ZSTD = yes;
-  #ZSWAP_ZPOOL_DEFAULT_ZBUD = yes;
-  #TRANSPARENT_HUGEPAGE = yes;
-  #TRANSPARENT_HUGEPAGE_ALWAYS = no; # changed to no to fix error
-  #IP_ADVANCED_ROUTER = yes; # changed to yes to fix error
-  #IP_PNP = no;
-  ##SYN_COOKIES = no;
-  #TCP_CONG_ADVANCED = yes; # changed to yes to fix error
-  #TCP_MD5SIG = no;
-  #IPV6 = yes;
-  #NETLABEL = no;
-  #NET_SCHED = yes; # changed to yes to fix error
-  #HAMRADIO = no;
-  #BT = no;
-  #NET_9P = no;
-  #HOTPLUG_PCI = no;
-  #DEBUG_DEVRES = no;
-  #BLK_DEV_NVME = yes;
-  #SATA_PMP = no;
-  #ATA_SFF = no;
-  #MD = yes; # changed to yes to fix error
-  #MACINTOSH_DRIVERS = no;
-  #INPUT_TABLET = no;
-  #INPUT_TOUCHSCREEN = no;
-  #INPUT_MISC = no;
-  #SERIAL_8250 = yes; # changed to yes to fix error
-  #SERIAL_NONSTANDARD = no;
-  #HW_RANDOM = no;
-  #WATCHDOG = no;
-  #WATCHDOG_SYSFS = yes; # changed to yes to fix error
-  #AGP = yes; # changed to yes to fix error
-  #DRM_AMDGPU = yes;
-  #DRM_I915 = yes;
-  #DRM_I915_GVT = yes;
-  #DRM_I915_GVT_KVMGT = module; # changed to module to fix error
-  #X86_SGX_KVM = yes;
-  #KVM_AMD_SEV = yes;
-  #KVM_ASYNC_PF = yes;
-  #KVM_GENERIC_DIRTYLOG_READ_PROTECT = yes;
-  #KVM_MMIO = yes;
-  #KVM_VFIO = yes;
-  #SND_SUPPORT_OLD_API = no;
-  #SND_VERBOSE_PROCFS = no;
-  #HID_A4TECH = no;
-  #HID_BELKIN = no;
-  #HID_CHERRY = no;
-  #HID_CHICONY = no;
-  #HID_CYPRESS =  no;
-  #HID_EZKEY = no;
-  #HID_GYRATION = no;
-  #HID_ITE = no;
-  #HID_KENSINGTON = no;
-  #HID_REDRAGON = no;
-  #HID_MICROSOFT = no;
-  #HID_MONTEREY = no;
-  #HID_NTRIG = no;
-  #HID_PANTHERLORD = no;
-  #HID_PETALYNX = no;
-  #HID_SAMSUNG = no;
-  #HID_SUNPLUS = no;
-  #HID_TOPSEED = no;
-  #USB_OHCI_HCD = no;
-  #USB_UHCI_HCD = no;
-  #QUOTA = no;
-  #AUTOFS_FS = no;
-  #EFIVAR_FS = yes;
-  #SECURITY_SELINUX = no;
-  #DEBUG_KERNEL = yes;
-  #FTRACE = yes; # changed to yes to fix error
-  #PROVIDE_OHCI1394_DMA_INIT = no;
-  #};
-  #};
-  #};
   ### NETWORKING ###
   networking = {
     hostName = "t420";
