@@ -94,6 +94,10 @@
     ### LSP ###
     nixd
     nixfmt-rfc-style
+    bash-language-server
+    ccls
+    jdt-language-server
+    vscode-langservers-extracted
   ];
   home.file = {
     ".emacs.d/init.el".source = ./emacs/init.el;

@@ -65,6 +65,14 @@
   (add-to-list 'eglot-server-programs
 	       '(nix-mode . ("nixd"))))
 (add-hook 'nix-mode-hook 'eglot-ensure)
+(add-hook 'shell-mode-hook 'eglot-ensure)
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c++-mode-hook 'eglot ensure)
+(add-hook 'java-mode-hook 'eglot ensure)
+(add-hook 'html-mode-hook 'eglot-ensure)
+(add-hook 'css-mode-hook 'eglot-ensure)
+(add-hook 'js-mode-hook 'eglot-ensure)
+
 ;; LSP ;;
 ;(require 'lsp-mode)
 ;;(add-hook 'XXX-mode-hook #'lsp-deferred)
