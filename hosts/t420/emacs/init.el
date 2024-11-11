@@ -34,29 +34,38 @@
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
-;; LSP ;;
-(require 'lsp-mode)
-;(add-hook 'XXX-mode-hook #'lsp-deferred)
-(with-eval-after-load 'lsp-mode
-  (lsp-register-client
-    (make-lsp-client :new-connection (lsp-stdio-connection "nixd")
-                     :major-modes '(nix-mode)
-                     :priority 0
-                     :server-id 'nixd)))
-(setq gc-cons-percentage 100000000
-      read-process-output-max (* 1024 1024)
-      lsp-idle-delay 0.500
-      lsp-log-io nil
-      lsp-keymap-prefix "C-c l"
-      lsp-nix-nixd-server-path "nixd"
-      lsp-nix-nixd-formatting-command [ "nixfmt" ]
-      lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
-      lsp-nix-nixd-nixos-options-expr "(builtins.getFlake \"/home/nb/nixos\").nixosConfigurations.mnd.options"
-      lsp-nix-nixd-home-manager-options-expr "(builtins.getFlake \"/home/nb/nixos\").homeConfigurations.\"nb@mnd\".options")
+;; EGLOT ;;
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook 'eglot-format nil t)))
 
-(add-hook 'nix-mode-hook
-         ;; enable autocompletion with company
-         (setq company-idle-delay 0.1))
+(with-eval-after-load 'eglot
+  (dolist (mode '((nix-mode . ("nixd"))))
+    (add-to-list 'eglot-server-programs mode)))
+
+;; LSP ;;
+;(require 'lsp-mode)
+;;(add-hook 'XXX-mode-hook #'lsp-deferred)
+;(with-eval-after-load 'lsp-mode
+;  (lsp-register-client
+;    (make-lsp-client :new-connection (lsp-stdio-connection "nixd")
+;                     :major-modes '(nix-mode)
+;                     :priority 0
+;                     :server-id 'nixd)))
+;(setq gc-cons-percentage 100000000
+;      read-process-output-max (* 1024 1024)
+;      lsp-idle-delay 0.500
+;      lsp-log-io nil
+;      lsp-keymap-prefix "C-c l"
+;      lsp-nix-nixd-server-path "nixd"
+;      lsp-nix-nixd-formatting-command [ "nixfmt" ]
+;      lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
+;      lsp-nix-nixd-nixos-options-expr "(builtins.getFlake \"/home/nb/nixos\").nixosConfigurations.mnd.options"
+;      lsp-nix-nixd-home-manager-options-expr "(builtins.getFlake \"/home/nb/nixos\").homeConfigurations.\"nb@mnd\".options")
+;
+;(add-hook 'nix-mode-hook
+;         ;; enable autocompletion with company
+;         (setq company-idle-delay 0.1))
 
 ;; MELPA ;;
 (require 'package)
