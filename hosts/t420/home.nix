@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   home = {
     username = "iglu";
     homeDirectory = "/home/iglu";
@@ -26,9 +27,9 @@
     bash = {
       enable = true;
       bashrcExtra = ''
-        pfetch
-	export PATH=$PATH:/home/iglu/mydwl/dwl
-	export PATH=$PATH:/usr/local/bin
+                pfetch
+        	export PATH=$PATH:/home/iglu/mydwl/dwl
+        	export PATH=$PATH:/usr/local/bin
       '';
     };
     emacs = {
@@ -36,14 +37,14 @@
       package = pkgs.emacs-nox;
       extraPackages = epkgs: [
         epkgs.gruvbox-theme # colorscheme
-	epkgs.tree-sitter # syntax highlighting
-	epkgs.tree-sitter-langs # better language support
-	epkgs.rainbow-delimiters # rainbow parentheses
-	epkgs.magit # git client
-	epkgs.company # completion
-	epkgs.neotree # directory viewer
-	epkgs.nix-mode # nix major mode
-	epkgs.lsp-mode # language server support
+        epkgs.tree-sitter # syntax highlighting
+        epkgs.tree-sitter-langs # better language support
+        epkgs.rainbow-delimiters # rainbow parentheses
+        epkgs.magit # git client
+        epkgs.company # completion
+        epkgs.neotree # directory viewer
+        epkgs.nix-mode # nix major mode
+        epkgs.lsp-mode # language server support
       ];
     };
     obs-studio = {
@@ -91,16 +92,16 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-  ];				
+  ];
   home.file = {
     ".emacs.d/init.el".source = ./emacs/init.el;
-    
+
     ".ssh/id_deploy".source = ./ssh/id_deploy;
     ".ssh/id_deploy.pub".source = ./ssh/id_deploy.pub;
     ".ssh/id_ed25519".source = ./ssh/id_ed25519;
     ".ssh/id_ed25519.pub".source = ./ssh/id_ed25519.pub;
     ".ssh/known_hosts".source = ./ssh/known_hosts;
-    
+
     ".config/foot/foot.ini".source = ./foot/foot.ini;
     ".config/sway/config".source = ./sway/config;
     ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
