@@ -13,7 +13,7 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    { self, nixpkgs, chaotic, ... }@inputs:
     {
       nixosConfigurations = {
         t420 = nixpkgs.lib.nixosSystem {
