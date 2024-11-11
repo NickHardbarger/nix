@@ -418,14 +418,6 @@
     grim # screenshots
     slurp # screen select
     wl-clipboard # clipboard
-    wayland
-    wayland-scanner
-    wlroots
-    libinput
-    libxkbcommon
-    pixman
-    libdrm
-    fcft
     ### CLI SCRIPTS ###
     pfetch-rs # basic system info
     cmatrix # matrix text scroll
