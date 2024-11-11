@@ -63,7 +63,7 @@
     #stdenv = pkgs.gcc10Stdenv;
     #extraMakeFlags = ["WERROR=0"];
   };
-  chaotic.scx.enable; # chaotic
+  chaotic.scx.enable = true; # chaotic
   ### NETWORKING ###
   networking = {
     hostName = "t420";
