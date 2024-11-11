@@ -15,7 +15,7 @@
     { self, nixpkgs, ... }@inputs:
     {
       nixosConfigurations = {
-        nil = nixpkgs.lib.nixosSystem {
+        t420 = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
           };
