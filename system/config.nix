@@ -33,9 +33,9 @@
         };
       })
       #(final: prev: {
-        #dwl = prev.dwl.overrideAttrs (old: {
-          #src = /home/iglu/mydwl;
-        #});
+      #dwl = prev.dwl.overrideAttrs (old: {
+      #src = /home/iglu/mydwl;
+      #});
       #})
     ];
   };
@@ -111,6 +111,10 @@
       LC_TIME = "en_US.UTF-8";
     };
   };
+  ### SYSTEMD ###
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
   ### SERVICES ###
   services = {
     blueman.enable = true;
