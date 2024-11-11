@@ -229,7 +229,7 @@
     bash.blesh.enable = true;
     nh = {
       enable = true;
-      flake = "/home/iglu/t420";
+      flake = "/home/iglu/nil#t420";
       clean = {
         enable = true;
         #dates = weekly; # doesn't work??
