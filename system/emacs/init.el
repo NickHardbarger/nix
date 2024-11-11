@@ -62,9 +62,9 @@
             (add-hook 'before-save-hook 'eglot-format nil t)))
 
 (with-eval-after-load 'eglot
-  (dolist (mode '((nix-mode . ("nixd"))))
-    (add-to-list 'eglot-server-programs mode)))
-
+  (add-to-list 'eglot-server-programs
+	       '(nix-mode . ("nixd"))))
+(add-hook 'nix-mode-hook 'eglot-ensure)
 ;; LSP ;;
 ;(require 'lsp-mode)
 ;;(add-hook 'XXX-mode-hook #'lsp-deferred)
