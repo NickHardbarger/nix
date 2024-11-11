@@ -54,7 +54,7 @@
       lsp-nix-nixd-nixos-options-expr "(builtins.getFlake \"/home/nb/nixos\").nixosConfigurations.mnd.options"
       lsp-nix-nixd-home-manager-options-expr "(builtins.getFlake \"/home/nb/nixos\").homeConfigurations.\"nb@mnd\".options")
 
-(add-hook! 'nix-mode-hook
+(add-hook 'nix-mode-hook
          ;; enable autocompletion with company
          (setq company-idle-delay 0.1))
 
