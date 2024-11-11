@@ -12,6 +12,8 @@
 (global-display-line-numbers-mode 1)
 (hl-line-mode 1)
 (blink-cursor-mode 1)
+(set-frame-parameter nil 'alpha-background 90)
+(add-to-list 'default-frame-alist '(alpha-background . 90))
 (require 'nix-mode)
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 
