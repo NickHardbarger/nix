@@ -241,9 +241,6 @@
     ssh = {
       startAgent = true;
     };
-    sway = {
-      enable = true;
-    };
     firefox = {
       enable = true;
       languagePacks = [ "en-US" ];
@@ -310,7 +307,6 @@
     cmatrix # matrix text scroll
     speedtest-cli # test network speed
     ### MISC ###
-    waybar # statusbar
     mangohud # steam hud overlay
     wget # file retriever
     pulseaudio # ?? I forget why that's there lol
