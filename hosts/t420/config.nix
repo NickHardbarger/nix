@@ -379,18 +379,6 @@
     };
   };
   environment.systemPackages = with pkgs; [
-    ### SIMPLE TERMINAL ###
-    (st.overrideAttrs (oldAttrs: {
-      buildInputs = oldAttrs.buildInputs ++ [ ];
-      patches = [
-        ./st/st-defaultfontsize-20210225-4ef0cbd.diff
-	./st/st-gruvbox-dark-0.8.5.diff
-	#./st/st-themed_cursor-0.8.1.diff # patch error
-	./st/st-scrollback-0.9.2.diff
-	./st/st-scrollback-mouse-0.9.2.diff
-	#./st/st-clickurl-0.8.5.diff # patch error
-      ];
-    }))
     ### DMENU ###
     (dmenu.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ ];
