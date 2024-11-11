@@ -32,6 +32,9 @@
           conf = ./slstatus/config.h;
         };
       })
+      (final: prev: {
+      dwl = prev.dwl.overrideAttrs (old: {src = /home/iglu/mydwl/;});
+    })
     ];
   };
   ### BOOT ###
