@@ -275,7 +275,7 @@
         xterm
       ];
       displayManager = {
-        startx.enable = true;
+        startx.enable = false;
         lightdm.enable = false;
       };
     };

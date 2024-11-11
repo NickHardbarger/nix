@@ -93,7 +93,6 @@
   ];				
   home.file = {
     ".emacs.d/init.el".source = ./emacs/init.el;
-    ".xinitrc".source = ./.xinitrc;
     
     ".ssh/id_deploy".source = ./ssh/id_deploy;
     ".ssh/id_deploy.pub".source = ./ssh/id_deploy.pub;
@@ -102,7 +101,6 @@
     ".ssh/known_hosts".source = ./ssh/known_hosts;
     
     ".config/foot/foot.ini".source = ./foot/foot.ini;
-    ".config/yambar/config.yml".source = ./yambar/config.yml;
     ".config/sway/config".source = ./sway/config;
     ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
     ".config/waybar/style.css".source = ./waybar/style.css;
