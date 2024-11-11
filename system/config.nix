@@ -64,7 +64,7 @@
   };
   ### NETWORKING ###
   networking = {
-    hostName = "nil";
+    hostName = "t420";
     networkmanager.enable = true;
     firewall = {
       enable = true;
