@@ -48,6 +48,7 @@
         epkgs.projectile # project navigation
         epkgs.org-bullets # org mode bullets
         epkgs.ivy # completion
+        epkgs.multiple-cursors # multiple cursors
       ];
     };
     obs-studio = {
