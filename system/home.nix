@@ -47,6 +47,7 @@
         epkgs.hyperbole # hyperlinks
         epkgs.projectile # project navigation
         epkgs.org-bullets # org mode bullets
+        epkgs.ivy # completion
       ];
     };
     obs-studio = {
