@@ -12,6 +12,7 @@
 (global-display-line-numbers-mode 1)
 (hl-line-mode 1)
 (blink-cursor-mode 1)
+(hyperbole-mode 1)
 
 ;; TRANSPARENCY ;;
 (set-frame-parameter nil 'alpha-background 90)
