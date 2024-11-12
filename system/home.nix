@@ -45,6 +45,7 @@
         epkgs.lsp-mode # language server support
         epkgs.smartparens # insert pairs
         epkgs.hyperbole # hyperlinks
+        epkgs.projectile # project navigation
       ];
     };
     obs-studio = {

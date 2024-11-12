@@ -14,6 +14,9 @@
 (blink-cursor-mode 1)
 (hyperbole-mode 1)
 
+;; PROJECTILE ;;
+(projectile-mode 1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 ;; TRANSPARENCY ;;
 (set-frame-parameter nil 'alpha-background 90)
 (add-to-list 'default-frame-alist '(alpha-background . 90))
