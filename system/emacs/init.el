@@ -17,6 +17,7 @@
 ;; PROJECTILE ;;
 (projectile-mode 1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 ;; TRANSPARENCY ;;
 (set-frame-parameter nil 'alpha-background 90)
 (add-to-list 'default-frame-alist '(alpha-background . 90))
@@ -45,7 +46,8 @@
   'org-babel-load-languages
   '((emacs-lisp . t)
     (shell . t)))
-
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; NEOTREE ;;
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
