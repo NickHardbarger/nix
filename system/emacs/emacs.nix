@@ -2,5 +2,5 @@
 
 pkgs.writeShellApplication {
   name = "vim";
-  text = "exec emacsclient -c -a ''";
+  text = "emacsclient -c -a ''";
 }
