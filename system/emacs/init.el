@@ -25,6 +25,30 @@
 (projectile-mode 1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
+      dashboard-banner-logo-title "Welcome to Emacs!!!"
+      dashboard-startup-banner 'official
+      dashboard-center-content t
+      dashboard-vertically-center-content t
+      dashboard-show-shortcuts t
+      dashboard-display-icons-p t
+      dashboard-icon-type 'nerd-icons
+      dashboard-set-heading-icons t
+      dashboard-set-file-icons t)
+
+(setq dashboard-startupify-list '(dashboard-insert-banner
+				  dashboard-insert-newline
+				  dashboard-insert-banner-title
+				  dashboard-insert-newline
+				  dashboard-insert-navigator
+				  dashboard-insert-newline
+				  dashboard-insert-init-info
+				  dashboard-insert-items
+				  dashboard-insert-newline
+				  dashboard-insert-footer))
+
 (ivy-mode)
 (setq ivy-use-virtual-buffers t
       enable-recursive-minibuffers t)

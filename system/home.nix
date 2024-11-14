@@ -54,6 +54,7 @@
         epkgs.diminish # cleans up modeline
         epkgs.page-break-lines # makes page breaks prettier
         epkgs.nerd-icons # adds nerd icons
+        epkgs.dashboard # adds a dashboard
       ];
     };
     obs-studio = {
