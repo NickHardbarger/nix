@@ -14,7 +14,7 @@
 (global-hl-line-mode 1)
 (blink-cursor-mode 1)
 (hyperbole-mode 1)
-(require diminish)
+(require 'diminish)
 
 (require 'server)
 (unless (server-running-p)
