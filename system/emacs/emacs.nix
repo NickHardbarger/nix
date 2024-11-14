@@ -2,5 +2,5 @@
 
 pkgs.writeShellApplication {
   name = "vscode";
-  text = "emacsclient -c -a ''";
+  text = "exec emacsclient -c -a ''";
 }

@@ -1,5 +1,4 @@
 { pkgs }:
-#with import <nixpkgs> {};
 
 pkgs.writeShellApplication {
   name = "mydwl";
