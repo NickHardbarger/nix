@@ -109,7 +109,7 @@
   ];
   home.file = {
     ".emacs.d/init.el".source = ./emacs/init.el;
-    ".config/foot/foot.org".source = ./foot/foot.org;
+    ".config/foot/foot.ini".source = ./foot/foot.ini;
     ".ssh/id_deploy".source = ./ssh/id_deploy;
     ".ssh/id_deploy.pub".source = ./ssh/id_deploy.pub;
     ".ssh/id_ed25519".source = ./ssh/id_ed25519;
