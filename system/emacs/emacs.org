@@ -6,20 +6,23 @@
 
 * General
 #+BEGIN_SRC emacs-lisp
-(setq inhibit-startup-message nil
-      visible-bell t
-      display-line-numbers 'relative
-      scroll-conservatively most-positive-fixnum
-      make-backup-files nil)
+  (setq inhibit-startup-message nil
+	visible-bell t
+	display-line-numbers 'relative
+	scroll-conservatively most-positive-fixnum
+	make-backup-files nil)
 
-(require 'magit)
-(add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-(menu-bar-mode -1)
-(global-display-line-numbers-mode 1)
-(hl-line-mode 1)
-(blink-cursor-mode 1)
-(hyperbole-mode 1)
+  (require 'magit)
+  (add-hook 'after-init-hook 'global-company-mode)
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (global-display-line-numbers-mode 1)
+  (global-hl-line-mode 1)
+  (blink-cursor-mode 1)
+  (hyperbole-mode 1)
+  (require diminish)
 #+END_SRC
 
 * Server

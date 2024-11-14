@@ -51,6 +51,7 @@
         epkgs.ivy # completion
         epkgs.multiple-cursors # multiple cursors
         epkgs.org-auto-tangle # auto tangle org files
+        epkgs.diminish # cleans up modeline
       ];
     };
     obs-studio = {
