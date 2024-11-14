@@ -63,9 +63,9 @@
   home.shellAliases = {
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
-    "vi" = "emacsclient -c -a ''";
+    "vi" = "emacs -nw";
     "wmenu-run" = "wmenu-run -f 'Jetbrains Mono 12'";
-    "mydwl" = "exec mydwl";
+    "dwl" = "exec mydwl";
     "menuconfig" = "MENUCONFIG_COLOR=blackbg menuconfig";
     "screenshot" = "slurp | grim -g -"; # to use: screenshot <screenshot>.png
   };
