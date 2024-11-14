@@ -87,6 +87,7 @@
 	       '(nix-mode . ("nixd"))))
 (add-hook 'nix-mode-hook 'eglot-ensure)
 (add-hook 'shell-mode-hook 'eglot-ensure)
+(add-hook 'perl-mode-hook 'eglot-ensure)
 (add-hook 'c-mode-hook 'eglot-ensure)
 (add-hook 'c++-mode-hook 'eglot ensure)
 (add-hook 'java-mode-hook 'eglot ensure)
