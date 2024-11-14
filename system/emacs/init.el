@@ -4,7 +4,6 @@
       scroll-conservatively most-positive-fixnum
       make-backup-files nil)
 
-(server-start)
 (require 'magit)
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
@@ -13,6 +12,10 @@
 (hl-line-mode 1)
 (blink-cursor-mode 1)
 (hyperbole-mode 1)
+
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 
 (projectile-mode 1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)

@@ -12,7 +12,6 @@
       scroll-conservatively most-positive-fixnum
       make-backup-files nil)
 
-(server-start)
 (require 'magit)
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
@@ -21,6 +20,13 @@
 (hl-line-mode 1)
 (blink-cursor-mode 1)
 (hyperbole-mode 1)
+#+END_SRC
+
+* Server
+#+BEGIN_SRC emacs-lisp
+    (require 'server)
+  (unless (server-running-p)
+    (server-start))
 #+END_SRC
 
 * Projectile
