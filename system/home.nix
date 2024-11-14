@@ -28,7 +28,7 @@
       enable = true;
       bashrcExtra = ''
         pfetch
-        ~/fetch/fetch.pl
+        ~/nil/system/fetch/fetch.pl
       '';
     };
     emacs = {
@@ -114,7 +114,6 @@
     ".ssh/id_ed25519".source = ./ssh/id_ed25519;
     ".ssh/id_ed25519.pub".source = ./ssh/id_ed25519.pub;
     ".ssh/known_hosts".source = ./ssh/known_hosts;
-    "fetch/fetch.pl".source = ./fetch.pl;
   };
   home.sessionVariables = {
     EDITOR = "emacsclient -c -a ''";
