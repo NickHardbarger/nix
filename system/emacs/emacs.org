@@ -24,6 +24,7 @@
   (hyperbole-mode 1)
   (require 'diminish)
   (global-page-break-lines-mode)
+  (require 'nerd-icons)
 #+END_SRC
 
 * Server

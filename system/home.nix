@@ -53,6 +53,7 @@
         epkgs.org-auto-tangle # auto tangle org files
         epkgs.diminish # cleans up modeline
         epkgs.page-break-lines # makes page breaks prettier
+        epkgs.nerd-icons # adds nerd icons
       ];
     };
     obs-studio = {

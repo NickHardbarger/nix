@@ -16,6 +16,7 @@
 (hyperbole-mode 1)
 (require 'diminish)
 (global-page-break-lines-mode)
+(require 'nerd-icons)
 
 (require 'server)
 (unless (server-running-p)
