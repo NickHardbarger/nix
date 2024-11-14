@@ -67,7 +67,7 @@
   home.shellAliases = {
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
-    "vi" = "emacs -nw";
+    #"vi" = "emacs -nw";
     "dwl" = "exec mydwl";
     "menuconfig" = "MENUCONFIG_COLOR=blackbg menuconfig";
     "screenshot" = "slurp | grim -g -"; # to use: screenshot <screenshot>.png
