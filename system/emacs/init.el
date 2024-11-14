@@ -69,7 +69,10 @@
 
 ;; TREE SITTER ;;
 (require 'tree-sitter)
+(require 'tree-sitter-hl)
 (require 'tree-sitter-langs)
+(require 'tree-sitter-debug)
+(require 'tree-sitter-query)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
