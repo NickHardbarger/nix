@@ -1,3 +1,11 @@
+#+title: emacs config
+#+description: my emacs config
+#+author: Nick Hardbarger
+#+property: header-args :tangle init.el
+#+startup: showeverything
+
+* General
+#+BEGIN_SRC emacs-lisp
 (setq inhibit-startup-message nil
       visible-bell t
       display-line-numbers 'relative
@@ -13,14 +21,23 @@
 (hl-line-mode 1)
 (blink-cursor-mode 1)
 (hyperbole-mode 1)
+#+END_SRC
 
+* Projectile
+#+BEGIN_SRC emacs-lisp
 (projectile-mode 1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+#+END_SRC
 
+* IVY
+#+BEGIN_SRC emacs-lisp
 (ivy-mode)
 (setq ivy-use-virtual-buffers t
       enable-recursive-minibuffers t)
+#+END_SRC
 
+* Transparency
+#+BEGIN_SRC emacs-lisp
 (set-frame-parameter nil 'alpha-background 90)
 (add-to-list 'default-frame-alist '(alpha-background . 90))
 (defun on-after-init ()
@@ -34,10 +51,16 @@
   (unless (display-graphic-p frame)
     (set-face-background 'default "unspecified-bg" frame)))
 (add-hook 'after-make-frame-functions #'on-frame-open)
+#+END_SRC
 
+* Theme
+#+BEGIN_SRC emacs-lisp
 (require 'gruvbox-theme)
 (load-theme 'gruvbox-dark-hard t)
+#+END_SRC
 
+* Org
+#+BEGIN_SRC emacs-lisp
 (require 'org)
 (org-babel-do-load-languages
   'org-babel-load-languages
@@ -48,19 +71,31 @@
 (require 'org-auto-tangle)
 (add-hook 'org-mode-hook 'org-auto-tangle-mode)
 (setq org-auto-tangle-default t)
+#+END_SRC
 
+* Neotree
+#+BEGIN_SRC emacs-lisp
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+#+END_SRC
 
+* Smartparens
+#+BEGIN_SRC emacs-lisp
 (require 'smartparens-config)
 (smartparens-global-mode t)
+#+END_SRC
 
+* Multiple cursors
+#+BEGIN_SRC emacs-lisp
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+#+END_SRC
 
+* Tree sitter
+#+BEGIN_SRC emacs-lisp
 (require 'tree-sitter)
 (require 'tree-sitter-hl)
 (require 'tree-sitter-langs)
@@ -68,7 +103,10 @@
 (require 'tree-sitter-query)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+#+END_SRC
 
+* Eglot
+#+BEGIN_SRC emacs-lisp
 (add-hook 'prog-mode-hook
           (lambda ()
             (add-hook 'before-save-hook 'eglot-format nil t)))
@@ -86,7 +124,10 @@
 (add-hook 'html-mode-hook 'eglot-ensure)
 (add-hook 'css-mode-hook 'eglot-ensure)
 (add-hook 'js-mode-hook 'eglot-ensure)
+#+END_SRC
 
+* LSP
+#+BEGIN_SRC emacs-lisp
 ;(require 'lsp-mode)
 ;;(add-hook 'XXX-mode-hook #'lsp-deferred)
 ;(with-eval-after-load 'lsp-mode
@@ -109,9 +150,13 @@
 ;(add-hook 'nix-mode-hook
 ;         ;; enable autocompletion with company
 ;         (setq company-idle-delay 0.1))
+#+END_SRC
 
+* MELPA
+#+BEGIN_SRC emacs-lisp
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 (package-refresh-contents)
+#+END_SRC
