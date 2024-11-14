@@ -296,6 +296,7 @@
     (import ./dwl/dwl.nix { inherit pkgs; })
     slstatus # provides input for bar
     wmenu # app launcher
+    (import ./wmenu/wmenu.nix { inherit pkgs; })
     foot # terminal
     wbg # wallpaper setter
     mako # notification daemon
@@ -307,6 +308,7 @@
     cmatrix # matrix text scroll
     speedtest-cli # test network speed
     ### MISC ###
+    (import ./emacs/emacs.nix { inherit pkgs; })
     mangohud # steam hud overlay
     wget # file retriever
     pulseaudio # ?? I forget why that's there lol

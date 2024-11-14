@@ -1,8 +1,8 @@
 { pkgs }:
 
 pkgs.writeShellApplication {
-  name = "vscode";
+  name = "vim";
   text = ''
-    emacsclient -c -a '\'
+    exec emacsclient -c -a '\'
   '';
 }
