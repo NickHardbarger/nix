@@ -27,6 +27,7 @@
 
 (require 'dashboard)
 (dashboard-setup-startup-hook)
+(add-to-list 'dashboard-items '(agenda) t)
 (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
       dashboard-banner-logo-title "Welcome to Emacs!!!"
       dashboard-startup-banner 'official
@@ -36,7 +37,9 @@
       dashboard-display-icons-p t
       dashboard-icon-type 'nerd-icons
       dashboard-set-heading-icons t
-      dashboard-set-file-icons t)
+      dashboard-set-file-icons t
+      dashboard-week-agenda t
+      dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 
 (setq dashboard-startupify-list '(dashboard-insert-banner
 				  dashboard-insert-newline
