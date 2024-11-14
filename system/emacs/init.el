@@ -51,6 +51,9 @@
     (shell . t)))
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(require 'org-auto-tangle)
+(add-hook 'org-mode-hook 'org-auto-tangle-mode)
+(setq org-auto-tangle-default t)
 
 ;; NEOTREE ;;
 (require 'neotree)
