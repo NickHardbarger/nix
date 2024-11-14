@@ -2,10 +2,11 @@
 #+description: my foot config
 #+author: Nick Hardbarger
 #+property: header-args :tangle foot.ini
+#+auto_tangle: t
+#+startup: showeverything
 
-#+BEGIN_SRC
+#+BEGIN_SRC conf
 # -*- conf -*-
-
 # shell=$SHELL (if set, otherwise user's default shell from /etc/passwd)
 # term=foot (or xterm-256color if built with -Dterminfo=disabled)
 # login-shell=no
@@ -16,7 +17,7 @@
 #+END_SRC
 
 * Font
-#+BEGIN_SRC
+#+BEGIN_SRC conf
 font=JetBrainsMonoNF:size=12
 # font-bold=<bold variant of regular font>
 # font-italic=<italic variant of regular font>
@@ -33,7 +34,7 @@ font=JetBrainsMonoNF:size=12
 # dpi-aware=no
 #+END_SRC
 
-#+BEGIN_SRC
+#+BEGIN_SRC conf
 # initial-window-size-pixels=700x500  # Or,
 # initial-window-size-chars=<COLSxROWS>
 # initial-window-mode=windowed
@@ -97,7 +98,7 @@ font=JetBrainsMonoNF:size=12
 
 * Colors
 Sets opacity level and uses the gruvbox-dark colorscheme
-#+BEGIN_SRC
+#+BEGIN_SRC conf
 [colors]
 alpha=0.9
 background=282828
@@ -163,7 +164,7 @@ bright7=ebdbb2
 # urls=<regular3>
 #+END_SRC
 
-#+BEGIN_SRC
+#+BEGIN_SRC conf
 [csd]
 # preferred=server
 # size=26
