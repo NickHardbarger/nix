@@ -28,6 +28,7 @@
       enable = true;
       bashrcExtra = ''
         pfetch
+        ~/nil/system/fetch.pl
       '';
     };
     emacs = {
