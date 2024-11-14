@@ -15,6 +15,7 @@
 (blink-cursor-mode 1)
 (hyperbole-mode 1)
 (require 'diminish)
+(global-page-break-lines-mode)
 
 (require 'server)
 (unless (server-running-p)

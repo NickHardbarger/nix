@@ -52,6 +52,7 @@
         epkgs.multiple-cursors # multiple cursors
         epkgs.org-auto-tangle # auto tangle org files
         epkgs.diminish # cleans up modeline
+        epkgs.page-break-lines # makes page breaks prettier
       ];
     };
     obs-studio = {

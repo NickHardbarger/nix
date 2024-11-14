@@ -23,6 +23,7 @@
   (blink-cursor-mode 1)
   (hyperbole-mode 1)
   (require 'diminish)
+  (global-page-break-lines-mode)
 #+END_SRC
 
 * Server
