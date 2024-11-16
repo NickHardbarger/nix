@@ -50,7 +50,7 @@
   (require 'dashboard)
   (dashboard-setup-startup-hook)
   (add-to-list 'dashboard-items '(agenda) t)
-  (setq ;initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
+  (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
 	dashboard-banner-logo-title "Hello World!"
 	dashboard-startup-banner 'official
 	dashboard-center-content t
