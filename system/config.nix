@@ -182,6 +182,17 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
+    sudo.enable = true;
+    doas = {
+      enable = true;
+      extraRules = [
+        {
+          users = [ "iglu" ];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
+    };
   };
   system.autoUpgrade = {
     enable = true;
