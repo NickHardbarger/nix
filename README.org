@@ -1,6 +1,6 @@
-#+title: NIL documentation
+#+title: Nil Documentation
 #+author: Nick Hardbarger
-#+date: [2024-11-10]
+#+date: [2024-11-16]
 #+caption: my desktop
 [[./desktop.png]]
 ** TODO Add Disko and Impermanence
@@ -10,7 +10,7 @@
 ** TODO Add custom kernel
 ** TODO Configure emacs!
 ** Installation
-To install NIL on a fresh NixOS system, run these commands:
+To install Nil on a fresh NixOS system, run these commands:
 
 #+BEGIN_SRC shell
 nix-shell -p git
