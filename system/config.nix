@@ -180,7 +180,7 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
-    sudo.enable = false; # might be dangerous
+    sudo.enable = true; # TODO: figure out nil repo ownership issue
     doas = {
       enable = true;
       extraRules = [
