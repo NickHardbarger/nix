@@ -180,7 +180,7 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
-    sudo.enable = true;
+    sudo.enable = false; # might be dangerous
     doas = {
       enable = true;
       extraRules = [
