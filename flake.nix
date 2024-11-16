@@ -9,11 +9,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs =
-    { self, nixpkgs, chaotic, ... }@inputs:
+    { self, nixpkgs, ... }@inputs:
     {
       nixosConfigurations = {
         t420 = nixpkgs.lib.nixosSystem {
@@ -24,7 +23,6 @@
             ./system/config.nix
             ./system/hardware/t420.nix
             inputs.home-manager.nixosModules.default
-            chaotic.nixosModules.default
           ];
         };
       };

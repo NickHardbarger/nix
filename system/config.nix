@@ -50,9 +50,8 @@
       efi.canTouchEfiVariables = true;
     };
     ### KERNEL ###
-    kernelPackages = pkgs.linuxPackages_cachyos; # chaotic
+    kernelPackages = pkgs.linuxPackages_zen;
     #kernelPackages = pkgs.linuxPackagesFor linux;
-    #kernelPackages = pkgs.linuxPackages_zen;
     #kernelPackages = pkgs.linuxManualConfig {
     #version = "6.6.59";
     #src = fetchTarball {
@@ -63,7 +62,6 @@
     #stdenv = pkgs.gcc10Stdenv;
     #extraMakeFlags = ["WERROR=0"];
   };
-  #chaotic.scx.enable = true; # chaotic
   ### NETWORKING ###
   networking = {
     hostName = "t420";
