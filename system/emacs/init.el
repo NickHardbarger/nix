@@ -32,7 +32,7 @@
   (add-to-list 'dashboard-items '(agenda) t)
   (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
 	dashboard-banner-logo-title "Hello World!"
-	dashboard-startup-banner 'official
+	dashboard-startup-banner 4
 	dashboard-center-content t
 	dashboard-vertically-center-content t
 	dashboard-show-shortcuts t
