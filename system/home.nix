@@ -67,6 +67,7 @@
   home.shellAliases = {
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
+    "sudo" = "doas";
     #"vi" = "emacs -nw";
     "dwl" = "exec mydwl";
     "menuconfig" = "MENUCONFIG_COLOR=blackbg menuconfig";
