@@ -319,7 +319,7 @@
     cmatrix # matrix text scroll
     speedtest-cli # test network speed
     ### MISC ###
-    (import ./emacs/emacs.nix { inherit pkgs; })
+    #(import ./emacs/emacs.nix { inherit pkgs; })
     mangohud # steam hud overlay
     wget # file retriever
     pulseaudio # ?? I forget why that's there lol
