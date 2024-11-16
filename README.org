@@ -4,6 +4,7 @@
 #+caption: my desktop
 [[./desktop.png]]
 ** TODO Add Disko and Impermanence
+** TODO Add multihost support!
 ** TODO Add opacity to dwl
 ** TODO Rice dwl
 ** TODO Add custom kernel
