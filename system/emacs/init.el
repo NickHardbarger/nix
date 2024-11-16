@@ -90,7 +90,7 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (require 'org-auto-tangle)
 (add-hook 'org-mode-hook 'org-auto-tangle-mode)
-(setq org-auto-tangle-default t)
+(setq org-auto-tangle-default nil)
 
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)

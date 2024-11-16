@@ -2,6 +2,7 @@
 #+description: my emacs config
 #+author: Nick Hardbarger
 #+property: header-args :tangle init.el
+#+auto_tangle: t
 #+startup: showeverything
 
 * General
@@ -122,7 +123,7 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (require 'org-auto-tangle)
 (add-hook 'org-mode-hook 'org-auto-tangle-mode)
-(setq org-auto-tangle-default t)
+(setq org-auto-tangle-default nil)
 #+END_SRC
 
 * Neotree
