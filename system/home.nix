@@ -55,6 +55,7 @@
         epkgs.page-break-lines # makes page breaks prettier
         epkgs.nerd-icons # adds nerd icons
         epkgs.dashboard # adds a dashboard
+        epkgs.fireplace # +100 coziness
       ];
     };
     obs-studio = {
