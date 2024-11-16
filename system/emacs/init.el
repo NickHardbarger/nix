@@ -28,37 +28,37 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 (require 'dashboard)
-(dashboard-setup-startup-hook)
-(add-to-list 'dashboard-items '(agenda) t)
-(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
-      dashboard-banner-logo-title "Hello World!"
-      dashboard-startup-banner 'official
-      dashboard-center-content t
-      dashboard-vertically-center-content t
-      dashboard-show-shortcuts t
-      dashboard-display-icons-p t
-      dashboard-icon-type 'nerd-icons
-      dashboard-set-heading-icons t
-      dashboard-set-file-icons t
-      dashboard-week-agenda t
-      dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
+  (dashboard-setup-startup-hook)
+  (add-to-list 'dashboard-items '(agenda) t)
+  (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
+	dashboard-banner-logo-title "Hello World!"
+	dashboard-startup-banner 'official
+	dashboard-center-content t
+	dashboard-vertically-center-content t
+	dashboard-show-shortcuts t
+;	dashboard-display-icons-p t
+;	dashboard-icon-type 'nerd-icons
+;	dashboard-set-heading-icons t
+;	dashboard-set-file-icons t
+	dashboard-week-agenda t
+	dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 
-(setq dashboard-items '((recents . 5)
-			(bookmarks . 5)
-			(projects . 5)
-			(agenda . 5)
-			(registers . 5)))
-
-(setq dashboard-startupify-list '(dashboard-insert-banner
-				  dashboard-insert-newline
-				  dashboard-insert-banner-title
-				  dashboard-insert-newline
-				  dashboard-insert-navigator
-				  dashboard-insert-newline
-				  dashboard-insert-init-info
-				  dashboard-insert-items
-				  dashboard-insert-newline
-				  dashboard-insert-footer))
+  (setq dashboard-items '((recents . 5)
+			  (bookmarks . 5)
+			  (projects . 5)
+			  (agenda . 5)
+			  (registers . 5)))
+  
+  (setq dashboard-startupify-list '(dashboard-insert-banner
+				    dashboard-insert-newline
+				    dashboard-insert-banner-title
+				    dashboard-insert-newline
+				    dashboard-insert-navigator
+				    dashboard-insert-newline
+				    dashboard-insert-init-info
+				    dashboard-insert-items
+				    dashboard-insert-newline
+				    dashboard-insert-footer))
 
 (ivy-mode)
 (setq ivy-use-virtual-buffers t
