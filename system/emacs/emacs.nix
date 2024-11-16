@@ -1,6 +1,6 @@
 { pkgs }:
 
 pkgs.writeShellApplication {
-  name = "vi";
+  name = "vim";
   text = "emacsclient -c -a ''";
 }
