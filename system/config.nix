@@ -316,8 +316,9 @@
     wl-clipboard # clipboard
     ### CLI SCRIPTS ###
     pfetch-rs # basic system info
-    cmatrix # matrix text scroll
     speedtest-cli # test network speed
+    cmatrix # matrix text scroll
+    cowsay # generates ascii cow with message
     ### MISC ###
     #(import ./emacs/emacs.nix { inherit pkgs; })
     mangohud # steam hud overlay
