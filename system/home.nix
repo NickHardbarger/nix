@@ -59,8 +59,8 @@
         epkgs.fireplace # adds a cozy fireplace
         epkgs.editorconfig # coding styles
         epkgs.doom-modeline # fancy modeline
-        epkgs.polymode # multiple major modes
-        epkgs.poly-org # polymode for .org files
+        #epkgs.polymode # multiple major modes
+        #epkgs.poly-org # polymode for .org files
       ];
     };
     obs-studio = {
