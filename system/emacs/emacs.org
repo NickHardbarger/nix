@@ -15,6 +15,12 @@
     (package-refresh-contents)
     (package-install 'use-package))
 #+END_SRC
+* Linum
+#+BEGIN_SRC emacs-lisp
+  (require 'linum-relative)
+  (linum-on)
+  (setq linum-relative-backend 'display-line-numbers-mode)
+#+END_SRC
 * Polymode
 #+BEGIN_SRC emacs-lisp
   (unless (package-installed-p 'polymode)
@@ -33,7 +39,6 @@
 #+BEGIN_SRC emacs-lisp
   (setq inhibit-startup-message nil
 	visible-bell t
-	display-line-numbers 'relative
 	scroll-conservatively most-positive-fixnum
 	make-backup-files nil)
 

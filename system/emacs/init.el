@@ -6,6 +6,10 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(require 'linum-relative)
+(linum-on)
+(setq linum-relative-backend 'display-line-numbers-mode)
+
 (unless (package-installed-p 'polymode)
   (package-install 'poly-org))
 (use-package poly-org
@@ -18,7 +22,6 @@
 
 (setq inhibit-startup-message nil
       visible-bell t
-      display-line-numbers 'relative
       scroll-conservatively most-positive-fixnum
       make-backup-files nil)
 
