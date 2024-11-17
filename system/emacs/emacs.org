@@ -5,6 +5,16 @@
 #+auto_tangle: t
 #+startup: showeverything
 
+* Packages
+#+BEGIN_SRC emacs-lisp
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives
+	       '("melpa" . "https://melpa.org/packages/") t)
+  (when (not (package-installed-p 'use-package))
+    (package-refresh-contents)
+    (package-install 'use-package))
+#+END_SRC
 * General
 #+BEGIN_SRC emacs-lisp
   (setq inhibit-startup-message nil
@@ -211,11 +221,3 @@
 ;         (setq company-idle-delay 0.1))
 #+END_SRC
 
-* MELPA
-#+BEGIN_SRC emacs-lisp
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-(package-refresh-contents)
-#+END_SRC

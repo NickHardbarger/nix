@@ -35,6 +35,7 @@
       enable = true;
       package = pkgs.emacs-nox; # change to emacs-wayland when it becomes available on nixos
       extraPackages = epkgs: [
+        epkgs.use-package # emacs package config
         epkgs.gruvbox-theme # colorscheme
         epkgs.tree-sitter # syntax highlighting
         epkgs.tree-sitter-langs # better language support

@@ -1,3 +1,11 @@
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/") t)
+(when (not (package-installed-p 'use-package))
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 (setq inhibit-startup-message nil
       visible-bell t
       display-line-numbers 'relative
@@ -156,9 +164,3 @@
 ;(add-hook 'nix-mode-hook
 ;         ;; enable autocompletion with company
 ;         (setq company-idle-delay 0.1))
-
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-(package-refresh-contents)
