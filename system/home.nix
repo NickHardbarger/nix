@@ -58,6 +58,7 @@
         epkgs.dashboard # adds a dashboard
         epkgs.fireplace # adds a cozy fireplace
         epkgs.editorconfig # coding styles
+        epkgs.doom-modeline # fancy modeline
       ];
     };
     obs-studio = {
