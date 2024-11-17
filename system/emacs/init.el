@@ -6,6 +6,9 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(unless (package-installed-p 'polymode)
+  (package-install 'poly-org))
+
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1))
@@ -22,8 +25,8 @@
 (tool-bar-mode -1)
 ;(scroll-bar-mode -1)
 (global-display-line-numbers-mode 1)
-(global-hl-line-mode 1)
-;(blink-cursor-mode 1)
+;(global-hl-line-mode 1)
+(blink-cursor-mode 1)
 (hyperbole-mode 1)
 (require 'diminish)
 (global-page-break-lines-mode)
