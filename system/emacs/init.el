@@ -8,6 +8,9 @@
 
 (unless (package-installed-p 'polymode)
   (package-install 'poly-org))
+(use-package poly-org
+  :ensure t)
+(add-to-list 'auto-mode-alist '("\\.org" . poly-org-mode))
 
 (use-package doom-modeline
   :ensure t

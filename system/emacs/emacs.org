@@ -17,8 +17,11 @@
 #+END_SRC
 * Polymode
 #+BEGIN_SRC emacs-lisp
-    (unless (package-installed-p 'polymode)
-      (package-install 'poly-org))
+  (unless (package-installed-p 'polymode)
+    (package-install 'poly-org))
+  (use-package poly-org
+    :ensure t)
+  (add-to-list 'auto-mode-alist '("\\.org" . poly-org-mode))
 #+END_SRC
 * Doom Modeline
 #+BEGIN_SRC emacs-lisp
