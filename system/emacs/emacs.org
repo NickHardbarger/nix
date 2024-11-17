@@ -19,6 +19,7 @@
 #+BEGIN_SRC emacs-lisp
   (require 'linum-relative)
   (linum-on)
+  (linum-relative-global-mode)
   (setq linum-relative-backend 'display-line-numbers-mode)
 #+END_SRC
 * Polymode

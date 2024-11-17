@@ -8,6 +8,7 @@
 
 (require 'linum-relative)
 (linum-on)
+(linum-relative-global-mode)
 (setq linum-relative-backend 'display-line-numbers-mode)
 
 (unless (package-installed-p 'polymode)
