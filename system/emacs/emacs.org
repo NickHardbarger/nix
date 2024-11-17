@@ -27,6 +27,12 @@
   (require 'nerd-icons)
 #+END_SRC
 
+* Editorconfig
+#+BEGIN_SRC emacs-lisp
+  (editorconfig-mode 1)
+  (setq editorconfig-trim-whitespace-mode
+	'ws-butler-mode)
+#+END_SRC
 * Server
 #+BEGIN_SRC emacs-lisp
   (require 'server)

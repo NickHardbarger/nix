@@ -17,6 +17,10 @@
 (global-page-break-lines-mode)
 (require 'nerd-icons)
 
+(editorconfig-mode 1)
+(setq editorconfig-trim-whitespace-mode
+      'ws-butler-mode)
+
 (require 'server)
 (unless (server-running-p)
   (server-start))
