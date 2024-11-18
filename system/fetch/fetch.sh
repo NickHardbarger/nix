@@ -8,7 +8,8 @@ os=$(uname -o)
 kernel=$(uname -r)
     
 echo "Hello $name!"
-echo "$user$host"
-echo "-------"
+#echo "$user$host"
+#echo "-------"
+echo "host: $host"
 echo "system: $arch $os"
 echo "kernel: $kernel"
