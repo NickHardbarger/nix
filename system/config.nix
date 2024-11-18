@@ -11,7 +11,7 @@
   imports = [
     inputs.home-manager.nixosModules.default
     ./slstatus/slstatus.nix
-    #./kernel/kernel.nix
+    ./kernel/kernel.nix
   ];
   #SECURITY
   #SYSTEM
@@ -50,8 +50,8 @@
       efi.canTouchEfiVariables = true;
     };
     ### KERNEL ###
-    kernelPackages = pkgs.linuxPackages_zen;
-    #kernelPackages = pkgs.linuxPackagesFor linux;
+    #kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackagesFor pkgs.myLinux;
     #kernelPackages = pkgs.linuxManualConfig {
     #version = "6.6.59";
     #src = fetchTarball {
@@ -317,6 +317,7 @@
     speedtest-cli # test network speed
     cmatrix # matrix text scroll
     cowsay # generates ascii cow with message
+    sl # steam locomotive on ls typo
     ### MISC ###
     #(import ./emacs/emacs.nix { inherit pkgs; })
     mangohud # steam hud overlay
