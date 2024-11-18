@@ -182,7 +182,7 @@
     polkit.enable = true;
     sudo.enable = true; # TODO: figure out nil repo ownership issue
     doas = {
-      enable = true;
+      enable = false;
       extraRules = [
         {
           users = [ "iglu" ];

@@ -73,7 +73,7 @@
   home.shellAliases = {
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
-    "sudo" = "doas";
+    #"sudo" = "doas";
     "vi" = "emacs -nw";
     "vim" = "emacsclient -c -a ''";
     "dwl" = "exec mydwl";
