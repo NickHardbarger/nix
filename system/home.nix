@@ -28,9 +28,7 @@
       enable = true;
       bashrcExtra = ''
         pfetch
-        echo "Perl:\n"
-        ~/nil/system/fetch/fetch.pl
-        echo "Bash:\n"
+        #~/nil/system/fetch/fetch.pl
         ~/nil/system/fetch/fetch.sh
       '';
     };

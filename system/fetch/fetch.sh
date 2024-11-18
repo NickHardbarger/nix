@@ -3,19 +3,13 @@
 name="Nick"
 user=$(echo "${HOME/*\/}@")
 host=$(hostname -f)
-
-echo "Hello $name!\n"
-echo $var$host
+arch=$(uname -m)
+os=$(uname -o)
+kernel=$(uname -r)
+    
+echo "Hello $name!"
+echo "$user$host"
 echo "-------"
-
-echo "hostname: "
-uname -n
-
-echo "arch: "
-uname -m
-
-echo "os: "
-uname -o
-
-echo "kernel: "
-uname -r
+echo "arch: $arch"
+echo "os: $os"
+echo "kernel: $kernel"
