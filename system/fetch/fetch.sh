@@ -1,20 +1,21 @@
-#!/usr/bin/env perl
+#!/usr/bin/env bash
 
-$name = "Nick";
-#user=$(echo "${HOME/*\/}@")
-#host=$(hostname -f)
-#echo $var$host
-print "Hello $name!\n";
-#system("uname -a"); # all
+name="Nick"
+user=$(echo "${HOME/*\/}@")
+host=$(hostname -f)
 
-print "hostname: ";
-system("uname -n"); # hostname
+echo "Hello $name!\n"
+echo $var$host
+echo "-------"
 
-print "arch: ";
-system("uname -m"); # architecture
+echo "hostname: "
+uname -n
 
-print "os: ";
-system("uname -o"); # OS
+echo "arch: "
+uname -m
 
-print "kernel: ";
-system("uname -r"); # kernel
+echo "os: "
+uname -o
+
+echo "kernel: "
+uname -r
