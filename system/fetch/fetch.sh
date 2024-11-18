@@ -10,6 +10,5 @@ kernel=$(uname -r)
 echo "Hello $name!"
 echo "$user$host"
 echo "-------"
-echo "arch: $arch"
-echo "os: $os"
+echo "system: $arch $os"
 echo "kernel: $kernel"
