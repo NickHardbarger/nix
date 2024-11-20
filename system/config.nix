@@ -359,7 +359,6 @@
     slurp # screen select
     wl-clipboard # clipboard
     ### CLI SCRIPTS ###
-    pfetch-rs # basic system info
     speedtest-cli # test network speed
     cmatrix # matrix text scroll
     cowsay # generates ascii cow with message
