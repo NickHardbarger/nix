@@ -194,9 +194,27 @@
       ];
       displayManager = {
         startx.enable = false;
-        lightdm.enable = false;
-      };
+        lightdm = {
+          enable = false;
+          background = pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
+          extraConfig = ''
+            #user-authority-in-system-dir = true\n
+          '';
+          extraSeatDefaults = ''
+            #greeter-show-manual-login=true\n
+          '';
+          greeter = {
+            enable = true;
+            name = "dwl.desktop";
+            package = /usr/local/share/wayland-sessions;
+          };
+          greeters = {
+            gtk.enable = true;
+            slick.enable = false;
+          };
+        };
     };
+    displayManager.defaultSession = "dwl";
   };
   security = {
     rtkit.enable = true;
