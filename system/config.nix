@@ -205,8 +205,8 @@
           '';
           greeter = {
             enable = true;
-            name = "dwl.desktop";
-            package = /usr/local/share/wayland-sessions;
+            name = "lightdm-gtk-greeter";
+            package = pkgs.lightdm-gtk-greeter;
           };
           greeters = {
             gtk.enable = true;
@@ -214,7 +214,7 @@
           };
         };
       };
-      #displayManager.defaultSession = "dwl";
+      displayManager.defaultSession = "dwl";
     };
   };
   security = {
