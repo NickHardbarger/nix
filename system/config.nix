@@ -177,8 +177,14 @@
         PermitRootLogin = "prohibit-password";
       };
     };
+    displayManager = {
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+    };
     xserver = {
-      enable = true;
+      enable = false;
       autorun = false;
       xkb = {
         layout = "us";
@@ -193,9 +199,9 @@
         xterm
       ];
       displayManager = {
-        startx.enable = true;
+        startx.enable = false;
         lightdm = {
-          enable = true;
+          enable = false;
           background = pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
           extraConfig = ''
             #user-authority-in-system-dir = true\n
@@ -204,12 +210,12 @@
             #greeter-show-manual-login=true\n
           '';
           greeter = {
-            enable = true;
+            enable = false;
             name = "lightdm-gtk-greeter";
             package = pkgs.lightdm-gtk-greeter;
           };
           greeters = {
-            gtk.enable = true;
+            gtk.enable = false;
             slick.enable = false;
           };
         };
