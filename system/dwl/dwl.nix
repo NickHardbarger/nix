@@ -1,7 +1,7 @@
 { pkgs }:
 
 pkgs.writeShellApplication {
-  name = "mydwl";
+  name = "dwl";
   runtimeInputs = with pkgs; [
     # might not be necessary
     wayland
