@@ -1,8 +1,8 @@
 {
-  #config, # unneeded
+  config, # unneeded?
   pkgs,
   inputs,
-  #lib, # unneeded
+  lib, # unneeded?
   ...
 }:
 
