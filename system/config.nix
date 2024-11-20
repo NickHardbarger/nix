@@ -1,8 +1,8 @@
 {
-  config,
+  #config,
   pkgs,
   inputs,
-  lib,
+  #lib,
   ...
 }:
 
@@ -213,8 +213,9 @@
             slick.enable = false;
           };
         };
+      };
+      displayManager.defaultSession = "dwl";
     };
-    displayManager.defaultSession = "dwl";
   };
   security = {
     rtkit.enable = true;
