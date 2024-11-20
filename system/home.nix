@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
   home = {
-    username = "iglu";
-    homeDirectory = "/home/iglu";
+    username = "nickh";
+    homeDirectory = "/home/nickh";
   };
   ### PROGRAMS ###
   programs = {
@@ -16,7 +16,7 @@
       userEmail = "nickhardbarger13@gmail.com";
       extraConfig = {
         init.defaultBranch = "main";
-        safe.directory = "/home/iglu/nil";
+        safe.directory = "/home/nickh/nil";
       };
     };
     btop = {

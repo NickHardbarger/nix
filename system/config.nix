@@ -34,7 +34,7 @@
       })
       #(final: prev: {
       #dwl = prev.dwl.overrideAttrs (old: {
-      #src = /home/iglu/mydwl;
+      #src = /home/nickh/mydwl;
       #});
       #})
     ];
@@ -171,7 +171,7 @@
       enable = true;
       settings = {
         PasswordAuthentication = true;
-        AllowUsers = [ "iglu" ];
+        AllowUsers = [ "nickh" ];
         UseDns = true;
         X11Forwarding = false;
         PermitRootLogin = "prohibit-password";
@@ -225,7 +225,7 @@
       enable = false;
       extraRules = [
         {
-          users = [ "iglu" ];
+          users = [ "nickh" ];
           keepEnv = true;
           persist = true;
         }
@@ -256,10 +256,10 @@
     virtualbox.host.enable = true;
   };
   # Don't forget to set a password with ‘passwd’.
-  users.users.iglu = {
+  users.users.nickh = {
     isNormalUser = true;
-    description = "iglu";
-    initialPassword = "iglu";
+    description = "nickh";
+    initialPassword = "nickh";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -271,7 +271,7 @@
       inherit inputs;
     };
     users = {
-      "iglu" = import ./home.nix;
+      "nickh" = import ./home.nix;
     };
   };
   ### PROGRAMS ###
@@ -280,7 +280,7 @@
     bash.blesh.enable = true;
     nh = {
       enable = true;
-      flake = "/home/iglu/nil";
+      flake = "/home/nickh/nil";
       clean = {
         enable = true;
         #dates = weekly; # doesn't work??
