@@ -214,7 +214,7 @@
           };
         };
       };
-      displayManager.defaultSession = "dwl";
+      #displayManager.defaultSession = "dwl";
     };
   };
   security = {
