@@ -320,6 +320,7 @@
     sl # steam locomotive on ls typo
     ### MISC ###
     #(import ./emacs/emacs.nix { inherit pkgs; })
+    (import ./kernel/kernel.nix { inherit pkgs; })
     mangohud # steam hud overlay
     wget # file retriever
     pulseaudio # ?? I forget why that's there lol
