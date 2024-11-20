@@ -51,7 +51,7 @@
       timeout = 5;
     };
     plymouth = {
-      enable = false;
+      enable = true;
       theme = "rings";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
@@ -193,9 +193,9 @@
         xterm
       ];
       displayManager = {
-        startx.enable = false;
+        startx.enable = true;
         lightdm = {
-          enable = false;
+          enable = true;
           background = pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
           extraConfig = ''
             #user-authority-in-system-dir = true\n
@@ -204,12 +204,12 @@
             #greeter-show-manual-login=true\n
           '';
           greeter = {
-            enable = false;
+            enable = true;
             name = "lightdm-gtk-greeter";
             package = pkgs.lightdm-gtk-greeter;
           };
           greeters = {
-            gtk.enable = false;
+            gtk.enable = true;
             slick.enable = false;
           };
         };
