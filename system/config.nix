@@ -52,10 +52,10 @@
     };
     plymouth = {
       enable = true;
-      theme = "rings";
+      theme = "glitch";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
-          selected_themes = [ "rings" ];
+          selected_themes = [ "glitch" ];
         })
       ];
     };
@@ -179,12 +179,12 @@
     };
     displayManager = {
       sddm = {
-        enable = false;
-        wayland.enable = false;
+        #enable = true;
+        #wayland.enable = true;
       };
     };
     xserver = {
-      enable = false;
+      enable = true;
       autorun = false;
       xkb = {
         layout = "us";
@@ -336,7 +336,7 @@
       };
     };
   };
-  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [
     ### DMENU ###
     (dmenu.overrideAttrs (oldAttrs: {
