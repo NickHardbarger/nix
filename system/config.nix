@@ -11,7 +11,7 @@
   imports = [
     inputs.home-manager.nixosModules.default
     ./slstatus/slstatus.nix
-    ./kernel/kernel.nix
+    #./kernel/kernel.nix
   ];
   #SECURITY
   #SYSTEM
@@ -50,8 +50,8 @@
       efi.canTouchEfiVariables = true;
     };
     ### KERNEL ###
-    #kernelPackages = pkgs.linuxPackages_zen;
-    kernelPackages = pkgs.linuxPackagesFor pkgs.myLinux;
+    kernelPackages = pkgs.linuxPackages_zen;
+    #kernelPackages = pkgs.linuxPackagesFor pkgs.myLinux; # error says myLinux doesn't exist
     #kernelPackages = pkgs.linuxManualConfig {
     #version = "6.6.59";
     #src = fetchTarball {
@@ -320,7 +320,7 @@
     sl # steam locomotive on ls typo
     ### MISC ###
     #(import ./emacs/emacs.nix { inherit pkgs; })
-    (import ./kernel/kernel.nix { inherit pkgs; })
+    #(import ./kernel/kernel.nix { inherit pkgs; })
     mangohud # steam hud overlay
     wget # file retriever
     pulseaudio # ?? I forget why that's there lol
