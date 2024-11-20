@@ -195,7 +195,7 @@
       displayManager = {
         startx.enable = false;
         lightdm = {
-          enable = false;
+          enable = true;
           background = pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
           extraConfig = ''
             #user-authority-in-system-dir = true\n
@@ -259,7 +259,7 @@
   users.users.nickh = {
     isNormalUser = true;
     description = "nickh";
-    initialPassword = "nickh";
+    initialPassword = "1337";
     extraGroups = [
       "networkmanager"
       "wheel"
