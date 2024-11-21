@@ -89,7 +89,7 @@
   (add-to-list 'dashboard-items '(agenda) t)
   (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
 	dashboard-banner-logo-title "[https://github.com/NickHardbarger]"
-	dashboard-startup-banner 'original ;2
+	dashboard-startup-banner 'official ;2
 	dashboard-center-content t
 	dashboard-vertically-center-content t
 	dashboard-show-shortcuts t
@@ -117,6 +117,9 @@
 				    dashboard-insert-newline
 				    dashboard-insert-footer))
 #+END_SRC
+
+#+RESULTS:
+| dashboard-insert-banner | dashboard-insert-newline | dashboard-insert-banner-title | dashboard-insert-newline | dashboard-insert-navigator | dashboard-insert-newline | dashboard-insert-init-info | dashboard-insert-items | dashboard-insert-newline | dashboard-insert-footer |
 
 * Ivy
 #+BEGIN_SRC emacs-lisp
