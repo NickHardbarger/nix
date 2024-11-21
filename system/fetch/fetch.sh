@@ -39,23 +39,23 @@ nix2="$(nix-store -q --requisites ~/.nix-profile | wc -l)"
 pkgs="$(expr $nix1 + $nix2)"
 memory="$(free -m | grep Mem | awk '{print $3}')"
 
-echo -en "  \\\\\  \\\\\ //   "
+echo -en "${BLUE}  \\\\\  \\\\\ //   ${WHITE}"
 echo -e "${GREEN}$user$host${WHITE}"
 
-echo -en " ==\\\\\__\\\\\/ // "
+echo -en "${BLUE} ==\\\\\__\\\\\/ // ${WHITE}"
 echo -e "${GREY}https://github.com/NickHardbarger${WHITE}"
 
-echo -en "   //   \\\\\//  "
+echo -en "${BLUE}   //   \\\\\//  ${WHITE}"
 echo -e "${RED}model:${WHITE}  $model"
 
-echo -en "==//     //== "
+echo -en "${BLUE}==//     //== ${WHITE}"
 echo -e "${BLUE}flake:${WHITE}  $nixos"
 
-echo -en " //\\\\\___//    "
+echo -en "${BLUE} //\\\\\___//    ${WHITE}"
 echo -e "${YELLOW}kernel:${WHITE} $kernel"
 
-echo -en "// /\\\\\  \\\\\==  "
+echo -en "${BLUE}// /\\\\\  \\\\\==  ${WHITE}"
 echo -e "${CYAN}pkgs:${WHITE}   $pkgs"
 
-echo -en "  // \\\\\  \\\\\   "
+echo -en "${BLUE}  // \\\\\  \\\\\   ${WHITE}"
 echo -e "${PURPLE}memory:${WHITE} $memory Mi"
