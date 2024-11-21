@@ -27,8 +27,8 @@
     bash = {
       enable = true;
       bashrcExtra = ''
-        ~/nil/system/fetch/fetch.sh
         ~/nil/system/fetch/fetch.pl
+        ~/nil/system/fetch/fetch.sh
       '';
     };
     emacs = {
