@@ -48,7 +48,7 @@
         configurationLimit = 20;
       };
       efi.canTouchEfiVariables = true;
-      timeout = 5;
+      timeout = 2;
     };
     plymouth = {
       enable = true;
