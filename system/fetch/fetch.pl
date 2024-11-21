@@ -2,6 +2,24 @@
 
 # inspired and based on pfetch
 
-$user = system("${HOME/*\/}@");
-$host = system(hostname -f);
-print "$user$host\n";
+#  \\  \\ //
+# ==\\__\\/ //
+#   //   \\//
+#==//     //==
+# //\\___//
+#// /\\  \\==
+#  // \\  \\
+
+# \\
+# /\\
+#// \\
+
+# \\
+#  \\
+#  /\\
+# // \\
+#//   \\
+
+print " \\\\\n";
+print " /\\\\\n";
+print "// \\\\TODO: learn perl\n";
