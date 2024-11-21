@@ -75,7 +75,7 @@
     ".." = "cd ..";
     #"sudo" = "doas";
     "vi" = "emacs -nw";
-    "vim" = "emacsclient -c -a ''";
+    #"vim" = "emacsclient -c -a ''";
     "menuconfig" = "MENUCONFIG_COLOR=blackbg menuconfig";
     "screenshot" = "slurp | grim -g -"; # to use: screenshot <screenshot>.png
   };
