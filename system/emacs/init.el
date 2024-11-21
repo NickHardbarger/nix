@@ -63,7 +63,7 @@
 	dashboard-vertically-center-content t
 	dashboard-show-shortcuts t
 	dashboard-display-icons-p t
-	;dashboard-icon-type 'nerd-icons
+	dashboard-icon-type 'nerd-icons
 	;dashboard-set-heading-icons t
 	;dashboard-set-file-icons t
 	dashboard-week-agenda t
