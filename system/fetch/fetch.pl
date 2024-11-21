@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-
+use Term::ANSIColor;
 # inspired and based on pfetch
 
 #  \\  \\ //
@@ -20,6 +20,9 @@
 # // \\
 #//   \\
 
+print color('bold magenta');
 print " \\\\\n";
-print " /\\\\\n";
-print "// \\\\TODO: learn perl\n";
+print " /\\\\TODO: learn perl\n";
+print "// \\\\TODO: finish this script\n";
+print color('reset');
+print "\n";
