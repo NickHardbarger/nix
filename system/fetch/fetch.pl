@@ -22,7 +22,6 @@ use Term::ANSIColor;
 
 print color('bold magenta');
 print " \\\\\n";
-print " /\\\\TODO: learn perl\n";
-print "// \\\\TODO: finish this script\n";
+print " /\\\\  TODO: learn perl\n";
+print "// \\\\ TODO: finish this script\n";
 print color('reset');
-print "\n";
