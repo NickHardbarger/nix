@@ -12,14 +12,14 @@
 ** Installation
 To install Nil on a fresh NixOS system, run these commands:
 
-1. Temporarily add git to shell:
+1. Add git to shell, then create ssh key:
 #+BEGIN_SRC shell
 nix-shell -p git
 #+END_SRC
 
 2. In home directory, clone the repo:
 #+BEGIN_SRC shell
-git clone https://github.com/NickHardbarger/nil
+git clone git@github.com:NickHardbarger/nil.git
 #+END_SRC
 
 3. Optionally, remove the default configuration:
