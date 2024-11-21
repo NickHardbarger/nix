@@ -29,27 +29,33 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 GREY='\033[0;90m'
 
-user=$(echo "${HOME/*\/}@")
-host=$(hostname -f)
-nixos=$(cat /etc/os-release | grep PRETTY_NAME | grep -o -P '(?<=").*(?=")')
-model=$(cat /sys/devices/virtual/dmi/id/product_version)
-kernel=$(uname -r)
-nix1=$(nix-store -q --requisites /run/current-system/sw | wc -l)
-nix2=$(nix-store -q --requisites ~/.nix-profile | wc -l)
-pkgs=$(expr $nix1 + $nix2)
-memory=$(free -m | grep Mem | awk '{print $3}')
+user="$(echo "${HOME/*\/}@")"
+host="$(hostname -f)"
+nixos="$(cat /etc/os-release | grep PRETTY_NAME | grep -o -P '(?<=").*(?=")')"
+model="$(cat /sys/devices/virtual/dmi/id/product_version)"
+kernel="$(uname -r)"
+nix1="$(nix-store -q --requisites /run/current-system/sw | wc -l)"
+nix2="$(nix-store -q --requisites ~/.nix-profile | wc -l)"
+pkgs="$(expr $nix1 + $nix2)"
+memory="$(free -m | grep Mem | awk '{print $3}')"
 
-echo -n "  \\\  \\\ //   "
+echo -en "  \\\\\  \\\\\ //   "
 echo -e "${GREEN}$user$host${WHITE}"
-echo -n " ==\\\__\\\/ // "
+
+echo -en " ==\\\\\__\\\\\/ // "
 echo -e "${GREY}https://github.com/NickHardbarger${WHITE}"
-echo -n "   //   \\\//  "
+
+echo -en "   //   \\\\\//  "
 echo -e "${RED}model:${WHITE}  $model"
-echo -n "==//     //== "
+
+echo -en "==//     //== "
 echo -e "${BLUE}flake:${WHITE}  $nixos"
-echo -n " //\\\___//    "
+
+echo -en " //\\\\\___//    "
 echo -e "${YELLOW}kernel:${WHITE} $kernel"
-echo -n "// /\\\  \\\==  "
+
+echo -en "// /\\\\\  \\\\\==  "
 echo -e "${CYAN}pkgs:${WHITE}   $pkgs"
-echo -n "  // \\\  \\\   "
+
+echo -en "  // \\\\\  \\\\\   "
 echo -e "${PURPLE}memory:${WHITE} $memory Mi"
