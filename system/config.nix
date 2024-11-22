@@ -239,10 +239,10 @@
         "flakes"
       ];
       system-features = [
-        "benchmark"
-        "big-parallel"
-        "kvm"
-        "nixos-test"
+        #"benchmark"
+        #"big-parallel"
+        #"kvm"
+        #"nixos-test"
         "gccarch-sandybridge"
       ];
       # configures nix to build with all cores
