@@ -45,10 +45,10 @@
       grub.enable = false;
       systemd-boot = {
         enable = true;
-        configurationLimit = 20;
+        configurationLimit = 15;
       };
       efi.canTouchEfiVariables = true;
-      timeout = 2;
+      timeout = 1;
     };
     plymouth = {
       enable = true;
