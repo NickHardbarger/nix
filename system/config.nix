@@ -27,8 +27,8 @@
       allowUnfree = true;
     };
     hostPlatform = {
-      #gcc.arch = "sandybridge";
-      #gcc.tune = "sandybridge";
+      gcc.arch = "sandybridge";
+      gcc.tune = "sandybridge";
       system = "x86_64-linux";
     };
     overlays = [
@@ -239,10 +239,10 @@
         "flakes"
       ];
       system-features = [
-        #"benchmark"
-        #"big-parallel"
-        #"kvm"
-        #"nixos-test"
+        "benchmark"
+        "big-parallel"
+        "kvm"
+        "nixos-test"
         "gccarch-sandybridge"
       ];
       # configures nix to build with all cores
