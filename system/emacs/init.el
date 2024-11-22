@@ -66,7 +66,7 @@
 	dashboard-show-shortcuts t
 	dashboard-display-icons-p t
 	dashboard-icon-type 'nerd-icons
-	dashboard-set-heading-icons t
+	;dashboard-set-heading-icons t
 	dashboard-set-file-icons t
 	dashboard-week-agenda t
 	dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
