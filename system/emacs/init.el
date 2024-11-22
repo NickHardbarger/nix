@@ -41,7 +41,7 @@
 (use-package all-the-icons
   :if (display-graphic-p))
 (add-to-list 'default-frame-alist
-           '(font . "JetBrains Mono-12"))
+           '(font . "JetBrainsMonoNF-12"))
 
 (editorconfig-mode 1)
 (setq editorconfig-trim-whitespace-mode
