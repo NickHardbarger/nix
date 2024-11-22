@@ -37,9 +37,9 @@
 (hyperbole-mode 1)
 (require 'diminish)
 (global-page-break-lines-mode)
- ;(require 'nerd-icons)
-(use-package all-the-icons
-  :if (display-graphic-p))
+(require 'nerd-icons)
+;(use-package all-the-icons
+  ;:if (display-graphic-p))
 (add-to-list 'default-frame-alist
            '(font . "JetBrainsMonoNF-12"))
 
@@ -66,8 +66,8 @@
 	dashboard-center-content t
 	dashboard-vertically-center-content t
 	dashboard-show-shortcuts t
-	;dashboard-display-icons-p t
-	dashboard-icon-type 'all-the-icons
+	dashboard-display-icons-p t
+	dashboard-icon-type 'nerd-icons
 	;dashboard-set-heading-icons t
 	dashboard-set-file-icons t
 	dashboard-week-agenda t
