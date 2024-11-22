@@ -66,6 +66,50 @@
     };
     consoleLogLevel = 0;
     initrd.verbose = false;
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPatches = [
+      {
+        name = "nil";
+        patch = null;
+        structuredExtraConfig = with lib.kernel; {
+          # compression algorithm
+          KERNEL_LZ4 = yes; # fastest, least compression
+          # timer frequency
+          HZ_PERIODIC = yes; # more power usage, better performance
+          NO_HZ = no;
+          # cpu frequency
+          CPU_FREQ_DEFAULT_GOV_PERFORMANCE = yes;
+          CPU_FREQ_DEFAULT_GOV_USERSPACE = no;
+          CPU_FREQ_GOV_POWERSAVE = no;
+          CPU_FREQ_GOV_USERSPACE = no;
+          CPU_FREQ_GOV_ONDEMAND = no;
+          CPU_FREQ_GOV_CONSERVATIVE = no;
+          CPU_FREQ_GOV_SCHEDUTIL = no;
+          # other cpu options
+          TASKSTATS = no;
+          X86_MPPARSE = no;
+          X86_EXTENDED_PLATFORM = no;
+          NR_CPUS = 32;
+          X86_MCE_INTEL = yes; # intel only
+          #X86_MCE_AMD = no; # amd only
+          X86_5LEVEL = no;
+          # cpu type
+          MK8 = no; # amd
+          MPSC = no; # older intel
+          MCORE_2 = no; # intel core 2
+          MATOM = no; # intel atom
+          GENERIC_CPU = yes;
+          # modules
+          #MODULES = no;
+          # drivers
+          HAMRADIO = no;
+          MD = no; # raid/lvm
+          MACINTOSH_DRIVERS = no;
+          INPUT_TABLET = no;
+          INPUT_TOUCHSCREEN = no;
+        };
+      }
+    ];
     kernelParams = [
       "quiet"
       "splash"
@@ -75,8 +119,6 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
-    ### KERNEL ###
-    kernelPackages = pkgs.linuxPackages_zen;
     #kernelPackages = pkgs.linuxPackagesFor pkgs.myLinux; # error says myLinux doesn't exist
     #kernelPackages = pkgs.linuxManualConfig {
     #version = "6.6.59";
