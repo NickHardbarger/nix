@@ -37,7 +37,9 @@
 (hyperbole-mode 1)
 (require 'diminish)
 (global-page-break-lines-mode)
-(require 'nerd-icons)
+ ;(require 'nerd-icons)
+(use-package all-the-icons
+:if (display-graphic-p))
 
 (editorconfig-mode 1)
 (setq editorconfig-trim-whitespace-mode
@@ -62,8 +64,8 @@
 	dashboard-center-content t
 	dashboard-vertically-center-content t
 	dashboard-show-shortcuts t
-	dashboard-display-icons-p t
-	dashboard-icon-type 'nerd-icons
+	;dashboard-display-icons-p t
+	dashboard-icon-type 'all-the-icons
 	;dashboard-set-heading-icons t
 	dashboard-set-file-icons t
 	dashboard-week-agenda t

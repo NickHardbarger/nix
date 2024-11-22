@@ -55,6 +55,7 @@
         epkgs.diminish # cleans up modeline
         epkgs.page-break-lines # makes page breaks prettier
         epkgs.nerd-icons # adds nerd icons
+        epkgs.all-the-icons # adds icons
         epkgs.dashboard # adds a dashboard
         epkgs.fireplace # adds a cozy fireplace
         epkgs.editorconfig # coding styles
