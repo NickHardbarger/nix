@@ -28,7 +28,7 @@
     };
     hostPlatform = {
       gcc.arch = "sandybridge";
-      #gcc.tune = "sandybridge";
+      gcc.tune = "sandybridge";
       system = "x86_64-linux";
     };
     overlays = [
@@ -238,6 +238,16 @@
         "nix-command"
         "flakes"
       ];
+      system-features = [
+        "benchmark"
+        "big-parallel"
+        "kvm"
+        "nixos-test"
+        "gccarch-sandybridge"
+      ];
+      # configures nix to build with all cores
+      cores = 0;
+      max-jobs = "auto";
     };
   };
   virtualisation = {
