@@ -33,7 +33,7 @@
     };
     emacs = {
       enable = true;
-      package = pkgs.emacs-gtk; # change to emacs-wayland when it becomes available on nixos
+      package = pkgs.emacs-pgtk;
       extraPackages = epkgs: [
         epkgs.use-package # emacs package config
         epkgs.gruvbox-theme # colorscheme
@@ -54,7 +54,7 @@
         epkgs.org-auto-tangle # auto tangle org files
         epkgs.diminish # cleans up modeline
         epkgs.page-break-lines # makes page breaks prettier
-        epkgs.nerd-icons # adds nerd icons
+        #epkgs.nerd-icons # adds nerd icons
         epkgs.all-the-icons # adds icons
         epkgs.dashboard # adds a dashboard
         epkgs.fireplace # adds a cozy fireplace
