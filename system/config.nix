@@ -78,31 +78,31 @@
           NO_HZ = no;
           # cpu frequency
           CPU_FREQ_DEFAULT_GOV_PERFORMANCE = yes;
-          CPU_FREQ_DEFAULT_GOV_USERSPACE = no;
-          CPU_FREQ_GOV_POWERSAVE = no;
-          CPU_FREQ_GOV_USERSPACE = no;
-          CPU_FREQ_GOV_ONDEMAND = no;
-          CPU_FREQ_GOV_CONSERVATIVE = no;
-          CPU_FREQ_GOV_SCHEDUTIL = no;
+          #CPU_FREQ_DEFAULT_GOV_USERSPACE = no;
+          #CPU_FREQ_GOV_POWERSAVE = no;
+          #CPU_FREQ_GOV_USERSPACE = no;
+          #CPU_FREQ_GOV_ONDEMAND = no;
+          #CPU_FREQ_GOV_CONSERVATIVE = no;
+          #CPU_FREQ_GOV_SCHEDUTIL = no;
           # other cpu options
-          TASKSTATS = no;
-          X86_MPPARSE = no;
-          X86_EXTENDED_PLATFORM = no;
-          NR_CPUS = 32;
-          X86_MCE_INTEL = yes; # intel only
+          #TASKSTATS = no;
+          #X86_MPPARSE = no;
+          #X86_EXTENDED_PLATFORM = no;
+          #NR_CPUS = 32;
+          #X86_MCE_INTEL = yes; # intel only
           #X86_MCE_AMD = no; # amd only
           X86_5LEVEL = no;
           # cpu type
-          MK8 = no; # amd
-          MPSC = no; # older intel
-          MCORE_2 = no; # intel core 2
-          MATOM = no; # intel atom
+          #MK8 = no; # amd
+          #MPSC = no; # older intel
+          #MCORE_2 = no; # intel core 2
+          #MATOM = no; # intel atom
           GENERIC_CPU = yes;
           # modules
           #MODULES = no;
           # drivers
           HAMRADIO = no;
-          MD = no; # raid/lvm
+          #MD = no; # raid/lvm
           MACINTOSH_DRIVERS = no;
           INPUT_TABLET = no;
           INPUT_TOUCHSCREEN = no;
