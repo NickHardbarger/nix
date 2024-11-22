@@ -16,11 +16,13 @@
 	:ensure t
 	:init (doom-modeline-mode 1))
 
+(global-display-line-numbers-mode)
+(setq display-line-numbers-type 'relative)
+
 (setq inhibit-startup-message nil
 	visible-bell t
 	scroll-conservatively most-positive-fixnum
-	make-backup-files nil
-	display-line-numbers-type 'relative)
+	make-backup-files nil)
 
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
