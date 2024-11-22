@@ -1,7 +1,7 @@
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/") t)
+	       '("melpa" . "https://melpa.org/packages/") t)
 (when (not (package-installed-p 'use-package))
   (package-refresh-contents)
   (package-install 'use-package))
@@ -18,13 +18,13 @@
 (add-to-list 'auto-mode-alist '("\\.org" . poly-org-mode))
 
 (use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
+	:ensure t
+	:init (doom-modeline-mode 1))
 
 (setq inhibit-startup-message nil
-      visible-bell t
-      scroll-conservatively most-positive-fixnum
-      make-backup-files nil)
+	visible-bell t
+	scroll-conservatively most-positive-fixnum
+	make-backup-files nil)
 
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
@@ -39,11 +39,13 @@
 (global-page-break-lines-mode)
  ;(require 'nerd-icons)
 (use-package all-the-icons
-:if (display-graphic-p))
+  :if (display-graphic-p))
+(add-to-list 'default-frame-alist
+           '(font . "JetBrains Mono-12"))
 
 (editorconfig-mode 1)
 (setq editorconfig-trim-whitespace-mode
-      'ws-butler-mode)
+	'ws-butler-mode)
 
 (require 'server)
 (unless (server-running-p)
