@@ -6,11 +6,6 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(require 'linum-relative)
-(linum-on)
-(linum-relative-global-mode)
-(setq linum-relative-backend 'display-line-numbers-mode)
-
 (unless (package-installed-p 'polymode)
   (package-install 'poly-org))
 (use-package poly-org
@@ -32,6 +27,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1) ; graphical emacs only
 (global-display-line-numbers-mode 1)
+(display-line-numbers 'relative)
 ;(global-hl-line-mode 1)
 (blink-cursor-mode 1)
 (hyperbole-mode 1)

@@ -15,13 +15,6 @@
     (package-refresh-contents)
     (package-install 'use-package))
 #+END_SRC
-* Linum
-#+BEGIN_SRC emacs-lisp
-  (require 'linum-relative)
-  (linum-on)
-  (linum-relative-global-mode)
-  (setq linum-relative-backend 'display-line-numbers-mode)
-#+END_SRC
 * Polymode
 #+BEGIN_SRC emacs-lisp
   (unless (package-installed-p 'polymode)
@@ -49,6 +42,7 @@
   (tool-bar-mode -1)
   (scroll-bar-mode -1) ; graphical emacs only
   (global-display-line-numbers-mode 1)
+  (display-line-numbers 'relative)
   ;(global-hl-line-mode 1)
   (blink-cursor-mode 1)
   (hyperbole-mode 1)
