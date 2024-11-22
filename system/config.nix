@@ -27,9 +27,9 @@
       allowUnfree = true;
     };
     hostPlatform = {
-      #gcc.arch = "sandybridge";
-      #gcc.tune = "sandybridge";
-      system = "x86_64-linux";
+      gcc.arch = "sandybridge";
+      gcc.tune = "sandybridge";
+      #system = "x86_64-linux";
     };
     overlays = [
       (final: prev: {
