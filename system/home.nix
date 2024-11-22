@@ -33,7 +33,7 @@
     };
     emacs = {
       enable = true;
-      package = pkgs.emacs-pgtk;
+      package = pkgs.emacs30-pgtk;
       extraPackages = epkgs: [
         epkgs.use-package # emacs package config
         epkgs.gruvbox-theme # colorscheme
