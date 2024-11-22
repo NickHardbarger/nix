@@ -35,14 +35,13 @@
 	visible-bell t
 	scroll-conservatively most-positive-fixnum
 	make-backup-files nil
-	display-line-numbers 'relative)
+	display-line-numbers-type 'relative)
 
   (add-hook 'after-init-hook 'global-company-mode)
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   (menu-bar-mode -1)
   (tool-bar-mode -1)
   (scroll-bar-mode -1) ; graphical emacs only
-  ;(global-display-line-numbers-mode 1)
   ;(global-hl-line-mode 1)
   (blink-cursor-mode 1)
   (hyperbole-mode 1)
