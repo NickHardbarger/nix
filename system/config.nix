@@ -26,6 +26,11 @@
     config = {
       allowUnfree = true;
     };
+    hostPlatform = {
+      gcc.arch = "sandybridge";
+      gcc.tune = "sandybridge";
+      system = "x86_64-linux";
+    };
     overlays = [
       (final: prev: {
         slstatus = prev.slstatus.override {
@@ -186,7 +191,7 @@
         options = "ctrl:nocaps";
       };
       videoDrivers = [
-        "amdgpu"
+        #"amdgpu"
         "intel"
       ];
       excludePackages = with pkgs; [
