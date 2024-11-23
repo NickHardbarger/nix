@@ -65,7 +65,6 @@
     };
     consoleLogLevel = 0;
     initrd.verbose = false;
-    kernelPackages = pkgs.linuxPackages_latest;
     kernelPatches = [
       {
         name = "nil";
@@ -109,6 +108,7 @@
         };
       }
     ];
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "quiet"
       "splash"
