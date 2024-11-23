@@ -72,8 +72,8 @@
         patch = null;
         structuredExtraConfig = with lib.kernel; {
           # compression algorithm
-          KERNEL_LZ4 = yes; # fastest, least compression
-          KERNEL_ZSTD = no; # won't let me change this for some reason
+          #KERNEL_LZ4 = yes; # fastest, least compression
+          #KERNEL_ZSTD = no; # won't let me change this for some reason
           # timer frequency- won't work
           #TICK_ONESHOT = no;
           #NO_HZ_COMMON = no;
@@ -81,35 +81,35 @@
           #NO_HZ_IDLE = no;
           #NO_HZ = no;
           # cpu frequency
-          CPU_FREQ_DEFAULT_GOV_PERFORMANCE = yes;
-          CPU_FREQ_DEFAULT_GOV_POWERSAVE = no;
-          CPU_FREQ_DEFAULT_GOV_USERSPACE = no;
-          CPU_FREQ_DEFAULT_GOV_SCHEDUTIL = no;
-          CPU_FREQ_GOV_PERFORMANCE = yes;
-          CPU_FREQ_GOV_POWERSAVE = no;
-          CPU_FREQ_GOV_USERSPACE = no;
-          CPU_FREQ_GOV_ONDEMAND = no;
-          CPU_FREQ_GOV_CONSERVATIVE = no;
-          CPU_FREQ_GOV_SCHEDUTIL = no;
+          #CPU_FREQ_DEFAULT_GOV_PERFORMANCE = yes;
+          #CPU_FREQ_DEFAULT_GOV_POWERSAVE = no;
+          #CPU_FREQ_DEFAULT_GOV_USERSPACE = no;
+          #CPU_FREQ_DEFAULT_GOV_SCHEDUTIL = no;
+          #CPU_FREQ_GOV_PERFORMANCE = yes;
+          #CPU_FREQ_GOV_POWERSAVE = no;
+          #CPU_FREQ_GOV_USERSPACE = no;
+          #CPU_FREQ_GOV_ONDEMAND = no;
+          #CPU_FREQ_GOV_CONSERVATIVE = no;
+          #CPU_FREQ_GOV_SCHEDUTIL = no;
           # other cpu options
-          TASKSTATS = no;
-          X86_MPPARSE = no;
-          X86_EXTENDED_PLATFORM = no;
-          NR_CPUS = 32;
-          X86_MCE_INTEL = yes; # intel only
-          X86_MCE_AMD = no; # amd only
-          X86_5LEVEL = no;
+          #TASKSTATS = no;
+          #X86_MPPARSE = no;
+          #X86_EXTENDED_PLATFORM = no;
+          #NR_CPUS = 32;
+          #X86_MCE_INTEL = yes; # intel only
+          #X86_MCE_AMD = no; # amd only
+          #X86_5LEVEL = no;
           # cpu type
-          MK8 = no; # amd
-          MPSC = no; # older intel
-          MCORE_2 = yes; # intel core 2
-          MATOM = no; # intel atom
-          GENERIC_CPU = no;
+          #MK8 = no; # amd
+          #MPSC = no; # older intel
+          #MCORE_2 = yes; # intel core 2
+          #MATOM = no; # intel atom
+          #GENERIC_CPU = no;
           # modules
           #MODULES = no;
           # drivers
           HAMRADIO = no;
-          MD = no; # raid/lvm
+          #MD = no; # raid/lvm
           MACINTOSH_DRIVERS = no;
           INPUT_TABLET = no;
           INPUT_TOUCHSCREEN = no;
