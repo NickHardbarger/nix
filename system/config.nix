@@ -82,7 +82,7 @@
           CPU_FREQ_DEFAULT_GOV_POWERSAVE = no;
           CPU_FREQ_DEFAULT_GOV_USERSPACE = no;
           CPU_FREQ_DEFAULT_GOV_SCHEDUTIL = no;
-          CPU_FREQ_GOV_PERFORMANCE = no;
+          CPU_FREQ_GOV_PERFORMANCE = yes;
           CPU_FREQ_GOV_POWERSAVE = no;
           CPU_FREQ_GOV_USERSPACE = no;
           CPU_FREQ_GOV_ONDEMAND = no;
