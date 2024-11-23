@@ -73,24 +73,28 @@
         structuredExtraConfig = with lib.kernel; {
           # compression algorithm
           KERNEL_LZ4 = yes; # fastest, least compression
+          KERNEL_ZSTD = no;
           # timer frequency
           HZ_PERIODIC = yes; # more power usage, better performance
           NO_HZ = no;
           # cpu frequency
           CPU_FREQ_DEFAULT_GOV_PERFORMANCE = yes;
-          #CPU_FREQ_DEFAULT_GOV_USERSPACE = no;
-          #CPU_FREQ_GOV_POWERSAVE = no;
-          #CPU_FREQ_GOV_USERSPACE = no;
-          #CPU_FREQ_GOV_ONDEMAND = no;
-          #CPU_FREQ_GOV_CONSERVATIVE = no;
-          #CPU_FREQ_GOV_SCHEDUTIL = no;
+          CPU_FREQ_DEFAULT_GOV_POWERSAVE = no;
+          CPU_FREQ_DEFAULT_GOV_USERSPACE = no;
+          CPU_FREQ_DEFAULT_GOV_SCHEDUTIL = no;
+          CPU_FREQ_GOV_PERFORMANCE = no;
+          CPU_FREQ_GOV_POWERSAVE = no;
+          CPU_FREQ_GOV_USERSPACE = no;
+          CPU_FREQ_GOV_ONDEMAND = no;
+          CPU_FREQ_GOV_CONSERVATIVE = no;
+          CPU_FREQ_GOV_SCHEDUTIL = no;
           # other cpu options
-          #TASKSTATS = no;
-          #X86_MPPARSE = no;
-          #X86_EXTENDED_PLATFORM = no;
+          TASKSTATS = no;
+          X86_MPPARSE = no;
+          X86_EXTENDED_PLATFORM = no;
           NR_CPUS = 32;
           X86_MCE_INTEL = yes; # intel only
-          #X86_MCE_AMD = no; # amd only
+          X86_MCE_AMD = no; # amd only
           X86_5LEVEL = no;
           # cpu type
           MK8 = no; # amd
