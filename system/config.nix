@@ -67,6 +67,7 @@
     initrd.verbose = false;
     #kernelPackages = pkgs.linuxPackages_latest; # 6.12 won't work with config
     kernelPatches = [
+      # TODO: figure out why configuration won't work
       {
         name = "nil";
         patch = null;
@@ -108,11 +109,11 @@
           # modules
           #MODULES = no;
           # drivers
-          HAMRADIO = no;
+          #HAMRADIO = no;
           #MD = no; # raid/lvm
-          MACINTOSH_DRIVERS = no;
-          INPUT_TABLET = no;
-          INPUT_TOUCHSCREEN = no;
+          #MACINTOSH_DRIVERS = no;
+          #INPUT_TABLET = no;
+          #INPUT_TOUCHSCREEN = no;
         };
       }
     ];
