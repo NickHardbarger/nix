@@ -28,7 +28,7 @@
     hostPlatform = {
       #gcc.arch = "sandybridge";
       #gcc.tune = "sandybridge";
-      #system = "x86_64-linux";
+      system = "x86_64-linux";
     };
     overlays = [
       (final: prev: {
