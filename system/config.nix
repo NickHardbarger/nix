@@ -73,10 +73,13 @@
         structuredExtraConfig = with lib.kernel; {
           # compression algorithm
           KERNEL_LZ4 = yes; # fastest, least compression
-          KERNEL_ZSTD = no;
-          # timer frequency
-          HZ_PERIODIC = yes; # more power usage, better performance
-          NO_HZ = no;
+          KERNEL_ZSTD = no; # won't let me change this for some reason
+          # timer frequency- won't work
+          #TICK_ONESHOT = no;
+          #NO_HZ_COMMON = no;
+          #HZ_PERIODIC = yes; # more power usage, better performance
+          #NO_HZ_IDLE = no;
+          #NO_HZ = no;
           # cpu frequency
           CPU_FREQ_DEFAULT_GOV_PERFORMANCE = yes;
           CPU_FREQ_DEFAULT_GOV_POWERSAVE = no;
