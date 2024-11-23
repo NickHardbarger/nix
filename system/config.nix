@@ -65,7 +65,7 @@
     };
     consoleLogLevel = 0;
     initrd.verbose = false;
-    kernelPackages = pkgs.linuxPackages_6_12;
+    #kernelPackages = pkgs.linuxPackages_latest; # 6.12 won't work with config
     kernelPatches = [
       {
         name = "nil";
