@@ -84,8 +84,8 @@ static const char mic[] =
 
 static const struct arg args[] = {
     /* function        format         argument */
-    {run_command, "^fg(d79921)[VOL: %s ]^fg()", vol},
-    {run_command, "^fg(d79921)[MIC: %s ]^fg()", mic},
+    {run_command, "^fg(d79921)[VOL: %s ^fg()", vol},
+    {run_command, "^fg(d79921)MIC: %s ]^fg()", mic},
     {ram_perc, "^fg(b16286)[RAM: %s%%]^fg()", NULL},
     {battery_perc, "^fg(98971a)[BAT: %s%%]^fg()", "BAT0"},
     //{  kernel_release, "[%s]",        NULL    },
