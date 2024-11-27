@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "死"; //"n/a";
+static const char unknown_str[] = "n/a";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -66,14 +66,16 @@ static const char unknown_str[] = "死"; //"n/a";
  */
 
 /* vol and mic modules stolen from github.com/brookiestein */
-static const char vol[] = "muted=`wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $3;}'`; \
+static const char vol[] =
+    "muted=`wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $3;}'`; \
                             volume=`wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2;}'`; \
                             if [ -z ${muted} ]; then \
                                 printf \"${volume}\"; \
                             else printf \"Off\"; \
                             fi";
 
-static const char mic[] = "muted=`wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{print $3;}'`; \
+static const char mic[] =
+    "muted=`wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{print $3;}'`; \
                             volume=`wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{print $2;}'`; \
                             if [ -z ${muted} ]; then \
                                 printf \"${volume}\"; \
@@ -81,12 +83,12 @@ static const char mic[] = "muted=`wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk 
                             fi";
 
 static const struct arg args[] = {
-	/* function        format         argument */
-        {  run_command,    "[VOL: %s ]",  vol     },
-        {  run_command,    "[MIC: %s ]",  mic     },
-        {  ram_perc,       "[RAM: %s%%]", NULL    },
-        {  battery_perc,   "[BAT: %s%%]", "BAT0"  },
-	//{  kernel_release, "[%s]",        NULL    },
-	{  kanji,          "[%s]",        NULL    },
-	{  datetime,       "[%s]",        "%F %T" },
+    /* function        format         argument */
+    {run_command, "[VOL: %s ]", vol},
+    {run_command, "[MIC: %s ]", mic},
+    {ram_perc, "[RAM: %s%%]", NULL},
+    {battery_perc, "[BAT: %s%%]", "BAT0"},
+    //{  kernel_release, "[%s]",        NULL    },
+    {kanji, "[%s]", NULL},
+    {datetime, "[%s]", "%F %T"},
 };
