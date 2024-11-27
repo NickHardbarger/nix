@@ -184,6 +184,7 @@
   services = {
     blueman.enable = true;
     printing.enable = true;
+    ollama.enable = true;
     pipewire = {
       enable = true;
       alsa = {
