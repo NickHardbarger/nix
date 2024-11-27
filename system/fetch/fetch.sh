@@ -29,17 +29,17 @@ echo -e "${GREY}https://github.com/NickHardbarger${WHITE}"
 
 echo -en "${CYAN}   //   \\\\\\"
 echo -en "${BLUE}//  ${WHITE}"
-echo -e "${RED}model:${WHITE}  $model"
+echo -e "${RED}model${WHITE}  $model"
 
 echo -en "${CYAN}==//     ${BLUE}//== ${WHITE}"
-echo -e "${BLUE}flake:${WHITE}  $nixos"
+echo -e "${BLUE}flake${WHITE}  $nixos"
 
 echo -en "${CYAN} //${BLUE}\\\\\\"
 echo -en "${CYAN}___//    ${WHITE}"
-echo -e "${YELLOW}kernel:${WHITE} $kernel"
+echo -e "${YELLOW}kernel${WHITE} $kernel"
 
 echo -en "${CYAN}// ${BLUE}/\\\\\  ${CYAN}\\\\\==  ${WHITE}"
-echo -e "${CYAN}pkgs:${WHITE}   $pkgs"
+echo -e "${CYAN}pkgs${WHITE}   $pkgs"
 
 echo -en "${BLUE}  // \\\\\  ${CYAN}\\\\\   ${WHITE}"
-echo -e "${PURPLE}memory:${WHITE} $memory Mi"
+echo -e "${PURPLE}memory${WHITE} $memory Mi"
