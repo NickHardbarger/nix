@@ -89,6 +89,6 @@ static const struct arg args[] = {
     {ram_perc, "[RAM: %s%%]", NULL},
     {battery_perc, "[BAT: %s%%]", "BAT0"},
     //{  kernel_release, "[%s]",        NULL    },
-    {kanji, "[%s]", NULL},
+    {kanji, ^fg(cc241d)"[%s]"^fg(), NULL},
     {datetime, "[%s]", "%F %T"},
 };
