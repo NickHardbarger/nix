@@ -27,7 +27,7 @@
     bash = {
       enable = true;
       bashrcExtra = ''
-        ~/nil/system/fetch/fetch.pl
+        #~/nil/system/fetch/fetch.pl
         ~/nil/system/fetch/fetch.sh
       '';
       profileExtra = "dwl"; # should execute dwl upon login
