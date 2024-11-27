@@ -148,7 +148,7 @@ Enables line numbers globally and makes them relative to the current line
 * Theme
 #+BEGIN_SRC emacs-lisp
 (require 'gruvbox-theme)
-(load-theme 'gruvbox-dark-hard t)
+(load-theme 'gruvbox-dark-medium t)
 #+END_SRC
 
 * Org

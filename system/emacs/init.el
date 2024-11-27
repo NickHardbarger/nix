@@ -104,7 +104,7 @@
 (add-hook 'after-make-frame-functions #'on-frame-open)
 
 (require 'gruvbox-theme)
-(load-theme 'gruvbox-dark-hard t)
+(load-theme 'gruvbox-dark-medium t)
 
 (require 'org)
 (org-babel-do-load-languages
