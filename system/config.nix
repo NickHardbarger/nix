@@ -370,15 +370,6 @@
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [
-    ### DMENU ###
-    (dmenu.overrideAttrs (oldAttrs: {
-      buildInputs = oldAttrs.buildInputs ++ [ ];
-      patches = [
-        ./dmenu/dmenu-gruvbox-20210329-9ae8ea5.diff
-        ./dmenu/dmenu-lineheight-5.2.diff
-        ./dmenu/dmenu-numbers-20220512-28fb3e2.diff
-      ];
-    }))
     ### DWL ###
     (import ./dwl/dwl.nix { inherit pkgs; })
     slstatus # provides input for bar
