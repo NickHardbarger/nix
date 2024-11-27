@@ -84,11 +84,11 @@ static const char mic[] =
 
 static const struct arg args[] = {
     /* function        format         argument */
-    {run_command, "[VOL: %s ]", vol},
-    {run_command, "[MIC: %s ]", mic},
-    {ram_perc, "[RAM: %s%%]", NULL},
-    {battery_perc, "[BAT: %s%%]", "BAT0"},
+    {run_command, "^fg(cc241d)[VOL: %s ]^fg()", vol},
+    {run_command, "^fg(cc241d)[MIC: %s ]^fg()", mic},
+    {ram_perc, "^fg(cc241d)[RAM: %s%%]^fg()", NULL},
+    {battery_perc, "^fg(cc241d)[BAT: %s%%]^fg()", "BAT0"},
     //{  kernel_release, "[%s]",        NULL    },
     {kanji, "^fg(cc241d)[%s]^fg()", NULL},
-    {datetime, "[%s]", "%F %T"},
+    {datetime, "^fg(cc241d)[%s]^fg()", "%F %T"},
 };
