@@ -115,7 +115,9 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (require 'org-auto-tangle)
 (add-hook 'org-mode-hook 'org-auto-tangle-mode)
-(setq org-auto-tangle-default nil)
+(setq org-auto-tangle-default nil
+      calendar-week-start-day 1)
+(add-to-list 'org-agenda-files "~/notes/agenda.org")
 
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
