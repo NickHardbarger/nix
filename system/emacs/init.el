@@ -55,7 +55,10 @@
 	   :chat-model "llama3.1"
 	   :embedding-model "nomic-embed-text"
 	   :default-chat-non-standard-params
-	   '(("num_ctx" . 32768)))))
+	   '(("num_ctx" . 32768))))
+:config
+(setq ellama-sessions-directory "~/ellama-sessions/"
+	ellama-sessions-auto-save t))
 
 (unless (package-installed-p 'polymode)
   (package-install 'poly-org))

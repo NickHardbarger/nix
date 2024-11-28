@@ -67,7 +67,10 @@ LLMs in Emacs!
 	   :chat-model "llama3.1"
 	   :embedding-model "nomic-embed-text"
 	   :default-chat-non-standard-params
-	   '(("num_ctx" . 32768)))))
+	   '(("num_ctx" . 32768))))
+  :config
+  (setq ellama-sessions-directory "~/ellama-sessions/"
+	ellama-sessions-auto-save t))
 #+END_SRC
 * Polymode
 #+BEGIN_SRC emacs-lisp
