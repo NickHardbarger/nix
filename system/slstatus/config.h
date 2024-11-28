@@ -84,12 +84,13 @@ static const char mic[] =
 
 static const struct arg args[] = {
     /* function        format         argument */
-    {run_command, "^fg(d79921)[ %s ^fg()", vol},
-    {run_command, "^fg(d79921) %s ]^fg()", mic},
-    {cpu_perc, "^fg(458588)[ %s%%]^fg()", NULL},
-    {ram_perc, "^fg(b16286)[ %s%%]^fg()", NULL},
-    {battery_perc, "^fg(98971a)[ %s%%]^fg()", "BAT0"},
-    //{  kernel_release, "[%s]",        NULL    },
-    {kanji, "^fg(cc241d)[%s]^fg()", NULL},
-    {datetime, "^fg(689d6a)[%s]^fg()", "%F %T"},
+    {run_command, "^fg(d79921) %s ^fg()", vol},
+    {run_command, "^fg(d79921) %s ^fg()", mic},
+    {cpu_perc, "^fg(458588) %s%%^fg()", NULL},
+    {ram_perc, "^fg(b16286) %s%%^fg()", NULL},
+    {battery_perc, "^fg(98971a) %s%%^fg()", "BAT0"},
+    //{  kernel_release, "%s",        NULL    },
+    {datetime, "^fg(689d6a)%s^fg()", "%Y年%m月%d日"},
+    {kanji, "^fg(cc241d)%s^fg()", NULL},
+    {datetime, "^fg(689d6a)%s^fg()", "%H:%M:%S"},
 };
