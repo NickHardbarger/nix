@@ -172,7 +172,7 @@
 (setq org-auto-tangle-default nil
       calendar-week-start-day 1)
 (add-to-list 'org-agenda-files "~/notes/agenda.org")
-(setq org-clock-sound "./ding.wav") ; https://freesound.org/people/.Andre_Onate/sounds/484665/
+(setq org-clock-sound "~/.emacs.d/ding.wav") ; https://freesound.org/people/.Andre_Onate/sounds/484665/
 
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
