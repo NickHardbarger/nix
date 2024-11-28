@@ -2,7 +2,7 @@
 
 pkgs.writeShellApplication {
   name = "run-wmenu";
-  text = "wmenu-run -if 'JetBrainsMonoNF 12' -p '[Wmenu]' -N 282828 -n ebdbb2 -M 458588 -m 282828 -S 458588 -s 282828";
+  text = "wmenu-run -if 'JetBrainsMonoNF 12' -p '[Wmenu]' -N 282828 -n ebdbb2 -M 689d6a -m 282828 -S 689d6a -s 282828";
 }
 # Color flags:
 # -N: normal bg color
