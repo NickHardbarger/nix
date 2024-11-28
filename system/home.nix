@@ -61,6 +61,7 @@
         epkgs.editorconfig # coding styles
         epkgs.doom-modeline # fancy modeline
         epkgs.poly-org # allows multiple major modes in .org files
+        epkgs.ellama # ai integration
       ];
     };
     obs-studio = {
