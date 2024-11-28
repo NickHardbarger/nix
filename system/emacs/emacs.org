@@ -222,6 +222,7 @@ Enables line numbers globally and makes them relative to the current line
 (setq org-auto-tangle-default nil
       calendar-week-start-day 1)
 (add-to-list 'org-agenda-files "~/notes/agenda.org")
+(setq org-clock-sound "./ding.wav") ; https://freesound.org/people/.Andre_Onate/sounds/484665/
 #+END_SRC
 
 * Neotree
