@@ -65,7 +65,7 @@
     };
     consoleLogLevel = 0;
     initrd.verbose = false;
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelPatches = [
       # TODO: figure out why configuration won't work
       {
