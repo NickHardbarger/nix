@@ -409,8 +409,6 @@
     pulseaudio # ?? I forget why that's there lol
     discord # chat client
     libreoffice # office suite
-    onlyoffice-bin # office suite
-    #onlyoffice-desktopeditors # office suite
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono # best font
