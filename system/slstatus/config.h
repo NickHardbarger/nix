@@ -88,6 +88,8 @@ static const struct arg args[] = {
     {run_command, "^fg(d79921) %s]^fg()", mic},
     {cpu_perc, "^fg(458588)[ %s%%]^fg()", NULL},
     {ram_perc, "^fg(b16286)[ %s%%]^fg()", NULL},
+    {temp, "^fg(cc241d)[TEMP: %s]^fg()",
+     "/sys/class/thermal/thermal_zone*/temp"},
     {battery_perc, "^fg(98971a)[ %s%%]^fg()", "BAT0"},
     {datetime, "^fg(689d6a)[%s^fg()", "%Y年%m月%d日"},
     {kanji, "^fg(689d6a) %s ^fg()", NULL},
