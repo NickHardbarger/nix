@@ -413,7 +413,8 @@
     #onlyoffice-desktopeditors # office suite
   ];
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono # required in 25.05?
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
