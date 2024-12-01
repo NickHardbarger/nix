@@ -391,7 +391,6 @@
     slstatus # provides input for bar
     wmenu # app launcher
     (import ./wmenu/wmenu.nix { inherit pkgs; })
-    foot # terminal
     wbg # wallpaper setter
     mako # notification daemon
     grim # screenshots
@@ -414,7 +413,6 @@
     #onlyoffice-desktopeditors # office suite
   ];
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # installs only that font
     nerd-fonts.jetbrains-mono
   ];
   # Some programs need SUID wrappers, can be configured further or are
