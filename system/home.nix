@@ -120,7 +120,6 @@
   ];
   home.file = {
     ".emacs.d/init.el".source = ./emacs/init.el;
-    ".config/foot/foot.ini".source = ./foot/foot.ini;
     ".emacs.d/ding.wav".source = ./emacs/ding.wav;
   };
   home.sessionVariables = {
