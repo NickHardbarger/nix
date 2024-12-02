@@ -126,6 +126,12 @@
     ollama.enable = false;
     thinkfan = {
       enable = true;
+      sensors = [
+        {
+          query = "/proc/acpi/ibm/thermal";
+          type = "tpacpi";
+        }
+      ];
     };
     pipewire = {
       enable = true;
