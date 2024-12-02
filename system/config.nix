@@ -126,15 +126,6 @@
     ollama.enable = false;
     thinkfan = {
       enable = true;
-      levels = ''
-        (0,    0,      60)
-        (1,    60,     65)
-        (2,    65,     70)
-        (3,    70,     75)
-        (4     75,     80)
-        (5,    80,     85)
-        (7,    85,     32767)
-      '';
     };
     pipewire = {
       enable = true;
