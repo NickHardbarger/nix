@@ -65,9 +65,6 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
-    extraModprobeConfig = ''
-      options thinkpad_acpi fan_control=1
-    '';
   };
   ### NETWORKING ###
   networking = {
