@@ -35,34 +35,6 @@
     emacs = {
       enable = true;
       package = pkgs.emacs30-pgtk;
-      extraPackages = epkgs: [
-        epkgs.use-package # emacs package config
-        epkgs.gruvbox-theme # colorscheme
-        epkgs.tree-sitter # syntax highlighting
-        epkgs.tree-sitter-langs # better language support
-        epkgs.rainbow-delimiters # rainbow parentheses
-        epkgs.magit # git client
-        epkgs.company # completion
-        epkgs.neotree # directory viewer
-        epkgs.nix-mode # nix major mode
-        epkgs.lsp-mode # language server support
-        epkgs.smartparens # insert pairs
-        epkgs.hyperbole # hyperlinks
-        epkgs.projectile # project navigation
-        epkgs.org-bullets # org mode bullets
-        epkgs.ivy # completion
-        epkgs.multiple-cursors # multiple cursors
-        epkgs.org-auto-tangle # auto tangle org files
-        epkgs.diminish # cleans up modeline
-        epkgs.page-break-lines # makes page breaks prettier
-        epkgs.nerd-icons # adds nerd icons
-        epkgs.dashboard # adds a dashboard
-        epkgs.fireplace # adds a cozy fireplace
-        epkgs.editorconfig # coding styles
-        epkgs.doom-modeline # fancy modeline
-        epkgs.poly-org # allows multiple major modes in .org files
-        epkgs.ellama # ai integration
-      ];
     };
     obs-studio = {
       enable = true;
@@ -119,6 +91,7 @@
     vscode-langservers-extracted
   ];
   home.file = {
+    ".emacs.d/early-init.el".source = ./emacs/early-init.el;
     ".emacs.d/init.el".source = ./emacs/init.el;
     ".emacs.d/ding.wav".source = ./emacs/ding.wav;
   };
