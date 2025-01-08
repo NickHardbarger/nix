@@ -86,7 +86,7 @@
 (straight-use-package 'magit)
 (require 'magit)
 (define-key global-map (kbd "C-x g") 'magit-status)
-(use-package 'magit-todos
+(use-package magit-todos
   :straight t
   :after magit
   :config (magit-todos-mode 1))
