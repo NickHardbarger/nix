@@ -1,13 +1,19 @@
 #+title: Nil Documentation
 #+author: Nick Hardbarger
-#+date: [2024-11-21]
+#+date: [2025-1-8]
 #+caption: my desktop
 [[./desktop.png]]
+** TODO Add multihost support [1/3]
+- [X] t420 host
+- [ ] gaming pc host
+- [ ] work pc host
+  
+** TODO Rice dwl [1/2]
+- [X] set the initial colorscheme
+- [ ] change around the colors
+  
 ** TODO Add Disko and Impermanence
-** TODO Add multihost support!
-** TODO Rice dwl
-** TODO Add custom kernel
-** TODO Configure emacs!
+** TODO Update installation guide
 
 ** Installation
 To install Nil on a fresh NixOS system, run these commands:
