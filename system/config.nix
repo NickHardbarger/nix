@@ -22,9 +22,7 @@
   #FONTS
   ### NIXPKGS ###
   nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
+    config.allowUnfree = true;
     overlays = [
       (final: prev: {
         slstatus = prev.slstatus.override {
@@ -120,7 +118,6 @@
   '';
   ### SERVICES ###
   services = {
-    pulseaudio.enable = false;
     blueman.enable = true;
     printing.enable = true;
     ollama.enable = false;
@@ -130,6 +127,7 @@
         enable = true;
         support32Bit = true;
       };
+      pulseaudio.enable = false;
       pulse.enable = true;
       #jack.enable = true;
       #media-session.enable = true;
@@ -178,9 +176,7 @@
       ];
       displayManager = {
         startx.enable = false;
-        lightdm = {
-          enable = false;
-        };
+        lightdm.enable = false;
       };
     };
   };
@@ -222,9 +218,7 @@
       max-jobs = "auto";
     };
   };
-  virtualisation = {
-    virtualbox.host.enable = true;
-  };
+  virtualisation.virtualbox.host.enable = true;
   # Don't forget to set a password with ‘passwd’.
   users.users.nickh = {
     isNormalUser = true;
@@ -257,9 +251,7 @@
         extraArgs = "--keep-since 3d --keep 3";
       };
     };
-    ssh = {
-      startAgent = true;
-    };
+    ssh.startAgent = true;
     firefox = {
       enable = true;
       languagePacks = [ "en-US" ];
@@ -274,16 +266,12 @@
         };
       };
     };
-    nano = {
-      enable = false;
-    };
+    nano.enable = false;
     steam = {
       enable = true;
       gamescopeSession.enable = true;
     };
-    gamemode = {
-      enable = true;
-    };
+    gamemode.enable = true;
     foot = {
       enable = true;
       theme = "gruvbox-dark";
