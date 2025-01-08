@@ -58,7 +58,7 @@
 (straight-use-package 'nerd-icons)
 (require 'nerd-icons)
 (add-to-list 'default-frame-alist
-           '(font . "JetBrainsMonoNL-12"))
+           '(font . "JetBrainsMonoNF-12"))
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 

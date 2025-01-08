@@ -343,7 +343,8 @@
     libreoffice # office suite
   ];
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono # best font
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    #nerd-fonts.jetbrains-mono
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
