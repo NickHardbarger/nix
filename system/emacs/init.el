@@ -73,9 +73,10 @@
   :init (doom-modeline-mode 1))
 
 ; EDITORCONFIG
-(use-package doom-modeline
-  :straight t
-  :init (doom-modeline-mode 1))
+;TODO: fix this
+;(use-package doom-modeline
+;  :straight t
+;  :init (doom-modeline-mode 1))
 
 ; SERVER
 (require 'server)
@@ -199,8 +200,22 @@
 (add-hook 'css-mode-hook 'eglot-ensure)
 (add-hook 'js-mode-hook 'eglot-ensure)
 
+; WEB DEV
+(straight-use-package 'js2-mode)
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
+(straight-use-package 'skewer-mode)
+(require 'skewer-mode)
+(add-hook 'js2-mode-hook 'skewer-mode)
+(add-hook 'css-mode-hook 'skewer-css-mode)
+(add-hook 'html-mode-hook 'skewer-html-mode)
 
+(use-package web-mode
+  :straight t
+  :mode
+  (("\\.cshtml\\'" . web-mode)
+   ("\\.aspx\\'" . web-mode)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
