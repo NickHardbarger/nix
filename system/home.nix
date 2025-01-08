@@ -43,6 +43,16 @@
       ];
     };
   };
+  ### SERVICES ###
+  services = {
+    mako = {
+      enable = true;
+      font = "JetBrainsMonoNF 12";
+      backgroundColor = "#285577FF";
+      borderColor = "#4C7899FF";
+      textColor = "#FFFFFFFF";
+    };
+  };
   home.shellAliases = {
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
