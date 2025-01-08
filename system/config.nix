@@ -89,7 +89,6 @@
   };
   ### HARDWARE ###
   hardware = {
-    pulseaudio.enable = false;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -121,6 +120,7 @@
   '';
   ### SERVICES ###
   services = {
+    pulseaudio.enable = false;
     blueman.enable = true;
     printing.enable = true;
     ollama.enable = false;
