@@ -121,13 +121,13 @@
     blueman.enable = true;
     printing.enable = true;
     ollama.enable = false;
+    pulseaudio.enable = false;
     pipewire = {
       enable = true;
       alsa = {
         enable = true;
         support32Bit = true;
       };
-      pulseaudio.enable = false;
       pulse.enable = true;
       #jack.enable = true;
       #media-session.enable = true;
