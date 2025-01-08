@@ -47,7 +47,6 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-;(global-hl-line-mode 1)
 (blink-cursor-mode 1)
 (straight-use-package 'hyperbole)
 (hyperbole-mode 1)
@@ -73,10 +72,10 @@
   :init (doom-modeline-mode 1))
 
 ; EDITORCONFIG
-;TODO: fix this
-;(use-package doom-modeline
-;  :straight t
-;  :init (doom-modeline-mode 1))
+(use-package editorconfig
+  :straight t
+  :config
+  (editorconfig-mode 1))
 
 ; SERVER
 (require 'server)
