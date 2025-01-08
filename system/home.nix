@@ -48,18 +48,14 @@
     mako = {
       enable = true;
       font = "JetBrainsMonoNF 12";
-      backgroundColor = "#285577FF";
-      borderColor = "#4C7899FF";
-      textColor = "#FFFFFFFF";
+      backgroundColor = "#458588FF";
+      borderColor = "#689d6aFF";
+      textColor = "#ebdbb2FF";
     };
   };
   home.shellAliases = {
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
-    #"sudo" = "doas";
-    "vi" = "emacs -nw";
-    #"vim" = "emacsclient -c -a ''";
-    "menuconfig" = "MENUCONFIG_COLOR=blackbg menuconfig";
     "screenshot" = "slurp | grim -g -"; # to use: screenshot <screenshot>.png
   };
   ### CURSOR ###
