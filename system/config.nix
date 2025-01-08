@@ -268,12 +268,10 @@
         DisableFirefoxStudies = true;
         DisablePocket = true;
         DisplayBookmarksToolbar = "always";
-        ExtensionSettings =
-          {
-          };
-        preferences =
-          {
-          };
+        ExtensionSettings = {
+        };
+        preferences = {
+        };
       };
     };
     nano = {
@@ -323,7 +321,7 @@
     slstatus # provides input for bar
     wmenu # app launcher
     (import ./wmenu/wmenu.nix { inherit pkgs; })
-    wbg # wallpaper setter
+    #wbg # wallpaper setter #!!build failure
     mako # notification daemon
     grim # screenshots
     slurp # screen select
