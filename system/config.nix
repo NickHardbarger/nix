@@ -310,6 +310,7 @@
     wmenu # app launcher
     (import ./wmenu/wmenu.nix { inherit pkgs; })
     #wbg # wallpaper setter #!!build failure
+    swaybg # wallpaper setter
     grim # screenshots
     slurp # screen select
     wl-clipboard # clipboard
