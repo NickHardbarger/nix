@@ -2,7 +2,7 @@
   config, # unneeded?
   pkgs,
   inputs,
-  lib,
+  lib, # unneeded?
   ...
 }:
 
@@ -53,7 +53,7 @@
     };
     consoleLogLevel = 0;
     initrd.verbose = false;
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "quiet"
       "splash"
@@ -118,6 +118,12 @@
   '';
   ### SERVICES ###
   services = {
+    scx = {
+      enable = true;
+      package = pkgs.scx.full; # TODO: figure out package
+      scheduler = "scx_rustland"; # TODO: figure out scheduler
+      #extraArgs = [ "--slice-us 5000" "--verbose" ]; # TODO: figure out args
+    };
     blueman.enable = true;
     printing.enable = true;
     ollama.enable = false;
