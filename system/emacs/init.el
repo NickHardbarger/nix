@@ -1,4 +1,4 @@
-; PACKAGES
+;; PACKAGES ;;
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name
@@ -16,77 +16,87 @@
   (load bootstrap-file nil 'nomessage))
 (straight-use-package 'use-package)
 
-; THEME
+;; THEME ;;
 (straight-use-package 'gruvbox-theme)
 (require 'gruvbox-theme)
 (load-theme 'gruvbox-dark-medium t)
 
-; TRANSPARENCY
+;; TRANSPARENCY ;;
 (set-frame-parameter nil 'alpha-background 90)
 (add-to-list 'default-frame-alist '(alpha-background . 90))
+
 (defun on-after-init ()
   (unless (display-graphic-p (selected-frame))
     (set-face-background 'default "unspecified-bg" (selected-frame))))
 (add-hook 'window-setup-hook #'on-after-init)
 ;; [[https://stackoverflow.com/questions/19054228/emacs-disable-theme-background-color-in-terminal/33298750#33298750][Emacs: disable theme background color in terminal - Stack Overflow]]
+
 (defun on-frame-open (&optional frame)
   "If the FRAME created in terminal don't load background color."
   (unless (display-graphic-p frame)
     (set-face-background 'default "unspecified-bg" frame)))
 (add-hook 'after-make-frame-functions #'on-frame-open)
 
-; GENERAL
+;; GENERAL ;;
 (setq inhibit-startup-message nil
 	visible-bell t
 	scroll-conservatively most-positive-fixnum
 	make-backup-files nil)
+
 (straight-use-package 'company)
 (add-hook 'after-init-hook 'global-company-mode)
+
 (straight-use-package 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (blink-cursor-mode 1)
+
 (straight-use-package 'hyperbole)
 (hyperbole-mode 1)
+
 (straight-use-package 'diminish)
 (require 'diminish)
+
 (straight-use-package 'page-break-lines)
 (global-page-break-lines-mode)
+
 (straight-use-package 'nerd-icons)
 (require 'nerd-icons)
+
 (add-to-list 'default-frame-alist
              '(font . "JetBrainsMonoNF-12"))
 
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
-;(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+
 (global-display-fill-column-indicator-mode)
 (setq display-fill-column-indicator-column 80)
 
-; POLYMODE
+;; POLYMODE ;;
 (use-package poly-org
   :straight t)
 (add-to-list 'auto-mode-alist '("\\.org" . poly-org-mode))
 
-; DOOM MODELINE
+;; DOOM MODELINE ;;
 (use-package doom-modeline
   :straight t
   :init (doom-modeline-mode 1))
 
-; EDITORCONFIG
+;; EDITORCONFIG ;;
 (use-package editorconfig
   :straight t
   :config
   (editorconfig-mode 1))
 
-; SERVER
+;; SERVER ;;
 (require 'server)
 (unless (server-running-p)
   (server-start))
 
-; MAGIT
+;; MAGIT ;;
 (straight-use-package 'magit)
 (require 'magit)
 (define-key global-map (kbd "C-x g") 'magit-status)
@@ -95,12 +105,12 @@
   :after magit
   :config (magit-todos-mode 1))
 
-; PROJECTILE
+;; PROJECTILE ;;
 (straight-use-package 'projectile)
 (projectile-mode 1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-; DASHBOARD
+;; DASHBOARD ;;
 (straight-use-package 'dashboard)
 (require 'dashboard)
 (dashboard-setup-startup-hook)
@@ -135,40 +145,43 @@
 				  dashboard-insert-newline
 				  dashboard-insert-footer))
 
-; IVY
+;; IVY ;;
 (straight-use-package 'ivy)
 (ivy-mode)
 (setq ivy-use-virtual-buffers t
       enable-recursive-minibuffers t)
 
-; ORG
+;; ORG ;;
 (require 'org)
 (org-babel-do-load-languages
   'org-babel-load-languages
   '((emacs-lisp . t)
     (shell . t)))
+
 (straight-use-package 'org-bullets)
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 (straight-use-package 'org-auto-tangle)
 (require 'org-auto-tangle)
 (add-hook 'org-mode-hook 'org-auto-tangle-mode)
 (setq org-auto-tangle-default nil
       calendar-week-start-day 1)
+
 (add-to-list 'org-agenda-files "~/notes/agenda.org")
 (setq org-clock-sound "~/.emacs.d/ding.wav") ; https://freesound.org/people/.Andre_Onate/sounds/484665/
 
-; NEOTREE
+;; NEOTREE ;;
 (straight-use-package 'neotree)
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
-; SMARTPARENS
+;; SMARTPARENS ;;
 (straight-use-package 'smartparens)
 (require 'smartparens-config)
 (smartparens-global-mode t)
 
-; MULTIPLE CURSORS
+;; MULTIPLE CURSORS ;;
 (straight-use-package 'multiple-cursors)
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -176,7 +189,7 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-; TREE SITTER
+;; TREE SITTER ;;
 (straight-use-package 'tree-sitter)
 (straight-use-package 'tree-sitter-langs)
 (require 'tree-sitter)
@@ -187,13 +200,15 @@
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
-; EGLOT
+;; EGLOT ;;
 (add-hook 'prog-mode-hook
           (lambda ()
             (add-hook 'before-save-hook 'eglot-format nil t)))
+
 (straight-use-package 'nix-mode)
 (require 'nix-mode)
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
+
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
 	       '(nix-mode . ("nixd"))))
@@ -207,7 +222,7 @@
 (add-hook 'css-mode-hook 'eglot-ensure)
 (add-hook 'js-mode-hook 'eglot-ensure)
 
-; WEB DEV
+;; WEB DEV ;;
 (straight-use-package 'js2-mode)
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -224,6 +239,7 @@
   (("\\.cshtml\\'" . web-mode)
    ("\\.aspx\\'" . web-mode)))
 
+;; CUSTOM VARIABLES ;;
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
