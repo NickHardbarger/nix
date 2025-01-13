@@ -57,9 +57,13 @@
 (straight-use-package 'nerd-icons)
 (require 'nerd-icons)
 (add-to-list 'default-frame-alist
-           '(font . "JetBrainsMonoNF-12"))
+             '(font . "JetBrainsMonoNF-12"))
+
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
+;(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+(global-display-fill-column-indicator-mode)
+(setq display-fill-column-indicator-column 80)
 
 ; POLYMODE
 (use-package poly-org
