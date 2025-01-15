@@ -10,7 +10,6 @@
 
   imports = [
     inputs.home-manager.nixosModules.default
-    ./slstatus/slstatus.nix
   ];
   #SECURITY
   #SYSTEM
@@ -23,13 +22,6 @@
   ### NIXPKGS ###
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [
-      (final: prev: {
-        slstatus = prev.slstatus.override {
-          conf = ./slstatus/config.h;
-        };
-      })
-    ];
   };
   ### BOOT ###
   boot = {
@@ -312,7 +304,6 @@
   environment.systemPackages = with pkgs; [
     ### DWL ###
     (import ./dwl/dwl.nix { inherit pkgs; })
-    slstatus # provides input for bar
     wmenu # app launcher
     (import ./wmenu/wmenu.nix { inherit pkgs; })
     #wbg # wallpaper setter #!!build failure
