@@ -70,7 +70,7 @@
 (setq display-line-numbers-type 'relative)
 
 (global-display-fill-column-indicator-mode)
-(setq display-fill-column-indicator-column 90) ; off by ten??
+(setq display-fill-column-indicator-column 20) ; doesn't seem to work
 
 ;; POLYMODE ;;
 (use-package poly-org
