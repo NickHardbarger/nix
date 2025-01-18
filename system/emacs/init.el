@@ -153,6 +153,8 @@
   '((emacs-lisp . t)
     (shell . t)))
 
+(straight-use-package 'org-drill)
+
 (straight-use-package 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
