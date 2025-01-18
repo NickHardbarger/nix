@@ -18,7 +18,6 @@
 
 ;; THEME ;;
 (straight-use-package 'gruvbox-theme)
-;(require 'gruvbox-theme)
 (load-theme 'gruvbox-dark-medium t)
 
 ;; TRANSPARENCY ;;
@@ -58,13 +57,11 @@
 (hyperbole-mode 1)
 
 (straight-use-package 'diminish)
-;(require 'diminish)
 
 (straight-use-package 'page-break-lines)
 (global-page-break-lines-mode)
 
 (straight-use-package 'nerd-icons)
-;(require 'nerd-icons)
 
 (add-to-list 'default-frame-alist
              '(font . "JetBrainsMonoNF-12"))
@@ -98,7 +95,6 @@
 
 ;; MAGIT ;;
 (straight-use-package 'magit)
-;(require 'magit)
 (define-key global-map (kbd "C-x g") 'magit-status)
 (use-package magit-todos
   :straight t
@@ -112,7 +108,6 @@
 
 ;; DASHBOARD ;;
 (straight-use-package 'dashboard)
-;(require 'dashboard)
 (dashboard-setup-startup-hook)
 (add-to-list 'dashboard-items '(agenda) t)
 (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
@@ -159,11 +154,9 @@
     (shell . t)))
 
 (straight-use-package 'org-bullets)
-;(require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 (straight-use-package 'org-auto-tangle)
-;(require 'org-auto-tangle)
 (add-hook 'org-mode-hook 'org-auto-tangle-mode)
 (setq org-auto-tangle-default nil
       calendar-week-start-day 1)
@@ -173,17 +166,14 @@
 
 ;; NEOTREE ;;
 (straight-use-package 'neotree)
-;(require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
 ;; SMARTPARENS ;;
 (straight-use-package 'smartparens)
-;(require 'smartparens-config)
 (smartparens-global-mode t)
 
 ;; MULTIPLE CURSORS ;;
 (straight-use-package 'multiple-cursors)
-;(require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
@@ -192,9 +182,7 @@
 ;; TREE SITTER ;;
 (straight-use-package 'tree-sitter)
 (straight-use-package 'tree-sitter-langs)
-;(require 'tree-sitter)
 (require 'tree-sitter-hl)
-;(require 'tree-sitter-langs)
 (require 'tree-sitter-debug)
 (require 'tree-sitter-query)
 (global-tree-sitter-mode)
@@ -206,7 +194,6 @@
             (add-hook 'before-save-hook 'eglot-format nil t)))
 
 (straight-use-package 'nix-mode)
-;(require 'nix-mode)
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 
 (with-eval-after-load 'eglot
@@ -224,11 +211,9 @@
 
 ;; WEB DEV ;;
 (straight-use-package 'js2-mode)
-;(require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (straight-use-package 'skewer-mode)
-;(require 'skewer-mode)
 (add-hook 'js2-mode-hook 'skewer-mode)
 (add-hook 'css-mode-hook 'skewer-css-mode)
 (add-hook 'html-mode-hook 'skewer-html-mode)
