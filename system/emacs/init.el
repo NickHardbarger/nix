@@ -15,6 +15,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 (straight-use-package 'use-package)
+(straight-use-package 'org) ; told me to put this early in the config
 
 ;; THEME ;;
 (straight-use-package 'gruvbox-theme)
@@ -147,7 +148,6 @@
       enable-recursive-minibuffers t)
 
 ;; ORG ;;
-(require 'org)
 (org-babel-do-load-languages
   'org-babel-load-languages
   '((emacs-lisp . t)
