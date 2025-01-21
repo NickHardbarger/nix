@@ -16,6 +16,7 @@
     ./steam.nix
     ./foot.nix
     ./starship.nix
+    ./nh.nix
   ];
   #SECURITY
   #SYSTEM
@@ -219,16 +220,8 @@
   programs = {
     nix-ld.enable = true;
     bash.blesh.enable = true;
-    nh = {
-      enable = true;
-      flake = "/home/nickh/nil";
-      clean = {
-        enable = true;
-        #dates = weekly; # doesn't work??
-        extraArgs = "--keep-since 3d --keep 3";
-      };
-    };
     nano.enable = false;
+  };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [
     ### DWL ###
