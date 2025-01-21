@@ -27,6 +27,7 @@
     };
     consoleLogLevel = 0;
     initrd.verbose = false;
+    systemd.extraConfig = ''DefaultTimeoutStopSec=10s'';
     #kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "quiet"

@@ -52,9 +52,6 @@
       LC_TIME = "en_US.UTF-8";
     };
   };
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
   services = {
     scx = {
       enable = false;
