@@ -16,4 +16,8 @@
     cores = 0;
     max-jobs = "auto";
   };
+  nixpkgs.config = {
+    #allowBroken = true;
+    allowUnfree = true;
+  };
 }

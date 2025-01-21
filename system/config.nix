@@ -19,19 +19,6 @@
     ./nh.nix
     ./nix.nix
   ];
-  #SECURITY
-  #SYSTEM
-  #NIX
-  #VIRTUALISATION
-  #USERS
-  #HOME-MANAGER
-  #ENVIRONMENT
-  #FONTS
-  ### NIXPKGS ###
-  nixpkgs = {
-    config.allowUnfree = true;
-  };
-  ### BOOT ###
   boot = {
     loader = {
       grub.enable = false;
@@ -64,7 +51,6 @@
       "udev.log_priority=3"
     ];
   };
-  ### NETWORKING ###
   networking = {
     hostName = "t420";
     networkmanager.enable = true;
@@ -85,7 +71,6 @@
       #noProxy = "127.0.0.1,localhost,internal.domain";
     };
   };
-  ### HARDWARE ###
   hardware = {
     bluetooth = {
       enable = true;
@@ -96,7 +81,6 @@
       enable32Bit = true;
     };
   };
-  ### LOCALE ###
   time.timeZone = "America/New_York";
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -112,11 +96,9 @@
       LC_TIME = "en_US.UTF-8";
     };
   };
-  ### SYSTEMD ###
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
   '';
-  ### SERVICES ###
   services = {
     scx = {
       enable = false;
@@ -205,7 +187,6 @@
       "nickh" = import ./home.nix;
     };
   };
-  ### PROGRAMS ###
   programs = {
     nix-ld.enable = true;
     bash.blesh.enable = true;
@@ -222,11 +203,13 @@
     grim # screenshots
     slurp # screen select
     wl-clipboard # clipboard
+
     ### CLI SCRIPTS ###
     speedtest-cli # test network speed
     cmatrix # matrix text scroll
     cowsay # generates ascii cow with message
     sl # steam locomotive on ls typo
+
     ### MISC ###
     (import ./emacs/emacs.nix { inherit pkgs; })
     #(import ./kernel/kernel.nix { inherit pkgs; })
