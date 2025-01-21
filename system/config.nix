@@ -21,6 +21,7 @@
     ./boot.nix
     ./firewall.nix
     ./bluetooth.nix
+    ./audio.nix
   ];
   networking = {
     hostName = "t420";
@@ -56,17 +57,6 @@
     };
     printing.enable = true;
     ollama.enable = false;
-    pulseaudio.enable = false;
-    pipewire = {
-      enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      pulse.enable = true;
-      #jack.enable = true;
-      #media-session.enable = true;
-    };
     xserver = {
       enable = true;
       autorun = false;
