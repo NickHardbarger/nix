@@ -225,7 +225,6 @@
         extraArgs = "--keep-since 3d --keep 3";
       };
     };
-    ssh.startAgent = true;
     nano.enable = false;
     steam = {
       enable = true;

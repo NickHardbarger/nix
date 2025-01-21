@@ -16,4 +16,5 @@
       PermitRootLogin = "prohibit-password";
     };
   };
+  programs.ssh.startAgent = true;
 }
