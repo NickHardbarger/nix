@@ -13,6 +13,7 @@
     ./firefox.nix
     ./fail2ban.nix
     ./ssh.nix
+    ./steam.nix
   ];
   #SECURITY
   #SYSTEM
@@ -226,11 +227,6 @@
       };
     };
     nano.enable = false;
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-    };
-    gamemode.enable = true;
     foot = {
       enable = true;
       theme = "gruvbox-dark";
