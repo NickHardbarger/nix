@@ -19,26 +19,13 @@
     ./nh.nix
     ./nix.nix
     ./boot.nix
+    ./firewall.nix
   ];
   networking = {
     hostName = "t420";
     networkmanager.enable = true;
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [
-        22
-        80
-        443
-      ];
-      #allowedUDPPortRanges = [
-      #  { from = 4000; to = 4007; }
-      #	 { from = 8000; to = 8010; }
-      #];
-    };
-    proxy = {
-      #default = "http://user:password@proxy:port/";
-      #noProxy = "127.0.0.1,localhost,internal.domain";
-    };
+    #proxy.default = "http://user:password@proxy:port/";
+    #proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
   hardware = {
     bluetooth = {
