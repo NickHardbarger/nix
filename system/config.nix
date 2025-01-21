@@ -156,17 +156,6 @@
       ];
     };
   };
-  system.autoUpgrade = {
-    enable = true;
-    flake = inputs.self.outPath;
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "-L"
-    ];
-    dates = "daily";
-    randomizedDelaySec = "30min";
-  };
   virtualisation.virtualbox.host.enable = true;
   # Don't forget to set a password with ‘passwd’.
   users.users.nickh = {
