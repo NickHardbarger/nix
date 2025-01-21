@@ -17,6 +17,7 @@
     ./foot.nix
     ./starship.nix
     ./nh.nix
+    ./nix.nix
   ];
   #SECURITY
   #SYSTEM
@@ -183,18 +184,6 @@
     ];
     dates = "daily";
     randomizedDelaySec = "30min";
-  };
-  nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      # configures nix to build with all cores
-      cores = 0;
-      max-jobs = "auto";
-    };
   };
   virtualisation.virtualbox.host.enable = true;
   # Don't forget to set a password with ‘passwd’.
