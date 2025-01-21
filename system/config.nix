@@ -10,6 +10,7 @@
 
   imports = [
     inputs.home-manager.nixosModules.default
+    ./firefox.nix
   ];
   #SECURITY
   #SYSTEM
@@ -250,20 +251,6 @@
       };
     };
     ssh.startAgent = true;
-    firefox = {
-      enable = true;
-      languagePacks = [ "en-US" ];
-      policies = {
-        DisableTelemetry = true;
-        DisableFirefoxStudies = true;
-        DisablePocket = true;
-        DisplayBookmarksToolbar = "always";
-        ExtensionSettings = {
-        };
-        preferences = {
-        };
-      };
-    };
     nano.enable = false;
     steam = {
       enable = true;
