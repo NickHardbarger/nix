@@ -20,6 +20,7 @@
     ./nix.nix
     ./boot.nix
     ./firewall.nix
+    ./bluetooth.nix
   ];
   networking = {
     hostName = "t420";
@@ -27,15 +28,9 @@
     #proxy.default = "http://user:password@proxy:port/";
     #proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
-  hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
   };
   time.timeZone = "America/New_York";
   i18n = {
@@ -59,7 +54,6 @@
       scheduler = "scx_rustland"; # TODO: figure out scheduler
       #extraArgs = [ "--slice-us 5000" "--verbose" ]; # TODO: figure out args
     };
-    blueman.enable = true;
     printing.enable = true;
     ollama.enable = false;
     pulseaudio.enable = false;
