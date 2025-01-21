@@ -15,6 +15,7 @@
     ./ssh.nix
     ./steam.nix
     ./foot.nix
+    ./starship.nix
   ];
   #SECURITY
   #SYSTEM
@@ -228,21 +229,6 @@
       };
     };
     nano.enable = false;
-    starship = {
-      enable = true;
-      settings = {
-        add_newline = false;
-        line_break = {
-          disabled = true;
-        };
-        format = "$all$directory$character";
-        character = {
-          success_symbol = "[➜](bold green)";
-          error_symbol = "[➜](bold red)";
-        };
-      };
-    };
-  };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [
     ### DWL ###
