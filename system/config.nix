@@ -12,6 +12,7 @@
     inputs.home-manager.nixosModules.default
     ./firefox.nix
     ./fail2ban.nix
+    ./ssh.nix
   ];
   #SECURITY
   #SYSTEM
@@ -131,16 +132,6 @@
       pulse.enable = true;
       #jack.enable = true;
       #media-session.enable = true;
-    };
-    openssh = {
-      enable = true;
-      settings = {
-        PasswordAuthentication = true;
-        AllowUsers = [ "nickh" ];
-        UseDns = true;
-        X11Forwarding = false;
-        PermitRootLogin = "prohibit-password";
-      };
     };
     xserver = {
       enable = true;
