@@ -27,10 +27,14 @@
     bash = {
       enable = true;
       bashrcExtra = ''
-        #~/nil/system/fetch/fetch.pl
-        ~/nil/system/fetch/fetch.sh
+        #~/nil/system/scripts/fetch.pl
+        ~/nil/system/scripts/fetch.sh
       '';
-      profileExtra = "dwl"; # should execute dwl upon login
+      profileExtra = ''
+        ~/nil/system/bin/slstatus -s | ~/nil/system/bin/dwl
+        exec <&-
+      '';
+      # launches dwl on login, then flushes path? i think
     };
     emacs = {
       enable = true;

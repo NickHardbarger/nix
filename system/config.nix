@@ -52,9 +52,9 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [
     ### DWL ###
-    (import ./dwl/dwl.nix { inherit pkgs; })
+    (import ./scripts/dwl.nix { inherit pkgs; })
     wmenu # app launcher
-    (import ./wmenu/wmenu.nix { inherit pkgs; })
+    (import ./scripts/wmenu.nix { inherit pkgs; })
     #wbg # wallpaper setter #!!build failure
     swaybg # wallpaper setter
     grim # screenshots
@@ -68,7 +68,7 @@
     sl # steam locomotive on ls typo
 
     ### MISC ###
-    (import ./emacs/emacs.nix { inherit pkgs; })
+    (import ./scripts/emacs.nix { inherit pkgs; })
     #(import ./kernel/kernel.nix { inherit pkgs; })
     mangohud # steam hud overlay
     wget # file retriever

@@ -14,7 +14,7 @@ pkgs.writeShellApplication {
     fcft
   ];
   text = ''
-    ~/nil/system/dwl/slstatus -s | ~/nil/system/dwl/dwl
+    ~/nil/system/bin/slstatus -s | ~/nil/system/bin/dwl
     exec <&-
   '';
 }
