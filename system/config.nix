@@ -27,6 +27,7 @@
     ./xorg.nix
     ./doas.nix
     ./scx.nix
+    ./users.nix
   ];
   networking = {
     hostName = "t420";
@@ -43,25 +44,6 @@
     polkit.enable = true;
   };
   virtualisation.virtualbox.host.enable = true;
-  # Don't forget to set a password with ‘passwd’.
-  users.users.nickh = {
-    isNormalUser = true;
-    description = "nickh";
-    initialPassword = "1337";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "vboxusers"
-    ];
-  };
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-    users = {
-      "nickh" = import ./home.nix;
-    };
-  };
   programs = {
     nix-ld.enable = true;
     bash.blesh.enable = true;
