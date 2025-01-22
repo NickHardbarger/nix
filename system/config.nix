@@ -41,6 +41,7 @@
     };
     printing.enable = true;
     ollama.enable = false;
+  };
   security = {
     rtkit.enable = true;
     polkit.enable = true;
