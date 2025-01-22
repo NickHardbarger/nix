@@ -24,6 +24,7 @@
     ./audio.nix
     ./locale.nix
     ./gpu.nix
+    ./xorg.nix
   ];
   networking = {
     hostName = "t420";
@@ -40,23 +41,6 @@
     };
     printing.enable = true;
     ollama.enable = false;
-    xserver = {
-      enable = true;
-      autorun = false;
-      xkb = {
-        layout = "us";
-        variant = "";
-        options = "ctrl:nocaps";
-      };
-      excludePackages = with pkgs; [
-        xterm
-      ];
-      displayManager = {
-        startx.enable = false;
-        lightdm.enable = false;
-      };
-    };
-  };
   security = {
     rtkit.enable = true;
     polkit.enable = true;
