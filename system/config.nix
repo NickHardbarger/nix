@@ -26,6 +26,7 @@
     ./gpu.nix
     ./xorg.nix
     ./doas.nix
+    ./scx.nix
   ];
   networking = {
     hostName = "t420";
@@ -34,12 +35,6 @@
     #proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
   services = {
-    scx = {
-      enable = false;
-      package = pkgs.scx.full; # TODO: figure out package
-      scheduler = "scx_rustland"; # TODO: figure out scheduler
-      #extraArgs = [ "--slice-us 5000" "--verbose" ]; # TODO: figure out args
-    };
     printing.enable = true;
     ollama.enable = false;
   };
