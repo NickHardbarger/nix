@@ -27,7 +27,6 @@
     };
     consoleLogLevel = 0;
     initrd.verbose = false;
-    systemd.extraConfig = ''DefaultTimeoutStopSec=10s'';
     #kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "quiet"
@@ -39,4 +38,5 @@
       "udev.log_priority=3"
     ];
   };
+  systemd.extraConfig = ''DefaultTimeoutStopSec=10s'';
 }
