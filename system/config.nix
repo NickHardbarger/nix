@@ -23,16 +23,13 @@
     ./bluetooth.nix
     ./audio.nix
     ./locale.nix
+    ./gpu.nix
   ];
   networking = {
     hostName = "t420";
     networkmanager.enable = true;
     #proxy.default = "http://user:password@proxy:port/";
     #proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  };
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
   };
   services = {
     scx = {
@@ -51,10 +48,6 @@
         variant = "";
         options = "ctrl:nocaps";
       };
-      videoDrivers = [
-        #"amdgpu"
-        "intel"
-      ];
       excludePackages = with pkgs; [
         xterm
       ];
