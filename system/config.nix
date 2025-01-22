@@ -25,6 +25,7 @@
     ./locale.nix
     ./gpu.nix
     ./xorg.nix
+    ./doas.nix
   ];
   networking = {
     hostName = "t420";
@@ -45,17 +46,6 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
-    sudo.enable = true; # TODO: figure out nil repo ownership issue
-    doas = {
-      enable = false;
-      extraRules = [
-        {
-          users = [ "nickh" ];
-          keepEnv = true;
-          persist = true;
-        }
-      ];
-    };
   };
   virtualisation.virtualbox.host.enable = true;
   # Don't forget to set a password with ‘passwd’.
