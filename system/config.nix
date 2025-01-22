@@ -52,7 +52,6 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [
     ### DWL ###
-    (import ./scripts/dwl.nix { inherit pkgs; })
     wmenu # app launcher
     (import ./scripts/wmenu.nix { inherit pkgs; })
     #wbg # wallpaper setter #!!build failure
