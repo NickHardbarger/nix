@@ -10,11 +10,6 @@
     home-manager = {
       enable = true;
     };
-    btop = {
-      enable = true;
-      package = pkgs.btop;
-      #settings = { color_theme = "gruvbox_dark"; };
-    };
     bash = {
       enable = true;
       bashrcExtra = ''
