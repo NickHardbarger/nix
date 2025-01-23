@@ -6,6 +6,7 @@
     ../modules/home/bash.nix
     ../modules/home/obs.nix
     ../modules/home/mako.nix
+    ../modules/home/cursor.nix
   ];
   home = {
     username = "nickh";
@@ -24,19 +25,6 @@
     "cmatrix" = "cmatrix -C cyan";
     ".." = "cd ..";
     "screenshot" = "slurp | grim -g -"; # to use: screenshot <screenshot>.png
-  };
-  ### CURSOR ###
-  home.pointerCursor = {
-    name = "Simp1e-Gruvbox-Dark";
-    package = pkgs.simp1e-cursors;
-    size = 24;
-    x11 = {
-      enable = true;
-      defaultCursor = "Simp1e-Gruvbox-Dark";
-    };
-    gtk = {
-      enable = true;
-    };
   };
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
