@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
-  imports = [ ../modules/home/git.nix ];
+  imports = [
+    ../modules/home/git.nix
+    ../modules/home/btop.nix
+  ];
   home = {
     username = "nickh";
     homeDirectory = "/home/nickh";
