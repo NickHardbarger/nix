@@ -92,9 +92,9 @@
     vscode-langservers-extracted
   ];
   home.file = {
-    ".emacs.d/early-init.el".source = ./emacs/early-init.el;
-    ".emacs.d/init.el".source = ./emacs/init.el;
-    ".emacs.d/ding.wav".source = ./emacs/ding.wav;
+    ".emacs.d/early-init.el".source = ../emacs/early-init.el;
+    ".emacs.d/init.el".source = ../emacs/init.el;
+    ".emacs.d/ding.wav".source = ../emacs/ding.wav;
   };
   home.sessionVariables = {
     EDITOR = "emacsclient -c -a ''";
