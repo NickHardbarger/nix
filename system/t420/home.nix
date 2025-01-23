@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  imports = [ ../modules/home/git.nix ];
   home = {
     username = "nickh";
     homeDirectory = "/home/nickh";
@@ -8,16 +9,6 @@
   programs = {
     home-manager = {
       enable = true;
-    };
-    ### GIT ###
-    git = {
-      enable = true;
-      userName = "Nick";
-      userEmail = "nickhardbarger13@gmail.com";
-      extraConfig = {
-        init.defaultBranch = "main";
-        safe.directory = "/home/nickh/nil";
-      };
     };
     btop = {
       enable = true;
