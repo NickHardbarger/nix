@@ -53,7 +53,7 @@
   environment.systemPackages = with pkgs; [
     ### DWL ###
     wmenu # app launcher
-    (import ./scripts/wmenu.nix { inherit pkgs; })
+    (import ../scripts/wmenu.nix { inherit pkgs; })
     #wbg # wallpaper setter #!!build failure
     swaybg # wallpaper setter
     grim # screenshots
@@ -67,7 +67,7 @@
     sl # steam locomotive on ls typo
 
     ### MISC ###
-    (import ./scripts/emacs.nix { inherit pkgs; })
+    (import ../scripts/emacs.nix { inherit pkgs; })
     mangohud # steam hud overlay
     wget # file retriever
     pulseaudio # ?? I forget why that's there lol
