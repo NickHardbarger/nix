@@ -22,7 +22,7 @@
       inherit inputs;
     };
     users = {
-      "nickh" = import ./home.nix;
+      "nickh" = import ../home.nix;
     };
   };
 }
