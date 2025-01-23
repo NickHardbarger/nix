@@ -4,6 +4,7 @@
     ../modules/home/git.nix
     ../modules/home/btop.nix
     ../modules/home/bash.nix
+    ../modules/home/obs.nix
   ];
   home = {
     username = "nickh";
@@ -17,12 +18,6 @@
     emacs = {
       enable = true;
       package = pkgs.emacs30-pgtk;
-    };
-    obs-studio = {
-      enable = true;
-      plugins = with pkgs.obs-studio-plugins; [
-        wlrobs
-      ];
     };
   };
   ### SERVICES ###
