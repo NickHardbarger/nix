@@ -5,12 +5,12 @@
     ../modules/home/btop.nix
     ../modules/home/bash.nix
     ../modules/home/obs.nix
+    ../modules/home/mako.nix
   ];
   home = {
     username = "nickh";
     homeDirectory = "/home/nickh";
   };
-  ### PROGRAMS ###
   programs = {
     home-manager = {
       enable = true;
@@ -18,16 +18,6 @@
     emacs = {
       enable = true;
       package = pkgs.emacs30-pgtk;
-    };
-  };
-  ### SERVICES ###
-  services = {
-    mako = {
-      enable = true;
-      font = "JetBrainsMonoNF 12";
-      backgroundColor = "#458588FF";
-      borderColor = "#689d6aFF";
-      textColor = "#ebdbb2FF";
     };
   };
   home.shellAliases = {
