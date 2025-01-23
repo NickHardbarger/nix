@@ -9,6 +9,7 @@
     ../modules/home/cursor.nix
     ../modules/home/emacs.nix
   ];
+  programs.home-manager.enable = true;
   home = {
     username = "nickh";
     homeDirectory = "/home/nickh";
@@ -21,11 +22,5 @@
     # release notes.
     stateVersion = "24.05"; # Please read the comment before changing.
     enableNixpkgsReleaseCheck = false;
-  };
-  programs.home-manager.enable = true;
-  home.shellAliases = {
-    "cmatrix" = "cmatrix -C cyan";
-    ".." = "cd ..";
-    "screenshot" = "slurp | grim -g -"; # to use: screenshot <screenshot>.png
   };
 }

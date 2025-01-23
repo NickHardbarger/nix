@@ -12,4 +12,10 @@
     '';
     # launches dwl on login, then flushes path? i think
   };
+  home.shellAliases = {
+    "cmatrix" = "cmatrix -C cyan";
+    ".." = "cd ..";
+    "screenshot" = "slurp | grim -g -"; # to use: screenshot <screenshot>.png
+  };
+
 }
