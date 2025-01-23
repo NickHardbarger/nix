@@ -67,7 +67,7 @@
     sl # steam locomotive on ls typo
 
     ### MISC ###
-    (import ../scripts/emacs.nix { inherit pkgs; })
+    (import ../scripts/vim.nix { inherit pkgs; })
     wget # file retriever
     pulseaudio # ?? I forget why that's there lol
     discord # chat client
