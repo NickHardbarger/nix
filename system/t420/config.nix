@@ -10,24 +10,24 @@
 
   imports = [
     inputs.home-manager.nixosModules.default
-    ./firefox.nix
-    ./fail2ban.nix
-    ./ssh.nix
-    ./steam.nix
-    ./foot.nix
-    ./starship.nix
-    ./nh.nix
-    ./nix.nix
-    ./boot.nix
-    ./firewall.nix
-    ./bluetooth.nix
-    ./audio.nix
-    ./locale.nix
-    ./gpu.nix
-    ./xorg.nix
-    ./doas.nix
-    ./scx.nix
-    ./users.nix
+    ../modules/firefox.nix
+    ../modules/fail2ban.nix
+    ../modules/ssh.nix
+    ../modules/steam.nix
+    ../modules/foot.nix
+    ../modules/starship.nix
+    ../modules/nh.nix
+    ../modules/nix.nix
+    ../modules/boot.nix
+    ../modules/firewall.nix
+    ../modules/bluetooth.nix
+    ../modules/audio.nix
+    ../modules/locale.nix
+    ../modules/gpu.nix
+    ../modules/xorg.nix
+    ../modules/doas.nix
+    ../modules/scx.nix
+    ../modules/users.nix
   ];
   networking = {
     hostName = "t420";
@@ -68,7 +68,6 @@
 
     ### MISC ###
     (import ./scripts/emacs.nix { inherit pkgs; })
-    #(import ./kernel/kernel.nix { inherit pkgs; })
     mangohud # steam hud overlay
     wget # file retriever
     pulseaudio # ?? I forget why that's there lol

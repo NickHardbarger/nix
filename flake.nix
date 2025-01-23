@@ -20,8 +20,8 @@
             inherit inputs;
           };
           modules = [
-            ./system/config.nix
-            ./system/hardware/t420.nix
+            ./system/t420/config.nix
+            ./system/t420/hardware.nix
             inputs.home-manager.nixosModules.default
           ];
         };
