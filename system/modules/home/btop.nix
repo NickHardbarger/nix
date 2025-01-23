@@ -4,7 +4,7 @@
     enable = true;
     package = pkgs.btop;
     extraConfig = ''
-      color_theme = "Default"
+      color_theme = "gruvbox_dark"
       theme_background = True
     '';
   };
