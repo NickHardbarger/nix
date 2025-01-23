@@ -3,6 +3,7 @@
   imports = [
     ../modules/home/git.nix
     ../modules/home/btop.nix
+    ../modules/home/bash.nix
   ];
   home = {
     username = "nickh";
@@ -12,18 +13,6 @@
   programs = {
     home-manager = {
       enable = true;
-    };
-    bash = {
-      enable = true;
-      bashrcExtra = ''
-        #~/nil/system/scripts/fetch.pl
-        ~/nil/system/scripts/fetch.sh
-      '';
-      profileExtra = ''
-        ~/nil/system/bin/slstatus -s | ~/nil/system/bin/dwl
-        exec <&-
-      '';
-      # launches dwl on login, then flushes path? i think
     };
     emacs = {
       enable = true;
