@@ -3,8 +3,6 @@
   programs.btop = {
     enable = true;
     package = pkgs.btop;
-    extraConfig = ''
-      theme_background = False
-    '';
+    # settings and extraConfig options don't work at all
   };
 }
