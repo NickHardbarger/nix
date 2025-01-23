@@ -68,7 +68,6 @@
 
     ### MISC ###
     (import ../scripts/emacs.nix { inherit pkgs; })
-    mangohud # steam hud overlay
     wget # file retriever
     pulseaudio # ?? I forget why that's there lol
     discord # chat client
