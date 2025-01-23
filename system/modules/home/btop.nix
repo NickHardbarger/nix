@@ -3,8 +3,9 @@
   programs.btop = {
     enable = true;
     package = pkgs.btop;
-    settings = {
-      color_theme = "gruvbox_dark";
-    };
+    extraConfig = ''
+      color_theme = "Default"
+      theme_background = True
+    '';
   };
 }
