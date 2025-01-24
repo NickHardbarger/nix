@@ -13,7 +13,7 @@
     ../modules/firefox.nix
     ../modules/fail2ban.nix
     ../modules/ssh.nix
-    ../modules/steam.nix
+    ../modules/games.nix
     ../modules/foot.nix
     ../modules/starship.nix
     ../modules/nh.nix
