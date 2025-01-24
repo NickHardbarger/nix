@@ -10,24 +10,25 @@
 
   imports = [
     inputs.home-manager.nixosModules.default
-    ../modules/firefox.nix
+    ../modules/audio.nix
+    ../modules/bluetooth.nix
+    ../modules/boot.nix
+    ../modules/doas.nix
     ../modules/fail2ban.nix
-    ../modules/ssh.nix
-    ../modules/games.nix
+    ../modules/firefox.nix
+    ../modules/firewall.nix
     ../modules/foot.nix
-    ../modules/starship.nix
+    ../modules/games.nix
+    ../modules/gpu.nix
+    ../modules/locale.nix
     ../modules/nh.nix
     ../modules/nix.nix
-    ../modules/boot.nix
-    ../modules/firewall.nix
-    ../modules/bluetooth.nix
-    ../modules/audio.nix
-    ../modules/locale.nix
-    ../modules/gpu.nix
-    ../modules/xorg.nix
-    ../modules/doas.nix
     ../modules/scx.nix
+    ../modules/ssh.nix
+    ../modules/starship.nix
+    ../modules/upgrades.nix
     ../modules/users.nix
+    ../modules/xorg.nix
   ];
   networking = {
     hostName = "t420";
