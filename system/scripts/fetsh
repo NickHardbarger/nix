@@ -22,30 +22,34 @@ kernel="$(uname -r)"
 #pkgs="$(expr $nix1 + $nix2)"
 # runs 10x faster by removing package count!
 
-uptime="$(uptime | awk '{print $3, $4, $5}' | awk '{gsub(/[,\t]+/, ""); print}')"
+if [[ "$(uptime)" == *"day"* ]]; then
+    uptime="$(uptime | awk '{gsub(/[,\t]+/, ""); print $3, $4, $5}')"
+else
+    uptime="$(uptime | awk '{gsub(/[,\t]+/, ""); print $3}')"
+fi
+
 memory="$(free -m | grep Mem | awk '{print $3}')"
-output() {
-  echo -en "${BLUE}  \\\\\  ${CYAN}\\\\\ //   ${WHITE}"
-  echo -e "${GREEN}$user$host${WHITE}"
+# need something more useful than memory. maybe time since last updated?
 
-  echo -en "${BLUE} ==\\\\\__${CYAN}\\\\\/ ${BLUE}// ${WHITE}"
-  echo -e "${GREY}https://github.com/NickHardbarger${WHITE}"
+echo -en "${BLUE}  \\\\\  ${CYAN}\\\\\ //   ${WHITE}"
+echo -e "${GREEN}$user$host${WHITE}"
 
-  echo -en "${CYAN}   //   \\\\\\"
-  echo -en "${BLUE}//  ${WHITE}"
-  echo -e "${RED}model${WHITE}  $model"
+echo -en "${BLUE} ==\\\\\__${CYAN}\\\\\/ ${BLUE}// ${WHITE}"
+echo -e "${GREY}https://github.com/NickHardbarger${WHITE}"
 
-  echo -en "${CYAN}==//     ${BLUE}//== ${WHITE}"
-  echo -e "${BLUE}flake${WHITE}  $nixos"
+echo -en "${CYAN}   //   \\\\\\"
+echo -en "${BLUE}//  ${WHITE}"
+echo -e "${RED}model${WHITE}  $model"
 
-  echo -en "${CYAN} //${BLUE}\\\\\\"
-  echo -en "${CYAN}___//    ${WHITE}"
-  echo -e "${YELLOW}kernel${WHITE} $kernel"
+echo -en "${CYAN}==//     ${BLUE}//== ${WHITE}"
+echo -e "${BLUE}flake${WHITE}  $nixos"
 
-  echo -en "${CYAN}// ${BLUE}/\\\\\  ${CYAN}\\\\\==  ${WHITE}"
-  echo -e "${CYAN}uptime${WHITE} $uptime"
+echo -en "${CYAN} //${BLUE}\\\\\\"
+echo -en "${CYAN}___//    ${WHITE}"
+echo -e "${YELLOW}kernel${WHITE} $kernel"
 
-  echo -en "${BLUE}  // \\\\\  ${CYAN}\\\\\   ${WHITE}"
-  echo -e "${PURPLE}memory${WHITE} $memory Mi"
-}
-output
+echo -en "${CYAN}// ${BLUE}/\\\\\  ${CYAN}\\\\\==  ${WHITE}"
+echo -e "${CYAN}uptime${WHITE} $uptime 小时"
+
+echo -en "${BLUE}  // \\\\\  ${CYAN}\\\\\   ${WHITE}"
+echo -e "${PURPLE}memory${WHITE} $memory Mi"
