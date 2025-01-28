@@ -4,7 +4,7 @@
     enable = true;
     bashrcExtra = ''
       #~/nil/system/scripts/fetch.pl
-      ~/nil/system/scripts/fet.sh
+      ~/nil/system/scripts/fetsh
     '';
     profileExtra = ''
       ~/nil/system/bin/slstatus -s | ~/nil/system/bin/dwl
