@@ -46,7 +46,8 @@
     ];
     kernelModules = [ "tp_smapi" ];
     extraModulePackages = with config.boot.kernelPackages; [ tp_smapi ];
-    initrd.kernelModules = [ "intel" ]; # early KMS
+    # "Module intel not found"
+    #initrd.kernelModules = [ "intel" ]; # early KMS
   };
   hardware = {
     #enableAllHardware = false;
