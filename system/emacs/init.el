@@ -121,10 +121,26 @@
   :after magit
   :config (magit-todos-mode 1))
 
-(straight-use-package 'git-gutter)
-(global-git-gutter-mode t)
-(git-gutter:linum-setup)
-(custom-set-variables '(git-gutter:update-interval 2))
+(straight-use-package 'fringe-helper)
+(straight-use-package 'git-gutter-fringe)
+(setq git-gutter:window-width 2
+      ;git-gutter:unchanged-sign "  "
+      git-gutter:modified-sign "=="
+      git-gutter:added-sign "++"
+      git-gutter:deleted-sign "--")
+(set-face-foreground 'git-gutter-fr:modified "yellow")
+(set-face-foreground 'git-gutter-fr:added "blue")
+(set-face-foreground 'git-gutter-fr:deleted "white")
+
+;(global-git-gutter-mode t)
+;(git-gutter:linum-setup)
+;(custom-set-variables
+; '(git-gutter:update-interval 2)
+; '(git-gutter:window-width 2)
+; '(git-gutter:modified-sign "  ")
+; '(git-gutter:added-sign "++")
+; '(git-gutter:deleted-sign "--")
+; '(git-gutter:visual-line t))
 
 ;; PROJECTILE ;;
 (straight-use-package 'projectile)
