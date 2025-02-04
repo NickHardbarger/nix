@@ -15,7 +15,26 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 (straight-use-package 'use-package)
+
+;; ORG ;;
 (straight-use-package 'org) ; told me to put this early in the config
+(org-babel-do-load-languages
+  'org-babel-load-languages
+  '((emacs-lisp . t)
+    (shell . t)))
+
+(straight-use-package 'org-drill)
+
+(straight-use-package 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(straight-use-package 'org-auto-tangle)
+(add-hook 'org-mode-hook 'org-auto-tangle-mode)
+(setq org-auto-tangle-default nil
+      calendar-week-start-day 1)
+
+(add-to-list 'org-agenda-files "~/notes/agenda.org")
+(setq org-clock-sound "~/.emacs.d/ding.wav") ; https://freesound.org/people/.Andre_Onate/sounds/484665/
 
 ;; THEME ;;
 (straight-use-package 'gruvbox-theme)
@@ -94,13 +113,15 @@
 (unless (server-running-p)
   (server-start))
 
-;; MAGIT ;;
+;; GIT ;;
 (straight-use-package 'magit)
 (define-key global-map (kbd "C-x g") 'magit-status)
 (use-package magit-todos
   :straight t
   :after magit
   :config (magit-todos-mode 1))
+(straight-use-package 'git-gutter)
+(global-git-gutter-mode 1)
 
 ;; PROJECTILE ;;
 (straight-use-package 'projectile)
@@ -146,25 +167,6 @@
 (ivy-mode)
 (setq ivy-use-virtual-buffers t
       enable-recursive-minibuffers t)
-
-;; ORG ;;
-(org-babel-do-load-languages
-  'org-babel-load-languages
-  '((emacs-lisp . t)
-    (shell . t)))
-
-(straight-use-package 'org-drill)
-
-(straight-use-package 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
-(straight-use-package 'org-auto-tangle)
-(add-hook 'org-mode-hook 'org-auto-tangle-mode)
-(setq org-auto-tangle-default nil
-      calendar-week-start-day 1)
-
-(add-to-list 'org-agenda-files "~/notes/agenda.org")
-(setq org-clock-sound "~/.emacs.d/ding.wav") ; https://freesound.org/people/.Andre_Onate/sounds/484665/
 
 ;; NEOTREE ;;
 (straight-use-package 'neotree)
