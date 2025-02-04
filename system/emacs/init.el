@@ -121,7 +121,7 @@
   :after magit
   :config (magit-todos-mode 1))
 
-;(straight-use-package 'diff-hl)
+(straight-use-package 'diff-hl)
 (global-diff-hl-mode)
 ;(straight-use-package 'fringe-helper)
 ;(straight-use-package 'git-gutter-fringe)
