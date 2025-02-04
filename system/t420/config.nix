@@ -40,10 +40,10 @@
   };
 
   boot = {
-    kernelParams = [
-      "i915.enable_rc6=7"
-      "video=LVDS-1:1600x900@60"
-    ];
+    #kernelParams = [
+    # "i915.enable_rc6=7"
+    #"video=LVDS-1:1600x900@60"
+    #];
     # it was compiling the kernel
     #kernelModules = [ "tp_smapi" ];
     #extraModulePackages = with config.boot.kernelPackages; [ tp_smapi ];
