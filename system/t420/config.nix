@@ -40,12 +40,13 @@
   };
 
   boot = {
-    kernelModules = [ "tp_smapi" ];
     kernelParams = [
       "i915.enable_rc6=7"
       "video=LVDS-1:1600x900@60"
     ];
-    extraModulePackages = with config.boot.kernelPackages; [ tp_smapi ];
+    # it was compiling the kernel
+    #kernelModules = [ "tp_smapi" ];
+    #extraModulePackages = with config.boot.kernelPackages; [ tp_smapi ];
     initrd.kernelModules = [ "intel" ]; # early KMS
   };
   hardware = {
