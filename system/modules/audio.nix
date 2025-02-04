@@ -19,4 +19,7 @@
       #media-session.enable = true;
     };
   };
+  environment.systemPackages = [
+    pkgs.pulseaudio # ?? I forget why this matters lol
+  ];
 }

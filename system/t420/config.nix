@@ -23,6 +23,7 @@
     ../modules/locale.nix
     ../modules/nh.nix
     ../modules/nix.nix
+    ../modules/pkgs.nix
     ../modules/scx.nix
     ../modules/ssh.nix
     ../modules/starship.nix
@@ -86,27 +87,10 @@
   environment = {
     sessionVariables.NIXOS_OZONE_WL = "1";
     systemPackages = with pkgs; [
-      ### DWL ###
-      wmenu # app launcher
-      (import ../scripts/wmenu.nix { inherit pkgs; })
-      #wbg # wallpaper setter #!!build failure
-      swaybg # wallpaper setter
-      grim # screenshots
-      slurp # screen select
-      wl-clipboard # clipboard
-
-      ### CLI SCRIPTS ###
-      speedtest-cli # test network speed
       cmatrix # matrix text scroll
       cowsay # generates ascii cow with message
       sl # steam locomotive on ls typo
-
-      ### MISC ###
-      (import ../scripts/vi.nix { inherit pkgs; })
-      wget # file retriever
-      pulseaudio # ?? I forget why that's there lol
       discord # chat client
-      libreoffice # office suite
     ];
   };
   # Some programs need SUID wrappers, can be configured further or are
