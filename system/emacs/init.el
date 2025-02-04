@@ -128,9 +128,9 @@
       git-gutter:modified-sign "=="
       git-gutter:added-sign "++"
       git-gutter:deleted-sign "--")
-(set-face-foreground 'git-gutter-fr:modified "yellow")
-(set-face-foreground 'git-gutter-fr:added "blue")
-(set-face-foreground 'git-gutter-fr:deleted "white")
+;(set-face-foreground 'git-gutter-fr:modified "yellow")
+;(set-face-foreground 'git-gutter-fr:added "blue")
+;(set-face-foreground 'git-gutter-fr:deleted "white")
 
 ;(global-git-gutter-mode t)
 ;(git-gutter:linum-setup)
