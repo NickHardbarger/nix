@@ -1,5 +1,5 @@
 {
-  config, # unneeded?
+  config,
   pkgs,
   inputs,
   lib, # unneeded?
@@ -17,9 +17,9 @@
     ../modules/fail2ban.nix
     ../modules/firefox.nix
     ../modules/firewall.nix
+    ../modules/fonts.nix
     ../modules/foot.nix
     ../modules/games.nix
-    ../modules/gpu.nix
     ../modules/locale.nix
     ../modules/nh.nix
     ../modules/nix.nix
@@ -28,6 +28,7 @@
     ../modules/starship.nix
     ../modules/upgrades.nix
     ../modules/users.nix
+    ../modules/xkb.nix
     ../modules/xorg.nix
   ];
   networking = {
@@ -36,6 +37,38 @@
     #proxy.default = "http://user:password@proxy:port/";
     #proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
+
+  boot = {
+    kernelModules = [ "tp_smapi" ];
+    kernelParams = [
+      "i915.enable_rc6=7"
+      "video=LVDS-1:1600x900@60"
+    ];
+    extraModulePackages = with config.boot.kernelPackages; [ tp_smapi ];
+    initrd.kernelModules = [ "intel" ]; # early KMS
+  };
+  hardware = {
+    enableAllHardware = false;
+    enableAllFirmware = true;
+    cpu.intel.updateMicrocode = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = [
+        pkgs.intel-vaapi-driver
+      ];
+      extraPackages32 = [
+        pkgs.pkgsi686Linux.intel-vaapi-driver # wiki says this
+        #pkgs.driversi686Linux.intel-vaapi-driver # but pkg name is this?
+      ];
+    };
+    trackpoint = {
+      enable = true;
+      emulateWheel = true;
+    };
+  };
+  services.xserver.videoDrivers = [ "intel" ];
+
   services = {
     printing.enable = true;
     ollama.enable = false;
@@ -50,34 +83,32 @@
     bash.blesh.enable = true;
     nano.enable = false;
   };
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.systemPackages = with pkgs; [
-    ### DWL ###
-    wmenu # app launcher
-    (import ../scripts/wmenu.nix { inherit pkgs; })
-    #wbg # wallpaper setter #!!build failure
-    swaybg # wallpaper setter
-    grim # screenshots
-    slurp # screen select
-    wl-clipboard # clipboard
+  environment = {
+    sessionVariables.NIXOS_OZONE_WL = "1";
+    systemPackages = with pkgs; [
+      ### DWL ###
+      wmenu # app launcher
+      (import ../scripts/wmenu.nix { inherit pkgs; })
+      #wbg # wallpaper setter #!!build failure
+      swaybg # wallpaper setter
+      grim # screenshots
+      slurp # screen select
+      wl-clipboard # clipboard
 
-    ### CLI SCRIPTS ###
-    speedtest-cli # test network speed
-    cmatrix # matrix text scroll
-    cowsay # generates ascii cow with message
-    sl # steam locomotive on ls typo
+      ### CLI SCRIPTS ###
+      speedtest-cli # test network speed
+      cmatrix # matrix text scroll
+      cowsay # generates ascii cow with message
+      sl # steam locomotive on ls typo
 
-    ### MISC ###
-    (import ../scripts/vi.nix { inherit pkgs; })
-    wget # file retriever
-    pulseaudio # ?? I forget why that's there lol
-    discord # chat client
-    libreoffice # office suite
-  ];
-  fonts.packages = with pkgs; [
-    #(nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) # old
-    nerd-fonts.jetbrains-mono # new
-  ];
+      ### MISC ###
+      (import ../scripts/vi.nix { inherit pkgs; })
+      wget # file retriever
+      pulseaudio # ?? I forget why that's there lol
+      discord # chat client
+      libreoffice # office suite
+    ];
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

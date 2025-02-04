@@ -9,11 +9,6 @@
   services.xserver = {
     enable = true;
     autorun = false;
-    xkb = {
-      layout = "us";
-      variant = "";
-      options = "ctrl:nocaps";
-    };
     excludePackages = with pkgs; [
       xterm
     ];
