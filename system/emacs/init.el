@@ -121,13 +121,15 @@
   :after magit
   :config (magit-todos-mode 1))
 
-(straight-use-package 'fringe-helper)
-(straight-use-package 'git-gutter-fringe)
-(setq git-gutter:window-width 2
-      ;git-gutter:unchanged-sign "  "
-      git-gutter:modified-sign "=="
-      git-gutter:added-sign "++"
-      git-gutter:deleted-sign "--")
+;(straight-use-package 'diff-hl)
+(global-diff-hl-mode)
+;(straight-use-package 'fringe-helper)
+;(straight-use-package 'git-gutter-fringe)
+;(setq git-gutter:window-width 2
+;      ;git-gutter:unchanged-sign "  "
+;      git-gutter:modified-sign "=="
+;      git-gutter:added-sign "++"
+;      git-gutter:deleted-sign "--")
 ;(set-face-foreground 'git-gutter-fr:modified "yellow")
 ;(set-face-foreground 'git-gutter-fr:added "blue")
 ;(set-face-foreground 'git-gutter-fr:deleted "white")
