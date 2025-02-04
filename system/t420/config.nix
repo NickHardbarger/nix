@@ -50,9 +50,9 @@
     #initrd.kernelModules = [ "intel" ]; # early KMS
   };
   hardware = {
-    #enableAllHardware = false;
-    #enableAllFirmware = true;
-    #cpu.intel.updateMicrocode = true;
+    enableAllHardware = false;
+    enableAllFirmware = true;
+    cpu.intel.updateMicrocode = true;
     graphics = {
       enable = true;
       enable32Bit = true;
