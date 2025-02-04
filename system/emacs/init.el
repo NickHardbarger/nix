@@ -120,8 +120,11 @@
   :straight t
   :after magit
   :config (magit-todos-mode 1))
+
 (straight-use-package 'git-gutter)
-(global-git-gutter-mode 1)
+(global-git-gutter-mode t)
+(git-gutter:linum-setup)
+(custom-set-variables '(git-gutter:update-interval 2))
 
 ;; PROJECTILE ;;
 (straight-use-package 'projectile)
