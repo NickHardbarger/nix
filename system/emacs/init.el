@@ -90,7 +90,14 @@
 (setq display-line-numbers-type 'relative)
 
 (global-display-fill-column-indicator-mode)
-(setq display-fill-column-indicator-column 20) ; doesn't seem to work
+(setq display-fill-column-indicator-column 80) ; doesn't seem to work ;70       ;80
+
+; apparently, utf-16-le is best on windows
+; if set to nil, emacs will interpret character encoding based on clipboard contents
+(set-selection-coding-system
+ (if (eq system-type 'windows-nt)
+     'utf-16-le
+   nil))
 
 ;; POLYMODE ;;
 (use-package poly-org
