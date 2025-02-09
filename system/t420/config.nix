@@ -2,7 +2,6 @@
   config,
   pkgs,
   inputs,
-  lib, # unneeded?
   ...
 }:
 
@@ -13,6 +12,7 @@
     ../modules/audio.nix
     ../modules/bluetooth.nix
     ../modules/boot.nix
+    ../modules/direnv.nix
     ../modules/doas.nix
     ../modules/fail2ban.nix
     ../modules/firefox.nix
