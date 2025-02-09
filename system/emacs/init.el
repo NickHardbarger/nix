@@ -90,7 +90,9 @@
 (setq display-line-numbers-type 'relative)
 
 (global-display-fill-column-indicator-mode)
-(setq display-fill-column-indicator-column 80) ; doesn't seem to work ;70       ;80
+; for some reason this variable is not set upon loading emacs?
+; doing it manually with C-M-x works though
+(setq display-fill-column-indicator-column 80)                        ;70       ;80
 
 ; apparently, utf-16-le is best on windows
 ; if set to nil, emacs will interpret character encoding based on clipboard contents
@@ -98,6 +100,8 @@
  (if (eq system-type 'windows-nt)
      'utf-16-le
    nil))
+
+(set-default 'truncate-lines t)
 
 ;; POLYMODE ;;
 (use-package poly-org
@@ -188,12 +192,13 @@
 (straight-use-package 'smartparens)
 (smartparens-global-mode t)
 
+; seems useless. better done with C-u, maybe macros?
 ;; MULTIPLE CURSORS ;;
-(straight-use-package 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;(straight-use-package 'multiple-cursors)
+;(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; TREE SITTER ;;
 (straight-use-package 'tree-sitter)
