@@ -34,8 +34,23 @@ mv hardware-configuration.nix <host-name>.nix
 sudo nixos-rebuild switch --flake ~/nix#<host-name>
 #+END_SRC
 
+* Todos:
+
+** TODO Add multihost support [1/3]
+- [X] t420 host
+- [ ] gaming pc host
+- [ ] work pc host
+- [ ] server host
+  
+** TODO Rice dwl [1/2]
+- [X] set the initial colorscheme
+- [ ] change around colors
+  
+** TODO Add Disko and Impermanence
+** TODO Update installation guide
+
 ** TODO Features
-- essentially documentation
+- need to document system features
   
 ** TODO Project Goals
-- explain my goals and motivations
+- should explain my goals and motivations
