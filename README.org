@@ -32,20 +32,6 @@ reboot
   
 ** Optional: adding ssh
 
-** Optional: adding a new user
-+ Move the hardware configuration into this directory:
-#+BEGIN_SRC shell
-mkdir ~/nix/system/<host-name>
-sudo mv /etc/nixos/hardware-configuration.nix ~/nix/system/<host-name>/
-cd ~/nix/system/<host-name>
-mv hardware-configuration.nix <host-name>.nix
-#+END_SRC
-
-+ Add the new host into flake.nix. Then, rebuild the system:
-#+BEGIN_SRC shell
-sudo nixos-rebuild switch --flake ~/nix#<host-name>
-#+END_SRC
-
 * Todos:
 
 ** TODO Add multihost support [1/3]
