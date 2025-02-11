@@ -1,5 +1,5 @@
 {
-  description = "Nil";
+  description = "nix";
 
   inputs = {
     nixpkgs = {

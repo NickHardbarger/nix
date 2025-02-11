@@ -1,6 +1,6 @@
-#+title: Nil Documentation
+#+title: Nix Documentation
 #+author: Nick Hardbarger
-#+date: [2025-1-8]
+#+date: [2025-2-11]
 #+caption: my desktop
 [[./desktop.png]]
 ** TODO Add multihost support [1/3]
@@ -16,7 +16,7 @@
 ** TODO Update installation guide
 
 ** Installation
-To install Nil on a fresh NixOS system, run these commands:
+To install nix on a fresh NixOS system, run these commands:
 
 1. Add git to shell, then create ssh key:
 #+BEGIN_SRC shell
@@ -25,7 +25,7 @@ nix-shell -p git
 
 2. In home directory, clone the repo:
 #+BEGIN_SRC shell
-git clone git@github.com:NickHardbarger/nil.git
+git clone git@github.com:NickHardbarger/nix.git
 #+END_SRC
 
 3. Optionally, remove the default configuration:
@@ -35,15 +35,15 @@ sudo rm /etc/nixos/configuration.nix
 
 3. Move the hardware configuration into this directory:
 #+BEGIN_SRC shell
-mkdir ~/nil/system/<host-name>
-sudo mv /etc/nixos/hardware-configuration.nix ~/nil/system/<host-name>/
-cd ~/nil/system/<host-name>
+mkdir ~/nix/system/<host-name>
+sudo mv /etc/nixos/hardware-configuration.nix ~/nix/system/<host-name>/
+cd ~/nix/system/<host-name>
 mv hardware-configuration.nix <host-name>.nix
 #+END_SRC
 
 4. Add the new host into flake.nix. Then, rebuild the system:
 #+BEGIN_SRC shell
-sudo nixos-rebuild switch --flake ~/nil#<host-name>
+sudo nixos-rebuild switch --flake ~/nix#<host-name>
 #+END_SRC
 
 ** TODO Features

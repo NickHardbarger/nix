@@ -3,11 +3,11 @@
   programs.bash = {
     enable = true;
     bashrcExtra = ''
-      #~/nil/system/scripts/fetch.pl
-      ~/nil/system/scripts/fetsh
+      #~/nix/system/scripts/fetch.pl
+      ~/nix/system/scripts/fetsh
     '';
     profileExtra = ''
-      ~/nil/system/bin/slstatus -s | ~/nil/system/bin/dwl
+      ~/nix/system/bin/slstatus -s | ~/nix/system/bin/dwl
       exec <&-
     '';
     # launches dwl on login, then flushes path? i think

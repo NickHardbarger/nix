@@ -6,7 +6,7 @@
     userEmail = "nickhardbarger13@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
-      safe.directory = "/home/nickh/nil";
+      safe.directory = "/home/nickh/nix";
     };
   };
 }
