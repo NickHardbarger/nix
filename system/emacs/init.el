@@ -146,9 +146,10 @@
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
 ;; PROJECTILE ;;
-(straight-use-package 'projectile)
-(projectile-mode 1)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;(straight-use-package 'projectile)
+;(projectile-mode 1)
+;(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+; trying out project.el!
 
 ;; DASHBOARD ;;
 (straight-use-package 'dashboard)
