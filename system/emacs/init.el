@@ -15,6 +15,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 (straight-use-package 'use-package)
+(setq straight-check-for-modifications nil)
 
 ;; ORG ;;
 (straight-use-package 'org) ; told me to put this early in the config
