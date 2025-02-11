@@ -29,7 +29,7 @@ cd ~/nix/system/<host-name>
 mv hardware-configuration.nix <host-name>.nix
 #+END_SRC
 
-4. Add the new host into flake.nix. Then, rebuild the system:
++ Add the new host into flake.nix. Then, rebuild the system:
 #+BEGIN_SRC shell
 sudo nixos-rebuild switch --flake ~/nix#<host-name>
 #+END_SRC
