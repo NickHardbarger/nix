@@ -112,9 +112,10 @@
   ("C--" . er/contract-region))
 
 ;; POLYMODE ;;
-(use-package poly-org
-  :straight t)
-(add-to-list 'auto-mode-alist '("\\.org" . poly-org-mode))
+;(use-package poly-org
+;  :straight t)
+;(add-to-list 'auto-mode-alist '("\\.org" . poly-org-mode))
+; seems to cause issues with org mode source blocks
 
 ;; DOOM MODELINE ;;
 (use-package doom-modeline
