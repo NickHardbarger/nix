@@ -126,7 +126,12 @@
   (server-start))
 
 ;; GIT ;;
-(straight-use-package 'magit)
+(use-package magit
+  :straight t
+  :after nerd-icons
+  :custom
+  (magit-format-file-function #'magit-format-file-nerd-icons))
+
 (define-key global-map (kbd "C-x g") 'magit-status)
 (use-package magit-todos
   :straight t
