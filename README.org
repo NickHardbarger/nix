@@ -33,8 +33,9 @@ sudo nixos-rebuild switch --flake ~/nix#<host-name>
 reboot
 #+END_SRC
 
-+ You can now log in as normal!
-  
+You can now log in as normal.
+!Make sure to change your password to something more secure using `passwd`!
+    
 ** Optional: adding ssh
 
 * Todos:
