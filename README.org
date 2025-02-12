@@ -4,16 +4,19 @@
 #+caption: my desktop
 [[./desktop.png]]
 * Installation
-Note: this system is only intended to be installed by me!
-
+** Notes:
++ This system is NOT intended to be installed/used by anyone other than me. Do so at your own discretion!
++ This configuration assumes this repo is located in $HOME, e.g. /home/<user>/nix
++ You should replace <host-name> with a hostname, e.g. t420
+  
 To install nix on a fresh NixOS system, run these commands:
 
-+ Add git to shell:
++ Temporarily add git to shell:
 #+BEGIN_SRC shell
 nix-shell -p git
 #+END_SRC
 
-+ In home directory, clone the repo:
++ Clone the repo:
 #+BEGIN_SRC shell
 git clone https://github.com/NickHardbarger/nix.git
 #+END_SRC
@@ -28,13 +31,14 @@ cp /etc/nixos/hardware-configuration.nix ~/nix/system/<host-name>/hardware.nix
 sudo nixos-rebuild switch --flake ~/nix#<host-name>
 #+END_SRC
 
-+ Reboot:
++ Now reboot:
 #+BEGIN_SRC shell
 reboot
 #+END_SRC
 
-You can now log in as normal.
-!Make sure to change your password to something more secure using `passwd`!
+You should now be able to log in as normal.
+
+Warning: Make sure to change your password to something more secure using 'passwd'!
     
 ** Optional: adding ssh
 
