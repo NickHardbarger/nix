@@ -12,7 +12,8 @@
   home = {
     packages = [ pkgs.eww ];
     file = {
-      ".config/eww.yuck".source = ../../eww/eww.yuck;
+      ".config/eww/eww.yuck".source = ../../eww/eww.yuck;
+      ".config/eww/eww.css".source = ../../eww/eww.css;
     };
   };
 }
