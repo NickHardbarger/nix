@@ -5,3 +5,4 @@
 			       :anchor "top right")
 	   :stacking "overlay"
 	   (label :text "GO TO SLEEP"))
+;; TODO: make the notification pop up only at night

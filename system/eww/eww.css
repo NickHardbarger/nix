@@ -1,6 +1,7 @@
 .notification {
     background-color: #282828;
     color: #ebdbb2;
+    /* TODO: add opacity and rounded corners */
     padding: 10px;
     border: solid #cc241d 3px;
 }
