@@ -234,6 +234,8 @@
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 ; TODO: add code that automatically inserts 'in' when you type 'let' in nix-mode
 
+(straight-use-package 'yuck-mode)
+
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
 	       '(nix-mode . ("nixd"))))
