@@ -4,31 +4,10 @@
 #+caption: my desktop
 [[./desktop.png]]
 
-** Optional: Preinstallation
-
-+ Generate SSH key:
-#+begin_src shell
-ssh-keygen -t ed25519 -C "your_email@example.com"
-#+end_src
-
-+ Start ssh-agent:
-#+begin_src shell
-eval "$(ssh-agent -s)"
-#+end_src
-
-+ Add SSH key:
-#+begin_src shell
-ssh-add ~/.ssh/id_ed25519
-#+end_src
-
-+ Copy SSH key to clipboard:
-#+begin_src shell
-cat ~/.ssh/id_ed25519.pub
-#+end_src
-
 * Installation
+Note: This system is NOT intended to be installed/used by anyone other than me. This guide is just for my own personal reference!
 
-To install nix on a fresh NixOS system, run these commands:
+To install my config on a fresh NixOS system, run these commands:
 
 + Temporarily add git to shell:
 #+BEGIN_SRC shell
@@ -57,17 +36,40 @@ reboot
 
 You should now be able to log in as normal.
 
-Warning: Make sure to change your password to something more secure using 'passwd'!
+** Post-installation
 
-** Notes:
-+ This system is NOT intended to be installed/used by anyone other than me. Do so at your own discretion!
-+ This configuration assumes this repo is located in $HOME, e.g. /home/<user>/nix
-+ You should replace <host-name> with a hostname, e.g. t420
-+ SSH commands were copied from Github documentation
-        
++ Change your password to something more secure:
+#+begin_src shell
+passwd
+#+end_src
+
+*** Add SSH
+
++ Generate ssh key:
+#+begin_src shell
+ssh-keygen -t ed25519 -C "your_email@example.com"
+#+end_src
+
++ Start ssh-agent:
+#+begin_src shell
+eval "$(ssh-agent -s)"
+#+end_src
+
++ Add ssh key:
+#+begin_src shell
+ssh-add ~/.ssh/id_ed25519
+#+end_src
+
++ Copy ssh key to clipboard:
+#+begin_src shell
+cat ~/.ssh/id_ed25519.pub | wl-copy
+#+end_src
+
+You can now add the new key to your github profile!
+
 * Todos:
 
-** TODO Add multihost support [1/3]
+** TODO Add multihost support [1/4]
 - [X] t420 host
 - [ ] gaming pc host
 - [ ] work pc host
