@@ -1,15 +1,13 @@
 {
-  config,
-  pkgs,
   inputs,
-  lib,
+  myUser,
   ...
 }:
 {
   # Don't forget to set a password with ‘passwd’.
-  users.users.nickh = {
+  users.users.${myUser} = {
     isNormalUser = true;
-    description = "nickh";
+    description = "Nick";
     initialPassword = "1337";
     extraGroups = [
       "networkmanager"
@@ -19,10 +17,10 @@
   };
   home-manager = {
     extraSpecialArgs = {
-      inherit inputs;
+      inherit inputs myUser;
     };
     users = {
-      "nickh" = import ../t420/home.nix;
+      ${myUser} = import ../t420/home.nix;
     };
   };
 }

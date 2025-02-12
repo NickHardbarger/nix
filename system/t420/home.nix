@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ myUser, ... }:
 {
   imports = [
     ../modules/home/bash.nix
@@ -11,8 +11,8 @@
   ];
   programs.home-manager.enable = true;
   home = {
-    username = "nickh";
-    homeDirectory = "/home/nickh";
+    username = myUser;
+    homeDirectory = "/home/${myUser}";
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release
     # introduces backwards incompatible changes.
