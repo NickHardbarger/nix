@@ -43,7 +43,7 @@ You should now be able to log in as normal.
 passwd
 #+end_src
 
-*** Add SSH
+*** Add SSH key
 
 + Generate ssh key:
 #+begin_src shell
@@ -55,7 +55,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 #+end_src
 
-+ Add ssh key:
++ Add ssh key to agent:
 #+begin_src shell
 ssh-add ~/.ssh/id_ed25519
 #+end_src
