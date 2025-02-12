@@ -75,10 +75,7 @@ You can now add the new key to your github profile!
 - [ ] work pc host
 - [ ] server host
   
-** TODO Rice dwl [1/2]
-- [X] set the initial colorscheme
-- [ ] change around colors
-  
+** TODO Rice dwl
 ** TODO Add Disko and Impermanence
 ** TODO Update installation guide
 
