@@ -3,12 +3,31 @@
 #+date: [2025-2-11]
 #+caption: my desktop
 [[./desktop.png]]
+
+** Optional: Preinstallation
+
++ Generate SSH key:
+#+begin_src shell
+ssh-keygen -t ed25519 -C "your_email@example.com"
+#+end_src
+
++ Start ssh-agent:
+#+begin_src shell
+eval "$(ssh-agent -s)"
+#+end_src
+
++ Add SSH key:
+#+begin_src shell
+ssh-add ~/.ssh/id_ed25519
+#+end_src
+
++ Copy SSH key to clipboard:
+#+begin_src shell
+cat ~/.ssh/id_ed25519.pub
+#+end_src
+
 * Installation
-** Notes:
-+ This system is NOT intended to be installed/used by anyone other than me. Do so at your own discretion!
-+ This configuration assumes this repo is located in $HOME, e.g. /home/<user>/nix
-+ You should replace <host-name> with a hostname, e.g. t420
-  
+
 To install nix on a fresh NixOS system, run these commands:
 
 + Temporarily add git to shell:
@@ -39,9 +58,13 @@ reboot
 You should now be able to log in as normal.
 
 Warning: Make sure to change your password to something more secure using 'passwd'!
-    
-** Optional: adding ssh
 
+** Notes:
++ This system is NOT intended to be installed/used by anyone other than me. Do so at your own discretion!
++ This configuration assumes this repo is located in $HOME, e.g. /home/<user>/nix
++ You should replace <host-name> with a hostname, e.g. t420
++ SSH commands were copied from Github documentation
+        
 * Todos:
 
 ** TODO Add multihost support [1/3]
