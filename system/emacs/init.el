@@ -93,6 +93,7 @@
 (global-display-fill-column-indicator-mode)
 ; for some reason this variable is not set upon loading emacs?
 ; doing it manually with C-M-x works though
+; TODO: figure out why this won't set automatically
 (setq display-fill-column-indicator-column 80)                        ;70       ;80
 
 ; apparently, utf-16-le is best on windows
@@ -231,6 +232,7 @@
 
 (straight-use-package 'nix-mode)
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
+; TODO: add code that automatically inserts 'in' when you type 'let' in nix-mode
 
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
