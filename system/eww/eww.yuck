@@ -1,7 +1,10 @@
+(defwidget message
+	   label :text "GO TO SLEEP")
+
 (defwindow notification
 	   :monitor 0
 	   :geometry (geometry :x "40px"
 			       :y "40px"
 			       :anchor "top right")
 	   :stacking "overlay"
-	   (label :text "GO TO SLEEP"))
+	   (literal :content message))
