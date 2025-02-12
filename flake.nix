@@ -28,9 +28,39 @@
             inputs.home-manager.nixosModules.default
           ];
         };
-        #work
-        #desktop
-        #server
+
+        # work = nixpkgs.lib.nixosSystem {
+        #   specialArgs = {
+        #     inherit inputs myUser;
+        #   };
+        #   modules = [
+        #     ./system/work/config.nix
+        #     ./system/work/hardware.nix
+        #     inputs.home-manager.nixosModules.default
+        #   ];
+        # };
+
+        # server = nixpkgs.lib.nixosSystem {
+        #   specialArgs = {
+        #     inherit inputs myUser;
+        #   };
+        #   modules = [
+        #     ./system/server/config.nix
+        #     ./system/server/hardware.nix
+        #     inputs.home-manager.nixosModules.default
+        #   ];
+        # };
+
+        # desktop = nixpkgs.lib.nixosSystem {
+        #   specialArgs = {
+        #     inherit inputs myUser;
+        #   };
+        #   modules = [
+        #     ./system/desktop/config.nix
+        #     ./system/desktop/hardware.nix
+        #     inputs.home-manager.nixosModules.default
+        #   ];
+        # };
       };
     };
 }
