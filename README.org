@@ -18,6 +18,11 @@ nix-shell -p git
 git clone https://github.com/NickHardbarger/nix.git
 #+END_SRC
 
++ Update hardware configuration:
+#+begin_src shell
+cp /etc/nixos/hardware-configuration.nix ~/nix/system/<host-name>/hardware.nix
+#+end_src
+
 + Activate configuration:
 #+BEGIN_SRC shell
 sudo nixos-rebuild switch --flake ~/nix#<host-name>
