@@ -1,14 +1,11 @@
 {
-  config,
-  pkgs,
-  inputs,
-  lib,
+  myUser,
   ...
 }:
 {
   programs.nh = {
     enable = true;
-    flake = "/home/nickh/nix";
+    flake = "/home/${myUser}/nix";
     clean = {
       enable = true;
       #dates = weekly; # doesn't work??
