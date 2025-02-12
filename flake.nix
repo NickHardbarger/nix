@@ -1,6 +1,6 @@
 {
   description = "nix";
-
+  # TODO: add directory structure diagram
   inputs = {
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
