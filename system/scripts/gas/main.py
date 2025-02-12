@@ -1,7 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-driver = webdriver.Firefox()
+options = Options()
+options.add_argument("--headless=new")
+driver = webdriver.Chrome(options=options)
+
 driver.get("https://www.gasbuddy.com/station/30734")
 driver.implicitly_wait(0.5)
 
