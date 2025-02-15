@@ -3,6 +3,7 @@
   imports = [
     ../modules/home/bash.nix
     ../modules/home/btop.nix
+    ../modules/home/chromium.nix
     ../modules/home/cursor.nix
     ../modules/home/emacs.nix
     ../modules/home/eww.nix
