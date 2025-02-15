@@ -41,7 +41,7 @@ NIX_ENFORCE_NO_NATIVE='1'
 export NIX_ENFORCE_NO_NATIVE
 NIX_HARDENING_ENABLE='bindnow format fortify fortify3 pic relro stackprotector strictoverflow zerocallusedregs'
 export NIX_HARDENING_ENABLE
-NIX_LDFLAGS='-rpath /home/nickh/nix/system/scripts/gas/outputs/out/lib  -L/nix/store/jadfkn3b1kwn2x2vl2c7gdvrwdcz6xm2-python3-3.12.8-env/lib -L/nix/store/jadfkn3b1kwn2x2vl2c7gdvrwdcz6xm2-python3-3.12.8-env/lib'
+NIX_LDFLAGS='-rpath /home/nickh/nix/system/scripts/gaspy/outputs/out/lib  -L/nix/store/jadfkn3b1kwn2x2vl2c7gdvrwdcz6xm2-python3-3.12.8-env/lib -L/nix/store/jadfkn3b1kwn2x2vl2c7gdvrwdcz6xm2-python3-3.12.8-env/lib'
 export NIX_LDFLAGS
 NIX_NO_SELF_RPATH='1'
 NIX_STORE='/nix/store'
@@ -135,7 +135,7 @@ name='nix-shell-env'
 export name
 nativeBuildInputs='/nix/store/jadfkn3b1kwn2x2vl2c7gdvrwdcz6xm2-python3-3.12.8-env /nix/store/l2ad976h36dms14xi2i2xpph6gx0vwk5-chromium-133.0.6943.53 /nix/store/wjclnkdykqkd01zlxhi3sl3s40fyjr0a-chromedriver-unwrapped-133.0.6943.53'
 export nativeBuildInputs
-out='/home/nickh/nix/system/scripts/gas/outputs/out'
+out='/home/nickh/nix/system/scripts/gaspy/outputs/out'
 export out
 outputBin='out'
 outputDev='out'
@@ -166,7 +166,7 @@ preConfigurePhases=' updateAutotoolsGnuConfigScriptsPhase'
 declare -a preFixupHooks=('_moveToShare' '_multioutDocs' '_multioutDevs' )
 preferLocalBuild='1'
 export preferLocalBuild
-prefix='/home/nickh/nix/system/scripts/gas/outputs/out'
+prefix='/home/nickh/nix/system/scripts/gaspy/outputs/out'
 declare -a propagatedBuildDepFiles=('propagated-build-build-deps' 'propagated-native-build-inputs' 'propagated-build-target-deps' )
 propagatedBuildInputs=''
 export propagatedBuildInputs
