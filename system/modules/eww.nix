@@ -2,6 +2,7 @@
   myUser,
   ...
 }:
+# TODO: make timers work
 {
   systemd = {
     timers."eww-open" = {
