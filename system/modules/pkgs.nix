@@ -1,8 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
-  lib,
   ...
 }:
 {
@@ -15,7 +12,6 @@
     slurp # screen select
     wl-clipboard # clipboard
     speedtest-cli # test network speed
-    (import ../scripts/vi.nix { inherit pkgs; })
     wget # file retriever
     libreoffice # office suite
   ];

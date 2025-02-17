@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.emacs = {
     enable = true;
@@ -6,10 +6,9 @@
   };
   home = {
     packages = with pkgs; [
-      # # this adds a command 'my-hello' to your environment:
-      # (pkgs.writeShellScriptBin "my-hello" ''
-      #   echo "Hello, ${config.home.username}!"
-      # '')
+      (pkgs.writeShellScriptBin "vi" ''
+        exec $EDITOR
+      '')
       nixd
       nixfmt-rfc-style
       bash-language-server
