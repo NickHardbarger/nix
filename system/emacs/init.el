@@ -105,6 +105,9 @@
 
 (set-default 'truncate-lines t)
 
+(setopt dictionary-server "dict.org")
+(global-set-key (kbd "C-c C-l") 'dictionary-lookup-definition)
+
 ;; EXPAND REGION ;;
 (use-package expand-region
   :straight t
