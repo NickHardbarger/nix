@@ -108,6 +108,8 @@
 (setopt dictionary-server "dict.org")
 (global-set-key (kbd "C-c C-l") 'dictionary-lookup-definition)
 
+(global-visual-line-mode 1)
+
 ;; EXPAND REGION ;;
 (use-package expand-region
   :straight t
