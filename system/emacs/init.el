@@ -205,6 +205,7 @@
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-theme (if (display-graphic-p) 'classic 'arrow))
 ;; (straight-use-package 'all-the-icons)
+(custom-set-variables '(neo-window-position (quote right)))
 
 ;; SMARTPARENS ;;
 (straight-use-package 'smartparens)
