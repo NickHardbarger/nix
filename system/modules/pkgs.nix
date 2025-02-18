@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     wmenu # app launcher
     (import ../scripts/wmenu.nix { inherit pkgs; })
+    (import ../scripts/start.nix { inherit pkgs; })
     #wbg # wallpaper setter #!!build failure
     swaybg # wallpaper setter
     grim # screenshots
