@@ -4,8 +4,9 @@
 }:
 {
   environment.systemPackages = with pkgs; [
-    wmenu # app launcher
-    (import ../scripts/wmenu.nix { inherit pkgs; })
+    (pkgs.writeShellScriptBin "run-wmenu" ''
+      ${pkgs.wmenu}/bin/wmenu-run -if 'JetBrainsMonoNF 12' -p '[Wmenu]' -N 282828 -n ebdbb2 -M 689d6a -m 282828 -S 689d6a -s 282828
+    '')
     (import ../scripts/start.nix { inherit pkgs; })
     #wbg # wallpaper setter #!!build failure
     swaybg # wallpaper setter
