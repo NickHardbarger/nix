@@ -6,9 +6,7 @@
   };
   home = {
     packages = with pkgs; [
-      (pkgs.writeShellScriptBin "vi" ''
-        exec $EDITOR
-      '')
+      (pkgs.writeShellScriptBin "vi" "emacsclient -c -a ''")
       nixd
       nixfmt-rfc-style
       bash-language-server
