@@ -52,5 +52,5 @@ echo -en "${CYAN}// ${BLUE}/\\\\\  ${CYAN}\\\\\==  ${WHITE}"
 echo -e "│${CYAN} uptime${WHITE} $uptime 小时             │"
 
 echo -en "${BLUE}  // \\\\\  ${CYAN}\\\\\   ${WHITE}"
-echo -e "│${PURPLE} memory${WHITE} $memory Mi               │"
+echo -e "│${PURPLE} memory${WHITE} $memory Mi                │"
 echo -e "              └──────────────────────────────┘"
