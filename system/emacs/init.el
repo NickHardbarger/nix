@@ -214,6 +214,7 @@
 
 ;; BREADCRUMB ;;
 (straight-use-package 'breadcrumb)
+(fset 'breadcrumb--project-crumbs-1 #'ignore)
 
 ;; SMARTPARENS ;;
 (straight-use-package 'smartparens)
