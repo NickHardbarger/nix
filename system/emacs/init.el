@@ -212,6 +212,9 @@
 ;; (straight-use-package 'all-the-icons)
 (custom-set-variables '(neo-window-position (quote right)))
 
+;; BREADCRUMB ;;
+(straight-use-package 'breadcrumb)
+
 ;; SMARTPARENS ;;
 (straight-use-package 'smartparens)
 (smartparens-global-mode t)
