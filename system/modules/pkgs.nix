@@ -15,7 +15,6 @@
     wl-clipboard # clipboard
     speedtest-cli # test network speed
     wget # file retriever
-    libreoffice # office suite
     vlc # media player
   ];
 }
