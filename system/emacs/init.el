@@ -237,6 +237,10 @@
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
 ;; EGLOT ;;
+;; Fixes error "feature project is now provided by a different file" 
+(load "project.elc")
+(load "xref.elc")
+
 (add-hook 'prog-mode-hook
           (lambda ()
             (add-hook 'before-save-hook 'eglot-format nil t)))
