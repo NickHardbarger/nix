@@ -9,7 +9,7 @@
   security = {
     sudo.enable = true; # TODO: figure out nix repo ownership issue
     doas = {
-      enable = false;
+      enable = true;
       extraRules = [
         {
           users = [ "nickh" ];
