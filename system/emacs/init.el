@@ -170,7 +170,7 @@
 (add-to-list 'dashboard-items '(agenda) t)
 (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
 	dashboard-banner-logo-title "[https://github.com/NickHardbarger]"
-	dashboard-startup-banner 'official ;2
+	dashboard-startup-banner 'logo
 	dashboard-center-content t
 	dashboard-vertically-center-content t
 	dashboard-show-shortcuts t
