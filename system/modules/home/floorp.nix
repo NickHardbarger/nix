@@ -1,12 +1,11 @@
 {
-  inputs,
   pkgs,
-  lib,
   ...
 }:
 {
   programs.floorp = {
     enable = true;
+    package = pkgs.floorp;
     profiles."nickh" = {
       bookmarks = [
         {
