@@ -250,10 +250,13 @@
 ; TODO: add code that automatically inserts 'in' when you type 'let' in nix-mode
 
 (straight-use-package 'yuck-mode)
+(straight-use-package 'rust-mode)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
 
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
-	       '(nix-mode . ("nixd"))))
+	       '(nix-mode . ("nixd"))
+	       '(rust-mode . ("rust-analyzer"))))
 (add-hook 'nix-mode-hook 'eglot-ensure)
 (add-hook 'shell-mode-hook 'eglot-ensure)
 (add-hook 'perl-mode-hook 'eglot-ensure)
