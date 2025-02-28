@@ -14,6 +14,7 @@
       ccls
       jdt-language-server
       vscode-langservers-extracted
+      rust-analyzer
     ];
     file = {
       ".emacs.d/early-init.el".source = ../../emacs/early-init.el;
