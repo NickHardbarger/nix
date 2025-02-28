@@ -9,9 +9,14 @@
     profiles."nickh" = {
       bookmarks = [
         {
-          name = "YouTube";
+          name = "NixOS";
           toolbar = true;
-          url = "https://www.youtube.com/";
+          bookmarks = [
+            {
+              name = "YouTube";
+              url = "https://www.youtube.com/";
+            }
+          ];
         }
       ];
     };
