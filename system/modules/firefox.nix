@@ -8,7 +8,7 @@
 {
   programs.firefox = {
     enable = false;
-    languagePacks = [ "en-US" ];
+
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;

@@ -6,6 +6,13 @@
   programs.floorp = {
     enable = true;
     package = pkgs.floorp;
+    languagePacks = [ "en-US" ];
+    policies = {
+      DisableTelemetry = true;
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+      DisableBookmarksToolbar = "always";
+    };
     profiles."nickh" = {
       bookmarks = [
         {
