@@ -3,8 +3,8 @@
   services.mako = {
     enable = true;
     font = "JetBrainsMonoNF 12";
-    backgroundColor = "#458588FF";
-    borderColor = "#689d6aFF";
+    backgroundColor = "#282828FF";
+    borderColor = "#cc241dFF";
     textColor = "#ebdbb2FF";
   };
 }
