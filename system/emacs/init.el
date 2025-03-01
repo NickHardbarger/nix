@@ -110,7 +110,7 @@
 
 (global-visual-line-mode 1)
 
-(straight-use-package hl-todo-mode)
+;; (straight-use-package hl-todo-mode)
 ;; (global-hl-todo-mode)
 
 ;; EXPAND REGION ;;
