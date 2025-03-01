@@ -6,13 +6,11 @@
   programs.floorp = {
     enable = true;
     package = pkgs.floorp;
-    languagePacks = [ "en-US" ];
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       DisablePocket = true;
-      DisableBookmarksToolbar = "always";
-      Cookies = "allow";
+      Cookies = "Allow";
       DisableFormHistory = true;
       DisplayMenuBar = "never";
     };
