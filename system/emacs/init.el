@@ -245,6 +245,11 @@
           (lambda ()
             (add-hook 'before-save-hook 'eglot-format nil t)))
 
+(use-package eglot-booster
+  :straight t
+  :after eglot
+  :config (eglot-booster-mode))
+
 (straight-use-package 'nix-mode)
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 ; TODO: add code that automatically inserts 'in' when you type 'let' in nix-mode
