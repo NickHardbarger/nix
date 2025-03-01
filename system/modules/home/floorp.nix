@@ -10,9 +10,10 @@
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       DisablePocket = true;
-      Cookies = "Allow";
+      # Cookies = "Allow"; TODO: figure out cookies setting
       DisableFormHistory = true;
       DisplayMenuBar = "never";
+      DontCheckDefaultBrowser = true;
     };
     profiles."nickh" = {
       bookmarks = [
