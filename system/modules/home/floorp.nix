@@ -12,6 +12,9 @@
       DisableFirefoxStudies = true;
       DisablePocket = true;
       DisableBookmarksToolbar = "always";
+      Cookies = "allow";
+      DisableFormHistory = true;
+      DisplayMenuBar = "never";
     };
     profiles."nickh" = {
       bookmarks = [
