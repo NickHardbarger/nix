@@ -16,7 +16,6 @@
     ../modules/doas.nix
     ../modules/eww.nix
     ../modules/fail2ban.nix
-    ../modules/firefox.nix
     ../modules/firewall.nix
     ../modules/fonts.nix
     ../modules/foot.nix
