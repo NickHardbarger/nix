@@ -70,8 +70,8 @@
               url = "https://codeberg.org/dwl/dwl-patches/src/branch/main/patches/scenefx";
             }
             {
-              name = "barborder";
-              url = "https://codeberg.org/dwl/dwl-patches/src/branch/main/patches/barborder/barborder.patch";
+              name = "barcolors";
+              url = "https://codeberg.org/dwl/dwl-patches/src/branch/main/patches/barcolors/barcolors.patch";
             }
           ];
         }
