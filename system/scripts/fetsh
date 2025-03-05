@@ -17,9 +17,9 @@ flake="$(cat /etc/os-release | grep PRETTY_NAME | grep -o -P '(?<=").*(?=")')"
 model="$(cat /sys/devices/virtual/dmi/id/product_version)"
 kernel="$(uname -r)"
 
-#nix1="$(nix-store -q --requisites /run/current-system/sw | grep -c \n)"
-#nix2="$(nix-store -q --requisites ~/.nix-profile | grep -c \n)"
-#pkgs="$(expr $nix1 + $nix2)"
+# nix1="$(nix-store -q --requisites /run/current-system/sw | grep -c \n)"
+# nix2="$(nix-store -q --requisites ~/.nix-profile | grep -c \n)"
+# pkgs="$(expr $nix1 + $nix2)"
 # runs 10x faster by removing package count!
 
 if [[ "$(uptime)" == *"day"* ]]; then
@@ -28,8 +28,16 @@ else
     uptime="$(uptime | awk '{gsub(/[,\t]+/, ""); print $3}')"
 fi
 
-memory="$(free -m | grep Mem | awk '{print $3}')"
-# need something more useful than memory. maybe time since last updated?
+# modified version of progress.sh from The Linux Cast's dotfiles repo
+time="3/5/2025" # Must be manually updated
+let current=$(date +%s)
+timestamp=$(date -d "$time" +%s)
+passage=$((current - timestamp))
+days=$((passage / 86400))
+halfyear=15778463
+
+# memory="$(free -m | grep Mem | awk '{print $3}')"
+# not particularly useful
 
 echo -en "${BLUE}  \\\\\  ${CYAN}\\\\\ //   ${WHITE}"
 echo -e "${GREEN}$user$host${WHITE}"
@@ -49,9 +57,15 @@ echo -en "${CYAN}___//    ${WHITE}"
 echo -e "${YELLOW} kernel${WHITE} $kernel"
 
 echo -en "${CYAN}// ${BLUE}/\\\\\  ${CYAN}\\\\\==  ${WHITE}"
-echo -e "${CYAN} uptime${WHITE} $uptime 小时"
+echo -e "${CYAN} uptime${WHITE} $uptime hr "
 
 echo -en "${BLUE}  // \\\\\  ${CYAN}\\\\\   ${WHITE}"
-echo -e "${PURPLE} memory${WHITE} $memory Mi"
+
+if [ "$passage" -lt "$halfyear" ]; then
+    echo -e "${PURPLE} updated${WHITE} $days days ago"
+else
+    echo -e "${PURPLE} updated${RED} $days days ago!!${WHITE}"
+fi
+
 echo -e "              └──────────────────────────────┘"
-# │
+# │ This symbol is just in case I want vertical borders
