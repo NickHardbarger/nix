@@ -172,7 +172,6 @@
 (dashboard-setup-startup-hook)
 (add-to-list 'dashboard-items '(agenda) t)
 (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
-	dashboard-banner-logo-title "[https://github.com/NickHardbarger]"
 	dashboard-startup-banner '2
 	dashboard-center-content t
 	dashboard-vertically-center-content t
@@ -186,20 +185,11 @@
 
 (setq dashboard-items '((agenda . 5)
                         (recents . 5)))  
-			;(bookmarks . 5)
-			;(projects . 5)
-			;(registers . 5)))
+			;(projects . 5)))
   
 (setq dashboard-startupify-list '(dashboard-insert-banner
-				  dashboard-insert-newline
-				  dashboard-insert-banner-title
-				  dashboard-insert-newline
-				  dashboard-insert-navigator
-				  dashboard-insert-newline
 				  dashboard-insert-init-info
-				  dashboard-insert-items
-				  dashboard-insert-newline
-				  dashboard-insert-footer))
+				  dashboard-insert-items))
 
 ;; IVY ;;
 (straight-use-package 'ivy)
