@@ -16,6 +16,7 @@
       vscode-langservers-extracted
       rust-analyzer
       typescript-language-server
+      gopls
     ];
     file = {
       ".emacs.d/early-init.el".source = ../../emacs/early-init.el;
