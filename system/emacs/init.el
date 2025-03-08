@@ -261,6 +261,9 @@
 (straight-use-package 'rust-mode)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
 
+(straight-use-package 'go-mode)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
 	       '(nix-mode . ("nixd"))
