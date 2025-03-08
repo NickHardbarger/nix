@@ -15,6 +15,7 @@
       jdt-language-server
       vscode-langservers-extracted
       typescript-language-server
+      go # golang needs to be installed globally for gopls to work properly
       gopls
     ];
     file = {
