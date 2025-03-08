@@ -267,7 +267,9 @@
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
 	       '(nix-mode . ("nixd"))
+	       '(go-mode . ("gopls"))
 	       '(rust-mode . ("rust-analyzer"))))
+
 (add-hook 'nix-mode-hook 'eglot-ensure)
 (add-hook 'shell-mode-hook 'eglot-ensure)
 (add-hook 'perl-mode-hook 'eglot-ensure)
