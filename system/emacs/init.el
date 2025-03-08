@@ -267,8 +267,7 @@
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
 	       '(nix-mode . ("nixd"))
-	       '(go-mode . ("gopls"))
-	       '(rust-mode . ("rust-analyzer"))))
+	       '(go-mode . ("gopls"))))
 
 (add-hook 'nix-mode-hook 'eglot-ensure)
 (add-hook 'shell-mode-hook 'eglot-ensure)
@@ -279,7 +278,6 @@
 (add-hook 'html-mode-hook 'eglot-ensure)
 (add-hook 'css-mode-hook 'eglot-ensure)
 (add-hook 'js-mode-hook 'eglot-ensure)
-(add-hook 'rust-mode-hook 'eglot-ensure)
 (add-hook 'go-mode-hook 'eglot-ensure)
 
 ;; WEB DEV ;;

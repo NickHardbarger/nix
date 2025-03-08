@@ -14,7 +14,6 @@
       ccls
       jdt-language-server
       vscode-langservers-extracted
-      rust-analyzer
       typescript-language-server
       gopls
     ];
