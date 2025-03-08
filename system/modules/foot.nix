@@ -12,7 +12,7 @@
     settings = {
       main = {
         font = "JetBrainsMonoNF:size=12";
-        pad = "5x5";
+        pad = "10x10";
       };
       colors.alpha = 0.9;
       scrollback.lines = 100000;
