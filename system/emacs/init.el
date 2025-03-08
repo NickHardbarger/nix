@@ -260,6 +260,15 @@
 (straight-use-package 'go-mode)
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
 
+(defun project-find-go-module (dir)
+  (when-let ((root (locate-dominating-file dir "go.mod")))
+    (cons 'go-module root)))
+
+(cl-defmethod project-root ((project (head go-module)))
+  (cdr project))
+
+(add-hook 'project-find-functions #'project-find-go-module)
+
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
 	       '(nix-mode . ("nixd"))
