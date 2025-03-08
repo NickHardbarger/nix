@@ -257,10 +257,6 @@
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 ; TODO: add code that automatically inserts 'in' when you type 'let' in nix-mode
 
-(straight-use-package 'yuck-mode)
-(straight-use-package 'rust-mode)
-(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
-
 (straight-use-package 'go-mode)
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
 
