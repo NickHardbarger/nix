@@ -1,5 +1,6 @@
 {
   pkgs,
+  myUser,
   ...
 }:
 {
@@ -78,4 +79,7 @@
       ];
     };
   };
+  home.packages = [
+    (pkgs.writeShellScriptBin "youtube" ''floorp --profile "/home/${myUser}/.floorp/${myUser}" --start-ssb "{9761e6c5-c3ce-4f6c-9b60-c596b6df2489}"'')
+  ];
 }
