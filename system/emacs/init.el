@@ -247,6 +247,9 @@
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 ; TODO: add code that automatically inserts 'in' when you type 'let' in nix-mode
 
+(add-to-list 'auto-mode-alist '("\\.cs\\'" . csharp-mode))
+(add-to-list 'auto-mode-alist '("\\.csproj\\'" . xml-mode))
+
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
 	       '(nix-mode . ("nixd"))
