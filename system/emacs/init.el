@@ -257,6 +257,7 @@
 (add-hook 'c-mode-hook 'eglot-ensure)
 (add-hook 'c++-mode-hook 'eglot-ensure)
 (add-hook 'java-mode-hook 'eglot-ensure)
+(add-hook 'csharp-mode-hook 'eglot-ensure)
 (add-hook 'html-mode-hook 'eglot-ensure)
 (add-hook 'css-mode-hook 'eglot-ensure)
 (add-hook 'js-mode-hook 'eglot-ensure)
