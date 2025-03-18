@@ -249,7 +249,11 @@
 
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
-	       '(nix-mode . ("nixd"))))
+	       '(nix-mode . ("nixd"))
+	       '(c-mode . ("ccls"))
+	       '(java-mode . ("jdtls"))
+	       '(csharp-mode . ("omnisharp-roslyn"))
+	       '(js-mode . ("typescript-language-server"))))
 
 (add-hook 'nix-mode-hook 'eglot-ensure)
 (add-hook 'shell-mode-hook 'eglot-ensure)
