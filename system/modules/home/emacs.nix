@@ -10,7 +10,6 @@
       nixd
       nixfmt-rfc-style
       bash-language-server
-      perlnavigator
       ccls
       jdt-language-server
       vscode-langservers-extracted
