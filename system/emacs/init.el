@@ -247,13 +247,9 @@
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 ; TODO: add code that automatically inserts 'in' when you type 'let' in nix-mode
 
-(straight-use-package 'go-mode)
-(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
-
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
-	       '(nix-mode . ("nixd"))
-	       '(go-mode . ("gopls"))))
+	       '(nix-mode . ("nixd"))))
 
 (add-hook 'nix-mode-hook 'eglot-ensure)
 (add-hook 'shell-mode-hook 'eglot-ensure)
@@ -264,7 +260,6 @@
 (add-hook 'html-mode-hook 'eglot-ensure)
 (add-hook 'css-mode-hook 'eglot-ensure)
 (add-hook 'js-mode-hook 'eglot-ensure)
-(add-hook 'go-mode-hook 'eglot-ensure)
 
 ;; WEB DEV ;;
 (straight-use-package 'js2-mode)
