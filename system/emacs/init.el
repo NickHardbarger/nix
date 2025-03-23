@@ -246,15 +246,20 @@
 (straight-use-package 'nix-mode)
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 
+(straight-use-package 'rust-mode)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
 	       '(nix-mode . ("nixd"))
-	       '(c-mode . ("ccls"))))
+	       '(rust-mode . ("rust-analyzer"))))
+	       ;; '(c-mode . ("ccls"))))
 
 (add-hook 'nix-mode-hook 'eglot-ensure)
 (add-hook 'shell-mode-hook 'eglot-ensure)
 (add-hook 'c-mode-hook 'eglot-ensure)
 (add-hook 'c++-mode-hook 'eglot-ensure)
+(add-hook 'rust-mode-hook 'eglot-ensure)
 (add-hook 'java-mode-hook 'eglot-ensure)
 (add-hook 'csharp-mode-hook 'eglot-ensure)
 (add-hook 'html-mode-hook 'eglot-ensure)
