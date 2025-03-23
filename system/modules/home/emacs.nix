@@ -19,6 +19,9 @@
 
       jdt-language-server
       omnisharp-roslyn # csharp-ls?
+
+      rust-analyzer
+      rustfmt
     ];
     file = {
       ".emacs.d/early-init.el".source = ../../emacs/early-init.el;
