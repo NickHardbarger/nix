@@ -229,6 +229,12 @@
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
+;; DIRENV ;;
+(use-package direnv
+  :straight t
+  :config
+  (direnv-mode))
+
 ;; EGLOT ;;
 ;; Fixes error "feature project is now provided by a different file" 
 (load "project.elc")
