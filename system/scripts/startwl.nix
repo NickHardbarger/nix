@@ -1,7 +1,7 @@
 { pkgs }:
 
 pkgs.writeShellApplication {
-  name = "start";
+  name = "startwl";
   runtimeInputs = with pkgs; [
     libinput
     wayland
@@ -12,7 +12,7 @@ pkgs.writeShellApplication {
     xwayland
   ];
   text = ''
-    /home/nickh/nix/system/bin/slstatus -s | /home/nickh/nix/system/bin/dwl
+    /home/nickh/nix/system/bin/wlstat | /home/nickh/nix/system/bin/dwl
     exec <&-
   '';
 }
