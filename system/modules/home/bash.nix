@@ -6,7 +6,7 @@
       ~/nix/system/scripts/fetsh
     '';
     profileExtra = ''
-      start
+      startwl
     '';
   };
   home.shellAliases = {
