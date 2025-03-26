@@ -14,7 +14,6 @@
     ../modules/boot.nix
     ../modules/direnv.nix
     ../modules/doas.nix
-    ../modules/eww.nix
     ../modules/fail2ban.nix
     ../modules/firewall.nix
     ../modules/fonts.nix

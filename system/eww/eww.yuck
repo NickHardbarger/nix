@@ -1,8 +1,0 @@
-(defwindow notification
-	   :monitor 0
-	   :geometry (geometry :x "40px"
-			       :y "40px"
-			       :anchor "top right")
-	   :stacking "overlay"
-	   (label :text "GO TO SLEEP"))
-;; TODO: make the notification pop up only at night
