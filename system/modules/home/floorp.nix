@@ -74,6 +74,10 @@
               name = "barcolors";
               url = "https://codeberg.org/dwl/dwl-patches/src/branch/main/patches/barcolors/barcolors.patch";
             }
+            {
+              name = "courses";
+              url = "https://cotc.instructure.com/courses";
+            }
           ];
         }
       ];
