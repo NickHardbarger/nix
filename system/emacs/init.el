@@ -113,6 +113,9 @@
 ;; (straight-use-package hl-todo-mode)
 ;; (global-hl-todo-mode)
 
+;; Enables all commands that are disabled by default
+(setq disabled-command-function nil)
+
 ;; EXPAND REGION ;;
 (use-package expand-region
   :straight t
