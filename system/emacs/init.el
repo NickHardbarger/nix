@@ -88,7 +88,8 @@
              '(font . "JetBrainsMonoNF-12"))
 
 (global-display-line-numbers-mode)
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type 'relative
+      column-number-mode t)
 
 (global-display-fill-column-indicator-mode)
 ; for some reason this variable is not set upon loading emacs?
