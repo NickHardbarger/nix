@@ -93,6 +93,7 @@
 
 (global-display-fill-column-indicator-mode)
 (setq-default display-fill-column-indicator-column 80)
+(set-face-attribute 'fill-column-indicator nil :foreground "#928374")
 
 ; apparently, utf-16-le is best on windows
 ; if set to nil, emacs will interpret character encoding based on clipboard contents
