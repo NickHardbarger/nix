@@ -92,10 +92,7 @@
       column-number-mode t)
 
 (global-display-fill-column-indicator-mode)
-; for some reason this variable is not set upon loading emacs?
-; doing it manually with C-M-x works though
-; TODO: figure out why this won't set automatically
-(setq display-fill-column-indicator-column 80)                        ;70       ;80
+(setq-default display-fill-column-indicator-column 80)
 
 ; apparently, utf-16-le is best on windows
 ; if set to nil, emacs will interpret character encoding based on clipboard contents
