@@ -263,6 +263,7 @@
 	       '(rust-mode . ("rust-analyzer"))))
 	       ;; '(c-mode . ("ccls"))))
 
+(setq c-default-style "k&r")
 (add-hook 'nix-mode-hook 'eglot-ensure)
 (add-hook 'shell-mode-hook 'eglot-ensure)
 (add-hook 'c-mode-hook 'eglot-ensure)
