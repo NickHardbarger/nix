@@ -38,8 +38,10 @@
 (setq org-clock-sound "~/.emacs.d/ding.wav") ; https://freesound.org/people/.Andre_Onate/sounds/484665/
 
 ;; THEME ;;
-(straight-use-package 'gruvbox-theme)
-(load-theme 'gruvbox-dark-medium t)
+(use-package gruvbox-theme
+  :straight t
+  :config
+  (load-theme 'gruvbox-dark-medium t))
 
 ;; TRANSPARENCY ;;
 (set-frame-parameter nil 'alpha-background 90)
@@ -74,13 +76,17 @@
 (scroll-bar-mode -1)
 (blink-cursor-mode 1)
 
-(straight-use-package 'hyperbole)
-(hyperbole-mode 1)
+(use-package hyperbole
+  :straight t
+  :config
+  (hyperbole-mode 1))
 
 (straight-use-package 'diminish)
 
-(straight-use-package 'page-break-lines)
-(global-page-break-lines-mode)
+(use-package page-break-lines
+  :straight t
+  :config
+  (global-page-break-lines-mode))
 
 (straight-use-package 'nerd-icons)
 
@@ -157,12 +163,14 @@
   :after magit
   :config (magit-todos-mode 1))
 
-(straight-use-package 'diff-hl)
-(diff-hl-margin-mode)
-(diff-hl-dired-mode)
-(diff-hl-flydiff-mode)
-(global-diff-hl-mode)
-(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+(use-package diff-hl
+  :straight t
+  :config
+  (diff-hl-margin-mode)
+  (diff-hl-dired-mode)
+  (diff-hl-flydiff-mode)
+  (global-diff-hl-mode)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 ;; PROJECTILE ;;
 ;; (straight-use-package 'projectile)
@@ -194,25 +202,33 @@
 				  dashboard-insert-items))
 
 ;; IVY ;;
-(straight-use-package 'ivy)
-(ivy-mode)
-(setq ivy-use-virtual-buffers t
-      enable-recursive-minibuffers t)
+(use-package ivy
+  :straight t
+  :init
+  (setq ivy-use-virtual-buffers t
+	enable-recursive-minibuffers t)
+  :config
+  (ivy-mode))
 
 ;; NEOTREE ;;
-(straight-use-package 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-theme (if (display-graphic-p) 'classic 'arrow))
-;; (straight-use-package 'all-the-icons)
-(custom-set-variables '(neo-window-position (quote right)))
+(use-package neotree
+  :straight t
+  :bind ("f8" . neotree-toggle)
+  :config
+  (setq neo-theme (if (display-graphic-p) 'classic 'arrow))
+  (custom-set-variables '(neo-window-position (quote right))))
 
 ;; BREADCRUMB ;;
-(straight-use-package 'breadcrumb)
-(fset 'breadcrumb--project-crumbs-1 #'ignore)
+(use-package breadcrumb
+  :straight t
+  :config
+  (fset 'breadcrumb--project-crumbs-1 #'ignore))
 
 ;; SMARTPARENS ;;
-(straight-use-package 'smartparens)
-(smartparens-global-mode t)
+(use-package smartparens
+  :straight t
+  :config
+  (smartparens-global-mode t))
 
 ; seems useless. better done with C-u, maybe macros?
 ;; MULTIPLE CURSORS ;;
