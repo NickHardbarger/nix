@@ -213,7 +213,7 @@
 ;; NEOTREE ;;
 (use-package neotree
   :straight t
-  :bind ("f8" . neotree-toggle)
+  :bind ("<f8>" . neotree-toggle)
   :config
   (setq neo-theme (if (display-graphic-p) 'classic 'arrow))
   (custom-set-variables '(neo-window-position (quote right))))
