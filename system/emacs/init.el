@@ -204,6 +204,10 @@
   :init
   (vertico-mode))
 
+(use-package savehist
+  :init
+  (savehist-mode))
+
 ;; NEOTREE ;;
 (use-package neotree
   :straight t
