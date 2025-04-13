@@ -273,6 +273,13 @@
   :init
   (marginalia-mode))
 
+(use-package orderless
+  :ensure t
+  :config
+  (setq completion-styles '(orderless basic)
+	completion-category-defaults nil
+	completion-category-overrides nil))
+
 ;; NEOTREE ;;
 (use-package neotree
   :ensure t
