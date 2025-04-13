@@ -282,10 +282,11 @@
 
 ;; NEOTREE ;;
 (use-package neotree
+  :after nerd-icons
   :ensure t
   :bind ("<f8>" . neotree-toggle)
   :config
-  (setq neo-theme (if (display-graphic-p) 'classic 'arrow))
+  (setq neo-theme (if (display-graphic-p) 'nerd-icons 'arrow))
   (custom-set-variables '(neo-window-position (quote right))))
 
 ;; BREADCRUMB ;;
