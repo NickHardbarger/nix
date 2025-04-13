@@ -1,4 +1,8 @@
 ;; ELPACA ;;
+;; To go from elpaca back to package.el,
+;; delete this section of code and early-init.el,
+;; and change elpaca-after-init-hook to after-init-hook
+
 ;; Installer
 (defvar elpaca-installer-version 0.10)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
