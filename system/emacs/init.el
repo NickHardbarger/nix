@@ -1,45 +1,84 @@
-;; PACKAGES ;;
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name
-        "straight/repos/straight.el/bootstrap.el"
-        (or (bound-and-true-p straight-base-dir)
-            user-emacs-directory)))
-      (bootstrap-version 7))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
-(straight-use-package 'use-package)
-(setq straight-check-for-modifications nil)
+;; ELPACA ;;
+;; Installer
+(defvar elpaca-installer-version 0.10)
+(defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
+(defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
+(defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
+(defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
+                              :ref nil :depth 1 :inherit ignore
+                              :files (:defaults "elpaca-test.el" (:exclude "extensions"))
+                              :build (:not elpaca--activate-package)))
+(let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
+       (build (expand-file-name "elpaca/" elpaca-builds-directory))
+       (order (cdr elpaca-order))
+       (default-directory repo))
+  (add-to-list 'load-path (if (file-exists-p build) build repo))
+  (unless (file-exists-p repo)
+    (make-directory repo t)
+    (when (<= emacs-major-version 28) (require 'subr-x))
+    (condition-case-unless-debug err
+        (if-let* ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
+                  ((zerop (apply #'call-process `("git" nil ,buffer t "clone"
+                                                  ,@(when-let* ((depth (plist-get order :depth)))
+                                                      (list (format "--depth=%d" depth) "--no-single-branch"))
+                                                  ,(plist-get order :repo) ,repo))))
+                  ((zerop (call-process "git" nil buffer t "checkout"
+                                        (or (plist-get order :ref) "--"))))
+                  (emacs (concat invocation-directory invocation-name))
+                  ((zerop (call-process emacs nil buffer nil "-Q" "-L" "." "--batch"
+                                        "--eval" "(byte-recompile-directory \".\" 0 'force)")))
+                  ((require 'elpaca))
+                  ((elpaca-generate-autoloads "elpaca" repo)))
+            (progn (message "%s" (buffer-string)) (kill-buffer buffer))
+          (error "%s" (with-current-buffer buffer (buffer-string))))
+      ((error) (warn "%s" err) (delete-directory repo 'recursive))))
+  (unless (require 'elpaca-autoloads nil t)
+    (require 'elpaca)
+    (elpaca-generate-autoloads "elpaca" repo)
+    (load "./elpaca-autoloads")))
+(add-hook 'after-init-hook #'elpaca-process-queues)
+(elpaca `(,@elpaca-order))
+
+;; Windows users must be able to create symlinks, or enable elpaca-no-symlink-mode
+(when (eq system-type 'windows-nt) (elpaca-no-symlink-mode))
+
+;; For using elpaca with use-package :ensure
+(elpaca elpaca-use-package
+  (elpaca-use-package-mode))
+(elpaca-wait)
 
 ;; ORG ;;
-(straight-use-package 'org) ; told me to put this early in the config
-(org-babel-do-load-languages
-  'org-babel-load-languages
-  '((emacs-lisp . t)
-    (shell . t)))
+(use-package org ; told me to put this early in the config
+  :ensure t
+  :config
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (shell . t)))
+  (add-to-list 'org-agenda-files "~/notes/agenda.org")
+  (setq org-clock-sound "~/.emacs.d/ding.wav")) ; https://freesound.org/people/.Andre_Onate/sounds/484665/
 
-(straight-use-package 'org-drill)
+(use-package org-drill
+  :after org
+  :ensure t)
 
-(straight-use-package 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(use-package org-bullets
+  :after org
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-(straight-use-package 'org-auto-tangle)
-(add-hook 'org-mode-hook 'org-auto-tangle-mode)
-(setq org-auto-tangle-default nil
-      calendar-week-start-day 1)
-
-(add-to-list 'org-agenda-files "~/notes/agenda.org")
-(setq org-clock-sound "~/.emacs.d/ding.wav") ; https://freesound.org/people/.Andre_Onate/sounds/484665/
+(use-package org-auto-tangle
+  :after org
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook 'org-auto-tangle-mode)
+  (setq org-auto-tangle-default nil
+	calendar-week-start-day 1))
 
 ;; THEME ;;
 (use-package gruvbox-theme
-  :straight t
+  :ensure t
   :config
   (load-theme 'gruvbox-dark-medium t))
 
@@ -65,25 +104,31 @@
 	scroll-conservatively most-positive-fixnum
 	make-backup-files nil)
 
-(straight-use-package 'company)
-(add-hook 'after-init-hook 'global-company-mode)
+(use-package company
+  :ensure t
+  :config
+  (add-hook 'elpaca-after-init-hook 'global-company-mode))
 
-(straight-use-package 'rainbow-delimiters)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (blink-cursor-mode 1)
 
-(straight-use-package 'diminish)
+(use-package diminish
+  :ensure t)
 
 (use-package page-break-lines
-  :straight t
+  :ensure t
   :config
   (global-page-break-lines-mode))
 
-(straight-use-package 'nerd-icons)
+(use-package nerd-icons
+  :ensure t)
 
 (add-to-list 'default-frame-alist
              '(font . "JetBrainsMonoNF-12"))
@@ -110,33 +155,36 @@
 
 (global-visual-line-mode 1)
 
-;; (straight-use-package hl-todo-mode)
-;; (global-hl-todo-mode)
+;; (use-package hl-todo-mode
+  ;; :ensure t
+  ;; :config
+  ;; (global-hl-todo-mode))
 
 ;; Enables all commands that are disabled by default
 (setq disabled-command-function nil)
 
 ;; EXPAND REGION ;;
 (use-package expand-region
-  :straight t
+  :ensure t
   :bind
   ("C-=" . er/expand-region)
   ("C--" . er/contract-region))
 
 ;; POLYMODE ;;
-;(use-package poly-org
-;  :straight t)
-;(add-to-list 'auto-mode-alist '("\\.org" . poly-org-mode))
+;; (use-package poly-org
+  ;; :ensure t
+  ;; :config
+  ;; (add-to-list 'auto-mode-alist '("\\.org" . poly-org-mode)))
 ; seems to cause issues with org mode source blocks
 
 ;; DOOM MODELINE ;;
 (use-package doom-modeline
-  :straight t
+  :ensure t
   :init (doom-modeline-mode 1))
 
 ;; EDITORCONFIG ;;
 (use-package editorconfig
-  :straight t
+  :ensure t
   :config
   (editorconfig-mode 1))
 
@@ -146,20 +194,25 @@
   (server-start))
 
 ;; GIT ;;
+;; Emacs' built-in transient does not meet magit's version requirement
+(use-package transient
+  :ensure t)
+
 (use-package magit
-  :straight t
-  :after nerd-icons
+  :ensure t
+  :after (nerd-icons transient)
   :custom
   (magit-format-file-function #'magit-format-file-nerd-icons))
 
 (define-key global-map (kbd "C-x g") 'magit-status)
+
 (use-package magit-todos
-  :straight t
+  :ensure t
   :after magit
   :config (magit-todos-mode 1))
 
 (use-package diff-hl
-  :straight t
+  :ensure t
   :config
   (diff-hl-margin-mode)
   (diff-hl-dired-mode)
@@ -168,15 +221,19 @@
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 ;; PROJECTILE ;;
-;; (straight-use-package 'projectile)
-;; (projectile-mode 1)
-;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;; (use-package projectile
+  ;; :ensure t
+  ;; :config
+  ;; (projectile-mode 1)
+  ;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 ;; DASHBOARD ;;
-(straight-use-package 'dashboard)
-(dashboard-setup-startup-hook)
-(add-to-list 'dashboard-items '(agenda) t)
-(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  (add-to-list 'dashboard-items '(agenda) t)
+  (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
 	dashboard-startup-banner '2
 	dashboard-center-content t
 	dashboard-vertically-center-content t
@@ -187,18 +244,16 @@
 	dashboard-set-file-icons t
 	dashboard-week-agenda t
 	dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
-
-(setq dashboard-items '((agenda . 5)
-                        (recents . 5)))  
-			;(projects . 5)))
-  
-(setq dashboard-startupify-list '(dashboard-insert-banner
-				  dashboard-insert-init-info
-				  dashboard-insert-items))
+  (setq dashboard-items '((agenda . 5)
+			  (recents . 5)))
+					;(projects . 5)))
+  (setq dashboard-startupify-list '(dashboard-insert-banner
+				    dashboard-insert-init-info
+				    dashboard-insert-items)))
 
 ;; VERTICO ;;
 (use-package vertico
-  :straight t
+  :ensure t
   :custom
   (vertico-cycle t)
   :init
@@ -210,7 +265,7 @@
 
 (use-package marginalia
   :after vertico
-  :straight t
+  :ensure t
   :custom
   (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
   :init
@@ -218,7 +273,7 @@
 
 ;; NEOTREE ;;
 (use-package neotree
-  :straight t
+  :ensure t
   :bind ("<f8>" . neotree-toggle)
   :config
   (setq neo-theme (if (display-graphic-p) 'classic 'arrow))
@@ -226,36 +281,44 @@
 
 ;; BREADCRUMB ;;
 (use-package breadcrumb
-  :straight t
+  :ensure t
   :config
   (fset 'breadcrumb--project-crumbs-1 #'ignore))
 
 ;; SMARTPARENS ;;
 (use-package smartparens
-  :straight t
+  :ensure t
   :config
   (smartparens-global-mode t))
 
 ; seems useless. better done with C-u, maybe macros?
 ;; MULTIPLE CURSORS ;;
-;(straight-use-package 'multiple-cursors)
-;(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-;(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-;(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;; (use-package multiple-cursors
+  ;; :ensure t
+  ;; :config
+  ;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+  ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
 
 ;; TREE SITTER ;;
-(straight-use-package 'tree-sitter)
-(straight-use-package 'tree-sitter-langs)
-(require 'tree-sitter-hl)
-(require 'tree-sitter-debug)
-(require 'tree-sitter-query)
-(global-tree-sitter-mode)
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+(use-package tree-sitter
+  :ensure t
+  :config
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
+(use-package tree-sitter-langs
+  :after tree-sitter
+  :ensure t
+  :config
+  (require 'tree-sitter-hl)
+  (require 'tree-sitter-debug)
+  (require 'tree-sitter-query))
 
 ;; DIRENV ;;
 (use-package direnv
-  :straight t
+  :ensure t
   :config
   (direnv-mode))
 
@@ -269,15 +332,19 @@
             (add-hook 'before-save-hook 'eglot-format nil t)))
 
 ;; (use-package eglot-booster
-  ;; :straight t
+  ;; :ensure t
   ;; :after eglot
   ;; :config (eglot-booster-mode))
 
-(straight-use-package 'nix-mode)
-(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
+(use-package nix-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode)))
 
-(straight-use-package 'rust-mode)
-(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+(use-package rust-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode)))
 
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
@@ -300,16 +367,21 @@
 (add-to-list 'auto-mode-alist '("\\.csproj\\'" . xml-mode))
 
 ;; WEB DEV ;;
-(straight-use-package 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(use-package js2-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 
-(straight-use-package 'skewer-mode)
-(add-hook 'js2-mode-hook 'skewer-mode)
-(add-hook 'css-mode-hook 'skewer-css-mode)
-(add-hook 'html-mode-hook 'skewer-html-mode)
+(use-package skewer-mode
+  :after js2-mode
+  :ensure t
+  :config
+  (add-hook 'js2-mode-hook 'skewer-mode)
+  (add-hook 'css-mode-hook 'skewer-css-mode)
+  (add-hook 'html-mode-hook 'skewer-html-mode))
 
 (use-package web-mode
-  :straight t
+  :ensure t
   :mode
   (("\\.cshtml\\'" . web-mode)
    ("\\.aspx\\'" . web-mode)))
