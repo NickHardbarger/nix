@@ -76,11 +76,6 @@
 (scroll-bar-mode -1)
 (blink-cursor-mode 1)
 
-(use-package hyperbole
-  :straight t
-  :config
-  (hyperbole-mode 1))
-
 (straight-use-package 'diminish)
 
 (use-package page-break-lines
