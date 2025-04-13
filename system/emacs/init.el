@@ -201,14 +201,11 @@
 				  dashboard-insert-init-info
 				  dashboard-insert-items))
 
-;; IVY ;;
-(use-package ivy
+;; VERTICO ;;
+(use-package vertico
   :straight t
   :init
-  (setq ivy-use-virtual-buffers t
-	enable-recursive-minibuffers t)
-  :config
-  (ivy-mode))
+  (vertico-mode))
 
 ;; NEOTREE ;;
 (use-package neotree
