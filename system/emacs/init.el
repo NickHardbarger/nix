@@ -128,6 +128,12 @@
 (use-package nerd-icons
   :ensure t)
 
+(use-package nerd-icons-dired
+  :after nerd-icons
+  :ensure t
+  :hook
+  (dired-mode . nerd-icons-dired-mode))
+
 (add-to-list 'default-frame-alist
              '(font . "JetBrainsMonoNF-12"))
 
@@ -268,6 +274,12 @@
   :init
   (marginalia-mode))
 
+(use-package nerd-icons-completion
+  :after marginalia
+  :ensure t
+  :config
+  (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
+
 (use-package orderless
   :ensure t
   :config
@@ -282,6 +294,12 @@
   :config
   (setq corfu-popupinfo-delay '(1.25 . 0.5))
   (corfu-popupinfo-mode 1))
+
+(use-package nerd-icons-corfu
+  :after corfu
+  :ensure t
+  :config
+  (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
 
 ;; NEOTREE ;;
 (use-package neotree
