@@ -301,7 +301,8 @@
   :bind (:map corfu-map
 	      ("RET" . nil)
 	      ("TAB" . corfu-next)
-	      ([tab] . corfu-next))
+	      ([tab] . corfu-next)
+	      ("S-<return>" . corfu-insert))
   :init
   (global-corfu-mode)
   :config
