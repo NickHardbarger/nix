@@ -289,15 +289,23 @@
 
 (use-package corfu
   :ensure t
-  :init
-  (global-corfu-mode)
   :custom
   (corfu-cycle t)
   (corfu-auto t)
   (corfu-auto-prefix 2)
   (corfu-auto-delay 0.0)
+  (corfu-quit-at-boundary 'separator)
+  (corfu-echo-documentation 0.25)
+  (corfu-preview-current 'insert)
+  (corfu-preselect-first nil)
+  :bind (:map corfu-map
+	      ("RET" . nil)
+	      ("TAB" . corfu-next)
+	      ([tab] . corfu-next))
+  :init
+  (global-corfu-mode)
   :config
-  (setq corfu-popupinfo-delay '(0.0 . 0.0))
+  (setq corfu-popupinfo-delay '(0.25 . 0.25))
   (corfu-popupinfo-mode 1))
 
 (use-package nerd-icons-corfu
