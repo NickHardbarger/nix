@@ -199,6 +199,8 @@
 ;; VERTICO ;;
 (use-package vertico
   :straight t
+  :custom
+  (vertico-cycle t)
   :init
   (vertico-mode))
 
