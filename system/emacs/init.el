@@ -208,6 +208,14 @@
   :init
   (savehist-mode))
 
+(use-package marginalia
+  :after vertico
+  :straight t
+  :custom
+  (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+  :init
+  (marginalia-mode))
+
 ;; NEOTREE ;;
 (use-package neotree
   :straight t
