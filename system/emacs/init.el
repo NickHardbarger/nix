@@ -112,11 +112,6 @@
   :ensure nil
   :config (delete-selection-mode))
 
-(use-package company
-  :ensure t
-  :config
-  (add-hook 'elpaca-after-init-hook 'global-company-mode))
-
 (use-package rainbow-delimiters
   :ensure t
   :config
@@ -279,6 +274,14 @@
   (setq completion-styles '(orderless basic)
 	completion-category-defaults nil
 	completion-category-overrides nil))
+
+(use-package corfu
+  :ensure t
+  :init
+  (global-corfu-mode)
+  :config
+  (setq corfu-popupinfo-delay '(1.25 . 0.5))
+  (corfu-popupinfo-mode 1))
 
 ;; NEOTREE ;;
 (use-package neotree
