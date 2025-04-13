@@ -108,6 +108,10 @@
 	scroll-conservatively most-positive-fixnum
 	make-backup-files nil)
 
+(use-package delsel
+  :ensure nil
+  :config (delete-selection-mode))
+
 (use-package company
   :ensure t
   :config
