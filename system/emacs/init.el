@@ -203,16 +203,15 @@
   :ensure t)
 
 (use-package magit
-  :ensure t
   :after (nerd-icons transient)
+  :ensure t
+  :bind ("C-x g" . magit-status)
   :custom
   (magit-format-file-function #'magit-format-file-nerd-icons))
 
-(define-key global-map (kbd "C-x g") 'magit-status)
-
 (use-package magit-todos
-  :ensure t
   :after magit
+  :ensure t
   :config (magit-todos-mode 1))
 
 (use-package diff-hl
