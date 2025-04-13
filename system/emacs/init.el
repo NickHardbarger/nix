@@ -248,7 +248,7 @@
 				    dashboard-insert-init-info
 				    dashboard-insert-items)))
 
-;; VERTICO ;;
+;; COMPLETIONS ;;
 (use-package vertico
   :ensure t
   :custom
