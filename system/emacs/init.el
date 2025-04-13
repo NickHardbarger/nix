@@ -291,8 +291,13 @@
   :ensure t
   :init
   (global-corfu-mode)
+  :custom
+  (corfu-cycle t)
+  (corfu-auto t)
+  (corfu-auto-prefix 2)
+  (corfu-auto-delay 0.0)
   :config
-  (setq corfu-popupinfo-delay '(1.25 . 0.5))
+  (setq corfu-popupinfo-delay '(0.0 . 0.0))
   (corfu-popupinfo-mode 1))
 
 (use-package nerd-icons-corfu
