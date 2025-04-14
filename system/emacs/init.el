@@ -80,27 +80,13 @@
   (setq org-auto-tangle-default nil
 	calendar-week-start-day 1))
 
-;; THEME ;;
+;; AESTHETICS ;;
 (use-package gruvbox-theme
   :ensure t
   :config
   (load-theme 'gruvbox-dark-medium t))
 
-;; TRANSPARENCY ;;
-(set-frame-parameter nil 'alpha-background 90)
 (add-to-list 'default-frame-alist '(alpha-background . 90))
-
-(defun on-after-init ()
-  (unless (display-graphic-p (selected-frame))
-    (set-face-background 'default "unspecified-bg" (selected-frame))))
-(add-hook 'window-setup-hook #'on-after-init)
-;; [[https://stackoverflow.com/questions/19054228/emacs-disable-theme-background-color-in-terminal/33298750#33298750][Emacs: disable theme background color in terminal - Stack Overflow]]
-
-(defun on-frame-open (&optional frame)
-  "If the FRAME created in terminal don't load background color."
-  (unless (display-graphic-p frame)
-    (set-face-background 'default "unspecified-bg" frame)))
-(add-hook 'after-make-frame-functions #'on-frame-open)
 
 ;; GENERAL ;;
 (setq inhibit-startup-message nil
