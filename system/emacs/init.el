@@ -167,6 +167,8 @@
 ;; Enables all commands that are disabled by default
 (setq disabled-command-function nil)
 
+(which-key-mode)
+
 ;; EXPAND REGION ;;
 (use-package expand-region
   :ensure t
