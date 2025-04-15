@@ -154,6 +154,7 @@
 (setq disabled-command-function nil)
 
 (which-key-mode)
+(global-set-key [escape] 'keyboard-escape-quit)
 
 ;; EXPAND REGION ;;
 (use-package expand-region
