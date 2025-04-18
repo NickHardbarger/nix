@@ -94,10 +94,6 @@
 	scroll-conservatively most-positive-fixnum
 	make-backup-files nil)
 
-(use-package delsel
-  :ensure nil
-  :config (delete-selection-mode))
-
 (use-package rainbow-delimiters
   :ensure t
   :config
@@ -154,7 +150,14 @@
 (setq disabled-command-function nil)
 
 (which-key-mode)
-(global-set-key [escape] 'keyboard-escape-quit)
+(delete-selection-mode 1)
+(electric-pair-mode 1) ;; might not need smartparens
+(blink-cursor-mode 1)
+;; SMARTPARENS ;;
+(use-package smartparens
+  :ensure t
+  :config
+  (smartparens-global-mode t))
 
 ;; EXPAND REGION ;;
 (use-package expand-region
@@ -318,12 +321,6 @@
   :ensure t
   :config
   (fset 'breadcrumb--project-crumbs-1 #'ignore))
-
-;; SMARTPARENS ;;
-(use-package smartparens
-  :ensure t
-  :config
-  (smartparens-global-mode t))
 
 ; seems useless. better done with C-u, maybe macros?
 ;; MULTIPLE CURSORS ;;
