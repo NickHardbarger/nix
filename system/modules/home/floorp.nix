@@ -63,18 +63,6 @@
               url = "https://www.cotc.edu/sites/main/files/file-attachments/2024-2025_academic_calendar.pdf?1725366617";
             }
             {
-              name = "breadcrumb";
-              url = "https://github.com/joaotavora/breadcrumb";
-            }
-            {
-              name = "scenefx";
-              url = "https://codeberg.org/dwl/dwl-patches/src/branch/main/patches/scenefx";
-            }
-            {
-              name = "barcolors";
-              url = "https://codeberg.org/dwl/dwl-patches/src/branch/main/patches/barcolors/barcolors.patch";
-            }
-            {
               name = "courses";
               url = "https://cotc.instructure.com/courses";
             }
