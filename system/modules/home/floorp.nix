@@ -66,6 +66,10 @@
               name = "courses";
               url = "https://cotc.instructure.com/courses";
             }
+            {
+              name = "yuzu";
+              url = "https://reader.yuzu.com";
+            }
           ];
         }
       ];
