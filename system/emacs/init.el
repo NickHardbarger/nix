@@ -51,6 +51,7 @@
   (elpaca-use-package-mode))
 (elpaca-wait)
 ;; ELPACA END ;;
+
 ;; ORG ;;
 (use-package org ; told me to put this early in the config
   :ensure t
@@ -86,28 +87,6 @@
   :config
   (load-theme 'gruvbox-dark-medium t))
 
-(add-to-list 'default-frame-alist '(alpha-background . 90))
-(add-to-list 'default-frame-alist '(font . "JetBrainsMonoNF-12"))
-
-;; GENERAL ;;
-(use-package emacs
-  :ensure nil
-  :custom
-  (visible-bell t)
-  (scroll-conservatively most-positive-fixnum)
-  (display-fill-column-indicator-column 80)
-  (truncate-lines t))
-
-(use-package files
-  :ensure nil
-  :custom
-  (make-backup-files nil))
-
-(use-package startup
-  :ensure nil
-  :custom
-  (inhibit-startup-message nil))
-
 (use-package rainbow-delimiters
   :ensure t
   :config
@@ -130,6 +109,28 @@
   :hook
   (dired-mode . nerd-icons-dired-mode))
 
+(add-to-list 'default-frame-alist '(alpha-background . 90))
+(add-to-list 'default-frame-alist '(font . "JetBrainsMonoNF-12"))
+
+;; BUILT-INS ;;
+(use-package emacs
+  :ensure nil
+  :custom
+  (visible-bell t)
+  (scroll-conservatively most-positive-fixnum)
+  (display-fill-column-indicator-column 80)
+  (truncate-lines t))
+
+(use-package files
+  :ensure nil
+  :custom
+  (make-backup-files nil))
+
+(use-package startup
+  :ensure nil
+  :custom
+  (inhibit-startup-message nil))
+
 (use-package display-line-numbers
   :ensure nil
   :custom
@@ -145,12 +146,13 @@
 
 (set-face-attribute 'fill-column-indicator nil :foreground "#928374")
 
-; apparently, utf-16-le is best on windows
-; if set to nil, emacs will interpret character encoding based on clipboard contents
-(set-selection-coding-system
- (if (eq system-type 'windows-nt)
-     'utf-16-le
-   nil))
+(use-package mule
+  :ensure nil
+  :config
+  (set-selection-coding-system      ;; apparently, utf-16-le is best on windows
+   (if (eq system-type 'windows-nt) ;; if set to nil, emacs will interpret character encoding based on clipboard contents
+       'utf-16-le
+     nil)))
 
 (use-package dictionary
   :ensure nil
@@ -163,11 +165,6 @@
   :ensure nil
   :config
   (global-visual-line-mode 1))
-
-;; (use-package hl-todo-mode
-  ;; :ensure t
-  ;; :config
-  ;; (global-hl-todo-mode))
 
 (use-package novice
   :ensure nil
@@ -187,18 +184,20 @@
 
 (use-package elec-pair
   :ensure nil
-  :hook (after-init . electric-pair-mode)) ;; might not need smartparens
+  :custom
+  (electric-pair-pairs '((?\' . ?\') (?\{ . ?\})))
+  :hook (after-init . electric-pair-mode))
 
 (use-package frame
   :ensure nil
   :config
   (blink-cursor-mode 1))
 
-;; SMARTPARENS ;;
-;; (use-package smartparens
+;; HL-TODO ;;
+;; (use-package hl-todo-mode
   ;; :ensure t
   ;; :config
-  ;; (smartparens-global-mode t))
+  ;; (global-hl-todo-mode))
 
 ;; EXPAND REGION ;;
 (use-package expand-region
