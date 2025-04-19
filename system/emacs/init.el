@@ -176,21 +176,21 @@
   (setq disabled-command-function nil))
 
 (use-package which-key
-  :enable nil
+  :ensure nil
   :config
   (which-key-mode))
 
 (use-package delsel
-  :enable nil
+  :ensure nil
   :init
   (delete-selection-mode 1))
 
 (use-package elec-pair
-  :enable nil
+  :ensure nil
   :hook (after-init . electric-pair-mode)) ;; might not need smartparens
 
 (use-package frame
-  :enable nil
+  :ensure nil
   :config
   (blink-cursor-mode 1))
 
