@@ -20,6 +20,7 @@
     ../modules/foot.nix
     ../modules/games.nix
     ../modules/locale.nix
+    # ../modules/minecraft.nix
     ../modules/nh.nix
     ../modules/nix.nix
     ../modules/pkgs.nix
