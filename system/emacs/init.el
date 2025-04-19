@@ -50,7 +50,7 @@
 (elpaca elpaca-use-package
   (elpaca-use-package-mode))
 (elpaca-wait)
-
+;; ELPACA END ;;
 ;; ORG ;;
 (use-package org ; told me to put this early in the config
   :ensure t
@@ -87,12 +87,26 @@
   (load-theme 'gruvbox-dark-medium t))
 
 (add-to-list 'default-frame-alist '(alpha-background . 90))
+(add-to-list 'default-frame-alist '(font . "JetBrainsMonoNF-12"))
 
 ;; GENERAL ;;
-(setq inhibit-startup-message nil
-	visible-bell t
-	scroll-conservatively most-positive-fixnum
-	make-backup-files nil)
+(use-package emacs
+  :ensure nil
+  :custom
+  (visible-bell t)
+  (scroll-conservatively most-positive-fixnum)
+  (display-fill-column-indicator-column 80)
+  (truncate-lines t))
+
+(use-package files
+  :ensure nil
+  :custom
+  (make-backup-files nil))
+
+(use-package startup
+  :ensure nil
+  :custom
+  (inhibit-startup-message nil))
 
 (use-package rainbow-delimiters
   :ensure t
@@ -116,15 +130,19 @@
   :hook
   (dired-mode . nerd-icons-dired-mode))
 
-(add-to-list 'default-frame-alist
-             '(font . "JetBrainsMonoNF-12"))
+(use-package display-line-numbers
+  :ensure nil
+  :custom
+  (display-line-numbers-type 'relative)
+  (column-number-mode t)
+  :config
+  (global-display-line-numbers-mode))
 
-(global-display-line-numbers-mode)
-(setq display-line-numbers-type 'relative
-      column-number-mode t)
+(use-package display-fill-column-indicator
+  :ensure nil
+  :config
+  (global-display-fill-column-indicator-mode))
 
-(global-display-fill-column-indicator-mode)
-(setq-default display-fill-column-indicator-column 80)
 (set-face-attribute 'fill-column-indicator nil :foreground "#928374")
 
 ; apparently, utf-16-le is best on windows
@@ -134,25 +152,49 @@
      'utf-16-le
    nil))
 
-(set-default 'truncate-lines t)
+(use-package dictionary
+  :ensure nil
+  :custom
+  (dictionary-server "dict.org")
+  :bind
+  ("C-c C-l" . dictionary-lookup-definition))
 
-(setopt dictionary-server "dict.org")
-(global-set-key (kbd "C-c C-l") 'dictionary-lookup-definition)
-
-(global-visual-line-mode 1)
+(use-package simple
+  :ensure nil
+  :config
+  (global-visual-line-mode 1))
 
 ;; (use-package hl-todo-mode
   ;; :ensure t
   ;; :config
   ;; (global-hl-todo-mode))
 
-;; Enables all commands that are disabled by default
-(setq disabled-command-function nil)
+(use-package novice
+  :ensure nil
+  :config
+  ;; Enables all commands that are disabled by default
+  (setq disabled-command-function nil))
 
-(which-key-mode)
-(delete-selection-mode 1)
-(electric-pair-mode 1) ;; might not need smartparens
-(blink-cursor-mode 1)
+(use-package which-key
+  :enable nil
+  :config
+  (which-key-mode))
+
+(use-package delsel
+  :enable nil
+  :config
+  (delete-selection-mode 1))
+
+(use-package elec-pair
+  :enable nil
+  :config
+  (electric-pair-mode 1)) ;; might not need smartparens
+
+(use-package frame
+  :enable nil
+  :config
+  (blink-cursor-mode 1))
+
 ;; SMARTPARENS ;;
 (use-package smartparens
   :ensure t
@@ -185,9 +227,11 @@
   (editorconfig-mode 1))
 
 ;; SERVER ;;
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+(use-package server
+  :ensure nil
+  :config
+  (unless (server-running-p)
+    (server-start)))
 
 ;; GIT ;;
 ;; Emacs' built-in transient does not meet magit's version requirement
