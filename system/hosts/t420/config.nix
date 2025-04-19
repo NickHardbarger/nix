@@ -9,28 +9,28 @@
 
   imports = [
     inputs.home-manager.nixosModules.default
-    ../modules/audio.nix
-    ../modules/bluetooth.nix
-    ../modules/boot.nix
-    ../modules/direnv.nix
-    ../modules/doas.nix
-    ../modules/fail2ban.nix
-    ../modules/firewall.nix
-    ../modules/fonts.nix
-    ../modules/foot.nix
-    ../modules/games.nix
-    ../modules/locale.nix
-    # ../modules/minecraft.nix
-    ../modules/nh.nix
-    ../modules/nix.nix
-    ../modules/pkgs.nix
-    ../modules/scx.nix
-    ../modules/ssh.nix
-    ../modules/starship.nix
-    ../modules/upgrades.nix
-    ../modules/users.nix
-    ../modules/xkb.nix
-    ../modules/xorg.nix
+    ../../modules/audio.nix
+    ../../modules/bluetooth.nix
+    ../../modules/boot.nix
+    ../../modules/direnv.nix
+    ../../modules/doas.nix
+    ../../modules/fail2ban.nix
+    ../../modules/firewall.nix
+    ../../modules/fonts.nix
+    ../../modules/foot.nix
+    ../../modules/games.nix
+    ../../modules/locale.nix
+    # ../../modules/minecraft.nix
+    ../../modules/nh.nix
+    ../../modules/nix.nix
+    ../../modules/pkgs.nix
+    ../../modules/scx.nix
+    ../../modules/ssh.nix
+    ../../modules/starship.nix
+    ../../modules/upgrades.nix
+    ../../modules/users.nix
+    ../../modules/xkb.nix
+    ../../modules/xorg.nix
   ];
   networking = {
     hostName = "t420";

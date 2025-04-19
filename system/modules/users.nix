@@ -20,7 +20,7 @@
       inherit inputs myUser;
     };
     users = {
-      ${myUser} = import ../t420/home.nix;
+      ${myUser} = import ../hosts/t420/home.nix;
     };
   };
 }
