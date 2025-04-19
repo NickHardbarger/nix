@@ -182,13 +182,12 @@
 
 (use-package delsel
   :enable nil
-  :config
+  :init
   (delete-selection-mode 1))
 
 (use-package elec-pair
   :enable nil
-  :config
-  (electric-pair-mode 1)) ;; might not need smartparens
+  :hook (after-init . electric-pair-mode)) ;; might not need smartparens
 
 (use-package frame
   :enable nil
