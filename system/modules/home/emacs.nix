@@ -12,7 +12,8 @@
       nixfmt-rfc-style
 
       bash-language-server
-      ccls
+      # ccls
+      clang-tools
 
       vscode-langservers-extracted
       typescript-language-server
