@@ -59,6 +59,10 @@
               url = "https://github.com/morhetz/gruvbox";
             }
             {
+              name = "mycotc";
+              url = "https://experience.elluciancloud.com/cotc/";
+            }
+            {
               name = "calendar";
               url = "https://www.cotc.edu/sites/main/files/file-attachments/2024-2025_academic_calendar.pdf?1725366617";
             }
