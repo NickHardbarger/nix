@@ -190,7 +190,7 @@
 (use-package elec-pair
   :ensure nil
   :custom
-  (electric-pair-pairs '((?\' . ?\') (?\{ . ?\})))
+  (electric-pair-pairs '((?\' . ?\') (?\" . ?\") (?\{ . ?\})))
   :hook (after-init . electric-pair-mode))
 
 (use-package frame
