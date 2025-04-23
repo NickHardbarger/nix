@@ -126,6 +126,10 @@
   (display-fill-column-indicator-column 80)
   (truncate-lines t))
 
+(use-package bytecomp
+  :ensure nil
+  :custom (byte-compile-warnings nil))
+
 (use-package files
   :ensure nil
   :custom
