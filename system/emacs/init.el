@@ -418,6 +418,9 @@
   ;; :after eglot
   ;; :config (eglot-booster-mode))
 
+(use-package markdown-mode
+  :ensure t)
+
 (use-package nix-mode
   :ensure t
   :config
