@@ -468,6 +468,9 @@
   (("\\.cshtml\\'" . web-mode)
    ("\\.aspx\\'" . web-mode)))
 
+(use-package emmet-mode
+  :ensure t)
+
 ;; CUSTOM VARIABLES ;;
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
