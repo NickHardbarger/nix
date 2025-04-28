@@ -109,10 +109,12 @@
   :hook
   (dired-mode . nerd-icons-dired-mode))
 
-(use-package rainbow-mode
+(use-package colorful-mode
   :ensure t
+  :custom
+  (colorful-use-prefix t)
   :config
-  (rainbow-mode))
+  (global-colorful-mode t))
 
 (add-to-list 'default-frame-alist '(alpha-background . 90))
 (add-to-list 'default-frame-alist '(font . "JetBrainsMonoNF-12"))
@@ -201,6 +203,12 @@
   :ensure nil
   :config
   (blink-cursor-mode 1))
+
+(use-package css-mode
+  :ensure nil
+  :custom
+  ;; Can interfere with colorful-mode
+  (css-fontify-colors nil))
 
 ;; HL-TODO ;;
 ;; (use-package hl-todo-mode
