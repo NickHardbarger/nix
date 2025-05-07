@@ -465,6 +465,13 @@
 
 (add-to-list 'auto-mode-alist '("\\.csproj\\'" . xml-mode))
 
+;; SHARPER ;;
+(use-package sharper
+  :after transient
+  :ensure t
+  :bind
+  ("C-c n" . sharper-main-transient))
+
 ;; WEB DEV ;;
 (use-package js2-mode
   :ensure t
