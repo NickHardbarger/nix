@@ -19,7 +19,7 @@
       typescript-language-server
 
       jdt-language-server
-      omnisharp-roslyn
+      # omnisharp-roslyn
       csharp-ls
     ];
     file = {
