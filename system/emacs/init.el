@@ -472,6 +472,10 @@
   :bind
   ("C-c n" . sharper-main-transient))
 
+;; DAPE ;;
+(use-package dape
+  :ensure t)
+
 ;; WEB DEV ;;
 (use-package js2-mode
   :ensure t
