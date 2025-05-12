@@ -14,6 +14,10 @@
     wl-clipboard # clipboard
     speedtest-cli # test network speed
     wget # file retriever
-    vlc # media player
+    vlce # media player
+
+    # Test: this might be necessary for running dwl as a binary.
+    # I think the problem is that wlroots keeps getting garbage collected away.
+    wlroots
   ];
 }
