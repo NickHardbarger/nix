@@ -29,7 +29,7 @@ else
 fi
 
 # modified version of progress.sh from The Linux Cast's dotfiles repo
-time="3/5/2025" # Must be manually updated
+time="5/24/2025" # Must be manually updated
 let current=$(date +%s)
 timestamp=$(date -d "$time" +%s)
 passage=$((current - timestamp))
