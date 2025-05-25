@@ -16,8 +16,9 @@
       DisplayMenuBar = "never";
       DontCheckDefaultBrowser = true;
     };
-    profiles."nickh" = {
-      bookmarks = [
+    profiles.${myUser}.bookmarks = {
+      force = true;
+      settings = [
         {
           name = "NixOS";
           toolbar = true;
