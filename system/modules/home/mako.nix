@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   services.mako = {
     enable = true;
-    font = "JetBrainsMonoNF 12";
-    backgroundColor = "#282828FF";
-    borderColor = "#cc241dFF";
-    textColor = "#ebdbb2FF";
+    settings = {
+      font = "JetBrainsMonoNF 12";
+      background-color = "#282828FF";
+      border-color = "#cc241dFF";
+      text-color = "#ebdbb2FF";
+    };
   };
 }
