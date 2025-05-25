@@ -165,6 +165,11 @@
        'utf-16-le
      nil)))
 
+(use-package mule-cmds
+  :ensure nil
+  ;; Allows switching to Ancient Greek keyboard layout with C-\
+  :custom (default-input-method "greek-ibycus4"))
+
 (use-package dictionary
   :ensure nil
   :custom
