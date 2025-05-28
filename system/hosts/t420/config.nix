@@ -6,7 +6,6 @@
 }:
 let
   # To get new hash, run:
-  # nix-shell -p nix-prefetch-github
   # nix-prefetch-github NickHardbarger dwl-v0.7 | grep hash | awk '{print $2}' | wl-copy
   dwlsrc = pkgs.fetchFromGitHub {
     owner = "NickHardbarger";
@@ -104,6 +103,7 @@ in
       sl # steam locomotive on ls typo
       discord # chat client
 
+      nix-prefetch-github
       (pkgs.callPackage "${dwlsrc}/dwl-custom.nix" { })
     ];
   };
