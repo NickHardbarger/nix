@@ -6,12 +6,20 @@
 }:
 let
   # To get new hash, run:
-  # nix-prefetch-github NickHardbarger dwl-v0.7 | grep hash | awk '{print $2}' | wl-copy
+  # nix-prefetch-github NickHardbarger <repo> | grep hash | awk '{print $2}' | wl-copy
+
   dwlsrc = pkgs.fetchFromGitHub {
     owner = "NickHardbarger";
     repo = "dwl-v0.7";
     rev = "main";
     hash = "sha256-u/pep/QhFb9RBEG97z9bQVBY+FTkhYLCFoz2nZ1fKgc=";
+  };
+
+  cattysrc = pkgs.fetchFromGitHub {
+    owner = "NickHardbarger";
+    repo = "catty";
+    rev = "main";
+    hash = "sha256-R0FjrmNx1/sCuzpMC/+MTDEZMEVQg4rfIde1LwfqyJM=";
   };
 in
 {
@@ -105,6 +113,7 @@ in
 
       nix-prefetch-github
       (pkgs.callPackage "${dwlsrc}/dwl-custom.nix" { })
+      (pkgs.callPackage "${cattysrc}/build.nix" { })
     ];
   };
   # Some programs need SUID wrappers, can be configured further or are
