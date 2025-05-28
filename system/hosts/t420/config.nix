@@ -11,7 +11,7 @@ let
     owner = "NickHardbarger";
     repo = "dwl-v0.7";
     rev = "main";
-    hash = "sha256-FCFuceGovn20IIzeN7YlVbjmIMhTLMoFFXav3oxYEWU=";
+    hash = "sha256-u/pep/QhFb9RBEG97z9bQVBY+FTkhYLCFoz2nZ1fKgc=";
   };
 in
 {
