@@ -9,6 +9,7 @@
     ../../modules/home/git.nix
     ../../modules/home/mako.nix
     ../../modules/home/obs.nix
+    ../../modules/home/qutebrowser.nix
   ];
   programs.home-manager.enable = true;
   home = {
