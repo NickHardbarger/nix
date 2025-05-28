@@ -4,7 +4,17 @@
   inputs,
   ...
 }:
-
+let
+  # To get new hash, run:
+  # nix-shell -p nix-prefetch-github
+  # nix-prefetch-github NickHardbarger dwl-v0.7 | grep hash | awk '{print $2}' | wl-copy
+  dwlsrc = pkgs.fetchFromGitHub {
+    owner = "NickHardbarger";
+    repo = "dwl-v0.7";
+    rev = "main";
+    hash = "sha256-FCFuceGovn20IIzeN7YlVbjmIMhTLMoFFXav3oxYEWU=";
+  };
+in
 {
 
   imports = [
@@ -85,6 +95,7 @@
     bash.blesh.enable = true;
     nano.enable = false;
   };
+
   environment = {
     sessionVariables.NIXOS_OZONE_WL = "1";
     systemPackages = with pkgs; [
@@ -92,6 +103,8 @@
       cowsay # generates ascii cow with message
       sl # steam locomotive on ls typo
       discord # chat client
+
+      (pkgs.callPackage "${dwlsrc}/dwl-custom.nix" { })
     ];
   };
   # Some programs need SUID wrappers, can be configured further or are
