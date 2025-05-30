@@ -12,14 +12,14 @@ let
     owner = "NickHardbarger";
     repo = "dwl-v0.7";
     rev = "main";
-    hash = "sha256-r/ScK+fQMlKJfw2MuUGiOfyS62Nlhflbgvu25LsT92c=";
+    hash = "sha256-KJZHoHyhHCtkcp66rBnXj7rAFVA+4YYY9XpnLOEyogA=";
   };
 
   cattysrc = pkgs.fetchFromGitHub {
     owner = "NickHardbarger";
     repo = "catty";
     rev = "main";
-    hash = "sha256-R0FjrmNx1/sCuzpMC/+MTDEZMEVQg4rfIde1LwfqyJM=";
+    hash = "sha256-BxnE4sVV28eRuUHXBnuDJi+/QJGN1lQpvAe0HHHTKgo=";
   };
 in
 {
