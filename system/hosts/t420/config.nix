@@ -19,7 +19,7 @@ let
     owner = "NickHardbarger";
     repo = "catty";
     rev = "main";
-    hash = "sha256-BxnE4sVV28eRuUHXBnuDJi+/QJGN1lQpvAe0HHHTKgo=";
+    hash = "sha256-6IXqjsKLlOse0oP60Eu9OP0ky9Y0viSvDadAv6i9wbg=";
   };
 in
 {
