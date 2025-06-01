@@ -450,10 +450,16 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode)))
 
+(use-package go-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
+
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
 	       '(nix-mode . ("nixd"))
-	       '(rust-mode . ("rust-analyzer"))))
+	       '(go-mode . ("gopls"))))
+	       ;; '(rust-mode . ("rust-analyzer"))))
 	       ;; '(c-mode . ("ccls"))))
 
 (setq c-default-style "k&r")

@@ -21,6 +21,10 @@
       jdt-language-server
       # omnisharp-roslyn
       csharp-ls
+
+      # go language server requires go in PATH
+      # so I have to install go with direnv to have lsp support...
+      gopls
     ];
     file = {
       ".emacs.d/early-init.el".source = ../../emacs/early-init.el;
