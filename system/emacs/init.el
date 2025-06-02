@@ -224,8 +224,11 @@
 ;; PDF TOOLS ;;
 (use-package pdf-tools
   :ensure t
-  :config (pdf-loader-install)
-  :hook (pdf-view-mode . display-line-numbers-mode))
+  :config
+  (pdf-loader-install)
+  (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-tools-enable-minor-modes))
+  :hook
+  (pdf-tools-enable-minor-modes . display-line-numbers-mode))
 
 ;; EXPAND REGION ;;
 (use-package expand-region
