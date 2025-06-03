@@ -1,5 +1,16 @@
 { pkgs, ... }:
 {
+  # Need gopls 0.14.2 to work with gccgo
+  # nixpkgs.overlays = [
+  # (self: super: {
+  # gopls = super.gopls.overrideAttrs {
+  # src = fetchTarball {
+  # url = "https://github.com/golang/tools/archive/refs/tags/gopls/v0.14.2.tar.gz";
+  # sha256 = "0qyqrjdrhdcz5a5c8iyyvrrwidxh9nn23z18v4b6vshsk4irrj45";
+  # };
+  # };
+  # })
+  # ];
   programs.emacs = {
     enable = true;
     package = pkgs.emacs30-pgtk;
@@ -24,6 +35,8 @@
 
       # go language server requires go in PATH
       # so I have to install go with direnv to have lsp support...
+      # NB: "nix-shell -p go" doesn't work...
+      # also, I can't use gopls 0.18.1 with gccgo... -_-
       gopls
     ];
     file = {
