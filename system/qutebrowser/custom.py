@@ -2019,18 +2019,8 @@ c.url.start_pages = ['https://seek.fyi']
 ## Type: Bool
 # c.window.transparent = False
 
-## Default zoom level.
-## Type: Perc
-# c.zoom.default = '100%'
-
-## Available zoom levels.
-## Type: List of Perc
-# c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%']
-
-## Number of zoom increments to divide the mouse wheel movements to.
-## Type: Int
-# c.zoom.mouse_divider = 512
-
-## Apply the zoom factor on a frame only to the text or to all content.
-## Type: Bool
-# c.zoom.text_only = False
+# Zoom
+c.zoom.default = '100%'
+c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%']
+c.zoom.mouse_divider = 512
+c.zoom.text_only = False
