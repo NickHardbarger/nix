@@ -1708,39 +1708,11 @@ c.fonts.web.size.minimum_logical = 6
 ##   - vi-VN: Vietnamese (Viet Nam)
 # c.spellcheck.languages = []
 
-## Padding (in pixels) for the statusbar.
-## Type: Padding
-# c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 0}
-
-## Position of the status bar.
-## Type: VerticalPosition
-## Valid values:
-##   - top
-##   - bottom
-# c.statusbar.position = 'bottom'
-
-## When to show the statusbar.
-## Type: String
-## Valid values:
-##   - always: Always show the statusbar.
-##   - never: Always hide the statusbar.
-##   - in-mode: Show the statusbar when in modes other than normal mode.
-# c.statusbar.show = 'always'
-
-## List of widgets displayed in the statusbar.
-## Type: List of StatusbarWidget
-## Valid values:
-##   - url: Current page URL.
-##   - scroll: Percentage of the current page position like `10%`.
-##   - scroll_raw: Raw percentage of the current page position like `10`.
-##   - history: Display an arrow when possible to go back/forward in history.
-##   - search_match: A match count when searching, e.g. `Match [2/10]`.
-##   - tabs: Current active tab, e.g. `2`.
-##   - keypress: Display pressed keys when composing a vi command.
-##   - progress: Progress bar for the current page loading.
-##   - text:foo: Display the static text after the colon, `foo` in the example.
-##   - clock: Display current time. The format can be changed by adding a format string via `clock:...`. For supported format strings, see https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes[the Python datetime documentation].
-# c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', 'tabs', 'progress']
+# Status bar
+c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 0}
+c.statusbar.position = 'bottom'
+c.statusbar.show = 'always'
+c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', 'tabs', 'progress']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
