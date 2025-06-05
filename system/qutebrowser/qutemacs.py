@@ -46,7 +46,7 @@ c.bindings.commands['insert'] = {
     '<ctrl-w>': 'fake-key <Ctrl-x>;;message-info "cut to clipboard";;leave-mode',
     '<alt-w>': 'fake-key <Ctrl-c>;;message-info "copy to clipboard";;leave-mode',
     '<backspace>': 'fake-key <backspace>;;leave-mode',
-    '<alt-x>': 'leave-mode;;set-cmd-text :',
+    '<alt-x>': 'leave-mode;;cmd-set-text :',
     '<alt-o>': 'leave-mode;;tab-focus last',
     '<Tab>': 'fake-key <f1>'
 }
@@ -80,16 +80,16 @@ c.bindings.commands['normal'] = {
     '<ctrl-shift-v>': 'scroll-page 0 1',
     '<alt-shift-v>': 'scroll-page 0 -1',
 
-    '<alt-x>': 'set-cmd-text :',
-    '<ctrl-x>b': 'set-cmd-text -s :buffer;;fake-key <Down><Down><Down>',
+    '<alt-x>': 'cmd-set-text :',
+    '<ctrl-x>b': 'cmd-set-text -s :buffer;;fake-key <Down><Down><Down>',
     '<ctrl-x>k': 'tab-close',
     '<ctrl-x>r': 'config-cycle statusbar.hide',
     '<ctrl-x>1': 'tab-only;;message-info "cleared all other tabs"',
     '<ctrl-x><ctrl-c>': 'quit',
 
 	# searching
-    '<ctrl-s>': 'set-cmd-text /',
-    '<ctrl-r>': 'set-cmd-text ?',
+    '<ctrl-s>': 'cmd-set-text /',
+    '<ctrl-r>': 'cmd-set-text ?',
 
 	# hinting
     '<alt-s>': 'hint all',
@@ -99,8 +99,8 @@ c.bindings.commands['normal'] = {
     '<ctrl-shift-tab>': 'tab-prev',
 
     # open links
-    '<ctrl-l>': 'set-cmd-text -s :open',
-    '<alt-l>': 'set-cmd-text -s :open -t',
+    '<ctrl-l>': 'cmd-set-text -s :open',
+    '<alt-l>': 'cmd-set-text -s :open -t',
 
     # editing
     '<alt-[>': 'back',
@@ -137,7 +137,7 @@ c.bindings.commands['normal'] = {
     '0': 'fake-key 0',
 
 	# escape hatch
-    '<ctrl-h>': 'set-cmd-text -s :help',
+    '<ctrl-h>': 'cmd-set-text -s :help',
     '<ctrl-g>': ESC_BIND,
 }
 
