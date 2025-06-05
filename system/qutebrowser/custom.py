@@ -435,9 +435,9 @@ c.backend = 'webengine' # QTWebEngine
 # Darkmode
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 c.colors.webpage.darkmode.contrast = 0.0
-c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.enabled = False # for some reason, it has to be set to false to work?
 c.colors.webpage.darkmode.policy.images = 'smart-simple'
-c.colors.webpage.darkmode.policy.page = 'smart'
+c.colors.webpage.darkmode.policy.page = 'always'
 c.colors.webpage.darkmode.threshold.background = 0
 c.colors.webpage.darkmode.threshold.foreground = 256
 c.colors.webpage.preferred_color_scheme = 'dark'
