@@ -12,5 +12,6 @@
     ".config/qutebrowser/qutemacs.py".source = ../../qutebrowser/qutemacs.py;
     ".config/qutebrowser/custom.py".source = ../../qutebrowser/custom.py;
     ".config/qutebrowser/greasemonkey/youtube.js".source = ../../qutebrowser/youtube.js;
+    ".config/qutebrowser/styles.css".source = ../../qutebrowser/styles.css;
   };
 }

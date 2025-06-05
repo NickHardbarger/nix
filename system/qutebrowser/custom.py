@@ -1070,9 +1070,7 @@ c.backend = 'webengine' # QTWebEngine
 ##   - allow-all: Allows all navigation requests to URLs with unknown schemes.
 # c.content.unknown_url_scheme_policy = 'allow-from-user-interaction'
 
-## List of user stylesheet filenames to use.
-## Type: List of File, or File
-# c.content.user_stylesheets = []
+c.content.user_stylesheets = ["~/.config/qutebrowser/styles.css"]
 
 ## Enable WebGL.
 ## Type: Bool
