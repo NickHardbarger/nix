@@ -951,8 +951,8 @@ c.content.cookies.store = True
 ##   - allow-all: Allows all navigation requests to URLs with unknown schemes.
 # c.content.unknown_url_scheme_policy = 'allow-from-user-interaction'
 
-c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube.css",
-                              "~/.config/qutebrowser/styles/theme.css"]
+# c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube.css",
+                              # "~/.config/qutebrowser/styles/theme.css"]
 
 ## Enable WebGL.
 ## Type: Bool
