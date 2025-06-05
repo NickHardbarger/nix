@@ -1,5 +1,7 @@
 { ... }:
 {
+  # Reddit says my request has been blocked?
+  # old.reddit seems to work just fine
   programs.qutebrowser = {
     enable = true;
     extraConfig = ''
