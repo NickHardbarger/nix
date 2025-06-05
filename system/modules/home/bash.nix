@@ -10,8 +10,8 @@
     '';
   };
   home.shellAliases = {
-    "cmatrix" = "cmatrix -C cyan";
-    ".." = "cd ..";
+    # "cmatrix" = "cmatrix -C cyan";
+    # ".." = "cd ..";
     "screenshot" = "slurp | grim -g -"; # to use: screenshot <screenshot>.png
   };
 
