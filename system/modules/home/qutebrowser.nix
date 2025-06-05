@@ -3,7 +3,7 @@
   programs.qutebrowser = {
     enable = true;
     extraConfig = ''
-      config.source('qutemacs.py')
+      #config.source('qutemacs.py')
       config.source('custom.py')
     '';
   };
