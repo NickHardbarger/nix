@@ -2049,7 +2049,7 @@ c.content.user_stylesheets = ["~/.config/qutebrowser/styles.css"]
 ##   - dns: Use DNS requests (might be slow!).
 ##   - never: Never search automatically.
 ##   - schemeless: Always search automatically unless URL explicitly contains a scheme.
-# c.url.auto_search = 'naive'
+c.url.auto_search = 'naive'
 
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
@@ -2072,27 +2072,8 @@ c.content.user_stylesheets = ["~/.config/qutebrowser/styles.css"]
 ## Type: Bool
 # c.url.open_base_url = False
 
-## Search engines which can be used via the address bar.  Maps a search
-## engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
-## placeholder. The placeholder will be replaced by the search term, use
-## `{{` and `}}` for literal `{`/`}` braces.  The following further
-## placeholds are defined to configure how special characters in the
-## search terms are replaced by safe characters (called 'quoting'):  *
-## `{}` and `{semiquoted}` quote everything except slashes; this is the
-## most   sensible choice for almost all search engines (for the search
-## term   `slash/and&amp` this placeholder expands to `slash/and%26amp`).
-## * `{quoted}` quotes all characters (for `slash/and&amp` this
-## placeholder   expands to `slash%2Fand%26amp`). * `{unquoted}` quotes
-## nothing (for `slash/and&amp` this placeholder   expands to
-## `slash/and&amp`). * `{0}` means the same as `{}`, but can be used
-## multiple times.  The search engine named `DEFAULT` is used when
-## `url.auto_search` is turned on and something else than a URL was
-## entered to be opened. Other search engines can be used by prepending
-## the search engine name to the search term, e.g. `:open google
-## qutebrowser`.
-## Type: Dict
 c.url.searchengines = {
-    'DEFAULT': 'https://duckduckgo.com/?q={}',
+    'DEFAULT': 'https://seek.fyi/search?q={}',
 }
 
 # SearXNG start page
