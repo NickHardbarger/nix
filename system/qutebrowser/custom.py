@@ -536,9 +536,7 @@ c.colors.webpage.preferred_color_scheme = 'dark'
 ##   - never: Never show a confirmation.
 # c.confirm_quit = ['never']
 
-## Automatically start playing `<video>` elements.
-## Type: Bool
-# c.content.autoplay = True
+c.content.autoplay = False
 
 ## List of URLs to ABP-style adblocking rulesets.  Only used when Brave's
 ## ABP-style adblocker is used (see `content.blocking.method`).  You can
