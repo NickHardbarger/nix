@@ -1,20 +1,5 @@
-# qutemacs - a simple, preconfigured Emacs binding set for qutebrowser
-#
-# The aim of this binding set is not to provide bindings for absolutely
-# everything, but to provide a stable launching point for people to make their
-# own bindings.
-#
-# Installation:
-#
-# 1. Copy this file or add this repo as a submodule to your dotfiles.
-# 2. Add this line to your config.py, and point the path to this file:
-# config.source('qutemacs/qutemacs.py')
+import string
 
-
-config = config  # type: ConfigAPI # noqa: F821 pylint: disable=E0602,C0103
-c = c  # type: ConfigContainer # noqa: F821 pylint: disable=E0602,C0103
-
-c.tabs.background = True
 # disable insert mode completely
 c.input.insert_mode.auto_enter = False
 c.input.insert_mode.auto_leave = False
@@ -23,12 +8,7 @@ c.input.insert_mode.plugins = False
 # Forward unbound keys
 c.input.forward_unbound_keys = "all"
 
-
-
 ESC_BIND = 'clear-keychain ;; search ;; fullscreen --leave'
-
-
-import string
 
 c.bindings.default['normal'] = {}
 c.bindings.default['insert'] = {}
@@ -169,7 +149,3 @@ c.bindings.commands['caret'] = {
 
 config.bind('<Tab>', 'fake-key <f1>')
 config.bind('<Ctrl-x><Ctrl-l>', 'config-source')
-c.tabs.show = 'never'
-# c.statusbar.hide = False # gives error
-c.url.searchengines["g"] = "https://www.google.com.ar/search?q={}"
-c.url.searchengines["DEFAULT"] = "https://www.google.com.ar/search?q={}"
