@@ -436,22 +436,11 @@ c.backend = 'webengine' # QTWebEngine
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 c.colors.webpage.darkmode.contrast = 0.0
 c.colors.webpage.darkmode.enabled = True
-c.colors.webpage.darkmode.policy.images = 'never'
+c.colors.webpage.darkmode.policy.images = 'smart-simple'
 c.colors.webpage.darkmode.policy.page = 'smart'
 c.colors.webpage.darkmode.threshold.background = 0
 c.colors.webpage.darkmode.threshold.foreground = 256
-
-## Value to use for `prefers-color-scheme:` for websites. The "light"
-## value is only available with QtWebEngine 5.15.2+. On older versions,
-## it is the same as "auto". The "auto" value is broken on QtWebEngine
-## 5.15.2 due to a Qt bug. There, it will fall back to "light"
-## unconditionally.
-## Type: String
-## Valid values:
-##   - auto: Use the system-wide color scheme setting.
-##   - light: Force a light theme.
-##   - dark: Force a dark theme.
-# c.colors.webpage.preferred_color_scheme = 'auto'
+c.colors.webpage.preferred_color_scheme = 'dark'
 
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
