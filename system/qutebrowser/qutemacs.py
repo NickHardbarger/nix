@@ -170,6 +170,6 @@ c.bindings.commands['caret'] = {
 config.bind('<Tab>', 'fake-key <f1>')
 config.bind('<Ctrl-x><Ctrl-l>', 'config-source')
 c.tabs.show = 'never'
-c.statusbar.hide = False
+# c.statusbar.hide = False # gives error
 c.url.searchengines["g"] = "https://www.google.com.ar/search?q={}"
 c.url.searchengines["DEFAULT"] = "https://www.google.com.ar/search?q={}"
