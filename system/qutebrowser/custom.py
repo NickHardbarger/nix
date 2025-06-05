@@ -2097,10 +2097,8 @@ c.url.searchengines = {
     'DEFAULT': 'https://duckduckgo.com/?q={}',
 }
 
-
-## Page(s) to open at the start.
-## Type: List of FuzzyUrl, or FuzzyUrl
-# c.url.start_pages = ['https://start.duckduckgo.com']
+# SearXNG start page
+c.url.start_pages = ['https://seek.fyi']
 
 ## URL parameters to strip when yanking a URL.
 ## Type: List of String
