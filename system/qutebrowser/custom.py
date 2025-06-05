@@ -562,7 +562,7 @@ c.content.blocking.enabled = True
 c.content.blocking.hosts.block_subdomains = True
 c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 c.content.blocking.method = 'auto'
-c.content.blocking.whitelist = ['https://www.reddit.com/']
+c.content.blocking.whitelist = []
 
 ## Enable support for the HTML 5 web application cache feature. An
 ## application cache acts like an HTTP cache in some sense. For documents
@@ -951,8 +951,8 @@ c.content.cookies.store = True
 ##   - allow-all: Allows all navigation requests to URLs with unknown schemes.
 # c.content.unknown_url_scheme_policy = 'allow-from-user-interaction'
 
-# c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube.css",
-                              # "~/.config/qutebrowser/styles/theme.css"]
+c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube.css",
+                              "~/.config/qutebrowser/styles/theme.css"]
 
 ## Enable WebGL.
 ## Type: Bool
