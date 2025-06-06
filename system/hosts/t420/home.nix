@@ -5,7 +5,7 @@
     ../../modules/home/btop.nix
     ../../modules/home/cursor.nix
     ../../modules/home/emacs.nix
-    ../../modules/home/floorp.nix
+    # ../../modules/home/floorp.nix
     ../../modules/home/git.nix
     ../../modules/home/mako.nix
     ../../modules/home/obs.nix
