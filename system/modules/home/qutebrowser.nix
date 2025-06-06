@@ -30,7 +30,21 @@
         }, 50)
       '')
     ];
-    quickmarks = { };
+    quickmarks = {
+      youtube = "https://www.youtube.com/";
+      github = "https://github.com/dashboard";
+      nixpkgs = "https://search.nixos.org/packages?";
+      nixoptions = "https://search.nixos.org/options?";
+      nixhmoptions = "https://home-manager-options.extranix.com/?query=&release=master";
+      melpa = "https://melpa.org/#/";
+      gpacalc = "https://gpacalculator.net/college-gpa-calculator/";
+      indeed = "https://www.indeed.com/?from=notifcenter_webapp_zero_notifications_page";
+      mycotc = "https://experience.elluciancloud.com/cotc/";
+      calendar = "https://www.cotc.edu/sites/main/files/file-attachments/2024-2025_academic_calendar.pdf?1725366617";
+      courses = "https://cotc.instructure.com/courses";
+      yuzu = "https://reader.yuzu.com";
+      gruvbox = "https://github.com/morhetz/gruvbox";
+    };
   };
 
   home.file = {
