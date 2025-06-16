@@ -5,7 +5,6 @@
   programs.qutebrowser = {
     enable = true;
     extraConfig = ''
-      #config.source('qutemacs.py')
       config.source('custom.py')
     '';
     greasemonkey = [
@@ -48,7 +47,6 @@
   };
 
   home.file = {
-    ".config/qutebrowser/qutemacs.py".source = ../../qutebrowser/qutemacs.py;
     ".config/qutebrowser/custom.py".source = ../../qutebrowser/custom.py;
     ".config/qutebrowser/styles/youtube.css".source = ../../qutebrowser/youtube.css;
     ".config/qutebrowser/styles/theme.css".source = ../../qutebrowser/theme.css;
