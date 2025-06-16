@@ -12,21 +12,21 @@ let
     owner = "NickHardbarger";
     repo = "dwl-v0.7";
     rev = "main";
-    hash = "sha256-KJZHoHyhHCtkcp66rBnXj7rAFVA+4YYY9XpnLOEyogA=";
+    hash = "sha256-2mMTOymXzocIv7RQMBCg4xz92J4fTfkMDTp4ZbgQafQ=";
   };
 
   cattysrc = pkgs.fetchFromGitHub {
     owner = "NickHardbarger";
     repo = "catty";
     rev = "main";
-    hash = "sha256-6IXqjsKLlOse0oP60Eu9OP0ky9Y0viSvDadAv6i9wbg=";
+    hash = "sha256-P/hIrhfNeFEKaRe5GAVSy/2pX+4PFVmUZ2mtF/IOT3I=";
   };
 
   slstatussrc = pkgs.fetchFromGitHub {
     owner = "NickHardbarger";
     repo = "slstatus";
     rev = "main";
-    hash = "sha256-i/Mws8wUlUF7C2rCsXNLwgnibIfQnLf7CBb/6NoYo9o=";
+    hash = "sha256-THA55nT+D3m8ff1PnBxO1Kd5xT3laIt+EtDLK0Ag8RA=";
   };
 
 in
@@ -120,7 +120,7 @@ in
       discord # chat client
 
       nix-prefetch-github
-      (pkgs.callPackage "${dwlsrc}/dwl-custom.nix" { })
+      (pkgs.callPackage "${dwlsrc}/build.nix" { })
       (pkgs.callPackage "${cattysrc}/build.nix" { })
       (pkgs.callPackage "${slstatussrc}/build.nix" { })
     ];
