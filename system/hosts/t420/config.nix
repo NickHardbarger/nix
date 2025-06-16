@@ -21,6 +21,14 @@ let
     rev = "main";
     hash = "sha256-6IXqjsKLlOse0oP60Eu9OP0ky9Y0viSvDadAv6i9wbg=";
   };
+
+  slstatussrc = pkgs.fetchFromGitHub {
+    owner = "NickHardbarger";
+    repo = "slstatus";
+    rev = "main";
+    hash = "sha256-i/Mws8wUlUF7C2rCsXNLwgnibIfQnLf7CBb/6NoYo9o=";
+  };
+
 in
 {
 
@@ -114,6 +122,7 @@ in
       nix-prefetch-github
       (pkgs.callPackage "${dwlsrc}/dwl-custom.nix" { })
       (pkgs.callPackage "${cattysrc}/build.nix" { })
+      (pkgs.callPackage "${slstatussrc}/build.nix" { })
     ];
   };
   # Some programs need SUID wrappers, can be configured further or are
