@@ -642,21 +642,7 @@ c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', '
 ##   - none
 # c.tabs.title.elide = 'right'
 
-## Format to use for the tab title. The following placeholders are
-## defined:  * `{perc}`: Percentage as a string like `[10%]`. *
-## `{perc_raw}`: Raw percentage, e.g. `10`. * `{current_title}`: Title of
-## the current web page. * `{title_sep}`: The string `" - "` if a title
-## is set, empty otherwise. * `{index}`: Index of this tab. *
-## `{aligned_index}`: Index of this tab padded with spaces to have the
-## same   width. * `{relative_index}`: Index of this tab relative to the
-## current tab. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
-## Page scroll position. * `{host}`: Host of the current web page. *
-## `{backend}`: Either `webkit` or `webengine` * `{private}`: Indicates
-## when private mode is enabled. * `{current_url}`: URL of the current
-## web page. * `{protocol}`: Protocol (http/https/...) of the current web
-## page. * `{audio}`: Indicator for audio/mute status.
-## Type: FormatString
-# c.tabs.title.format = '{audio}{index}: {current_title}'
+c.tabs.title.format = '{private}{audio}{perc}{index}: {current_title}'
 
 ## Width (in pixels or as percentage of the window) of the tab bar if
 ## it's vertical.
@@ -680,10 +666,7 @@ c.url.searchengines = {
 ## Type: Bool
 # c.window.hide_decoration = False
 
-## Format to use for the window title. The same placeholders like for
-## `tabs.title.format` are defined.
-## Type: FormatString
-# c.window.title_format = '{perc}{current_title}{title_sep}qutebrowser'
+c.window.title_format = 'qutebrowser'
 
 ## Set the main window background to transparent.  This allows having a
 ## transparent tab- or statusbar (might require a compositor such as
