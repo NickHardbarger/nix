@@ -1,11 +1,16 @@
 { pkgs, ... }:
 {
-  # Reddit says my request has been blocked?
-  # old.reddit seems to work just fine
+  home.file = {
+    ".config/qutebrowser/custom.py".source = ../../qutebrowser/custom.py;
+    ".config/qutebrowser/styles/youtube.css".source = ../../qutebrowser/youtube.css;
+    ".config/qutebrowser/styles/theme.css".source = ../../qutebrowser/theme.css;
+  };
   programs.qutebrowser = {
     enable = true;
     extraConfig = ''
       config.source('custom.py')
+      c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube.css",
+                                    "~/.config/qutebrowser/styles/theme.css"]
     '';
     greasemonkey = [
       (pkgs.writeText "youtube-ads.js" ''
@@ -44,11 +49,5 @@
       yuzu = "https://reader.yuzu.com";
       gruvbox = "https://github.com/morhetz/gruvbox";
     };
-  };
-
-  home.file = {
-    ".config/qutebrowser/custom.py".source = ../../qutebrowser/custom.py;
-    ".config/qutebrowser/styles/youtube.css".source = ../../qutebrowser/youtube.css;
-    ".config/qutebrowser/styles/theme.css".source = ../../qutebrowser/theme.css;
   };
 }
