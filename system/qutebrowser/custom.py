@@ -598,56 +598,10 @@ c.statusbar.position = 'bottom'
 c.statusbar.show = 'always'
 c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', 'tabs', 'progress']
 
-## Padding (in pixels) for tab indicators.
-## Type: Padding
-# c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
-
-## Width (in pixels) of the progress indicator (0 to disable).
-## Type: Int
-# c.tabs.indicator.width = 3
-
-## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
-## only applies when tabs are horizontal. This setting does not apply to
-## pinned tabs, unless `tabs.pinned.shrink` is False. This setting may
-## not apply properly if max_width is smaller than the minimum size of
-## tab contents, or smaller than tabs.min_width.
-## Type: Int
-# c.tabs.max_width = -1
-
-## Minimum width (in pixels) of tabs (-1 for the default minimum size
-## behavior). This setting only applies when tabs are horizontal. This
-## setting does not apply to pinned tabs, unless `tabs.pinned.shrink` is
-## False.
-## Type: Int
-# c.tabs.min_width = -1
-
-## Padding (in pixels) around text for tabs.
-## Type: Padding
-# c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
-
-## Alignment of the text inside of tabs.
-## Type: TextAlignment
-## Valid values:
-##   - left
-##   - right
-##   - center
-# c.tabs.title.alignment = 'left'
-
-## Position of ellipsis in truncated title of tabs.
-## Type: ElidePosition
-## Valid values:
-##   - left
-##   - right
-##   - middle
-##   - none
-# c.tabs.title.elide = 'right'
-
+# Tabs
+c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
+c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
 c.tabs.title.format = '{private}{audio}{perc}{index}: {current_title}'
-
-## Width (in pixels or as percentage of the window) of the tab bar if
-## it's vertical.
-## Type: PercOrInt
-# c.tabs.width = '15%'
 
 # Search
 c.url.auto_search = 'naive'
