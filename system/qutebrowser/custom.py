@@ -544,17 +544,10 @@ c.fonts.web.size.default_fixed = 13
 c.fonts.web.size.minimum = 0
 c.fonts.web.size.minimum_logical = 6
 
-## CSS border value for hints.
-## Type: String
-# c.hints.border = '1px solid #E3BE23'
-
-## Padding (in pixels) for hints.
-## Type: Padding
-# c.hints.padding = {'top': 0, 'bottom': 0, 'left': 3, 'right': 3}
-
-## Rounding radius (in pixels) for the edges of hints.
-## Type: Int
-# c.hints.radius = 3
+# Hints
+c.hints.border = '1px solid #d79921'
+c.hints.padding = {'top': 0, 'bottom': 0, 'left': 3, 'right': 3}
+c.hints.radius = 3
 
 ## Interpret number prefixes as counts for bindings. This enables for vi-
 ## like bindings that can be prefixed with a number to indicate a count.
@@ -562,14 +555,6 @@ c.fonts.web.size.minimum_logical = 6
 ## passed through (according to `input.forward_unbound_keys`) instead.
 ## Type: Bool
 # c.input.match_counts = True
-
-## Rounding radius (in pixels) for the edges of the keyhint dialog.
-## Type: Int
-# c.keyhint.radius = 6
-
-## Rounding radius (in pixels) for the edges of prompts.
-## Type: Int
-# c.prompt.radius = 8
 
 ## Force a Qt platformtheme to use. This sets the `QT_QPA_PLATFORMTHEME`
 ## environment variable which controls dialogs like the filepicker. By
