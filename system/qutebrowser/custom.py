@@ -578,19 +578,9 @@ c.fonts.web.size.minimum_logical = 6
 ## Type: String
 # c.qt.force_platformtheme = None
 
-## When/how to show the scrollbar.
-## Type: String
-## Valid values:
-##   - always: Always show the scrollbar.
-##   - never: Never show the scrollbar.
-##   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
-##   - overlay: Show an overlay scrollbar. On macOS, this is unavailable and equal to `when-searching`; with the QtWebKit backend, this is equal to `never`. Enabling/disabling overlay scrollbars requires a restart.
-# c.scrolling.bar = 'overlay'
-
-## Enable smooth scrolling for web pages. Note smooth scrolling does not
-## work with the `:scroll-px` command.
-## Type: Bool
-# c.scrolling.smooth = False
+# Scrolling
+c.scrolling.bar = 'never'
+c.scrolling.smooth = False
 
 # Status bar
 c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 0}
