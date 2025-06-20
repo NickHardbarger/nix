@@ -124,7 +124,7 @@
   :ensure nil
   :custom
   (visible-bell t)
-  (scroll-conservatively most-positive-fixnum)
+  (scroll-conservatively 101)
   (display-fill-column-indicator-column 80)
   (truncate-lines t))
 
