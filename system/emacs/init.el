@@ -1,8 +1,6 @@
-;; ELPACA ;;
-;; To go from elpaca back to package.el,
-;; delete this section of code and early-init.el,
-;; and change elpaca-after-init-hook to after-init-hook
+;; -*- lexical-binding: t; -*-
 
+;; ELPACA ;;
 ;; Installer
 (defvar elpaca-installer-version 0.10)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
@@ -116,14 +114,10 @@
   :config
   (global-colorful-mode t))
 
-(add-to-list 'default-frame-alist '(alpha-background . 90))
-(add-to-list 'default-frame-alist '(font . "JetBrainsMonoNF-12"))
-
 ;; BUILT-INS ;;
 (use-package emacs
   :ensure nil
   :custom
-  (visible-bell t)
   (scroll-conservatively 101)
   (display-fill-column-indicator-column 80)
   (truncate-lines t))
