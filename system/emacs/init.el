@@ -516,22 +516,16 @@
 ;; YASNIPPET
 (use-package yasnippet
   :ensure t
-  :custom
+  :config
   (yas-reload-all)
-  (add-hook 'prog-mode-hook #'yas-minor-mode))
+  (yas-minor-mode))
 
 (use-package yasnippet-snippets
   :after yasnippet
   :ensure t)
 
-;; DIRENV ;;
-;; (use-package direnv
-;;   :ensure t
-;;   :config
-;;   (direnv-mode))
-
 ;; ENVRC ;;
 ;; Must be placed last in config
 (use-package envrc
   :ensure t
-  :hook (after-init . envrc-global-mode))
+  :config (envrc-global-mode))
