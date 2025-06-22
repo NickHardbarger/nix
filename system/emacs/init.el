@@ -372,11 +372,6 @@
   (corfu-echo-documentation 0.25)
   (corfu-preview-current 'insert)
   (corfu-preselect-first nil)
-  :bind (:map corfu-map
-	      ("RET" . nil)
-	      ("TAB" . corfu-next)
-	      ([tab] . corfu-next)
-	      ("S-<return>" . corfu-insert))
   :init
   (global-corfu-mode)
   :config
@@ -520,4 +515,15 @@
    ("\\.aspx\\'" . web-mode)))
 
 (use-package emmet-mode
+  :ensure t)
+
+;; YASNIPPET
+(use-package yasnippet
+  :ensure t
+  :custom
+  (yas-reload-all)
+  (add-hook 'prog-mode-hook #'yas-minor-mode))
+
+(use-package yasnippet-snippets
+  :after yasnippet
   :ensure t)
