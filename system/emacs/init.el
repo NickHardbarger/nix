@@ -123,6 +123,10 @@
   (truncate-lines t)
   (frame-title-format "vi"))
 
+(use-package help
+  :ensure nil
+  :custom (help-window-select t))
+
 (use-package bytecomp
   :ensure nil
   :custom (byte-compile-warnings nil))
