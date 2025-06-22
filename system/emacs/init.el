@@ -243,6 +243,11 @@
   :ensure t
   :init (doom-modeline-mode 1))
 
+;; ANZU
+(use-package anzu
+  :ensure t
+  :config (global-anzu-mode))
+
 ;; EDITORCONFIG ;;
 (use-package editorconfig
   :ensure t
