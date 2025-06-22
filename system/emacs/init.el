@@ -424,12 +424,6 @@
   (require 'tree-sitter-debug)
   (require 'tree-sitter-query))
 
-;; DIRENV ;;
-(use-package direnv
-  :ensure t
-  :config
-  (direnv-mode))
-
 ;; EGLOT ;;
 ;; Fixes error "feature project is now provided by a different file" 
 (load "project.elc")
@@ -529,3 +523,15 @@
 (use-package yasnippet-snippets
   :after yasnippet
   :ensure t)
+
+;; DIRENV ;;
+;; (use-package direnv
+;;   :ensure t
+;;   :config
+;;   (direnv-mode))
+
+;; ENVRC ;;
+;; Must be placed last in config
+(use-package envrc
+  :ensure t
+  :hook (after-init . envrc-global-mode))
