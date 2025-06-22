@@ -435,6 +435,8 @@
 (load "project.elc")
 (load "xref.elc")
 
+;; (setq eglot-report-progress nil)
+
 (add-hook 'prog-mode-hook
           (lambda ()
             (add-hook 'before-save-hook 'eglot-format nil t)))
