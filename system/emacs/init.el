@@ -120,7 +120,8 @@
   :custom
   (scroll-conservatively 101)
   (display-fill-column-indicator-column 80)
-  (truncate-lines t))
+  (truncate-lines t)
+  (frame-title-format "vi"))
 
 (use-package bytecomp
   :ensure nil
