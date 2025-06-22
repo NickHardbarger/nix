@@ -182,6 +182,11 @@
   ;; Enables all commands that are disabled by default
   (setq disabled-command-function nil))
 
+(use-package cus-edit
+  :ensure nil
+  :custom
+  (custom-file null-device "Don't store customizations"))
+
 (use-package which-key
   :ensure nil
   :config
@@ -511,18 +516,3 @@
 
 (use-package emmet-mode
   :ensure t)
-
-;; CUSTOM VARIABLES ;;
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-files nil)
- '(org-fold-core-style 'overlays))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
