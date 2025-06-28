@@ -1,7 +1,4 @@
-/* cosmetic and focus tweaks for yt */
-/* credit to various userstyles makers for some pieces of this */
-
-/* hide ads */
+/* Hides ads */
 #player-ads, ytd-ad-slot-renderer,
 ytd-rich-item-renderer:has(
   > #content
@@ -10,67 +7,60 @@ ytd-rich-item-renderer:has(
   display: none;
 }
 
-/* grid view */
+/* Hides shorts */
+/* NOTE: this didn't work. it just caused the search page to continually reload */
 /* #items.ytd-grid-renderer>ytd-grid-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"]) { */
 /*   display: none; */
 /* } */
 
-/* list view */
 /* ytd-item-section-renderer:not(:has(ytd-grid-renderer)):has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"]) { */
-/*   display: none;  */
+/*   display: none; */
 /* } */
 
-/* hide recs */
-/* #secondary { */
-/*   display: none !important; */
-/* } */
+/* Hides almost all elements in the hamburger menu */
+#endpoint.yt-simple-endpoint.ytd-guide-entry-renderer[title="Shorts"],
+#endpoint.yt-simple-endpoint.ytd-guide-entry-renderer[title="You"],
+#endpoint.yt-simple-endpoint.ytd-guide-entry-renderer[title="History"],
+#endpoint.yt-simple-endpoint.ytd-guide-entry-renderer[title="Your videos"],
+#endpoint.yt-simple-endpoint.ytd-guide-entry-renderer[title="Your movies & TV"],
+#endpoint.yt-simple-endpoint.ytd-guide-entry-renderer[title="Your courses"],
+#endpoint.yt-simple-endpoint.ytd-guide-entry-renderer[title="Your podcasts"],
+#sections.ytd-guide-renderer>ytd-guide-section-renderer.ytd-guide-renderer:not(:first-child),
+#guide-links-primary.ytd-guide-renderer,
+#guide-links-secondary.ytd-guide-renderer,
+#footer.ytd-guide-renderer>#copyright {
+    display: none !important;
+}
 
-/* make video fill the remaining space */
-/* #primary { */
-/*     width: 100% !important; */
-/*     flex: 1 !important; */
-/*     max-width: none !important; */
-/* } */
+/* Hides the "Your watch history is off" notice */
+ytd-feed-nudge-renderer[nudge-style=modernized-nudge] {
+    display: none !important;
+}
 
-/* hide yt sidebar */
-/* ytd-mini-guide-renderer,  */
-/* ytd-guide-renderer { */
-/*   display: none !important; */
-/* } */
+/* Hides sidebar */
+ytd-mini-guide-renderer {
+  display: none !important;
+}
 
-/* hide yt top bar */
-/* .ytd-masthead { */
-/*   margin: 0 !important; */
-/*   display: none !important; */
-/* } */
+/* Hides several header elements */
+ytd-topbar-logo-renderer,
+#voice-search-button.ytd-masthead,
+#buttons.ytd-masthead>*.ytd-masthead:not(:last-child) {
+    display: none !important;
+}
 
-/* remove extra padding and ensure content is full-width on channel page*/
-/* .ytd-app { */
-/*   margin-top: 0 !important; */
-/*   padding-top: 0 !important; */
-/*   margin-left: 0 !important; */
-/* } */
+/* Hides buttons beneath video */
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal[aria-label="Join this channel"],
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal[title="Share"],
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal[aria-label="Download"],
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal[title="Show support with Super Thanks"],
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal[title="Clip"],
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal[aria-label="More actions"] {
+    display: none !important;
+}
 
-/* html:not(.ytd-watch-flexy) ytd-watch-flexy[flexy] #player { */
-/*   width: 100% !important; */
-/*   max-width: 1400px; */
-/*   margin: 0 auto !important; */
-/* } */
-
-/* remove that annoying thing yt adds in dark mode */
-/* .ytp-gradient-bottom { */
-/*   display: none !important; */
-/* } */
-
-/* reshape some elements */
-/* .chip-container { */
-/*   border-radius: 0% !important; */
-/* } */
-
-/* .ytd-thumbnail { */
-/*   border-radius: 10% !important; */
-/* } */
-
-/* .yt-spec-avatar-shape__image { */
-/*   border-radius: 10% !important; */
-/* } */
+/* Hides recommended videos */
+#container.yt-chip-cloud-renderer,
+ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer {
+    display: none !important;
+}
