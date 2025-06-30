@@ -366,6 +366,26 @@
         	}
         }, 50)
       '')
+      # A website-agnostic way to set speed:
+      # document.getElementsByClassName('html5-main-video')[0].playbackRate = 2.0
+      (pkgs.writeText "youtube-speed.js" ''
+        // ==UserScript==
+        // @name        Youtube Playback Rate
+        // @namespace   Violentmonkey Scripts
+        // @match       *://youtube.com/*
+        // @match       *://www.youtube.com/*
+        // @grant       Any
+        // @version     1.0
+        // @author      Jason Miller
+        // @description 12/1/2019, 8:00:00 AM
+        // @run-at      document-start
+        // ==/UserScript==
+
+        sessionStorage.setItem("yt-player-playback-rate", JSON.stringify({
+            "data": "1.5",
+            "creation": Date.now(),
+        }));
+      '')
     ];
     quickmarks = {
       youtube = "https://www.youtube.com/";
