@@ -3,6 +3,7 @@
   pkgs,
   inputs,
   lib,
+  myUser,
   ...
 }:
 {
@@ -10,7 +11,7 @@
     enable = true;
     settings = {
       PasswordAuthentication = true;
-      AllowUsers = [ "nickh" ];
+      AllowUsers = [ "${myUser}" ];
       UseDns = true;
       X11Forwarding = false;
       PermitRootLogin = "prohibit-password";

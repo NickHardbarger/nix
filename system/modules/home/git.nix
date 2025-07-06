@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  myUser,
+  ...
+}:
 {
   programs.git = {
     enable = true;
@@ -6,7 +11,7 @@
     userEmail = "nickhardbarger13@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
-      safe.directory = "/home/nickh/nix";
+      safe.directory = "/home/${myUser}/nix";
     };
   };
 }

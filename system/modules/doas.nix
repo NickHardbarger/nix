@@ -3,6 +3,7 @@
   pkgs,
   inputs,
   lib,
+  myUser,
   ...
 }:
 {
@@ -12,7 +13,7 @@
       enable = true;
       extraRules = [
         {
-          users = [ "nickh" ];
+          users = [ "${myUser}" ];
           keepEnv = true;
           persist = true;
         }
