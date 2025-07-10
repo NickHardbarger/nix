@@ -156,6 +156,10 @@
 
 (set-face-attribute 'fill-column-indicator nil :foreground "#928374")
 
+(use-package dired
+  :ensure nil
+  :custom (dired-listing-switches "-Ahgo --color=auto --group-directories-first"))
+
 (use-package mule
   :ensure nil
   :config
