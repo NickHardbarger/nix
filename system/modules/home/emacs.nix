@@ -38,6 +38,9 @@
       # NB: "nix-shell -p go" doesn't work...
       # also, I can't use gopls 0.18.1 with gccgo... -_-
       gopls
+
+      # For org-mode
+      pandoc
     ];
     file = {
       ".emacs.d/early-init.el".source = ../../emacs/early-init.el;
