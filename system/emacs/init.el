@@ -78,14 +78,6 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-(use-package org-auto-tangle
-  :after org
-  :ensure t
-  :config
-  (add-hook 'org-mode-hook 'org-auto-tangle-mode)
-  (setq org-auto-tangle-default nil
-	calendar-week-start-day 1))
-
 ;; AESTHETICS ;;
 (use-package gruvbox-theme
   :ensure t
