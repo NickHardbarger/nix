@@ -532,7 +532,12 @@
   :ensure t)
 
 ;; ENVRC ;;
-;; Must be placed last in config
+;; Should be enabled after other global minor modes
 (use-package envrc
   :ensure t
   :config (envrc-global-mode))
+
+;; SCRATCH BUFFER
+(add-hook 'emacs-startup-hook
+	  (setq initial-scratch-message
+		(emacs-init-time "Emacs started in %.2f seconds\n")))
