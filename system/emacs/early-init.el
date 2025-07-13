@@ -58,5 +58,8 @@
 (setq ring-bell-function #'ignore
       inhibit-startup-screen t)
 
+(setq display-fill-column-indicator-column 80)
+(setq frame-title-format "vi")
+
 (provide 'early-init)
 ;;; early-init.el ends here

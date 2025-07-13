@@ -118,9 +118,10 @@
   :ensure nil
   :custom
   (scroll-conservatively 101)
-  (display-fill-column-indicator-column 80)
   (truncate-lines t)
-  (frame-title-format "vi"))
+  ;; Use Super key as Meta, Alt as Alt
+  (x-super-keysym 'meta)
+  (x-meta-keysym 'alt))
 
 (use-package help
   :ensure nil
