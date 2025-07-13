@@ -313,19 +313,21 @@
 				    dashboard-insert-items)))
 
 ;; COMPLETIONS ;;
-(use-package vertico
-  :ensure t
+(use-package icomplete
+  :ensure nil
   :custom
-  (vertico-cycle t)
-  :init
-  (vertico-mode))
+  (icomplete-delay-completions-threshold 0)
+  (icomplete-max-delay-chars 0)
+  (icomplete-compute-delay 0)
+  (icomplete-show-matches-on-no-input t)
+  :config
+  (icomplete-vertical-mode 1))
 
 (use-package savehist
   :init
   (savehist-mode))
 
 (use-package marginalia
-  :after vertico
   :ensure t
   :custom
   (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
