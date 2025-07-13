@@ -136,26 +136,6 @@
   :custom
   (make-backup-files nil))
 
-(use-package startup
-  :ensure nil
-  :custom
-  (inhibit-startup-message nil))
-
-(use-package display-line-numbers
-  :ensure nil
-  :custom
-  (display-line-numbers-type 'relative)
-  (column-number-mode t)
-  :config
-  (global-display-line-numbers-mode))
-
-(use-package display-fill-column-indicator
-  :ensure nil
-  :config
-  (global-display-fill-column-indicator-mode))
-
-(set-face-attribute 'fill-column-indicator nil :foreground "#928374")
-
 (use-package dired
   :ensure nil
   :custom (dired-listing-switches "-Ahgo --color=auto --group-directories-first"))

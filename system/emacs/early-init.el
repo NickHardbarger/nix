@@ -58,8 +58,17 @@
 (setq ring-bell-function #'ignore
       inhibit-startup-screen t)
 
-(setq display-fill-column-indicator-column 80)
 (setq frame-title-format "vi")
+
+;; Line numbers
+(setq display-line-numbers-type 'relative
+      column-number-mode t)
+(global-display-line-numbers-mode)
+
+;; Column indicator
+(setq display-fill-column-indicator-column 80)
+(global-display-fill-column-indicator-mode)
+(set-face-attribute 'fill-column-indicator nil :foreground "#928374")
 
 (provide 'early-init)
 ;;; early-init.el ends here
