@@ -48,6 +48,7 @@
 
       ".emacs.d/init-elpaca.el".source = ../../emacs/init-elpaca.el;
       ".emacs.d/init-org.el".source = ../../emacs/init-org.el;
+      ".emacs.d/init-pretty.el".source = ../../emacs/init-pretty.el;
       ".emacs.d/init-completions.el".source = ../../emacs/init-completions.el;
       ".emacs.d/init-prog.el".source = ../../emacs/init-prog.el;
 

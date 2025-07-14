@@ -7,39 +7,7 @@
 (load "~/.emacs.d/init-org.el")
 
 ;; AESTHETICS ;;
-(use-package gruvbox-theme
-  :ensure t
-  :config
-  (load-theme 'gruvbox-dark-medium t))
-
-(use-package rainbow-delimiters
-  :ensure t
-  :config
-  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
-
-(use-package diminish
-  :ensure t)
-
-(use-package page-break-lines
-  :ensure t
-  :config
-  (global-page-break-lines-mode))
-
-(use-package nerd-icons
-  :ensure t)
-
-(use-package nerd-icons-dired
-  :after nerd-icons
-  :ensure t
-  :hook
-  (dired-mode . nerd-icons-dired-mode))
-
-(use-package colorful-mode
-  :ensure t
-  :custom
-  (colorful-use-prefix t)
-  :config
-  (global-colorful-mode t))
+(load "~/.emacs.d/init-pretty.el")
 
 ;; BUILT-INS ;;
 (use-package emacs
@@ -160,11 +128,6 @@
   ;; (add-to-list 'auto-mode-alist '("\\.org" . poly-org-mode)))
 ; seems to cause issues with org mode source blocks
 
-;; DOOM MODELINE ;;
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
-
 ;; ANZU
 (use-package anzu
   :ensure t
@@ -216,47 +179,8 @@
   ;; (projectile-mode 1)
   ;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
-;; DASHBOARD ;;
-(use-package dashboard
-  :ensure t
-  :config
-  (dashboard-setup-startup-hook)
-  (add-to-list 'dashboard-items '(agenda) t)
-  (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name))
-	dashboard-startup-banner '2
-	dashboard-center-content t
-	dashboard-vertically-center-content t
-	dashboard-show-shortcuts t
-	dashboard-display-icons-p t
-	dashboard-icon-type 'nerd-icons
-	;dashboard-set-heading-icons t
-	dashboard-set-file-icons t
-	dashboard-week-agenda t
-	dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
-  (setq dashboard-items '((agenda . 5)
-			  (recents . 5)))
-					;(projects . 5)))
-  (setq dashboard-startupify-list '(dashboard-insert-banner
-				    dashboard-insert-init-info
-				    dashboard-insert-items)))
-
 ;; COMPLETIONS ;;
 (load "~/.emacs.d/init-completions.el")
-
-;; NEOTREE ;;
-(use-package neotree
-  :after nerd-icons
-  :ensure t
-  :bind ("<f8>" . neotree-toggle)
-  :config
-  (setq neo-theme (if (display-graphic-p) 'nerd-icons 'arrow))
-  (custom-set-variables '(neo-window-position (quote right))))
-
-;; BREADCRUMB ;;
-(use-package breadcrumb
-  :ensure t
-  :config
-  (fset 'breadcrumb--project-crumbs-1 #'ignore))
 
 ; seems useless. better done with C-u, maybe macros?
 ;; MULTIPLE CURSORS ;;
