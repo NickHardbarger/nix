@@ -45,9 +45,12 @@
     file = {
       ".emacs.d/early-init.el".source = ../../emacs/early-init.el;
       ".emacs.d/init.el".source = ../../emacs/init.el;
+
       ".emacs.d/init-elpaca.el".source = ../../emacs/init-elpaca.el;
       ".emacs.d/init-org.el".source = ../../emacs/init-org.el;
       ".emacs.d/init-completions.el".source = ../../emacs/init-completions.el;
+      ".emacs.d/init-prog.el".source = ../../emacs/init-prog.el;
+
       ".emacs.d/ding.wav".source = ../../emacs/ding.wav;
     };
     sessionVariables = {
