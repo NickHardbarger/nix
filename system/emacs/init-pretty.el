@@ -47,7 +47,8 @@
 (use-package breadcrumb
   :ensure t
   :config
-  (fset 'breadcrumb--project-crumbs-1 #'ignore))
+  (fset 'breadcrumb--project-crumbs-1 #'ignore)
+  :hook (prog-mode . breadcrumb-mode))
 
 (use-package dashboard
   :ensure t

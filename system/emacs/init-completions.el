@@ -14,16 +14,13 @@
 
 (use-package marginalia
   :ensure t
-  :custom
-  (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
   :init
   (marginalia-mode))
 
 (use-package nerd-icons-completion
   :after marginalia
   :ensure t
-  :config
-  (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
+  :config (nerd-icons-completion-mode))
 
 (use-package orderless
   :ensure t
