@@ -218,4 +218,5 @@
 ;; SCRATCH BUFFER
 (add-hook 'emacs-startup-hook
 	  (setq initial-scratch-message
-		(emacs-init-time "Emacs started in %.2f seconds\n")))
+		(concat ";; Emacs " emacs-version
+			(emacs-init-time " initialized in %.2f seconds\n"))))
