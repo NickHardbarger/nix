@@ -47,8 +47,13 @@
 (use-package breadcrumb
   :ensure t
   :config
-  (fset 'breadcrumb--project-crumbs-1 #'ignore)
-  :hook (prog-mode . breadcrumb-mode))
+  (fset 'breadcrumb--project-crumbs-1 #'ignore))
+
+(use-package which-func
+  :ensure nil
+  :config
+  (setq which-func-functions #'(breadcrumb-imenu-crumbs))
+  (which-function-mode))
 
 (use-package dashboard
   :ensure t
