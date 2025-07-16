@@ -101,3 +101,8 @@
 
 (use-package emmet-mode
   :ensure t)
+
+;; FLYMAKE ;;
+(use-package flymake
+  :ensure nil
+  :hook (prog-mode . flymake-mode))
