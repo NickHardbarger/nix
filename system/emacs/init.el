@@ -201,9 +201,7 @@
   :config
   ;; Shouldn't need this with global mode turned on
   ;; (yas-reload-all)
-  (yas-global-mode)
-  ;; Binds snippet expansion to space; Tab is taken up by corfu
-  (define-key yas-minor-mode-map (kbd "SPC") yas-maybe-expand))
+  (yas-global-mode))
 
 (use-package yasnippet-snippets
   :after yasnippet
