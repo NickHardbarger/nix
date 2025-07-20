@@ -3,7 +3,6 @@
 pkgs.writeShellApplication {
   name = "startwl";
   text = ''
-    wlstat | dwl
-    exec <&-
+    wlstat | dwl -s 'swaybg -i ~/nix/system/wallpapers/columbus.jpg <&-'
   '';
 }
