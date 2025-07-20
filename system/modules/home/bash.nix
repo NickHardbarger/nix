@@ -3,7 +3,7 @@
   programs.bash = {
     enable = true;
     bashrcExtra = ''
-      ~/nix/system/scripts/fetsh
+      nixfetch
     '';
     profileExtra = ''
       startwl

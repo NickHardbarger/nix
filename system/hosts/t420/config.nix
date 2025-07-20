@@ -29,12 +29,12 @@ let
     hash = "sha256-THA55nT+D3m8ff1PnBxO1Kd5xT3laIt+EtDLK0Ag8RA=";
   };
 
-  # nixfetchsrc = pkgs.fetchFromGitHub {
-  #   owner = "NickHardbarger";
-  #   repo = "nixfetch";
-  #   rev = "main";
-  #   hash = "sha256-ZcyhRyA8cpTRUM90dxbe9deJExjb94CMl9+B7rmKnyU=";
-  #};
+  nixfetchsrc = pkgs.fetchFromGitHub {
+    owner = "NickHardbarger";
+    repo = "nixfetch";
+    rev = "main";
+    hash = "sha256-ZcyhRyA8cpTRUM90dxbe9deJExjb94CMl9+B7rmKnyU=";
+  };
 
 in
 {
@@ -130,7 +130,7 @@ in
       (pkgs.callPackage "${dwlsrc}/build.nix" { })
       (pkgs.callPackage "${cattysrc}/build.nix" { })
       (pkgs.callPackage "${slstatussrc}/build.nix" { })
-      # (pkgs.callPackage "${nixfetchsrc}/build.nix" { })
+      (pkgs.callPackage "${nixfetchsrc}/build.nix" { })
     ];
   };
   # Some programs need SUID wrappers, can be configured further or are
