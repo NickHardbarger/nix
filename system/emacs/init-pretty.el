@@ -77,3 +77,7 @@
   (setq dashboard-startupify-list '(dashboard-insert-banner
 				    dashboard-insert-init-info
 				    dashboard-insert-items)))
+(use-package vundo
+  :ensure t
+  ;; I use C-/ for regular undo
+  :bind ("C-x u" . vundo))
