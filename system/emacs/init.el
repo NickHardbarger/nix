@@ -2,7 +2,7 @@
 
 ;; ELPACA ;;
 (load "~/.emacs.d/init-elpaca.el")
-
+(setq use-package-compute-statistics t)
 ;; ORG ;;
 (load "~/.emacs.d/init-org.el")
 
