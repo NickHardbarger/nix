@@ -39,11 +39,8 @@
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
 (push '(vertical-scroll-bars) default-frame-alist)
-;; (menu-bar-mode -1)
-;; (tool-bar-mode -1)
-;; (scroll-bar-mode -1)
 (push '(alpha-background . 90) default-frame-alist)
-;; (add-to-list 'default-frame-alist '(alpha-background . 90))
+(push '(fullscreen . maximized) default-frame-alist)
 
 (setq server-client-instructions nil)
 (setq frame-inhibit-implied-resize t)
