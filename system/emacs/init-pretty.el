@@ -8,9 +8,6 @@
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
-(use-package diminish
-  :ensure t)
-
 (use-package page-break-lines
   :ensure t
   :config
@@ -32,29 +29,12 @@
   :config
   (global-colorful-mode t))
 
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
-
-(use-package neotree
-  :after nerd-icons
-  :ensure t
-  :bind ("<f8>" . neotree-toggle)
-  :config
-  (setq neo-theme (if (display-graphic-p) 'nerd-icons 'arrow))
-  (custom-set-variables '(neo-window-position (quote right))))
-
-(use-package breadcrumb
-  :ensure t
-  :config
-  (fset 'breadcrumb--project-crumbs-1 #'ignore))
-
 (use-package which-func
   :ensure nil
   :config
-  (setq which-func-functions #'(breadcrumb-imenu-crumbs))
   (which-function-mode))
 
+;; Temporary
 (use-package dashboard
   :ensure t
   :config

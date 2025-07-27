@@ -1,39 +1,14 @@
 ;;; early-init.el --- Emacs pre package.el & UI configuration -*- lexical-binding: t; -*-
 ;;; Code:
 
-;; NB: Much of this code is taken from https://github.com/progfolio/.emacs.d
-
-(setq package-enable-at-startup nil)
-(setq inhibit-default-init nil)
-(setq native-comp-async-report-warnings-errors nil)
-
-;; STARTUP TIME ;;
-(defvar default-file-name-handler-alist file-name-handler-alist)
-(setq file-name-handler-alist nil)
+(setq package-enable-at-startup nil
+      inhibit-default-init nil
+      native-comp-async-report-warnings-errors nil)
 
 ;; GC
-(setq gc-cons-threshold most-positive-fixnum
-      gc-cons-percentage 1)
-
-(defun +gc-after-focus-change ()
-  "Run GC when frame loses focus."
-  (run-with-idle-timer
-   5 nil
-   (lambda () (unless (frame-focus-state) (garbage-collect)))))
-
-(defun +reset-init-values ()
-  (run-with-idle-timer
-   1 nil
-   (lambda ()
-     (setq file-name-handler-alist default-file-name-handler-alist
-           gc-cons-percentage 0.1
-           gc-cons-threshold 100000000)
-     (message "gc-cons-threshold & file-name-handler-alist restored")
-     (when (boundp 'after-focus-change-function)
-       (add-function :after after-focus-change-function #'+gc-after-focus-change)))))
-
-(with-eval-after-load 'elpaca
-  (add-hook 'elpaca-after-init-hook '+reset-init-values))
+(setq gc-cons-threshold most-positive-fixnum)
+(add-hook 'after-init-hook
+	  (lambda () (setq gc-cons-threshold (* 1000 1000 8)))) ;; 8mb
 
 ;; UI
 (push '(menu-bar-lines . 0) default-frame-alist)
@@ -42,30 +17,30 @@
 (push '(alpha-background . 90) default-frame-alist)
 (push '(fullscreen . maximized) default-frame-alist)
 
-(setq server-client-instructions nil)
-(setq frame-inhibit-implied-resize t)
+;; Still at col 70...
+(push '(display-fill-column-indicator-column . 80) default-frame-alist)
+(global-display-fill-column-indicator-mode)
+(set-face-attribute 'fill-column-indicator nil :foreground "#928374")
 
 (push '(font . "JetBrainsMonoNF-12") default-frame-alist)
 (set-face-font 'default "JetBrainsMonoNF-12")
 (set-face-font 'variable-pitch "DejaVu Sans")
 (copy-face 'default 'fixed-pitch)
 
-(advice-add #'x-apply-session-resources :override #'ignore)
+;; Allows switching to Ancient Greek keyboard layout with C-\
+(setq default-input-method "greek-ibycus4")
 
-(setq ring-bell-function #'ignore
-      inhibit-startup-screen t)
-
-(setq frame-title-format "vi")
-
-;; Line numbers
 (setq display-line-numbers-type 'relative
       column-number-mode t)
 (global-display-line-numbers-mode)
 
-;; Column indicator
-(setq display-fill-column-indicator-column 80)
-(global-display-fill-column-indicator-mode)
-(set-face-attribute 'fill-column-indicator nil :foreground "#928374")
+(advice-add #'x-apply-session-resources :override #'ignore)
+
+(setq server-client-instructions nil
+      frame-inhibit-implied-resize t
+      ring-bell-function #'ignore
+      inhibit-startup-screen t
+      frame-title-format "vi")
 
 (provide 'early-init)
 ;;; early-init.el ends here

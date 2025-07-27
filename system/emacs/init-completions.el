@@ -27,18 +27,10 @@
   (icomplete-vertical-mode 1))
 
 (use-package savehist
+  :ensure nil
   :init
   (savehist-mode))
 
-(use-package marginalia
-  :ensure t
-  :init
-  (marginalia-mode))
-
-(use-package nerd-icons-completion
-  :after marginalia
-  :ensure t
-  :config (nerd-icons-completion-mode))
 
 (use-package orderless
   :ensure t
@@ -46,6 +38,16 @@
   (setq completion-styles '(orderless basic)
 	completion-category-defaults nil
 	completion-category-overrides nil))
+
+(use-package marginalia
+  :ensure t
+  :init
+  (marginalia-mode))
+
+(use-package nerd-icons-completion
+  :after (nerd-icons marginalia)
+  :ensure t
+  :config (nerd-icons-completion-mode))
 
 (use-package corfu
   :ensure t
@@ -65,7 +67,7 @@
   (corfu-popupinfo-mode 1))
 
 (use-package nerd-icons-corfu
-  :after corfu
+  :after (nerd-icons corfu)
   :ensure t
   :config
   (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
