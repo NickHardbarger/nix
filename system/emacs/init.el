@@ -17,10 +17,7 @@
   :ensure nil
   :custom
   (scroll-conservatively 101)
-  (truncate-lines t)
-  ;; Use Super key as Meta, Alt as Alt
-  (x-super-keysym 'meta)
-  (x-meta-keysym 'alt))
+  (truncate-lines t))
 
 (use-package help
   :ensure nil

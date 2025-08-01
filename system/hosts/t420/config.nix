@@ -12,7 +12,7 @@ let
     owner = "NickHardbarger";
     repo = "dwl-v0.7";
     rev = "main";
-    hash = "sha256-5QA3XzfFCNHbmmM4BunpmjqXHg1MgyGEkbYWtLuDbdc=";
+    hash = "sha256-wAMSqIpwDCssH5/ZmYOZ9MBm3vK1TTOS27fyPbRQX1I=";
   };
 
   cattysrc = pkgs.fetchFromGitHub {
