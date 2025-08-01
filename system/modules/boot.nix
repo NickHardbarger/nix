@@ -16,17 +16,12 @@
       efi.canTouchEfiVariables = true;
       timeout = 1;
     };
-    plymouth = {
-      enable = true;
-      theme = "glitch";
-      themePackages = with pkgs; [
-        (adi1090x-plymouth-themes.override {
-          selected_themes = [ "glitch" ];
-        })
-      ];
-    };
     consoleLogLevel = 0;
-    initrd.verbose = false;
+    initrd = {
+      verbose = false;
+      # Unnecessary with NetworkManager
+      systemd.network.wait-online.enable = false;
+    };
     #kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "quiet"
