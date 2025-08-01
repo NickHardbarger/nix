@@ -117,7 +117,10 @@ in
     bash.blesh.enable = true;
     nano.enable = false;
   };
-
+  services.guix = {
+    enable = true;
+    gc.enable = true;
+  };
   environment = {
     sessionVariables.NIXOS_OZONE_WL = "1";
     systemPackages = with pkgs; [
