@@ -58,7 +58,6 @@ in
     ../../modules/pkgs.nix
     ../../modules/scx.nix
     ../../modules/ssh.nix
-    ../../modules/starship.nix
     ../../modules/upgrades.nix
     ../../modules/users.nix
     ../../modules/xkb.nix
@@ -111,7 +110,6 @@ in
     rtkit.enable = true;
     polkit.enable = true;
   };
-  virtualisation.virtualbox.host.enable = true;
   programs = {
     nix-ld.enable = true;
     bash.blesh.enable = true;
@@ -124,10 +122,10 @@ in
   environment = {
     sessionVariables.NIXOS_OZONE_WL = "1";
     systemPackages = with pkgs; [
-      cmatrix # matrix text scroll
-      cowsay # generates ascii cow with message
-      sl # steam locomotive on ls typo
-      discord # chat client
+      # cmatrix # matrix text scroll
+      # cowsay # generates ascii cow with message
+      # sl # steam locomotive on ls typo
+      # discord # chat client
 
       nix-prefetch-github
       (pkgs.callPackage "${dwlsrc}/build.nix" { })

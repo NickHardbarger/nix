@@ -13,6 +13,5 @@
   programs.gamemode.enable = true;
   environment.systemPackages = with pkgs; [
     mangohud
-    #minecraft #temporarily broken
   ];
 }
