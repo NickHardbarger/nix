@@ -7,7 +7,6 @@
     (pkgs.writeShellScriptBin "run-wmenu" ''
       ${pkgs.dmenu-wayland}/bin/dmenu-wl_run -fn 'JetBrainsMonoNF 12'
     '')
-    (import ../scripts/startwl.nix { inherit pkgs; })
     swaybg # wallpaper setter
     grim # screenshots
     slurp # screen select
