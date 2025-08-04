@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# Need to use mirror, main repo doesn't work?
+guix pull --channels=$HOME/nix/system/hosts/t420/channels.scm --url=https://codeberg.org/guix/guix-mirror
+
+# Might not need this on GuixSD?
+GUIX_PROFILE="/home/nh/.config/guix/current"
+. "$GUIX_PROFILE/etc/profile"
+
+guix describe --format=channels > ~/nix/system/hosts/t420/lock.scm
