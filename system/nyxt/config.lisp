@@ -4,4 +4,6 @@
 
 (define-configuration web-buffer
     ((default-modes
-	 (pushnew 'nyxt/mode/blocker:blocker-mode %slot-value%))))
+	 (append '(nyxt/mode/blocker:blocker-mode
+		   nyxt/mode/reduce-tracking:reduce-tracking-mode)
+		 %slot-value%))))
