@@ -23,15 +23,15 @@
   (services
    (append (list (service home-bash-service-type
                           (home-bash-configuration
-			   (environment-variables
-			    ;; Does not execute
-			    '(("PS1" . "\\[\\e[1;34m\\]\\w \\[\\e[91m\\]\\]($(git branch --show-current 2>/dev/null)) \\[\\e[0m\\]󰘧 ")
-						    ("EDITOR" . "emacs")))
                            (aliases '(("l" . "ls -Ahgo --color=auto --group-directories-first")))
 			   (bash-profile (list (plain-file "bash-profile"
 							   "wlstat | dwl -s 'swaybg -i ~/nix/system/wallpapers/columbus.jpg <&-'")))
                            (bashrc (list (plain-file "bashrc"
-						     "nixfetch")))))
+						     (string-append
+						      "GUIX_PROFILE='/home/nh/.config/guix/current'\n"
+						      ". $GUIX_PROFILE/etc/profile\n"
+						      "export PS1='\\[\\e[1;34m\\]\\w \\[\\e[91m\\]\\]() \\[\\e[0m\\]󰘧 '\n"
+						      "nixfetch\n"))))))
 		 (service home-xdg-configuration-files-service-type
 			  `(("nyxt/config.lisp" ,(local-file "../../nyxt/config.lisp")))))
            %base-home-services)))
