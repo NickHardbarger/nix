@@ -1,4 +1,5 @@
-#!/usr/bin/env sh
+#!/usr/bin/env -S guix shell unzip -- bash
+
 if [ ! -f ~/.local/share/fonts/JetBrainsMonoNerdFont-Regular.ttf ]; then
     echo "DOWNLOADING FONT"
 
@@ -11,11 +12,10 @@ if [ ! -f ~/.local/share/fonts/JetBrainsMonoNerdFont-Regular.ttf ]; then
     fc-cache -vf ~/.local/share/fonts/
 fi
 
-if [ ! -f ~/.local/share/icons/Simp1e-Gruvbox-Dark/ ]; then
-    echo "DOWNLOADING CURSOR THEME"
+if [ ! -d ~/.local/share/icons/Simp1e-Gruvbox-Dark/ ]; then
+    echo "COPYING CURSOR THEME"
 
-    mkdir -p ~/.local/share/icons/
-
-    curl -o /tmp/Simp1e-Gruvbox-Dark.tar.xz -L https://www.pling.com/p/1932768/Simp1e-Gruvbox-Dark.tar.xz
-    tar -xvf /tmp/Simp1e-Gruvbox-Dark.xz -C ~/.local/share/icons/
+    cp -r ~/nix/system/hosts/t420/icons/ .local/share/icons
 fi
+
+echo "FONTS AND CURSORS INSTALLED"

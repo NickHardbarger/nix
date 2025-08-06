@@ -25,7 +25,9 @@
                           (home-bash-configuration
                            (aliases '(("l" . "ls -Ahgo --color=auto --group-directories-first")))
 			   (bash-profile (list (plain-file "bash-profile"
-							   "wlstat | dwl -s 'swaybg -i ~/nix/system/wallpapers/columbus.jpg <&-'")))
+							   (string-append
+							    "~/nix/system/hosts/t420/font-cursor\n"
+							    "wlstat | dwl -s 'swaybg -i ~/nix/system/wallpapers/columbus.jpg <&-'\n"))))
                            (bashrc (list (plain-file "bashrc"
 						     (string-append
 						      "GUIX_PROFILE='/home/nh/.config/guix/current'\n"

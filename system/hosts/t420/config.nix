@@ -48,7 +48,6 @@ in
     ../../modules/doas.nix
     ../../modules/fail2ban.nix
     ../../modules/firewall.nix
-    ../../modules/fonts.nix
     ../../modules/foot.nix
     ../../modules/games.nix
     ../../modules/locale.nix
