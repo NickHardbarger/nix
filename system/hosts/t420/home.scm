@@ -26,7 +26,9 @@
                            (aliases '(("l" . "ls -Ahgo --color=auto --group-directories-first")))
 			   (bash-profile (list (plain-file "bash-profile"
 							   (string-append
-							    "~/nix/system/hosts/t420/font-cursor\n"
+							    ;; Script put me in root directory lol
+							    ;; Weird bug
+							    "#~/nix/system/hosts/t420/font-cursor\n"
 							    "wlstat | dwl -s 'swaybg -i ~/nix/system/wallpapers/columbus.jpg <&-'\n"))))
                            (bashrc (list (plain-file "bashrc"
 						     (string-append
