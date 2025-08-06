@@ -1,7 +1,7 @@
 { myUser, ... }:
 {
   imports = [
-    ../../modules/home/cursor.nix
+    # ../../modules/home/cursor.nix
     ../../modules/home/emacs.nix
     ../../modules/home/git.nix
     ../../modules/home/mako.nix
