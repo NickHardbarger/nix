@@ -15,8 +15,10 @@
   ;; Below is the list of packages that will show up in your
   ;; Home profile, under ~/.guix-home/profile.
  (packages (specifications->packages
-	    (list "btop"
-		  "nyxt")))
+	    (list ;; "nyxt"
+	     ;; Guix packages nyxt 3.11.7, which is broken for me
+	     ;; Using 3.12 (via Nix) seems to work just fine, but I couldn't build it with Guix
+	     "btop")))
 
   ;; Below is the list of Home services.  To search for available
   ;; services, run 'guix home search KEYWORD' in a terminal.

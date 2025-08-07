@@ -121,10 +121,7 @@ in
   environment = {
     sessionVariables.NIXOS_OZONE_WL = "1";
     systemPackages = with pkgs; [
-      # cmatrix # matrix text scroll
-      # cowsay # generates ascii cow with message
-      # sl # steam locomotive on ls typo
-      # discord # chat client
+      nyxt
 
       nix-prefetch-github
       (pkgs.callPackage "${dwlsrc}/build.nix" { })
