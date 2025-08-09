@@ -27,27 +27,14 @@ that the interface gets even nicer. Otherwise Nyxt generates the missing colors
 automatically, which should be good enough... for most cases.")))
 
 ;; GREASEMONKEY
-;; (define-configuration nyxt/mode/user-script:user-script-mode
-;;   ((nyxt/mode/user-script:user-scripts
-;;     (list
-;;      (make-instance 'nyxt/mode/user-script:user-script :code
-;;                     "// ==UserScript==
-;;                               // @name          No navbars!
-;;                               // @description	A simple script to remove navbars
-;;                               // @run-at        document-end
-;;                               // @include       http://*/*
-;;                               // @include       https://*/*
-;;                               // @noframes
-;;                               // ==/UserScript==
-
-;;                               var elem = document.querySelector(\"header\") || document.querySelector(\"nav\");
-;;                               if (elem) {
-;;                               elem.parentNode.removeChild(elem);
-;;                               }"))
-;;     :doc "Alternatively, save the code to some file and use
-;; :base-path #p\"/path/to/our/file.user.js\".
-;; Or fetch a remote script with
-;; url (quri:uri \"https://example.com/script.user.js\")")))
+(define-configuration nyxt/mode/user-script:user-script-mode
+  ((nyxt/mode/user-script:user-scripts
+    (list
+     (make-instance 'nyxt/mode/user-script:user-script :base-path #p"~/nix/system/nyxt/yt-ads.js")
+     ;; A website-agnostic way to set speed:
+     ;; document.getElementsByClassName('html5-main-video')[0].playbackRate = 2.0
+     (make-instance 'nyxt/mode/user-script:user-script :base-path #p"~/nix/system/nyxt/yt-speed.js"))
+    :doc "Save the code to some file and use :base-path #p\"/path/to/our/file.user.js\".")))
 
 ;; SEARCH ENGINES
 (defvar *my-search-engines*

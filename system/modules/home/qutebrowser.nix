@@ -4,6 +4,8 @@
     ".config/qutebrowser/custom.py".source = ../../qutebrowser/custom.py;
     ".config/qutebrowser/styles/youtube.css".source = ../../qutebrowser/youtube.css;
     ".config/qutebrowser/styles/theme.css".source = ../../qutebrowser/theme.css;
+    ".config/qutebrowser/greasemonkey/yt-ads.js".source = ../../nyxt/yt-ads.js;
+    ".config/qutebrowser/greasemonkey/yt-speed.js".source = ../../nyxt/yt-speed.js;
   };
   programs.qutebrowser = {
     enable = true;
@@ -345,48 +347,6 @@
       # color).
       # c.colors.webpage.bg = bg4
     '';
-    greasemonkey = [
-      (pkgs.writeText "youtube-ads.js" ''
-        // ==UserScript==
-        // @name         Auto Skip YouTube Ads 
-        // @version      1.0.0
-        // @description  Speed up and skip YouTube ads automatically 
-        // @author       jso8910
-        // @match        *://*.youtube.com/*
-        // @exclude      *://*.youtube.com/subscribe_embed?*
-        // ==/UserScript==
-        setInterval(() => {
-        	const btn = document.querySelector('.videoAdUiSkipButton,.ytp-ad-skip-button')
-        	if (btn) {
-        		btn.click()
-        	}
-        	const ad = [...document.querySelectorAll('.ad-showing')][0];
-        	if (ad) {
-        		document.querySelector('video').playbackRate = 10;
-        	}
-        }, 50)
-      '')
-      # A website-agnostic way to set speed:
-      # document.getElementsByClassName('html5-main-video')[0].playbackRate = 2.0
-      (pkgs.writeText "youtube-speed.js" ''
-        // ==UserScript==
-        // @name        Youtube Playback Rate
-        // @namespace   Violentmonkey Scripts
-        // @match       *://youtube.com/*
-        // @match       *://www.youtube.com/*
-        // @grant       Any
-        // @version     1.0
-        // @author      Jason Miller
-        // @description 12/1/2019, 8:00:00 AM
-        // @run-at      document-start
-        // ==/UserScript==
-
-        sessionStorage.setItem("yt-player-playback-rate", JSON.stringify({
-            "data": "1.5",
-            "creation": Date.now(),
-        }));
-      '')
-    ];
     quickmarks = {
       youtube = "https://www.youtube.com/";
       github = "https://github.com/dashboard";
