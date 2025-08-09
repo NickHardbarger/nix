@@ -1,1 +1,4 @@
 *.org linguist-detectable=true
+*.org linguist-language=Org
+
+*.lisp linguist-language=Common Lisp
