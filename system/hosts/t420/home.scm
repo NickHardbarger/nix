@@ -32,7 +32,7 @@
 	     "grim"
 	     "slurp"
 	     "mako"
-	     "foot" "glibc-utf8-locales-2.29" ; fix foot setlocale error
+	     "foot"
 	     
 	     ;; GENERAL GUI ;;
 	     "obs" "obs-wlrobs" ; need to configure
@@ -67,6 +67,7 @@
 						      "GUIX_PROFILE='/home/nh/.config/guix/current'\n"
 						      ". $GUIX_PROFILE/etc/profile\n"
 						      "export PS1='\\[\\e[1;34m\\]\\w \\[\\e[91m\\]\\]() \\[\\e[0m\\]󰘧 '\n"
+						      "clear\n" ;; HACK: hide setlocale error
 						      "nixfetch\n"))))))
 		 (service home-xdg-configuration-files-service-type
 			  `(("nyxt/config.lisp" ,(local-file "../../nyxt/config.lisp"))
