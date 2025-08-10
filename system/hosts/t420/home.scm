@@ -25,16 +25,16 @@
 	     "pandoc"
 	     "git"
 	     "tree"
+	     "mpv"
 	     
 	     ;; WAYLAND UTILS ;;
 	     "swaybg"
 	     "grim"
 	     "slurp"
 	     "mako"
-	     "foot" "glibc-utf8-locales" ; fix foot setlocale error
+	     "foot" "glibc-utf8-locales-2.29" ; fix foot setlocale error
 	     
 	     ;; GENERAL GUI ;;
-	     "vlc"
 	     "obs" "obs-wlrobs" ; need to configure
 	     ;; "nyxt"
 	     ;; Guix packages nyxt 3.11.7, which is broken for me
