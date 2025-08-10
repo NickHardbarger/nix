@@ -14,7 +14,8 @@
 (home-environment
   ;; Below is the list of packages that will show up in your
   ;; Home profile, under ~/.guix-home/profile.
- (packages (specifications->packages (list
+ (packages (specifications->packages
+	    (list 
 	     ;; CLI UTILS ;;
 	     "pciutils" ; lspci
 	     "btop" ; need to configure
@@ -23,13 +24,14 @@
 	     "wget"
 	     "pandoc"
 	     "git"
+	     "tree"
 	     
 	     ;; WAYLAND UTILS ;;
 	     "swaybg"
 	     "grim"
 	     "slurp"
 	     "mako"
-	     "foot"
+	     "foot" "glibc-utf8-locales" ; fix foot setlocale error
 	     
 	     ;; GENERAL GUI ;;
 	     "vlc"
