@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }:
 let
@@ -40,7 +39,6 @@ in
 {
 
   imports = [
-    inputs.home-manager.nixosModules.default
     ../../modules/audio.nix
     ../../modules/bluetooth.nix
     ../../modules/boot.nix
@@ -48,13 +46,10 @@ in
     ../../modules/doas.nix
     ../../modules/fail2ban.nix
     ../../modules/firewall.nix
-    ../../modules/foot.nix
-    ../../modules/games.nix
     ../../modules/locale.nix
     # ../../modules/minecraft.nix
     ../../modules/nh.nix
     ../../modules/nix.nix
-    ../../modules/pkgs.nix
     ../../modules/scx.nix
     ../../modules/ssh.nix
     ../../modules/upgrades.nix
@@ -122,8 +117,14 @@ in
     sessionVariables.NIXOS_OZONE_WL = "1";
     systemPackages = with pkgs; [
       nyxt
-
       nix-prefetch-github
+      nixd
+      nixfmt-rfc-style
+      vscode-langservers-extracted
+      typescript-language-server
+      (pkgs.writeShellScriptBin "run-wmenu" ''
+        ${pkgs.dmenu-wayland}/bin/dmenu-wl_run -fn 'JetBrainsMonoNF 12'
+      '')
       (pkgs.callPackage "${dwlsrc}/build.nix" { })
       (pkgs.callPackage "${cattysrc}/build.nix" { })
       (pkgs.callPackage "${slstatussrc}/build.nix" { })

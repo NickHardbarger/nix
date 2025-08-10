@@ -5,10 +5,6 @@
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -25,7 +21,6 @@
           modules = [
             ./system/hosts/t420/config.nix
             ./system/hosts/t420/hardware.nix
-            inputs.home-manager.nixosModules.default
           ];
         };
 
@@ -36,7 +31,6 @@
         #   modules = [
         #     ./system/work/config.nix
         #     ./system/work/hardware.nix
-        #     inputs.home-manager.nixosModules.default
         #   ];
         # };
 
@@ -47,7 +41,6 @@
         #   modules = [
         #     ./system/server/config.nix
         #     ./system/server/hardware.nix
-        #     inputs.home-manager.nixosModules.default
         #   ];
         # };
 
@@ -58,7 +51,6 @@
         #   modules = [
         #     ./system/desktop/config.nix
         #     ./system/desktop/hardware.nix
-        #     inputs.home-manager.nixosModules.default
         #   ];
         # };
       };

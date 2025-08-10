@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = "main"
+
+[safe]
+	directory = "/home/nh/nix"
+
+[user]
+	email = "nickhardbarger13@gmail.com"
+	name = "Nick"

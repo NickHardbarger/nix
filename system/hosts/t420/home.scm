@@ -14,11 +14,39 @@
 (home-environment
   ;; Below is the list of packages that will show up in your
   ;; Home profile, under ~/.guix-home/profile.
- (packages (specifications->packages
-	    (list ;; "nyxt"
+ (packages (specifications->packages (list
+	     ;; CLI UTILS ;;
+	     "pciutils" ; lspci
+	     "btop" ; need to configure
+	     "wl-clipboard"
+	     "speedtest-cli"
+	     "wget"
+	     "pandoc"
+	     "git"
+	     
+	     ;; WAYLAND UTILS ;;
+	     "swaybg"
+	     "grim"
+	     "slurp"
+	     "mako"
+	     "foot"
+	     
+	     ;; GENERAL GUI ;;
+	     "vlc"
+	     "obs" "obs-wlrobs" ; need to configure
+	     ;; "nyxt"
 	     ;; Guix packages nyxt 3.11.7, which is broken for me
 	     ;; Using 3.12 (via Nix) seems to work just fine, but I couldn't build it with Guix
-	     "btop")))
+	     "qutebrowser"
+	     "steam" ; Nonguix
+	     
+	     ;; EMACS ;;
+	     "emacs-pgtk"
+	     "ccls" ; C LSP
+	     "gopls" ; Go LSP
+	     "java-eclipse-jdt-core" ; Java LSP
+	     "omnisharp" ; Nonguix C# LSP
+	     )))
 
   ;; Below is the list of Home services.  To search for available
   ;; services, run 'guix home search KEYWORD' in a terminal.
@@ -39,5 +67,24 @@
 						      "export PS1='\\[\\e[1;34m\\]\\w \\[\\e[91m\\]\\]() \\[\\e[0m\\]󰘧 '\n"
 						      "nixfetch\n"))))))
 		 (service home-xdg-configuration-files-service-type
-			  `(("nyxt/config.lisp" ,(local-file "../../nyxt/config.lisp")))))
+			  `(("nyxt/config.lisp" ,(local-file "../../nyxt/config.lisp"))
+			    ("foot/foot.ini" ,(local-file "./config/foot/foot.ini"))
+			    ("git/config" ,(local-file "./config/git/config"))
+			    ("mako/config" ,(local-file "./config/mako/config"))
+			    ("qutebrowser/config.py" ,(local-file "./config/qutebrowser/config.py"))
+			    ("qutebrowser/quickmarks" ,(local-file "./config/qutebrowser/quickmarks"))
+			    ("qutebrowser/styles/youtube.css" ,(local-file "../../nyxt/youtube.css"))
+			    ("qutebrowser/styles/theme.css" ,(local-file "../../nyxt/theme.css"))
+			    ("qutebrowser/greasemonkey/yt-ads.js" ,(local-file "../../nyxt/yt-ads.js"))
+			    ("qutebrowser/greasemonkey/yt-speed.js" ,(local-file "../../nyxt/yt-speed.js"))))
+		 (service home-files-service-type
+			  `((".emacs.d/early-init.el" ,(local-file "../../emacs/early-init.el"))
+			    (".emacs.d/init.el" ,(local-file "../../emacs/init.el"))
+			    (".emacs.d/init-elpaca.el" ,(local-file "../../emacs/init-elpaca.el"))
+			    (".emacs.d/init-org.el" ,(local-file "../../emacs/init-org.el"))
+			    (".emacs.d/init-pretty.el" ,(local-file "../../emacs/init-pretty.el"))
+			    (".emacs.d/init-git.el" ,(local-file "../../emacs/init-git.el"))
+			    (".emacs.d/init-completions.el" ,(local-file "../../emacs/init-completions.el"))
+			    (".emacs.d/init-prog.el" ,(local-file "../../emacs/init-prog.el"))
+			    (".emacs.d/ding.wav" ,(local-file "../../emacs/ding.wav")))))
            %base-home-services)))

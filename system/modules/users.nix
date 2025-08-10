@@ -1,5 +1,4 @@
 {
-  inputs,
   myUser,
   ...
 }:
@@ -14,13 +13,5 @@
       "wheel"
       "vboxusers"
     ];
-  };
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs myUser;
-    };
-    users = {
-      ${myUser} = import ../hosts/t420/home.nix;
-    };
   };
 }
