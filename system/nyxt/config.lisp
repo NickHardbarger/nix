@@ -1,7 +1,9 @@
 ;; GENERAL
 (define-configuration buffer
     ((default-modes
-	 (pushnew 'nyxt/mode/emacs:emacs-mode %slot-value%))))
+	 (append '(nyxt/mode/emacs:emacs-mode
+		   dark-mode)
+		 %slot-value%))))
 
 (define-configuration web-buffer
     ((default-modes
