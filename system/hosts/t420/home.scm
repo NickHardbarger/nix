@@ -44,6 +44,7 @@
 	     
 	     ;; EMACS ;;
 	     "emacs-pgtk"
+	     "emacs-geiser-guile"
 	     "ccls" ; C LSP
 	     "gopls" ; Go LSP
 	     "java-eclipse-jdt-core" ; Java LSP

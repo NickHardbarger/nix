@@ -64,3 +64,7 @@
 
 (use-package emmet-mode
   :ensure t)
+
+; error installing
+;; (use-package geiser-guile
+;;   :ensure t)
