@@ -26,15 +26,24 @@ Note that you can also define more nuanced colors, like warning-color+, so
 that the interface gets even nicer. Otherwise Nyxt generates the missing colors
 automatically, which should be good enough... for most cases.")))
 
-;; GREASEMONKEY
+;; USER SCRIPTS
 (define-configuration nyxt/mode/user-script:user-script-mode
   ((nyxt/mode/user-script:user-scripts
     (list
-     (make-instance 'nyxt/mode/user-script:user-script :base-path #p"~/nix/system/nyxt/yt-ads.js")
-     ;; A website-agnostic way to set speed:
-     ;; document.getElementsByClassName('html5-main-video')[0].playbackRate = 2.0
+     ;; Triggers YouTube's adblock blocker
+     ;; (make-instance 'nyxt/mode/user-script:user-script :base-path #p"~/nix/system/nyxt/yt-ads.js")
      (make-instance 'nyxt/mode/user-script:user-script :base-path #p"~/nix/system/nyxt/yt-speed.js"))
     :doc "Save the code to some file and use :base-path #p\"/path/to/our/file.user.js\".")))
+
+(nyxt/mode/bookmarklets:define-bookmarklet-command-global set-playback-speed
+    "Easily tweak video playback speed. Website agnostic."
+  "(function() {
+  const rate = prompt('Set new playback speed', 1.5);
+  if (rate != null) {
+  // Not sure which of these is better
+  const video = document.getElementsByTagName('video')[0]; // .getElementsByClassName('html5-main-video')[0];
+  video.playbackRate = parseFloat(rate);
+  }})();")
 
 ;; SEARCH ENGINES
 (defvar *my-search-engines*
