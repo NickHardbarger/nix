@@ -46,12 +46,13 @@ automatically, which should be good enough... for most cases.")))
   }})();")
 
 ;; SEARCH ENGINES
+(define-configuration browser
+    ((default-new-buffer-url (quri:uri "https://duckduckgo.com/?q="))))
+
 (defvar *my-search-engines*
   (list
-   '("python3" "https://docs.python.org/3/search.html?q=~a"
-     "https://docs.python.org/3")
-   '("doi" "https://dx.doi.org/~a" "https://dx.doi.org/")
-   '("google" "https://google.com/search?q=~a" "https://google.com"))
+   '("google" "https://google.com/search?q=~a" "https://google.com")
+   '("ddg" "https://duckduckgo.com/?q=" "https://duckduckgo.com"))
   "List of search engines.")
 
 (define-configuration context-buffer
