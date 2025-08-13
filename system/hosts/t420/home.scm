@@ -72,6 +72,7 @@
 						      "nixfetch\n"))))))
 		 (service home-xdg-configuration-files-service-type
 			  `(("nyxt/config.lisp" ,(local-file "../../nyxt/config.lisp"))
+			    ("nyxt/theme.lisp" ,(local-file "../../nyxt/theme.lisp"))
 			    ("foot/foot.ini" ,(local-file "./config/foot/foot.ini"))
 			    ("git/config" ,(local-file "./config/git/config"))
 			    ("mako/config" ,(local-file "./config/mako/config"))

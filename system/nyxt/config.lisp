@@ -1,3 +1,7 @@
+(in-package #:nyxt-user)
+
+(nyxt::load-lisp "~/.config/nyxt/theme.lisp")
+
 ;; GENERAL
 (define-configuration buffer
     ((default-modes
@@ -11,22 +15,6 @@
 		   nyxt/mode/reduce-tracking:reduce-tracking-mode
 		   nyxt/mode/user-script:user-script-mode)
 		 %slot-value%))))
-
-;; THEME
-(define-configuration browser
-    ((theme
-      (make-instance 'theme:theme :background-color "#eee8d5"
-                     :action-color "#268bd2" :primary-color "#073642"
-                   :secondary-color "#586e75" :success-color
-                   "#2aa198" :warning-color "#dc322f"
-                   :highlight-color "#d33682" :codeblock-color
-                   "#6c71c4" :text-color "#002b36"
-                   :contrast-text-color "#fdf6e3")
-      :doc
-      "Covers all the semantic groups (warning-color, codeblock-color etc.)
-Note that you can also define more nuanced colors, like warning-color+, so
-that the interface gets even nicer. Otherwise Nyxt generates the missing colors
-automatically, which should be good enough... for most cases.")))
 
 ;; USER SCRIPTS
 (define-configuration nyxt/mode/user-script:user-script-mode
