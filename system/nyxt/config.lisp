@@ -37,7 +37,7 @@
 
 ;; SEARCH ENGINES
 (define-configuration browser
-    ((default-new-buffer-url (quri:uri "https://duckduckgo.com/?q="))))
+    ((default-new-buffer-url (quri:uri "https://start.duckduckgo.com/"))))
 
 (defvar *my-search-engines*
   (list
