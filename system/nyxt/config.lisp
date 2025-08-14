@@ -5,8 +5,8 @@
 ;; GENERAL
 (define-configuration buffer
     ((default-modes
-	 (append '(nyxt/mode/emacs:emacs-mode
-		   dark-mode)
+	 (append '(nyxt/mode/emacs:emacs-mode)
+		   ;; dark-mode) ; screws up youtube appearance
 		 %slot-value%))))
 
 (define-configuration web-buffer
