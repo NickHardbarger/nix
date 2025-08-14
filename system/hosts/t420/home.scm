@@ -22,8 +22,7 @@
 	     "btop" ; need to configure
 	     "wget"
 	     "pciutils" ; lspci
-	     "mpv"
-	     "ffmpeg"
+	     "mpv" ; ffmpeg
 	     "speedtest-cli"
 	     "pandoc"
 	     "tree"
