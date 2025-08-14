@@ -32,7 +32,7 @@ let
     owner = "NickHardbarger";
     repo = "nixfetch";
     rev = "main";
-    hash = "sha256-sTP8NZfZVX9B0yJ7n9lGMYnrzQwENl8dnrHS+YztiZc=";
+    hash = "sha256-GCwAphCh4MY2x7nyHOvqB4jMH77QnhLbRHF8UB7R2Ms=";
   };
 
 in
