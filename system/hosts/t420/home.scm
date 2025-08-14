@@ -17,15 +17,16 @@
  (packages (specifications->packages
 	    (list 
 	     ;; CLI UTILS ;;
-	     "pciutils" ; lspci
-	     "btop" ; need to configure
-	     "wl-clipboard"
-	     "speedtest-cli"
-	     "wget"
-	     "pandoc"
 	     "git"
-	     "tree"
+	     "wl-clipboard"
+	     "btop" ; need to configure
+	     "wget"
+	     "pciutils" ; lspci
 	     "mpv"
+	     "ffmpeg"
+	     "speedtest-cli"
+	     "pandoc"
+	     "tree"
 	     
 	     ;; WAYLAND UTILS ;;
 	     "swaybg"
@@ -35,7 +36,6 @@
 	     "foot"
 	     
 	     ;; GENERAL GUI ;;
-	     "obs" "obs-wlrobs" ; need to configure
 	     ;; "nyxt"
 	     ;; Guix packages nyxt 3.11.7, which is broken for me
 	     ;; Using 3.12 (via Nix) seems to work just fine, but I couldn't build it with Guix
