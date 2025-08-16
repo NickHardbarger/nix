@@ -72,9 +72,13 @@
 		 (service home-xdg-configuration-files-service-type
 			  `(("nyxt/config.lisp" ,(local-file "../../nyxt/config.lisp"))
 			    ("nyxt/theme.lisp" ,(local-file "../../nyxt/theme.lisp"))
+			    
+			    ("btop/btop.conf" ,(local-file "./config/btop/btop.conf"))
+			    ("btop/themes/gruvbox_dark.theme" ,(local-file "./config/btop/gruvbox_dark.theme"))
 			    ("foot/foot.ini" ,(local-file "./config/foot/foot.ini"))
 			    ("git/config" ,(local-file "./config/git/config"))
 			    ("mako/config" ,(local-file "./config/mako/config"))
+			    
 			    ("qutebrowser/config.py" ,(local-file "./config/qutebrowser/config.py"))
 			    ("qutebrowser/quickmarks" ,(local-file "./config/qutebrowser/quickmarks"))
 			    ("qutebrowser/styles/youtube.css" ,(local-file "../../nyxt/youtube.css"))
@@ -91,6 +95,7 @@
 			    (".emacs.d/init-completions.el" ,(local-file "../../emacs/init-completions.el"))
 			    (".emacs.d/init-prog.el" ,(local-file "../../emacs/init-prog.el"))
 			    (".emacs.d/ding.wav" ,(local-file "../../emacs/ding.wav"))
+			    
 			    (".gnus.el" ,(local-file "../../emacs/gnus.el"))
 			    (".local/share/nyxt/bookmarks.lisp" ,(local-file "../../nyxt/bookmarks.lisp")))))
            %base-home-services)))
