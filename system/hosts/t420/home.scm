@@ -91,5 +91,6 @@
 			    (".emacs.d/init-completions.el" ,(local-file "../../emacs/init-completions.el"))
 			    (".emacs.d/init-prog.el" ,(local-file "../../emacs/init-prog.el"))
 			    (".emacs.d/ding.wav" ,(local-file "../../emacs/ding.wav"))
+			    (".gnus.el" ,(local-file "../../emacs/gnus.el"))
 			    (".local/share/nyxt/bookmarks.lisp" ,(local-file "../../nyxt/bookmarks.lisp")))))
            %base-home-services)))
