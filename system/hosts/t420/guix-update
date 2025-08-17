@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
 
+## Update Channels
 # Need to use mirror, main repo doesn't work?
-guix pull --channels=$HOME/nix/system/hosts/t420/channels.scm --url=https://codeberg.org/guix/guix-mirror
+guix pull --url=https://codeberg.org/guix/guix-mirror
+# Said I should do this, but doesn't seem to do anything
+guix package -u
 
-guix describe --format=channels > ~/nix/system/hosts/t420/lock.scm
+## Update lockfile
+guix describe -f channels > ~/nix/system/hosts/t420/lock.scm

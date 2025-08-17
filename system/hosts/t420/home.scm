@@ -9,7 +9,9 @@
              (gnu services)
              (guix gexp)
 	     (gnu home services)
-             (gnu home services shells))
+             (gnu home services shells)
+	     (gnu home services guix)
+	     (guix channels))
 
 (home-environment
   ;; Below is the list of packages that will show up in your
@@ -98,5 +100,18 @@
 			    (".emacs.d/ding.wav" ,(local-file "../../emacs/ding.wav"))
 			    
 			    (".gnus.el" ,(local-file "../../emacs/gnus.el"))
-			    (".local/share/nyxt/bookmarks.lisp" ,(local-file "../../nyxt/bookmarks.lisp")))))
+			    (".local/share/nyxt/bookmarks.lisp" ,(local-file "../../nyxt/bookmarks.lisp"))))
+		 
+		 (simple-service 'nonguix-service
+				 home-channels-service-type
+				 (list
+				  (channel
+				   (name 'nonguix)
+				   (url "https://gitlab.com/nonguix/nonguix")
+				   ;; Enable signature verification:
+				   (introduction
+				    (make-channel-introduction
+				     "897c1a470da759236cc11798f4e0a5f7d4d59fbc"
+				     (openpgp-fingerprint
+				      "2A39 3FFF 68F4 EF7A 3D29  12AF 6F51 20A0 22FB B2D5")))))))
            %base-home-services)))
