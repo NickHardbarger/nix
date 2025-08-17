@@ -1,12 +1,10 @@
 #+title: Documentation
 #+author: Nick Hardbarger
-#+date: [2025-2-12]
+#+date: [2025-8-17]
 #+caption: my desktop
 [[./desktop.png]]
 
 * Installation
-Note: This system is NOT intended to be installed/used by anyone other than me. This guide is just for my own personal reference!
-
 To install my config on a fresh NixOS system, run these commands:
 
 + Temporarily add git to shell:
@@ -26,7 +24,8 @@ cp /etc/nixos/hardware-configuration.nix ~/nix/system/<host-name>/hardware.nix
 
 + Activate configuration:
 #+BEGIN_SRC shell
-sudo nixos-rebuild switch --flake ~/nix#<host-name>
+sudo nixos-rebuild switch --flake ~/nix#<host-name> && \
+guix home reconfigure ~/nix/system/hosts/t420/home.scm
 #+END_SRC
 
 + Now reboot:
@@ -65,22 +64,4 @@ ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | wl-copy
 #+end_src
 
-You can now add the new key to your github profile!
-
-* Todos:
-
-** TODO Add multihost support [1/4]
-- [X] t420 host
-- [ ] gaming pc host
-- [ ] work pc host
-- [ ] server host
-  
-** TODO Rice dwl
-** TODO Add Disko and Impermanence
-** TODO Update installation guide
-
-** TODO Features
-- need to document system features
-  
-** TODO Project Goals
-- should explain my goals and motivations
++ FIN
