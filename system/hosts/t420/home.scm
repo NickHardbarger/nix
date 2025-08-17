@@ -17,6 +17,7 @@
  (packages (specifications->packages
 	    (list 
 	     ;; CLI UTILS ;;
+	     "font-google-noto-sans-cjk" ; cjk support
 	     "git"
 	     "wl-clipboard"
 	     "btop" ; need to configure
