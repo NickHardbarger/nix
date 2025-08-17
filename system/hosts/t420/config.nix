@@ -25,7 +25,7 @@ let
     owner = "NickHardbarger";
     repo = "slstatus";
     rev = "main";
-    hash = "sha256-THA55nT+D3m8ff1PnBxO1Kd5xT3laIt+EtDLK0Ag8RA=";
+    hash = "sha256-fUEP/IJsFPYEQCNEjBIo9lBShaMNyz+81XvuqihpnrI=";
   };
 
   nixfetchsrc = pkgs.fetchFromGitHub {
