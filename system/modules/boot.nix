@@ -23,7 +23,7 @@
       systemd.network.wait-online.enable = false;
     };
     # Prepping for Guix System
-    kernelPackages = pkgs.linuxPackages_latest; # latest-libre;
+    kernelPackages = pkgs.linuxPackages-libre;
     kernelParams = [
       "quiet"
       "splash"
