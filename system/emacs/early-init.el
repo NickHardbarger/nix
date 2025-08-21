@@ -29,9 +29,7 @@
 ;; Allows switching to Ancient Greek keyboard layout with C-\
 (setq default-input-method "greek-ibycus4")
 
-(setq display-line-numbers-type 'relative
-      column-number-mode t)
-(global-display-line-numbers-mode)
+(setq column-number-mode t)
 
 (advice-add #'x-apply-session-resources :override #'ignore)
 
