@@ -16,15 +16,14 @@
 (push '(alpha-background . 90) default-frame-alist)
 (push '(fullscreen . maximized) default-frame-alist)
 
-;; Still at col 70...
-(push '(display-fill-column-indicator-column . 80) default-frame-alist)
-(global-display-fill-column-indicator-mode)
-(set-face-attribute 'fill-column-indicator nil :foreground "#928374")
-
 (push '(font . "JetBrainsMonoNF-12") default-frame-alist)
 (set-face-font 'default "JetBrainsMonoNF-12")
 (set-face-font 'variable-pitch "DejaVu Sans")
 (copy-face 'default 'fixed-pitch)
+
+(setq-default fill-column 80)
+(global-display-fill-column-indicator-mode)
+(set-face-attribute 'fill-column-indicator nil :foreground "#928374")
 
 ;; Allows switching to Ancient Greek keyboard layout with C-\
 (setq default-input-method "greek-ibycus4")
