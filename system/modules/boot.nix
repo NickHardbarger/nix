@@ -22,7 +22,8 @@
       # Unnecessary with NetworkManager
       systemd.network.wait-online.enable = false;
     };
-    #kernelPackages = pkgs.linuxPackages_latest;
+    # Prepping for Guix System
+    kernelPackages = pkgs.linuxPackages_latest; # latest-libre;
     kernelParams = [
       "quiet"
       "splash"
