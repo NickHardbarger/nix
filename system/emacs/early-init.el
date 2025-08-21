@@ -1,8 +1,7 @@
 ;;; early-init.el --- Emacs pre package.el & UI configuration -*- lexical-binding: t; -*-
 ;;; Code:
 
-(setq package-enable-at-startup nil
-      inhibit-default-init nil
+(setq inhibit-default-init nil
       native-comp-async-report-warnings-errors nil)
 
 ;; GC

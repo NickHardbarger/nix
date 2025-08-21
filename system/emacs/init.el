@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
-
-;; Must be first
-(load "~/.emacs.d/init-elpaca.el")
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(setq package-archive-priorities '(("gnu" . 20)("melpa" . 10)))
 
 ;; Temporary profiling
 (use-package use-package-core

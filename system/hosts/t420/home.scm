@@ -90,7 +90,6 @@
 		 (service home-files-service-type
 			  `((".emacs.d/early-init.el" ,(local-file "../../emacs/early-init.el"))
 			    (".emacs.d/init.el" ,(local-file "../../emacs/init.el"))
-			    (".emacs.d/init-elpaca.el" ,(local-file "../../emacs/init-elpaca.el"))
 			    (".emacs.d/init-org.el" ,(local-file "../../emacs/init-org.el"))
 			    (".emacs.d/init-pretty.el" ,(local-file "../../emacs/init-pretty.el"))
 			    (".emacs.d/init-git.el" ,(local-file "../../emacs/init-git.el"))

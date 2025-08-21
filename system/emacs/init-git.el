@@ -1,9 +1,5 @@
-;; Magit requires newer version
-(use-package transient
-  :ensure t)
-
 (use-package magit
-  :after (transient nerd-icons)
+  :after nerd-icons
   :ensure t
   :bind ("C-x g" . magit-status)
   :custom
