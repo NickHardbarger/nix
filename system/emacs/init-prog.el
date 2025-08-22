@@ -23,7 +23,8 @@
 ;; FLYMAKE ;;
 (use-package flymake
   :ensure nil
-  :hook (prog-mode . flymake-mode))
+  :hook (prog-mode . flymake-mode)
+  :custom (flymake-show-diagnostics-at-end-of-line t))
 
 ;; EDITORCONFIG ;;
 (use-package editorconfig
