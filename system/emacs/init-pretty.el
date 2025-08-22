@@ -29,11 +29,6 @@
   :config
   (global-colorful-mode t))
 
-(use-package which-func
-  :ensure nil
-  :config
-  (which-function-mode))
-
 ;; Temporary
 (use-package dashboard
   :ensure t
