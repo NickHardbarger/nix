@@ -86,6 +86,10 @@
   ;; Can interfere with colorful-mode
   (css-fontify-colors nil))
 
+(use-package misc
+  :ensure nil
+  :bind ("C-," . duplicate-line))
+
 (load "~/.emacs.d/init-git.el")
 
 (load "~/.emacs.d/init-completions.el")
