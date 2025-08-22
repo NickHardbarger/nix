@@ -88,7 +88,31 @@
 
 (use-package misc
   :ensure nil
-  :bind ("C-," . duplicate-line))
+  :bind
+  ("C-," . duplicate-dwim)
+  ("C-." . copy-from-above-command))
+
+(use-package window
+  :ensure nil
+  :bind ("M-o" . other-window))
+
+(use-package recentf
+  :ensure nil
+  :bind ("M-g r" . recentf))
+
+(use-package isearch
+  :ensure nil
+  :custom
+  (isearch-lazy-count t)
+  (lazy-count-prefix-format "(%s/%s) "))
+
+(use-package proced
+  :ensure nil
+  :custom
+  (proced-enable-color-flag t)
+  (proced-tree-flag t)
+  (proced-auto-update-flag t)
+  (proced-auto-update-timer 1))
 
 (load "~/.emacs.d/init-git.el")
 
@@ -103,10 +127,6 @@
   (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-tools-enable-minor-modes))
   :hook
   (pdf-tools-enable-minor-modes . display-line-numbers-mode))
-
-(use-package anzu
-  :ensure t
-  :config (global-anzu-mode))
 
 ;; Should be enabled after other global minor modes
 (use-package envrc
