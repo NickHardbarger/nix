@@ -41,16 +41,24 @@
 ;; TODO: make it look pretty
 (setq-default mode-line-format
 	      '("%e" mode-line-front-space
+
 		(:eval (if (eq (buffer-modified-p) t)
 			   (format "%s  " (propertize
-					 (buffer-name) 'face 'warning))
+					   (buffer-name) 'face 'warning))
 			 (format "%s  " (propertize
-				       (buffer-name) 'face 'bold))))
+					 (buffer-name) 'face 'bold))))
+		
 		mode-line-position (project-mode-line project-mode-line-format)
-		(:eval (format "%s" (propertize
+
+		(:eval (format "%s " (propertize
 				      (symbol-name major-mode) 'face 'bold)))
-	        (vc-mode vc-mode)
-		(:propertize ("" flymake-mode-line-format))
+
+		(:eval (format "%s %s" (propertize "󰘬" 'face 'success)
+			       (propertize
+				(vc-git--symbolic-ref (buffer-file-name))
+				'face 'success)))
+
+		(:propertize (" " flymake-mode-line-counters))
 		(:propertize (" " current-input-method-title))))
 
 (provide 'early-init)
